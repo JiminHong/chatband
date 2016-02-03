@@ -13,22 +13,14 @@ myapp.config(function ($routeProvider, $locationProvider){
 	.when('/', {
 		//its gonna load this page and run this controller.
 		templateUrl : 'views/chat.html',
-		controller 	: 'AuthCtrl', function($scope, $http){
+		controller 	: 'ChatCtrl', function($scope, $http){
 
 		}
 	})
-	.when('/createForm', {
-		//its gonna load this page and run this controller.
-		templateUrl : 'views/createForm.html',
-		controller 	: 'CreateFormCtrl', function($scope, $http){
+	.when('/chats', {
+		templateUrl : 'views/chats.html',
+		controller 	: 'ChatsCtrl', function($scope, $http){
 
-		}
-	})
-	.when('/updateForm/:userId', {
-		//its gonna load this page and run this controller.
-		templateUrl : 'views/updateForm.html',
-		controller 	: 'FormCtrl', function($scope, $http){
-			
 		}
 	})
 	.when('/chat', {
@@ -37,17 +29,45 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	.when('/loggedIn', {
-		templateUrl : 'views/userProfile.html',
-		controller	: 'UserProfileCtrl', function($scope, $http){
+	.when('/gigs', {
+		templateUrl : 'views/gigs.html',
+		controller 	: 'GigsCtrl', function($scope, $http){
 
 		}
 	})
-	.when('/groupChat/:groupId', {
-		templateUrl : 'views/groupChat.html',
-		controller	: 'GroupChatCtrl', function($scope){
+	.when('/songs', {
+		templateUrl : 'views/ManagingGigs/songs.html',
+		controller 	: 'ManagingGigs', function($scope, $http){
+
 		}
 	})
+	.when('/lineup', {
+		templateUrl : 'views/ManagingGigs/lineup.html',
+		controller 	: 'ManagingGigs', function($scope, $http){
+
+		}
+	})
+	.when('/datetime', {
+		templateUrl : 'views/ManagingGigs/datetime.html',
+		controller 	: 'ManagingGigs', function($scope, $http){
+
+		}
+	})
+	.when('/location', {
+		templateUrl : 'views/ManagingGigs/location.html',
+		controller 	: 'ManagingGigs', function($scope, $http){
+
+		}
+	})
+	.when('/wardrobe', {
+		templateUrl : 'views/ManagingGigs/wardrobe.html',
+		controller 	: 'ManagingGigs', function($scope, $http){
+
+		}
+	})
+
+
+
 
 })
 

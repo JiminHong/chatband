@@ -106,10 +106,35 @@ nav{
 .group:after { content:""; display:table; }
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWO  */
+.span_2_of_2 {
+    width: 100%;
+}
+.span_1_of_2 {
+    width: 49.2%;
+}
 /*  GRID OF THREE  */
 .span_3_of_3 { width: 100%; }
 .span_2_of_3 { width: 66.13%; }
 .span_1_of_3 { width: 32.26%; }
+
+/*  GRID OF FIVE  */
+.span_5_of_5 {
+    width: 100%;
+}
+.span_4_of_5 {
+    width: 79.68%;
+}
+.span_3_of_5 {
+    width: 59.36%;
+}
+.span_2_of_5 {
+    width: 39.04%;
+}
+.span_1_of_5 {
+    width: 18.72%;
+}
+
 
 
 
@@ -171,5 +196,38 @@ h4.subheading {
     bottom:0;
     width: 100%;
     padding: 10px;
+}
+
+.tabs{
+    background-color: #BCD37D;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+}
+
+.tabText{
+    font-size: .5em;
+    text-align: center;
+    color: #95a362;
+    position: absolute;
+    margin: 0 17px;
+    bottom: 10px;
+}
+a:hover p.tabText{
+    color: #5A822F;
+}
+
+.tabimg{
+    display: block;
+    margin: 10px auto;
+}
+
+#songs, #lineup, #datetime, #location, #wardrobe{
+    fill:#95a362;
+}
+
+svg:hover#songs, svg:hover#lineup, svg:hover#datetime, svg:hover#location, svg:hover#wardrobe{
+    fill:#5A822F;
 }
 
