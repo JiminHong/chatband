@@ -1,0 +1,175 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+    height: 100%;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#page-wrapper {
+    position: inherit;
+    margin: 0 10%;
+}
+
+label {
+    width: 100%;
+}
+
+.view{
+    margin-top: 100px;
+}
+
+/************************************************   Navigation bar  */
+.navbar-fixed-top {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+nav{
+    background-color: #6B7F48;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+
+/*  SECTIONS  */
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+    display: block;
+    float:left;
+    margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF THREE  */
+.span_3_of_3 { width: 100%; }
+.span_2_of_3 { width: 66.13%; }
+.span_1_of_3 { width: 32.26%; }
+
+
+
+h1{
+/*	font-weight: 800;
+*/	color: rgba(64, 64, 64, 1);
+}
+h2{
+	color: rgba(38, 50, 72, 1); 
+}
+h3{
+	color: rgba(126, 138, 162, 1);
+/*	font-weight: 700;
+*/}
+h4{
+/*	font-weight: 600;
+*/	color: rgba(38, 50, 72, 1);
+}
+h5{
+	color: rgba(38, 50, 72, .5);
+	float: left;
+}
+p{
+/*	font-weight: 300;
+*/	color: rgba(38, 50, 72, 1);
+}
+
+h4.subheading {
+    text-transform: none;
+}
+
+.authWrapper{
+    width: 70%;
+    margin: 0 auto;
+/*    background-color: rgba(255,255,255,.4);*/
+}
+
+.btn-xl {
+    width: 100%;
+    margin-top: 10px;
+    padding: 7px 40px;
+    border-color: #6b7f48;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #6b7f48;
+}
+
+.profileImg{
+    width: 100px;
+}
+
+.typebox{
+    background-color: #515D3C;
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    padding: 10px;
+}
+

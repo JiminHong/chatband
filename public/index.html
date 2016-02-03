@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<base href='/'></base>
+
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<script src="bower/angular/angular.js"></script>
+	<script src="bower/angular-route/angular-route.js"></script>
+	<script src="bower/firebase/firebase.js"></script>
+	<script src="bower/angularfire/dist/angularfire.js"></script>
+	<script src="bower/angular-bootstrap/ui-bootstrap.js"></script>
+	<script src="js/module.js"></script>
+	<script src="js/routes.js"></script>
+	
+	<script src="js/controllers/AuthCtrl.js"></script>
+	<script src="js/controllers/CreateFormCtrl.js"></script>
+	<script src="js/controllers/FormCtrl.js"></script>
+	<script src="js/controllers/UserProfileCtrl.js"></script>
+	<script src="js/controllers/ChatCtrl.js"></script>
+	<script src="js/controllers/GroupChatCtrl.js"></script>
+	
+</head>
+<body>
+    <!-- Header -->
+    <!-- Navigation -->
+    <nav class="navbar-fixed-top">
+        <div class="lv1-nav section group"> <!-- Level 1 nav -->
+            <div class="col span_1_of_3"><button>Chats</button></div>
+            <div class="col span_1_of_3"><h1>Awesome Band</h1></div>
+            <div class="col span_1_of_3"></div>
+        </div>
+        <div class="nav-icons lv2-nav">
+            <div class="col span_1_of_3">Add members</div>
+            <div class="col span_1_of_3">Manage gigs</div>
+            <div class="col span_1_of_3">Manage files</div>
+        </div>
+    </nav>
+    <div>
+            <div ng-view></div>
+        </div>
+
+
+</body>
+</html>
+
+<!--============================================================================-->
+
+
+ 
