@@ -1,1 +1,1 @@
-var myapp = angular.module('myapp', ['ngRoute', 'firebase', 'ui.bootstrap'])
+var myapp = angular.module('myapp', ['ngRoute', 'firebase', 'ui.bootstrap', 'ngAnimate'])

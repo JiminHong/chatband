@@ -29,6 +29,12 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
+	.when('/listGigs', {
+		templateUrl : 'views/listGigs.html',
+		controller 	: 'ListGigsCtrl', function($scope, $http){
+
+		}
+	})
 	.when('/gigs', {
 		templateUrl : 'views/gigs.html',
 		controller 	: 'GigsCtrl', function($scope, $http){
@@ -36,31 +42,31 @@ myapp.config(function ($routeProvider, $locationProvider){
 		}
 	})
 	.when('/songs', {
-		templateUrl : 'views/ManagingGigs/songs.html',
+		templateUrl : 'views/gigTabs/songs.html',
 		controller 	: 'ManagingGigs', function($scope, $http){
 
 		}
 	})
 	.when('/lineup', {
-		templateUrl : 'views/ManagingGigs/lineup.html',
+		templateUrl : 'views/gigTabs/lineup.html',
 		controller 	: 'ManagingGigs', function($scope, $http){
 
 		}
 	})
 	.when('/datetime', {
-		templateUrl : 'views/ManagingGigs/datetime.html',
+		templateUrl : 'views/gigTabs/datetime.html',
 		controller 	: 'ManagingGigs', function($scope, $http){
 
 		}
 	})
 	.when('/location', {
-		templateUrl : 'views/ManagingGigs/location.html',
+		templateUrl : 'views/gigTabs/location.html',
 		controller 	: 'ManagingGigs', function($scope, $http){
 
 		}
 	})
 	.when('/wardrobe', {
-		templateUrl : 'views/ManagingGigs/wardrobe.html',
+		templateUrl : 'views/gigTabs/wardrobe.html',
 		controller 	: 'ManagingGigs', function($scope, $http){
 
 		}

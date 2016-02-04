@@ -1,6 +1,6 @@
 {
   "name": "chatband",
-  "version": "0.0.0",
+  "version": "1.7.7",
   "authors": [
     "Jimin Hong <jhong.dev@gmail.com>"
   ],
@@ -19,6 +19,10 @@
   ],
   "dependencies": {
     "angular": "~1.4.7",
-    "angular-route": "~1.4.7"
+    "angular-route": "~1.4.7",
+    "firebase": "^2.4.0",
+    "angularfire": "^1.1.3",
+    "ui-bootstrap": "^1.1.2",
+    "angular-bootstrap": "^1.1.2"
   }
 }

@@ -8,7 +8,7 @@ function ($scope, $firebaseArray, $firebaseAuth, $location, $routeParams) {
         } 
 
         $scope.goGigs = function(){
-            $location.path('/gigs');
+            $location.path('/listGigs');
         }
         
 }]);
