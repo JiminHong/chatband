@@ -233,8 +233,6 @@ svg-icon#wardrobe.tabimg svg{
     margin: 13px 2px 5px;
 }
 
-
-
 svg {
     width: 4em;
     height: 4em;
@@ -250,4 +248,11 @@ path {
     fill: rgba(149,163,98,1);
 }
 
+.active svg path{
+    fill: rgba(90,130,47,1);
+}
+
+.active p.tabText {
+    color: rgba(90,130,47,1);
+}
 

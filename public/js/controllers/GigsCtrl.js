@@ -70,6 +70,7 @@ function ($scope, $location) {
 
     $scope.setTab = function(newTab){
         $scope.tab = newTab;
+        return $scope.tab;
     }
 
     $scope.isSet = function(tabNum){
@@ -83,7 +84,7 @@ function ($scope, $location) {
     //Directs to the chat page
     $scope.goChat = function(){
         $location.path('/chat');
-    }   
+    }  
     
 }]);
 
