@@ -19,6 +19,20 @@ myapp.directive('datetimePage', function(){
     }
 })
 
+myapp.directive('locationPage', function(){
+    return{
+        restrict : 'A',
+        templateUrl: '../views/gigTabs/location.html'
+    }
+})
+
+myapp.directive('wardrobePage', function(){
+    return{
+        restrict : 'A',
+        templateUrl: '../views/gigTabs/wardrobe.html'
+    }
+})
+
 myapp.controller('GigsCtrl', ["$scope","$location",
 function ($scope, $location) {
     console.log('GigsCtrl fired');
