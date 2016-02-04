@@ -220,52 +220,34 @@ a:hover p.tabText{
 
 .tabimg{
     display: block;
-    margin: 10px auto;
+    margin: 5px 18px;
 }
 
-#songs, #lineup, #datetime, #location, #wardrobe{
-    fill:#95a362;
+svg-icon#location.tabimg svg{
+    display: block;
+    margin:  0 0 0 7px;
 }
 
-svg:hover#songs, svg:hover#lineup, svg:hover#datetime, svg:hover#location, svg:hover#wardrobe{
-    fill:#5A822F;
+svg-icon#wardrobe.tabimg svg{
+    display: block;
+    margin: 13px 2px 5px;
 }
 
 
 
-
-
-
-
-
-.animate-switch-container {
-  position:relative;
-  background:white;
-  border:1px solid black;
-  height:40px;
-  overflow:hidden;
+svg {
+    width: 4em;
+    height: 4em;
+    display: block;
 }
 
-.animate-switch {
-  padding:10px;
+svg:hover path {
+    cursor: pointer;
+    fill: rgba(90,130,47,1);
 }
 
-.animate-switch.ng-animate {
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+path {
+    fill: rgba(149,163,98,1);
 }
 
-.animate-switch.ng-leave.ng-leave-active,
-.animate-switch.ng-enter {
-  top:-50px;
-}
-.animate-switch.ng-leave,
-.animate-switch.ng-enter.ng-enter-active {
-  top:0;
-}
 
