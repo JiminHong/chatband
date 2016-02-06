@@ -1,18 +1,27 @@
 // server.js
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 // modules =================================================
 var express        = require('express');
-var app            = express();
+var app            = express('./config/express');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 
+
 // configuration ===========================================
+var config 		= require('./config/config');
+var mongoose 	= require('./config/mongoose');
+
+mongoose.connect('mongodb://jhong:jhong@ds055525.mongolab.com:55545/heroku_sf66wt12');
+// var express		= require('./config/express');
     
 // config files
-var db = require('./config/db');
+var db = mongoose();
+var app = express();
 
 // set our port
 var port = process.env.PORT || 3000; 
+
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
@@ -34,15 +43,21 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public')); 
 
+app.get('/songslist', function(req, res) {
+	console.log("I received the GET request")
+})
+
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:8080
-app.listen(port);               
+app.listen(config.port);
+
+module.exports = app;            
 
 // shoutout to the user                     
-console.log('Magic happens on port ' + port);
+console.log('Magic happens on port ' + config.port);
 
 // expose app           
 exports = module.exports = app;                         

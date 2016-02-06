@@ -11,7 +11,11 @@ function ($scope, $firebaseArray, $firebaseAuth, $location, $routeParams) {
         $location.path('/chat');
     } 
 
-
+    $scope.goAddGigs = function(){
+    	$location.path('/addSongs');
+    }
+    
+    
         
 }]);
 

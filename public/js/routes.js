@@ -41,27 +41,30 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
+
+	// ======================================================== Gig info
+
 	.when('/songs', {
 		templateUrl : 'views/gigTabs/songs.html',
-		controller 	: 'ManagingGigs', function($scope, $http){
+		controller 	: 'ManagingGigsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/lineup', {
 		templateUrl : 'views/gigTabs/lineup.html',
-		controller 	: 'ManagingGigs', function($scope, $http){
+		controller 	: 'ManagingGigsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/datetime', {
 		templateUrl : 'views/gigTabs/datetime.html',
-		controller 	: 'ManagingGigs', function($scope, $http){
+		controller 	: 'ManagingGigsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/location', {
 		templateUrl : 'views/gigTabs/location.html',
-		controller 	: 'ManagingGigs', function($scope, $http){
+		controller 	: 'ManagingGigsCtrl', function($scope, $http){
 
 		}
 	})
@@ -71,6 +74,40 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
+
+	// ======================================================== Adding a new gig
+
+	.when('/addSongs', {
+		templateUrl : 'views/addGigs/addSongs.html',
+		controller 	: 'AddingGigsCtrl', function($scope, $http){
+
+		}
+	})
+	.when('/addLineup', {
+		templateUrl : 'views/addGigs/addLineup.html',
+		controller 	: 'AddingGigsCtrl', function($scope, $http){
+
+		}
+	})
+	.when('/addDatetime', {
+		templateUrl : 'views/addGigs/addDatetime.html',
+		controller 	: 'AddingGigsCtrl', function($scope, $http){
+
+		}
+	})
+	.when('/addLocation', {
+		templateUrl : 'views/addGigs/addLocation.html',
+		controller 	: 'AddingGigsCtrl', function($scope, $http){
+
+		}
+	})
+	.when('/addWardrobe', {
+		templateUrl : 'views/addGigs/addWardrobe.html',
+		controller 	: 'AddingGigsCtrl', function($scope, $http){
+
+		}
+	})
+	
 
 
 
