@@ -1,17 +1,24 @@
 <nav class="navbar-fixed-top">
     <div class="lv1-nav section group"> <!-- Level 1 nav -->
-        <div class="col span_1_of_3"></div>
-        <div class="col span_1_of_3"><h1 ng-click="goChat()">Awesome Band</h1></div>
-        <div class="col span_1_of_3"></div>
+    	<div class="class="span_3_of_3"">
+        	<h1 ng-click="goChat()">Awesome Band</h1></div>
+        </div>
     </div>
 </nav>
 
 <div class="view">
-	<h2 ng-click="goAddGigs()">Add a new gig</h2>
-	<div ng-click="goGigs()">
-		<p>Tomorrow</p>
-		<h2>MOONSTONE MUSIC FESTIVAL</h2>
-		<p>Central Florida Fairgrounds, Orlando, FL</p>
-		<p>PINK - Calling Dr.Love & 3 more</p>
+	<div class="full-width-btn">
+		<ng-click="goAddGigs()"><p>Add a new gig</p>
+	</div>
+	<div class="listGigs" ng-repeat="listGig in listGigs">
+		<div class="giglist-panel-header">
+			<p class="date-giglist">{[{ listGig.date }]}</p>	
+			<p class="time-giglist">{[{ listGig.time }]}</p>	
+		</div>
+		<p class="name-giglist">{[{ listGig.name }]}</p>
+		<p class="location-giglist">{[{ listGig.location }]}</p>
+		<p class="artist-giglist">{[{ listGig.artist }]}</p>
+		<p class="song-giglist">{[{ listGig.song }]}</p>
+		<p class="songcount-giglist">{[{ listGig.songCount }]}more</p>					
 	</div>
 </div>

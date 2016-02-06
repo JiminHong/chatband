@@ -12,8 +12,7 @@ var methodOverride = require('method-override');
 var config 		= require('./config/config');
 var mongoose 	= require('./config/mongoose');
 
-mongoose.connect('mongodb://jhong:jhong@ds055525.mongolab.com:55545/heroku_sf66wt12');
-// var express		= require('./config/express');
+// mongoose.connect('mongodb://jhong:jhong@ds055525.mongolab.com:55545/heroku_sf66wt12');
     
 // config files
 var db = mongoose();
@@ -26,6 +25,8 @@ var port = process.env.PORT || 3000;
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
 // mongoose.connect(db.url); 
+// mongoose.connect('mongodb://jhong:jhong@ds055525.mongolab.com:55545/heroku_sf66wt12');
+
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 

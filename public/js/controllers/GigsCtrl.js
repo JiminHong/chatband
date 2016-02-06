@@ -64,6 +64,22 @@ myapp.directive('wardrobePage', function(){
 
 myapp.controller('GigsCtrl', ["$scope","$location",
 function ($scope, $location) {
+
+    $scope.songs = [
+    {
+        artist: 'Adele',
+        title: 'Hello',
+        time: '4:40',
+        bpm: '128'
+    },
+    {
+        artist: 'Disclosure',
+        title: 'Magnets',
+        time: '5:05',
+        bpm: '132'
+    }
+    ]
+
     console.log('GigsCtrl fired');
 
     $scope.tab = 1;

@@ -8,7 +8,8 @@
 
 <div class="view">
 <p>Moonstone music festival</p>
-    <form action="/addSongs" method="post">
+    <form ng-submit="addSong()" method="get">
+    <!-- {[{songs[0].artist}]} -->
         <input type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Artist"/><br />
         <input type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title"/><br />
         <input type="text" ng-model="newGig.time" placeholder="Time"/><br />

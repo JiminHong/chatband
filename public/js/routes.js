@@ -79,31 +79,31 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 	.when('/addSongs', {
 		templateUrl : 'views/addGigs/addSongs.html',
-		controller 	: 'AddingGigsCtrl', function($scope, $http){
+		controller 	: 'SongsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/addLineup', {
 		templateUrl : 'views/addGigs/addLineup.html',
-		controller 	: 'AddingGigsCtrl', function($scope, $http){
+		controller 	: 'SongsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/addDatetime', {
 		templateUrl : 'views/addGigs/addDatetime.html',
-		controller 	: 'AddingGigsCtrl', function($scope, $http){
+		controller 	: 'SongsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/addLocation', {
 		templateUrl : 'views/addGigs/addLocation.html',
-		controller 	: 'AddingGigsCtrl', function($scope, $http){
+		controller 	: 'SongsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/addWardrobe', {
 		templateUrl : 'views/addGigs/addWardrobe.html',
-		controller 	: 'AddingGigsCtrl', function($scope, $http){
+		controller 	: 'SongsCtrl', function($scope, $http){
 
 		}
 	})
