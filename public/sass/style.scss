@@ -1,7 +1,7 @@
 @import "compass";
 @import "partials/variables";
 @import "partials/normalize";
-
+@import "compass/css3";
 
 /*============================================= */
 /*============== Navigation bar =============== */
@@ -17,10 +17,6 @@
     background-color: $dark-green;
     height: 30px;
     line-height: 2em;
-}
-
-.full-width-btn p{
-    
 }
 
 /*============================================= */
@@ -145,6 +141,8 @@ h4.subheading {
     margin-top: 30px;
     background-color: $reg-green;
     padding-left: 105px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);  
+    @include transition(background-color .1s .1s);
 
     &:hover{
         background-color: $reg-green-hover;
@@ -171,6 +169,7 @@ h4.subheading {
         width: 1.5em;
         display: block;
         margin-top: 1.2em;
+        
     }
 }
 

@@ -464,14 +464,14 @@ optgroup {
 /*============================================= */
 /*================== Columns ================== */
 /*============================================= */
-/* line 30, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 .row {
   margin-right: -15px;
   margin-left: -15px;
 }
 
 /*  SECTIONS  */
-/* line 37, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 .section {
   clear: both;
   padding: 0px;
@@ -479,86 +479,86 @@ optgroup {
 }
 
 /*  COLUMN SETUP  */
-/* line 44, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 .col {
   display: block;
   float: left;
   margin: 1% 0 1% 1.6%;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 .col:first-child {
   margin-left: 0;
 }
 
 /*  GROUPING  */
-/* line 52, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 .group:before,
 .group:after {
   content: "";
   display: table;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .group:after {
   clear: both;
 }
 
-/* line 55, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 */
 }
 
 /*  GRID OF TWO  */
-/* line 57, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .span_2_of_2 {
   width: 100%;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .span_1_of_2 {
   width: 49.2%;
 }
 
 /*  GRID OF THREE  */
-/* line 64, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .span_3_of_3 {
   width: 100%;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 .span_2_of_3 {
   width: 66.13%;
 }
 
-/* line 66, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 .span_1_of_3 {
   width: 32.26%;
 }
 
 /*  GRID OF FIVE  */
-/* line 69, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .span_5_of_5 {
   width: 100%;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .span_4_of_5 {
   width: 79.68%;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .span_3_of_5 {
   width: 59.36%;
 }
 
-/* line 78, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .span_2_of_5 {
   width: 39.04%;
 }
 
-/* line 81, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 .span_1_of_5 {
   width: 18.72%;
 }
@@ -566,7 +566,7 @@ optgroup {
 /*============================================= */
 /*==================== Fonts ================== */
 /*============================================= */
-/* line 89, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 h1 {
   font-weight: 300;
   font-style: italic;
@@ -577,39 +577,39 @@ h1 {
   margin: 0;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 h2 {
   color: #263248;
 }
 
-/* line 101, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 h3 {
   color: #7e8aa2;
   /*	font-weight: 700;
   */
 }
 
-/* line 105, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 h4 {
   /*	font-weight: 600;
   */
   color: #263248;
 }
 
-/* line 109, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 h5 {
   color: rgba(38, 50, 72, 0.5);
   float: left;
 }
 
-/* line 113, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 p {
   /*	font-weight: 300;
   */
   color: #263248;
 }
 
-/* line 118, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 h4.subheading {
   text-transform: none;
 }
@@ -617,7 +617,7 @@ h4.subheading {
 /*============================================= */
 /*================== Buttons ================== */
 /*============================================= */
-/* line 128, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .btn-xl {
   width: 100%;
   margin-top: 10px;
@@ -632,20 +632,26 @@ h4.subheading {
   background-color: #6b7f48;
 }
 
-/* line 142, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .full-width-btn {
   width: 100%;
   height: 60px;
   margin-top: 30px;
   background-color: #bcd37d;
   padding-left: 105px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+  -moz-transition: background-color 0.1s 0.1s;
+  -o-transition: background-color 0.1s 0.1s;
+  -webkit-transition: background-color 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition: background-color 0.1s 0.1s;
 }
-/* line 149, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 .full-width-btn:hover {
   background-color: #d9ea9d;
   cursor: pointer;
 }
-/* line 154, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 .full-width-btn h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
@@ -657,23 +663,23 @@ h4.subheading {
   line-height: 4em;
   margin-left: 5px;
 }
-/* line 166, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .full-width-btn path {
   fill: #8e9379;
 }
-/* line 170, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 .full-width-btn svg#plus {
   width: 1.5em;
   display: block;
   margin-top: 1.2em;
 }
 
-/* line 177, ../sass/style.scss */
+/* line 176, ../sass/style.scss */
 .profileImg {
   width: 100px;
 }
 
-/* line 181, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 .typebox {
   background-color: #515D3C;
   position: absolute;
@@ -682,7 +688,7 @@ h4.subheading {
   padding: 10px;
 }
 
-/* line 189, ../sass/style.scss */
+/* line 188, ../sass/style.scss */
 .tabs {
   background-color: #BCD37D;
   position: absolute;
@@ -691,7 +697,7 @@ h4.subheading {
   height: 70px;
 }
 
-/* line 197, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 .tabText {
   font-size: .5em;
   text-align: center;
@@ -701,12 +707,12 @@ h4.subheading {
   bottom: 10px;
 }
 
-/* line 205, ../sass/style.scss */
+/* line 204, ../sass/style.scss */
 a:hover p.tabText {
   color: #5A822F;
 }
 
-/* line 209, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 .tabimg {
   display: block;
   margin: 5px 18px;
@@ -715,52 +721,52 @@ a:hover p.tabText {
 /*============================================= */
 /*==================== SVGs =================== */
 /*============================================= */
-/* line 218, ../sass/style.scss */
+/* line 217, ../sass/style.scss */
 svg-icon#location.tabimg svg {
   display: block;
   margin: 0 0 0 7px;
 }
 
-/* line 223, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 svg-icon#wardrobe.tabimg svg {
   display: block;
   margin: 13px 2px 5px;
 }
 
-/* line 228, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 svg #songs, #lineup, #datetime, #location, #wardrobe {
   display: block;
 }
-/* line 229, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 svg #songs:hover path, #lineup:hover path, #datetime:hover path, #location:hover path, #wardrobe:hover path {
   cursor: pointer;
   fill: #5a822f;
 }
-/* line 233, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 svg #songs:hover p, #lineup:hover p, #datetime:hover p, #location:hover p, #wardrobe:hover p {
   color: #5a822f;
 }
-/* line 236, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 svg #songs path, #lineup path, #datetime path, #location path, #wardrobe path {
   fill: #95a362;
 }
 
-/* line 244, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 .active svg path {
   fill: #5a822f;
 }
 
-/* line 248, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 .active p.tabText {
   color: #5a822f;
 }
 
-/* line 252, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 .text-svg {
   float: left;
 }
 
-/* line 256, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 .float-clear {
   clear: both;
 }
