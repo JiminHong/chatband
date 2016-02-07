@@ -1,5 +1,5 @@
-myapp.controller('ChatCtrl', ["$scope", "$firebaseArray", "$firebaseAuth", "$location", "$routeParams", 
-function ($scope, $firebaseArray, $firebaseAuth, $location, $routeParams) {
+myapp.controller('ChatCtrl', ["$scope", "$location", "$routeParams", 
+function ($scope, $location, $routeParams) {
     console.log('ChatCtrl fired');
 
         //Directs to the chat page

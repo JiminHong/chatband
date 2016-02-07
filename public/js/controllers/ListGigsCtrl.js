@@ -1,5 +1,5 @@
-myapp.controller('ListGigsCtrl', ["$scope", "$firebaseArray", "$firebaseAuth", "$location", "$routeParams", 
-function ($scope, $firebaseArray, $firebaseAuth, $location, $routeParams) {
+myapp.controller('ListGigsCtrl', ["$scope", "$location", "$routeParams", 
+function ($scope, $location, $routeParams) {
     console.log('ListGigsCtrl fired');
 
     $scope.goGigs = function(){
