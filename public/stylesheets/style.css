@@ -1,4 +1,5 @@
 /*variables.scss*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -443,35 +444,34 @@ optgroup {
   font-weight: bold;
 }
 
-/************************************************   Navigation bar  */
-/* line 6, ../sass/style.scss */
+/*============================================= */
+/*============== Navigation bar =============== */
+/*============================================= */
+/* line 10, ../sass/style.scss */
 .navbar-fixed-top {
   position: absolute;
   width: 100%;
   top: 0;
 }
 
-/* line 12, ../sass/style.scss */
-nav {
+/* line 16, ../sass/style.scss */
+.lv1-nav {
   background-color: #515d3c;
   height: 30px;
   line-height: 2em;
 }
 
-/* line 18, ../sass/style.scss */
-.full-width-btn {
-  height: 50px;
-  background-color: #bcd37d;
-}
-
-/* line 27, ../sass/style.scss */
+/*============================================= */
+/*================== Columns ================== */
+/*============================================= */
+/* line 30, ../sass/style.scss */
 .row {
   margin-right: -15px;
   margin-left: -15px;
 }
 
 /*  SECTIONS  */
-/* line 34, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .section {
   clear: both;
   padding: 0px;
@@ -479,145 +479,145 @@ nav {
 }
 
 /*  COLUMN SETUP  */
-/* line 41, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 .col {
   display: block;
   float: left;
   margin: 1% 0 1% 1.6%;
 }
 
-/* line 46, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .col:first-child {
   margin-left: 0;
 }
 
 /*  GROUPING  */
-/* line 49, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .group:before,
 .group:after {
   content: "";
   display: table;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 .group:after {
   clear: both;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 */
 }
 
 /*  GRID OF TWO  */
-/* line 54, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 .span_2_of_2 {
   width: 100%;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .span_1_of_2 {
   width: 49.2%;
 }
 
 /*  GRID OF THREE  */
-/* line 61, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .span_3_of_3 {
   width: 100%;
 }
 
-/* line 62, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .span_2_of_3 {
   width: 66.13%;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .span_1_of_3 {
   width: 32.26%;
 }
 
 /*  GRID OF FIVE  */
-/* line 66, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 .span_5_of_5 {
   width: 100%;
 }
 
-/* line 69, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .span_4_of_5 {
   width: 79.68%;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 .span_3_of_5 {
   width: 59.36%;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .span_2_of_5 {
   width: 39.04%;
 }
 
-/* line 78, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 .span_1_of_5 {
   width: 18.72%;
 }
 
-/* line 83, ../sass/style.scss */
+/*============================================= */
+/*==================== Fonts ================== */
+/*============================================= */
+/* line 89, ../sass/style.scss */
 h1 {
   font-weight: 300;
   font-style: italic;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-align: center;
   color: #efefef;
   font-family: "chaparral-pro";
+  margin: 0;
 }
 
-/* line 90, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 h2 {
   color: #263248;
 }
 
-/* line 93, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 h3 {
   color: #7e8aa2;
   /*	font-weight: 700;
   */
 }
 
-/* line 97, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 h4 {
   /*	font-weight: 600;
   */
   color: #263248;
 }
 
-/* line 101, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 h5 {
   color: rgba(38, 50, 72, 0.5);
   float: left;
 }
 
-/* line 105, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 p {
   /*	font-weight: 300;
   */
   color: #263248;
 }
 
-/* line 111, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 h4.subheading {
   text-transform: none;
 }
 
-/* line 115, ../sass/style.scss */
-.authWrapper {
-  width: 70%;
-  margin: 0 auto;
-  /*    background-color: rgba(255,255,255,.4);*/
-}
-
-/* line 121, ../sass/style.scss */
+/*============================================= */
+/*================== Buttons ================== */
+/*============================================= */
+/* line 128, ../sass/style.scss */
 .btn-xl {
   width: 100%;
   margin-top: 10px;
@@ -632,12 +632,48 @@ h4.subheading {
   background-color: #6b7f48;
 }
 
-/* line 135, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
+.full-width-btn {
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  background-color: #bcd37d;
+  padding-left: 105px;
+}
+/* line 149, ../sass/style.scss */
+.full-width-btn:hover {
+  background-color: #d9ea9d;
+  cursor: pointer;
+}
+/* line 154, ../sass/style.scss */
+.full-width-btn h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #5e5a49;
+  text-align: center;
+  display: inline;
+  text-align: center;
+  line-height: 4em;
+  margin-left: 5px;
+}
+/* line 166, ../sass/style.scss */
+.full-width-btn path {
+  fill: #8e9379;
+}
+/* line 170, ../sass/style.scss */
+.full-width-btn svg#plus {
+  width: 1.5em;
+  display: block;
+  margin-top: 1.2em;
+}
+
+/* line 177, ../sass/style.scss */
 .profileImg {
   width: 100px;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 .typebox {
   background-color: #515D3C;
   position: absolute;
@@ -646,7 +682,7 @@ h4.subheading {
   padding: 10px;
 }
 
-/* line 147, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 .tabs {
   background-color: #BCD37D;
   position: absolute;
@@ -655,7 +691,7 @@ h4.subheading {
   height: 70px;
 }
 
-/* line 155, ../sass/style.scss */
+/* line 197, ../sass/style.scss */
 .tabText {
   font-size: .5em;
   text-align: center;
@@ -665,53 +701,66 @@ h4.subheading {
   bottom: 10px;
 }
 
-/* line 163, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 a:hover p.tabText {
   color: #5A822F;
 }
 
-/* line 167, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .tabimg {
   display: block;
   margin: 5px 18px;
 }
 
-/* line 172, ../sass/style.scss */
+/*============================================= */
+/*==================== SVGs =================== */
+/*============================================= */
+/* line 218, ../sass/style.scss */
 svg-icon#location.tabimg svg {
   display: block;
   margin: 0 0 0 7px;
 }
 
-/* line 177, ../sass/style.scss */
+/* line 223, ../sass/style.scss */
 svg-icon#wardrobe.tabimg svg {
   display: block;
   margin: 13px 2px 5px;
 }
 
-/* line 182, ../sass/style.scss */
-svg {
-  width: 4em;
-  height: 4em;
+/* line 228, ../sass/style.scss */
+svg #songs, #lineup, #datetime, #location, #wardrobe {
   display: block;
 }
-
-/* line 188, ../sass/style.scss */
-svg:hover path {
+/* line 229, ../sass/style.scss */
+svg #songs:hover path, #lineup:hover path, #datetime:hover path, #location:hover path, #wardrobe:hover path {
   cursor: pointer;
   fill: #5a822f;
 }
-
-/* line 193, ../sass/style.scss */
-path {
+/* line 233, ../sass/style.scss */
+svg #songs:hover p, #lineup:hover p, #datetime:hover p, #location:hover p, #wardrobe:hover p {
+  color: #5a822f;
+}
+/* line 236, ../sass/style.scss */
+svg #songs path, #lineup path, #datetime path, #location path, #wardrobe path {
   fill: #95a362;
 }
 
-/* line 197, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 .active svg path {
   fill: #5a822f;
 }
 
-/* line 201, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 .active p.tabText {
   color: #5a822f;
+}
+
+/* line 252, ../sass/style.scss */
+.text-svg {
+  float: left;
+}
+
+/* line 256, ../sass/style.scss */
+.float-clear {
+  clear: both;
 }

@@ -2,27 +2,30 @@
 @import "partials/variables";
 @import "partials/normalize";
 
-/************************************************   Navigation bar  */
+
+/*============================================= */
+/*============== Navigation bar =============== */
+/*============================================= */
+
 .navbar-fixed-top {
     position: absolute;
     width: 100%;
     top: 0;
 }
 
-nav{
-    background-color: rgba(81, 93, 60, 1);
+.lv1-nav{
+    background-color: $dark-green;
     height: 30px;
     line-height: 2em;
-}
-
-.full-width-btn{
-    height: 50px;
-    background-color: rgba(188,211,125,1);
 }
 
 .full-width-btn p{
     
 }
+
+/*============================================= */
+/*================== Columns ================== */
+/*============================================= */
 
 .row {
   margin-right: -15px;
@@ -79,13 +82,18 @@ nav{
     width: 18.72%;
 }
 
+/*============================================= */
+/*==================== Fonts ================== */
+/*============================================= */
 
 h1{
 	font-weight: 300;
     font-style: italic;
-    font-size: 1.1em;
-    text-align: center;color: rgba(239,239,239, 1);
-    font-family: "chaparral-pro";  
+    font-size: 1.2em;
+    text-align: center;
+    color: $white-text;
+    font-family: "chaparral-pro";
+    margin: 0;  
 }
 h2{
 	color: rgba(38, 50, 72, 1); 
@@ -107,16 +115,15 @@ p{
 */	color: rgba(38, 50, 72, 1);
 }
 
-
 h4.subheading {
     text-transform: none;
 }
 
-.authWrapper{
-    width: 70%;
-    margin: 0 auto;
-/*    background-color: rgba(255,255,255,.4);*/
-}
+
+
+/*============================================= */
+/*================== Buttons ================== */
+/*============================================= */
 
 .btn-xl {
     width: 100%;
@@ -130,6 +137,41 @@ h4.subheading {
     font-weight: 700;
     color: #fff;
     background-color: #6b7f48;
+}
+
+.full-width-btn{
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+    background-color: $reg-green;
+    padding-left: 105px;
+
+    &:hover{
+        background-color: $reg-green-hover;
+        cursor: pointer;
+    }
+    
+    h2{
+        font-family: $mont; 
+        font-size: 1em;
+        text-transform: uppercase;
+        color: $dark-desat-green;
+        text-align: center;
+        display: inline;
+        text-align: center;
+        line-height: 4em;
+        margin-left: 5px;
+    }
+
+    path {
+        fill: rgba(142,147,121,1);
+    } 
+
+    svg#plus{
+        width: 1.5em;
+        display: block;
+        margin-top: 1.2em;
+    }
 }
 
 .profileImg{
@@ -169,6 +211,10 @@ a:hover p.tabText{
     margin: 5px 18px;
 }
 
+/*============================================= */
+/*==================== SVGs =================== */
+/*============================================= */
+
 svg-icon#location.tabimg svg{
     display: block;
     margin:  0 0 0 7px;
@@ -179,20 +225,21 @@ svg-icon#wardrobe.tabimg svg{
     margin: 13px 2px 5px;
 }
 
-svg {
-    width: 4em;
-    height: 4em;
-    display: block;
+svg #songs, #lineup, #datetime, #location, #wardrobe{
+    &:hover path {
+        cursor: pointer;
+        fill: rgba(90,130,47,1);
+    } 
+    &:hover p {
+        color: rgba(90,130,47,1);
+    }
+    path {
+        fill: rgba(149,163,98,1);
+    } 
+display: block;
 }
 
-svg:hover path {
-    cursor: pointer;
-    fill: rgba(90,130,47,1);
-}
 
-path {
-    fill: rgba(149,163,98,1);
-}
 
 .active svg path{
     fill: rgba(90,130,47,1);
@@ -202,3 +249,10 @@ path {
     color: rgba(90,130,47,1);
 }
 
+.text-svg{
+    float: left;
+}
+
+.float-clear{
+    clear: both;
+}
