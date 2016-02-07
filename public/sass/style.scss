@@ -19,6 +19,7 @@
     line-height: 2em;
 }
 
+
 /*============================================= */
 /*================== Columns ================== */
 /*============================================= */
@@ -92,8 +93,32 @@ h1{
     margin: 0;  
 }
 h2{
-	color: rgba(38, 50, 72, 1); 
+	color: $text-green;
+    font-family: $mont;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: 0;
 }
+
+.chap-h2{
+    color: $text-green;
+    font-family: $chap;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.4em;
+    margin: 0;
+    @include transition(color .15s .1s);
+}
+
+h2.mont-h2{
+    font-family: $mont;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: 0;
+}
+
 h3{
 	color: rgba(126, 138, 162, 1);
 /*	font-weight: 700;
@@ -115,7 +140,23 @@ h4.subheading {
     text-transform: none;
 }
 
+.time-giglist{
+    margin-left: 5px;
+    color: #ADADAD;
+    font-size: .7em;
+    font-style: normal;
+    font-weight: 400;
+    font-family: $open-sans;
+    @include transition(color .15s .1s);
+}
 
+.small-text{
+    font-size: .75em;
+}
+
+.bold{
+    font-weight: bold;
+}
 
 /*============================================= */
 /*================== Buttons ================== */
@@ -138,9 +179,9 @@ h4.subheading {
 .full-width-btn{
     width: 100%;
     height: 60px;
-    margin-top: 30px;
+    margin: 30px 0 0 0;
     background-color: $reg-green;
-    padding-left: 105px;
+    padding: 0 -105px 0 105px;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);  
     @include transition(background-color .1s .1s);
 
@@ -171,6 +212,81 @@ h4.subheading {
         margin-top: 1.2em;
         
     }
+}
+
+
+
+/*============================================= */
+/*================= Contents ================== */
+/*============================================= */
+
+.content-width-8{
+    width: 80%;
+    margin: 0 0 0 10%;
+    float: left;
+}
+.content-width-9{
+    width: 90%;
+}
+.content-width-1{
+    width: 10%;
+}
+
+.listGigs-panel-content{
+    background-color: $light-grey;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    cursor: pointer;
+    @include transition(background-color .15s .1s);
+    
+    h2, p{
+        color: $reg-grey;
+        margin: 0;
+        @include transition(color .15s .1s);
+    }
+    h2.mont-h2{
+        padding-top: 15px;
+    }
+    
+}
+
+.giglist-panel-header{
+    z-index: 2;
+    height: 37px;
+    width: 100%;
+    line-height: 2.5em;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.3);
+    @include transition(background-color .15s .1s);
+}
+
+.listGigs-panel{
+    &:hover{
+        .giglist-panel-header{
+            background-color: $white-cool-grey;
+            .chap-h2{
+                color: $dark-navy;
+                .time-giglist{
+                    color: $dark-cool-grey;
+                }
+            }
+        }
+        .listGigs-panel-content{
+            background-color: $dark-cool-grey;
+            h2, p{
+                color: $white;
+            }
+            svg#arrow{
+                display: inline-block;
+                path.arrow{
+                    fill: $white;
+                }
+            }
+        }
+    }
+}
+
+.inline-block{
+    display: inline-block;
 }
 
 .profileImg{
@@ -238,7 +354,13 @@ svg #songs, #lineup, #datetime, #location, #wardrobe{
 display: block;
 }
 
-
+svg#arrow{
+    margin-top: 37px;
+    path.arrow{
+        fill: $desat-burnt-sienna;
+        @include transition(fill .15s .1s);
+    }
+}
 
 .active svg path{
     fill: rgba(90,130,47,1);
@@ -250,8 +372,11 @@ display: block;
 
 .text-svg{
     float: left;
+    margin-left: 75px;
 }
-
+.float-left{
+    float: left;
+}
 .float-clear{
     clear: both;
 }
