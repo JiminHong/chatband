@@ -1,6 +1,6 @@
 //app/routes.js
 
-var Model = require('./models/model');
+var SongsModel = require('./models/songs.server.model');
 
 module.exports = function(app){
 	// frontend routes =========================================================
