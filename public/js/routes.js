@@ -107,10 +107,6 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	
-
-
-
 
 })
 
