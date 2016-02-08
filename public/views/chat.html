@@ -1,21 +1,37 @@
 <nav class="navbar-fixed-top">
-    <div class="lv1-nav section group"> <!-- Level 1 nav -->
-        <div class="col span_1_of_3"><button ng-click="goChats()">Chats</button></div>
+    <div class="lv1-nav reg-green-bg section group"> <!-- Level 1 nav -->
+        <div class="nav-left col span_1_of_3">
+            <div class="nav-arrow-text-svg">
+                <svg id="nav-arrow" width="7" viewBox="0 0 15.37 28.63"><path class="nav-arrow" d="M14.37,28.63a1,1,0,0,1-.71-0.29L0.29,15a1,1,0,0,1,0-1.41L13.56,0.29A1,1,0,0,1,15,1.71L2.41,14.26,15.08,26.92A1,1,0,0,1,14.37,28.63Z"/></svg>
+            </div>
+            <div class="inline-block">
+                <p ng-click="goChats()" class="nav-text">Chats</p>
+            </div>
+        </div>
         <div class="col span_1_of_3"><h1>Awesome Band</h1></div>
         <div class="col span_1_of_3"></div>
     </div>
-    <div class="nav-icons lv2-nav">
-        <div class="col span_1_of_3">Add members</div>
-        <div class="col span_1_of_3" ng-click="goGigs()">Manage gigs</div>
-        <div class="col span_1_of_3">Manage files</div>
+    <div class="reg-green-bg lv2-nav section group">
+        <div class="col span_1_of_3">
+            <svg id="files" class="nav-icons" viewBox="0 0 48.54 40.6" width="35"><path d="{[{filesIcon}]}"/></svg>
+        </div>
+        <div class="col span_1_of_3" ng-click="goGigs()">
+        <svg id="calendar" class="nav-icons" viewBox="0 0 40 43.78" width="30"><path d="{[{calendarIcon}]}"/></svg>
+        </div>
+        <div class="col span_1_of_3">
+        <svg id="addUser" class="nav-icons" viewBox="0 0 43.77 36.88" width="37"><path d="{[{addUser}]}"/></svg>
+        </div>
     </div>
 </nav>
 
 <div class="view">
-<p>conversation</p>
 </div>
 <div class="typebox">
-	<span class="plusIcon">Plus</span>
-	<input type="text">
-	<button type="submit">Send</button>
+	<div class="option-plus-position">
+        <svg id="option-plus" width="25" viewBox="0 0 50.67 50.67"><path d="M25.33,0A25.33,25.33,0,1,0,50.67,25.33,25.33,25.33,0,0,0,25.33,0ZM40.07,29h-13V41c0,4-5,4-5,0V29h-13c-3,0-3-6,0-6h13V11c0-3,5-3,5,0V23h13C43.07,23,43.07,29,40.07,29Z"/></path></svg>
+    </div>
+	<form>
+        <input  class="form" type="text" placeholder="message here">   
+        <button type="submit">Send</button>
+    </form>
 </div>
