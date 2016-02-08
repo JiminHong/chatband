@@ -20,12 +20,9 @@ function ($scope, $location, $routeParams) {
 
         $scope.messages = [
             
-            
-            
-            
             {
                 message:"Good morning, group.",
-                donorUsername:$scope.username,
+                donorUsername: $scope.username,
                 recipientUsername: $scope.group,
                 time:"9:10"
             },

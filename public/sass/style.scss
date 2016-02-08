@@ -27,6 +27,35 @@ html{
 .lv2-nav{
     height: 55px;
 }
+
+/*============================================= */
+/*============== message-styles =============== */
+/*============================================= */
+
+.my-messages-wrapper{
+    text-align: right;
+}
+
+.your-messages-wrapper{
+    text-align: left;
+}
+
+.my-speech-bubble{
+    display: inline-block;
+    padding: 10px 10px 0 10px;
+    color: #fff;
+    background-color: $yellow-green-dark;
+    width: 269px;
+    margin-right: 11px;
+    p{
+        font-size: .8em;
+        position: absolute;
+    }
+}
+
+.my-speech-bubble-tail-svg{
+    fill :$yellow-green-dark;
+}
 /*============================================= */
 /*================== Columns ================== */
 /*============================================= */
@@ -139,8 +168,11 @@ h5{
 	float: left;
 }
 p{
-/*	font-weight: 300;
-*/	color: rgba(38, 50, 72, 1);
+	color: rgba(38, 50, 72, 1);
+    font-size: .9em;
+    margin: 0;
+    font-weight: 400;
+    font-family: $open-sans;
 }
 
 h4.subheading {
@@ -530,6 +562,10 @@ svg#option-plus{
 
 .float-left{
     float: left;
+}
+
+.float-right{
+    float: right;
 }
 .float-clear{
     clear: both;
