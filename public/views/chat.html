@@ -25,13 +25,38 @@
 </nav>
 
 <div class="view">
+    <div class="chat-view">
+        <div ng-repeat="data in messages">
+        <div ng-show="data.donorUsername === 'Me'">
+            <div ng-hide="data.donorUsername === 'Me'">
+                {[{data.donorUsername}]}
+            </div>
+            "{[{data.message}]}""
+            <div ng-hide="data.recipientUsername === 'Awesome Group'">
+                {[{data.recipientUsername}]}
+            </div>
+            {[{data.time}]}
+        </div>
+        <div ng-show="data.donorUsername != 'Me'">
+            <div ng-hide="data.donorUsername === 'Me'">
+                {[{data.donorUsername}]}
+            </div>
+            "{[{data.message}]}""
+            <div ng-hide="data.recipientUsername === 'Awesome Group'">
+                {[{data.recipientUsername}]}
+            </div>
+            {[{data.time}]}
+        </div>
+
+        </div>
+    </div>
 </div>
 <div class="typebox">
 	<div class="option-plus-position">
         <svg id="option-plus" width="25" viewBox="0 0 50.67 50.67"><path d="M25.33,0A25.33,25.33,0,1,0,50.67,25.33,25.33,25.33,0,0,0,25.33,0ZM40.07,29h-13V41c0,4-5,4-5,0V29h-13c-3,0-3-6,0-6h13V11c0-3,5-3,5,0V23h13C43.07,23,43.07,29,40.07,29Z"/></path></svg>
     </div>
 	<form>
-        <input  class="form" type="text" placeholder="message here">   
-        <button type="submit">Send</button>
+        <input  class="form float-left chat-msg-input" type="text" placeholder="message here">   
+        <p class="send-btn">Send</p>
     </form>
 </div>

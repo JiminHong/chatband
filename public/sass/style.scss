@@ -164,6 +164,17 @@ h4.subheading {
     font-weight: bold;
 }
 
+.send-btn{
+    margin: 5px 10px;;
+    display: inline-block;
+    color: $white-text;
+    cursor: pointer;
+    @include transition(color .15s .15s);
+    &:hover{
+        color: $reg-green;
+    };
+}
+
 /*============================================= */
 /*================== Buttons ================== */
 /*============================================= */
@@ -190,7 +201,6 @@ h4.subheading {
     padding: 0 -105px 0 105px;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);  
     @include transition(background-color .15s .15s);
-
     &:hover{
         background-color: $reg-green-hover;
         cursor: pointer;
@@ -291,6 +301,10 @@ h4.subheading {
     }
 }
 
+.chat-view{
+    background-color: #f7f7f7;
+    margin-top: 88px;
+}
 .inline-block{
     display: inline-block;
 }
@@ -338,11 +352,10 @@ a:hover p.tabText{
 
 .form {
   display: block;
-  width: 60%;
   height: 18px;
   padding: 6px 12px;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.4em;
   color: #555;
   border: 1px solid #ccc;
   border-radius: 2px;
@@ -364,15 +377,19 @@ input[type=text], textarea {
   @include transition(all .15s .15s);
   outline: none;
   border: 1px solid #DDDDDD;
+  &:focus{
+    box-shadow: 0 0 5px $white-orange;
+    border: 1px solid $white-orange;
+  };
 }
  
-input[type=text]:focus, textarea:focus {
-  box-shadow: 0 0 5px $white-orange;
-
-  border: 1px solid $white-orange;
+.chat-msg-input{
+    width: 70%;
 }
 
-
+::-webkit-input-placeholder {
+    color: $reg-grey;
+}
 
 /*============================================= */
 /*==================== SVGs =================== */
@@ -423,11 +440,15 @@ svg#files, svg#calendar, svg#addUser{
 
 svg#option-plus{
     fill:$white;
+    @include transition(fill .15s .15s);
+    &:hover{
+        fill:$reg-green;
+    };
 }
 
 .option-plus-position{
     float: left;
-    padding-right: 5px;
+    padding: 3px 5px 0 0;
 }
 
 
