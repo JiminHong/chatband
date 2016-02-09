@@ -1,6 +1,28 @@
-<div ng-repeat="song in songs">
-	<p>Artist:{[{song.artist}]}</p>
-	<p>Title:{[{song.title}]}</p>
-	<p>Time:{[{song.time}]}</p>
-	<p>BPM{[{song.bpm}]}</p>
+<div class="content-width-8">
+	<svg id="songs" class="float-left green-fill" viewBox="0 0 27.83 34.66" width="17"><path class="songs" d="M14.5,6.49H1.5a1.5,1.5,0,1,0,0,3h13C15.5,9.49,15.5,6.49,14.5,6.49Z"/><path class="songs" d="M14.5,13.49H1.5a1.5,1.5,0,0,0,0,3h13C15.5,16.49,15.5,13.49,14.5,13.49Z"/><path class="songs" d="M14.5,19.49H1.5a1.5,1.5,0,0,0,0,3h13C15.5,22.49,15.5,19.49,14.5,19.49Z"/><path class="songs" d="M20.51,0.36a1.66,1.66,0,0,0-2.66,1.07L17.56,19.2c0,2.32.21,4.91,0,7.28-3.11-.77-6.79-0.75-8.09,2.74C8,33,11.74,35.62,15.15,34.33A7.51,7.51,0,0,0,19.94,30a1.76,1.76,0,0,0,.56-2.17,38.07,38.07,0,0,0,.28-5L21.06,5.65c2.76,3.21,4.75,7.11,2.29,11.24-1.09,1.83,2,3.12,3,1.32C30.39,11.47,25.3,4.9,20.51.36Z"/></svg>
+
+	<h2 class="chap-h2 uplowcase margin-left">Songs</h2>
+	<div ng-repeat="song in songs" class="song-list-wrapper">
+		<div class="section group">
+			<h3 class="gig-title-h3">Artist & Title</h3>
+			<p class="gig-data-p">{[{song.artist}]} - {[{song.title}]}</p>
+		</div>
+		<div class="section group">
+			<div class="col span_1_of_4">
+				<h3 class="gig-title-h3">Time</h3>
+				<p class="gig-data-p">{[{song.time}]}</p>
+			</div>
+			<div class="col span_1_of_4">
+				<h3 class="gig-title-h3">BPM</h3>
+				<p class="gig-data-p">{[{song.bpm}]}</p>
+			</div>
+			<div class="col span_2_of_4">
+				<button class="button btn-sm dark-green-yellow-bg">
+				<svg id="lead-sheet" class="float-left" width="17%" viewBox="0 0 33.46 33.46"><path class="lead-sheet" d="M30.64,0H2.78A2.78,2.78,0,0,0,0,2.78V30.68a2.78,2.78,0,0,0,2.78,2.78H30.68a2.78,2.78,0,0,0,2.78-2.78V2.74A2.8,2.8,0,0,0,30.64,0Zm0.84,29.51a1.93,1.93,0,0,1-1.94,1.94H4A1.93,1.93,0,0,1,2,29.51V3.91A1.93,1.93,0,0,1,4,2H29.51a1.93,1.93,0,0,1,1.94,1.94V29.51h0Z M25.67,10.17H7.92a0.76,0.76,0,0,1-.75-0.75V8.67a0.76,0.76,0,0,1,.75-0.75H25.67a0.76,0.76,0,0,1,.75.75V9.42A0.71,0.71,0,0,1,25.67,10.17Z M25.64,17.84H7.85a0.76,0.76,0,0,1-.75-0.75V16.34a0.76,0.76,0,0,1,.75-0.75H25.61a0.76,0.76,0,0,1,.75.75v0.75A0.72,0.72,0,0,1,25.64,17.84Z M25.61,14H7.85a0.76,0.76,0,0,1-.75-0.75V12.52a0.76,0.76,0,0,1,.75-0.75H25.61a0.76,0.76,0,0,1,.75.75v0.75A0.74,0.74,0,0,1,25.61,14Z M25.64,21.7H7.88a0.76,0.76,0,0,1-.75-0.75V20.19a0.76,0.76,0,0,1,.75-0.75H25.64a0.76,0.76,0,0,1,.75.75v0.75A0.72,0.72,0,0,1,25.64,21.7Z M25.58,25.52H7.82a0.76,0.76,0,0,1-.75-0.75V24a0.76,0.76,0,0,1,.75-0.75H25.58a0.76,0.76,0,0,1,.75.75v0.75A0.72,0.72,0,0,1,25.58,25.52Z"/></svg>
+					<p class="light-brown">Lead Sheet</p>
+				</button>
+			</div>
+		</div>
+		<hr>
+	</div>
 </div>

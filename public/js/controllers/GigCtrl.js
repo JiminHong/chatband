@@ -1,3 +1,65 @@
+myapp.controller('GigCtrl', ["$scope","$location",
+function ($scope, $location) {
+
+    $scope.gigName = "moonstone music festival 2016"
+    $scope.songs = [
+    {
+        artist: 'PINK',
+        title: 'Calling Dr.Love',
+        time: '3:40',
+        bpm: '128'
+    },
+    {
+        artist: 'Disclosure',
+        title: 'Magnets',
+        time: '5:05',
+        bpm: '132'
+    },
+    {
+        artist: 'Led Zeppelin',
+        title: 'Stairway to heaven',
+        time: '8:02',
+        bpm: '66'
+    },
+    {
+        artist: 'Aerosmit',
+        title: 'Toys in the Attic',
+        time: '3:30',
+        bpm: '127'
+    },
+    {
+        artist: 'Cecil Gant',
+        title: "We're gonna rock",
+        time: '5:05',
+        bpm: '102'
+    }
+    ]
+
+    console.log('GigsCtrl fired');
+
+    $scope.tab = 1;
+
+    $scope.setTab = function(newTab){
+        $scope.tab = newTab;
+        return $scope.tab;
+    }
+
+    $scope.isSet = function(tabNum){
+        return $scope.tab === tabNum;
+    }
+
+    $scope.goGig = function(){
+        $location.path('/songs');
+    }
+
+    //Directs to the chat page
+    $scope.goChat = function(){
+        $location.path('/chat');
+    }  
+    
+}]);
+
+
 myapp.directive('svgIcon', function(){
     function link(scope, element, attrs) {
         function path(icon) {
@@ -62,46 +124,5 @@ myapp.directive('wardrobePage', function(){
     }
 })
 
-myapp.controller('GigCtrl', ["$scope","$location",
-function ($scope, $location) {
-
-    $scope.songs = [
-    {
-        artist: 'Adele',
-        title: 'Hello',
-        time: '4:40',
-        bpm: '128'
-    },
-    {
-        artist: 'Disclosure',
-        title: 'Magnets',
-        time: '5:05',
-        bpm: '132'
-    }
-    ]
-
-    console.log('GigsCtrl fired');
-
-    $scope.tab = 1;
-
-    $scope.setTab = function(newTab){
-        $scope.tab = newTab;
-        return $scope.tab;
-    }
-
-    $scope.isSet = function(tabNum){
-        return $scope.tab === tabNum;
-    }
-
-    $scope.goGig = function(){
-    	$location.path('/songs');
-    }
-
-    //Directs to the chat page
-    $scope.goChat = function(){
-        $location.path('/chat');
-    }  
-    
-}]);
 
 
