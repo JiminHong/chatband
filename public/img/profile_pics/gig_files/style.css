@@ -1434,11 +1434,6 @@ svg#lead-sheet {
 }
 
 /* line 786, ../sass/style.scss */
-.margin-zero {
-  margin: 0;
-}
-
-/* line 790, ../sass/style.scss */
 hr {
   border-top: 2px solid #e6e6e6;
   border-left: white;

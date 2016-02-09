@@ -338,6 +338,12 @@ h4.subheading {
     text-transform: unset;
 }
 
+.comment{
+    color: $white-orange;
+    font-family: $chap;
+    font-style: italic;
+}
+
 /*============================================= */
 /*================== Buttons ================== */
 /*============================================= */
@@ -367,15 +373,14 @@ h4.subheading {
 
 .btn-xl {
     width: 100%;
-    margin-top: 10px;
-    padding: 7px 40px;
-    border-color: #6b7f48;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #6b7f48;
+    margin: 10px 0 100px;
+    padding: 13px 40px 10px;
+    p{
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 1em;
+        font-weight: 700;
+    }
 }
 
 .full-width-btn{
@@ -737,8 +742,16 @@ svg#lead-sheet{
     background-color: $yellow-green-dark;
 }
 
+.dark-green-yellow-fill{
+    fill: $yellow-green-dark;
+}
+
 .light-brown{
     color: $light-brown;
+}
+
+.ligth-brown-fill{
+    fill:$light-brown;
 }
 
 .gig-content-wrapper{
@@ -750,6 +763,11 @@ svg#lead-sheet{
 .green-fill{
     fill:$text-green;
 }
+
+.reg-grey-fill {
+    fill: $reg-grey;
+}
+
 /*============================================= */
 /*=================== Float =================== */
 /*============================================= */
@@ -763,6 +781,10 @@ svg#lead-sheet{
 }
 .float-clear{
     clear: both;
+}
+
+.margin-zero{
+    margin: 0;
 }
 
 hr{
