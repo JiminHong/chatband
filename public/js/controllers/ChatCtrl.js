@@ -21,34 +21,46 @@ function ($scope, $location, $routeParams) {
         $scope.messages = [
             
             {
+                profilePic: "",
                 message:"Good morning, group.",
                 donorUsername: $scope.username,
                 recipientUsername: $scope.group,
                 time:"9:10"
             },
             {
+                profilePic: "",
+                message:"Let me know when you guys get up",
+                donorUsername: $scope.username,
+                recipientUsername: $scope.group,
+                time:"9:10"
+            },
+            {
+                profilePic: "/img/profile_pics/matt.jpg",
                 message:"Hey John",
-                donorUsername:"Mike",
+                donorUsername:"Matt",
                 recipientUsername:$scope.group,
                 time:"9:25"
             },
             {
+                profilePic: "/img/profile_pics/lorde.jpg",
                 message:"Didn't you say you have a video you were going to show us?",
-                donorUsername:"Clair",
+                donorUsername:"Lorde",
                 recipientUsername:$scope.group,
                 time:"9:27"
             },
             {
+                profilePic: "/img/profile_pics/lorde.jpg",
                 message:"Wanna watch the video",
-                donorUsername:"Clair",
+                donorUsername:"Lorde",
                 recipientUsername:$scope.group,
                 time:"9:27"
             },
             {
-                message:"Okay, give me a sec",
+                profilePic: "",
+                message:"Okay, give me a sec.",
                 donorUsername:$scope.username,
                 recipientUsername: $scope.group,
                 time:"9:29"
-            },
+            }
         ]
 }]);

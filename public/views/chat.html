@@ -26,28 +26,36 @@
 
 <div class="view">
     <div class="chat-view">
-        <div ng-repeat="data in messages">
+        <div ng-repeat="data in messages" class="section">
         <div class="my-messages-wrapper" ng-show="data.donorUsername === 'Me'">
-            <div ng-hide="data.donorUsername === 'Me'">{[{data.donorUsername}]}</div>
-            <div class="my-speech-bubble float-right">
+            <div class="my-speech-bubble section">
                 <p>{[{data.message}]}</p>
             </div>
             <div class="my-speech-bubble-tail">
+                <p class="float-left my-message-bubble-time">{[{data.time}]}</p>
                 <svg id="my-speech-bubble-tail-svg" width="300" viewBox="0 0 187.81 19.15"><path class="my-speech-bubble-tail-svg" d="M181-8.12H0v27H166.45c0.37,0,.75,0,1.14,0-0.18,0-.36,0-0.54,0h5.24c3,0,2.71-3.09,2.71-3.09V11.84s2.07,7.32,12.81,7.32c-5.86,0-6.81-10.64-6.81-15.85V-8.12Z"/></svg>
             </div>
-            
+            <div ng-hide="data.donorUsername === 'Me'">{[{data.donorUsername}]}</div>
             <div ng-hide="data.recipientUsername === 'Awesome Group'"><p>{[{data.recipientUsername}]}</p></div>
-            <p>{[{data.time}]}</p>
+            
         </div>
         <div class="your-messages-wrapper" ng-show="data.donorUsername != 'Me'">
-            <div ng-hide="data.donorUsername === 'Me'">
-                {[{data.donorUsername}]}
+            
+            <div class="section" ng-hide="data.donorUsername === 'Me'">
+                <img src="{[{data.profilePic}]}" class="message-profile-pic" alt="profile pic"/>
+                <p class="donorUsername">{[{data.donorUsername}]}</p>
             </div>
-            "{[{data.message}]}""
+            <div class="your-speech-bubble section">
+                <p>{[{data.message}]}</p>
+            </div>
+            <div class="your-speech-bubble-tail">
+                <p class="float-right your-message-bubble-time">{[{data.time}]}</p>
+                <svg id="your-speech-bubble-tail-svg" width="300" viewBox="0 0 187.81 19.15"><title>your-speech-bubble-tail</title><path class="your-speech-bubble-tail-svg" d="M6.81-8.85h181v28H21.2c-0.37,0-.75,0-1.14,0,0.19,0,.37,0,0.54,0H15.33c-3,0-2.53-3.85-2.53-3.85v-4S10.74,18.69,0,18.69C5.85,18.69,5.81,8,6.81,2.78V-8.85Z"/></svg>
+            </div>
+
             <div ng-hide="data.recipientUsername === 'Awesome Group'">
                 {[{data.recipientUsername}]}
             </div>
-            {[{data.time}]}
         </div>
 
         </div>
