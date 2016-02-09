@@ -36,10 +36,17 @@ function ($scope, $location, $routeParams) {
             },
             {
                 profilePic: "/img/profile_pics/matt.jpg",
-                message:"Hey John",
+                message:"Hey John, I just got up. What's up?",
                 donorUsername:"Matt",
                 recipientUsername:$scope.group,
                 time:"9:25"
+            },
+            {
+                profilePic: "",
+                message:"Hi Matt, I'm going to upload songs for the gig.",
+                donorUsername: $scope.username,
+                recipientUsername: $scope.group,
+                time:"9:10"
             },
             {
                 profilePic: "/img/profile_pics/lorde.jpg",
