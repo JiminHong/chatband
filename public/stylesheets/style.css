@@ -510,7 +510,7 @@ html {
   padding: 10px 10px 0 10px;
   color: #fff;
   background-color: #efeeda;
-  width: 269px;
+  width: 72%;
   margin-right: 11px;
 }
 /* line 64, ../sass/style.scss */
@@ -555,7 +555,7 @@ html {
 .my-message-bubble-time {
   font-size: .7em;
   margin-top: 10px;
-  margin-left: 70px;
+  margin-left: 10%;
   color: #777A7A;
 }
 
@@ -563,7 +563,7 @@ html {
 .your-message-bubble-time {
   font-size: .7em;
   margin-top: 10px;
-  margin-right: 60px;
+  margin-right: 10%;
   color: #777A7A;
 }
 
@@ -807,7 +807,7 @@ h4.subheading {
 
 /* line 274, ../sass/style.scss */
 .send-btn {
-  margin: 5px 10px;
+  margin: 5px 8px;
   display: inline-block;
   color: #efefef;
   cursor: pointer;
