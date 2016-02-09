@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="listGigs-panel" ng-repeat="listGig in listGigs">
+	<div class="listGigs-panel" ng-click="goGig()" ng-repeat="listGig in listGigs">
 		<div class="giglist-panel-header">
 			<div class="content-width-8">
 				<p class="chap-h2">{[{ listGig.date }]}<span class="time-giglist">{[{ listGig.time }]}</span></p>

@@ -35,9 +35,9 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	.when('/gigs', {
-		templateUrl : 'views/gigs.html',
-		controller 	: 'GigsCtrl', function($scope, $http){
+	.when('/gig', {
+		templateUrl : 'views/gig.html',
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})

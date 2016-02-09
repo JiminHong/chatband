@@ -2,8 +2,8 @@ myapp.controller('ListGigsCtrl', ["$scope", "$location", "$routeParams",
 function ($scope, $location, $routeParams) {
     console.log('ListGigsCtrl fired');
 
-    $scope.goGigs = function(){
-    	$location.path('/gigs');
+    $scope.goGig = function(){
+    	$location.path('/gig');
     }
 
     //Directs to the chat page

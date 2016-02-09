@@ -62,7 +62,7 @@ myapp.directive('wardrobePage', function(){
     }
 })
 
-myapp.controller('GigsCtrl', ["$scope","$location",
+myapp.controller('GigCtrl', ["$scope","$location",
 function ($scope, $location) {
 
     $scope.songs = [
