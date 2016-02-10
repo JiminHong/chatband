@@ -1,6 +1,22 @@
-myapp.controller('GigCtrl', ["$scope","$location",
-function ($scope, $location) {
+// myapp.controller('GigCtrl', ["$scope","$location", "NgMap",
+// function ($scope, $location, $NgMap) {
 
+
+
+myapp.controller('GigCtrl', ["$scope","$location",
+function ($scope, $location) {   
+
+    // $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
+    // $scope.address = 'San Francisco';
+
+    // $NgMap.getMap().then(function(map) {
+    //     console.log(map.getCenter());
+    //     console.log('markers', map.markers);
+    //     console.log('shapes', map.shapes);
+    //   });
+
+
+    console.log($scope.address);
     $scope.gigName = "moonstone music festival 2016";
     $scope.songs = [
     {
@@ -106,20 +122,37 @@ function ($scope, $location) {
 
     $scope.locations = [
     {
-        street: "420 bush street",
+        street: "420 California street",
         city: "San Francisco",
         state: "CA",
         zipcode: 94108
     }
-    ]
+    ];
+
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
     console.log('GigsCtrl fired');
 
-    $scope.tab = 1;
+    console.log("LOCATION !!",$location.path());
 
-    $scope.setTab = function(newTab){
-        $scope.tab = newTab;
-        return $scope.tab;
+    
+    // $scope.tab = 1;
+
+    if($location.path() === "/songs"){
+        $scope.tab = 1;
+
+    }else if($location.path() === "/lineup"){
+        $scope.tab = 2;
+
+    }else if($location.path() === "/datetime"){
+        $scope.tab = 3;
+
+    }else if($location.path() === "/location"){
+        $scope.tab = 4;
+
+    }else if($location.path() === "/wardrobe"){
+        $scope.tab = 5;
+
     }
 
     $scope.isSet = function(tabNum){
@@ -167,40 +200,40 @@ var icons = {
 
 
 
-myapp.directive('songsPage', function(){
-    return{
-        restrict : 'A',
-        templateUrl: '../views/gigTabs/songs.html'
-    }
-})
+// myapp.directive('songsPage', function(){
+//     return{
+//         restrict : 'A',
+//         templateUrl: '../views/gigTabs/songs.html'
+//     }
+// })
 
-myapp.directive('lineupPage', function(){
-    return{
-        restrict : 'A',
-        templateUrl: '../views/gigTabs/lineup.html'
-    }
-})
+// myapp.directive('lineupPage', function(){
+//     return{
+//         restrict : 'A',
+//         templateUrl: '../views/gigTabs/lineup.html'
+//     }
+// })
 
-myapp.directive('datetimePage', function(){
-    return{
-        restrict : 'A',
-        templateUrl: '../views/gigTabs/datetime.html'
-    }
-})
+// myapp.directive('datetimePage', function(){
+//     return{
+//         restrict : 'A',
+//         templateUrl: '../views/gigTabs/datetime.html'
+//     }
+// })
 
-myapp.directive('locationPage', function(){
-    return{
-        restrict : 'A',
-        templateUrl: '../views/gigTabs/location.html'
-    }
-})
+// myapp.directive('locationPage', function(){
+//     return{
+//         restrict : 'A',
+//         templateUrl: '../views/gigTabs/location.html'
+//     }
+// })
 
-myapp.directive('wardrobePage', function(){
-    return{
-        restrict : 'A',
-        templateUrl: '../views/gigTabs/wardrobe.html'
-    }
-})
+// myapp.directive('wardrobePage', function(){
+//     return{
+//         restrict : 'A',
+//         templateUrl: '../views/gigTabs/wardrobe.html'
+//     }
+// })
 
 
 

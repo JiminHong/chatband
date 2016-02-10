@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="listGigs-panel" ng-click="goGig()" ng-repeat="listGig in listGigs">
+	<div class="listGigs-panel" ng-click="goSongs()" ng-repeat="listGig in listGigs">
 		<div class="giglist-panel-header">
 			<div class="content-width-8">
 				<p class="chap-h2">{[{ listGig.date }]}<span class="time-giglist">{[{ listGig.time }]}</span></p>
@@ -25,7 +25,7 @@
 		</div>
 		<div class="listGigs-panel-content">
 			<div class="content-width-8">
-				<h2 class="mont-h2">{[{ listGig.name }]}</h2>
+				<h2>{[{ listGig.name }]}</h2>
 				<p class="small-text">{[{ listGig.location }]}</p>
 				<p class="small-text bold">{[{ listGig.songArtist }]} - 
 				<span class="bold">{[{ listGig.songTitle }]}</span><span> &amp; {[{ listGig.songCount }]} more</span></p>

@@ -1,4 +1,4 @@
-myapp = angular.module('myapp');
+var myapp = angular.module('myapp', ['ngMap','ngRoute', 'ui.bootstrap', 'ngAnimate'])
 
 myapp.config(['$interpolateProvider', function($interpolateProvider){
   // $interpolateProvider used to differentiate uses for angular from express
@@ -35,42 +35,36 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	.when('/gig', {
-		templateUrl : 'views/gig.html',
-		controller 	: 'GigCtrl', function($scope, $http){
-
-		}
-	})
 
 	// ======================================================== Gig info
 
 	.when('/songs', {
 		templateUrl : 'views/gigTabs/songs.html',
-		controller 	: 'ManagingGigsCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/lineup', {
 		templateUrl : 'views/gigTabs/lineup.html',
-		controller 	: 'ManagingGigsCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/datetime', {
 		templateUrl : 'views/gigTabs/datetime.html',
-		controller 	: 'ManagingGigsCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/location', {
 		templateUrl : 'views/gigTabs/location.html',
-		controller 	: 'ManagingGigsCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/wardrobe', {
 		templateUrl : 'views/gigTabs/wardrobe.html',
-		controller 	: 'ManagingGigs', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
