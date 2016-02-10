@@ -1330,14 +1330,15 @@ svg#lead-sheet {
 /* line 702, ../sass/style.scss */
 .nav-left:hover .nav-text {
   color: #bcd37d;
+  cursor: pointer;
 }
-/* line 706, ../sass/style.scss */
+/* line 707, ../sass/style.scss */
 .nav-left .nav-arrow-text-svg {
   float: left;
   margin-left: 20px;
   line-height: 2.2em;
 }
-/* line 710, ../sass/style.scss */
+/* line 711, ../sass/style.scss */
 .nav-left .nav-arrow-text-svg path.nav-arrow {
   fill: #efefef;
   -moz-transition: fill 0.15s 0.15s;
@@ -1346,15 +1347,15 @@ svg#lead-sheet {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 716, ../sass/style.scss */
+/* line 717, ../sass/style.scss */
 .nav-left path.nav-arrow {
   margin-top: 10px;
 }
-/* line 720, ../sass/style.scss */
+/* line 721, ../sass/style.scss */
 .nav-left svg#nav-arrow {
   margin: 5px 10px -3px 0;
 }
-/* line 724, ../sass/style.scss */
+/* line 725, ../sass/style.scss */
 .nav-left .nav-text {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -1371,55 +1372,55 @@ svg#lead-sheet {
 /*============================================= */
 /*===================== BG ==================== */
 /*============================================= */
-/* line 738, ../sass/style.scss */
+/* line 739, ../sass/style.scss */
 .dark-green-bg {
   background-color: #515d3c;
 }
 
-/* line 742, ../sass/style.scss */
+/* line 743, ../sass/style.scss */
 .reg-green-bg {
   background-color: #6B7F48;
 }
 
-/* line 746, ../sass/style.scss */
+/* line 747, ../sass/style.scss */
 .nav-icons {
   display: block;
   margin: 10px 45px;
 }
 
-/* line 751, ../sass/style.scss */
+/* line 752, ../sass/style.scss */
 .dark-green-yellow-bg {
   background-color: #d1c97d;
 }
 
-/* line 755, ../sass/style.scss */
+/* line 756, ../sass/style.scss */
 .dark-green-yellow-fill {
   fill: #d1c97d;
 }
 
-/* line 759, ../sass/style.scss */
+/* line 760, ../sass/style.scss */
 .light-brown {
   color: #7a6341;
 }
 
-/* line 763, ../sass/style.scss */
+/* line 764, ../sass/style.scss */
 .ligth-brown-fill {
   fill: #7a6341;
 }
 
-/* line 767, ../sass/style.scss */
+/* line 768, ../sass/style.scss */
 .gig-content-wrapper {
   width: 100%;
   height: 100%;
   background-color: red;
 }
 
-/* line 773, ../sass/style.scss */
+/* line 774, ../sass/style.scss */
 .green-fill {
   fill: #8DAF41;
 }
 
-/* line 777, ../sass/style.scss */
+/* line 778, ../sass/style.scss */
 .reg-grey-fill {
   fill: #777A7A;
 }
@@ -1427,44 +1428,44 @@ svg#lead-sheet {
 /*============================================= */
 /*=================== Float =================== */
 /*============================================= */
-/* line 785, ../sass/style.scss */
+/* line 786, ../sass/style.scss */
 .float-left {
   float: left;
 }
 
-/* line 789, ../sass/style.scss */
+/* line 790, ../sass/style.scss */
 .float-right {
   float: right;
 }
 
-/* line 792, ../sass/style.scss */
+/* line 793, ../sass/style.scss */
 .float-clear {
   clear: both;
 }
 
-/* line 796, ../sass/style.scss */
+/* line 797, ../sass/style.scss */
 .margin-zero {
   margin: 0;
 }
 
-/* line 800, ../sass/style.scss */
+/* line 801, ../sass/style.scss */
 .padding-zero {
   padding: 0;
 }
 
-/* line 804, ../sass/style.scss */
+/* line 805, ../sass/style.scss */
 hr {
   border-top: 2px solid #e6e6e6;
   border-left: white;
   border-bottom: 2px solid white;
 }
 
-/* line 810, ../sass/style.scss */
+/* line 811, ../sass/style.scss */
 .img {
   width: 100%;
 }
 
-/* line 814, ../sass/style.scss */
+/* line 815, ../sass/style.scss */
 #map {
   height: 400px;
   margin: 20px 0;

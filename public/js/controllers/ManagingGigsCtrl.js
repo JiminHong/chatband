@@ -2,7 +2,9 @@ myapp.controller('ManagingGigsCtrl', ["$scope", "$location", "$routeParams",
 function ($scope, $location, $routeParams) {
     console.log('ManagingGigsCtrl fired');
 
-    console.log($scope.tab);
+    $scope.goChat = function(){
+            $location.path('/chat');
+        }
         
 }]);
 

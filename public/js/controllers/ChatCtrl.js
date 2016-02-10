@@ -5,6 +5,10 @@ function ($scope, $location, $routeParams) {
         $scope.currentPath = $location.path();
         console.log($location.path());
         //Directs to the chat page
+
+        $scope.goChat = function(){
+            $location.path('/chat');
+        }
         $scope.goChats = function(){
             $location.path('/chats');
         } 

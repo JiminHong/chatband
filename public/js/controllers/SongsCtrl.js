@@ -6,7 +6,9 @@ function ($scope, $location, $routeParams) {
     	console.log('addsong function here');
     }
 
-   
+   $scope.goChat = function(){
+            $location.path('/chat');
+        }
             
 }]);
 

@@ -1,10 +1,7 @@
 myapp.controller('ListGigsCtrl', ["$scope", "$location", "$routeParams", 
 function ($scope, $location, $routeParams) {
-    console.log('ListGigsCtrl fired');
 
-    $scope.goGig = function(){
-    	$location.path('/gig');
-    }
+    console.log('ListGigsCtrl fired');
 
     //Directs to the chat page
     $scope.goChat = function(){
@@ -14,6 +11,12 @@ function ($scope, $location, $routeParams) {
     $scope.goAddGigs = function(){
     	$location.path('/addSongs');
     }
+
+    $scope.goSongs = function(){
+        $location.path('/songs');
+    }
+
+    
 
     $scope.listGigs = [
     {

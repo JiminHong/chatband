@@ -175,6 +175,7 @@ function ($scope, $location, $NgMap) {
         $location.path('/chat');
     }  
     
+    
 }]);
 
 
