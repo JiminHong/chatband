@@ -379,8 +379,9 @@ a{
 .btn-xl {
     width: 100%;
     margin: 10px 0 100px;
-    padding: 13px 40px 10px;
+    padding: 4% 23% 2%;
     p{
+        margin-top: 1%;
         text-transform: uppercase;
         font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 1em;
@@ -658,7 +659,9 @@ svg#lead-sheet{
     margin-bottom:1%;
 }
 
+svg#location{
 
+}
 
 .option-plus-position{
     float: left;
@@ -804,6 +807,9 @@ hr{
     border-bottom: 2px solid $white;
 }
 
+.img{
+    width: 100%;
+}
 
 #map { 
     height: 400px;

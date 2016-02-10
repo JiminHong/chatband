@@ -1,19 +1,18 @@
-// myapp.controller('GigCtrl', ["$scope","$location", "NgMap",
-// function ($scope, $location, $NgMap) {
+myapp.controller('GigCtrl', ["$scope","$location", "NgMap",
+function ($scope, $location, $NgMap) {
 
 
 
-myapp.controller('GigCtrl', ["$scope","$location",
-function ($scope, $location) {   
+// myapp.controller('GigCtrl', ["$scope","$location",
+// function ($scope, $location) {   
 
-    // $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
-    // $scope.address = 'San Francisco';
+    $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
-    // $NgMap.getMap().then(function(map) {
-    //     console.log(map.getCenter());
-    //     console.log('markers', map.markers);
-    //     console.log('shapes', map.shapes);
-    //   });
+    $NgMap.getMap().then(function(map) {
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
+      });
 
 
     console.log($scope.address);
@@ -128,6 +127,14 @@ function ($scope, $location) {
         zipcode: 94108
     }
     ];
+
+    $scope.wardrobes = [
+    {
+        wardrobe: "suit",
+        comment: "preferably black",
+        wardrobeImg : "../../img/wardrobe/black_suit.jpg"
+    }
+    ]
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
