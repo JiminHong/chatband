@@ -214,6 +214,43 @@ ul{
     width: 18.72%;
 }
 
+/*  GRID OF NINE  */
+.span_9_of_9 {
+    width: 100%;
+}
+
+.span_8_of_9 {
+    width: 88.71%;
+}
+
+.span_7_of_9 {
+    width: 77.42%;
+}
+
+.span_6_of_9 {
+    width: 66.13%;
+}
+
+.span_5_of_9 {
+    width: 54.84%;
+}
+
+.span_4_of_9 {
+    width: 43.55%;
+}
+
+.span_3_of_9 {
+    width: 32.26%;
+}
+
+.span_2_of_9 {
+    width: 20.97%;
+}
+
+.span_1_of_9 {
+    width: 9.688%;
+}
+
 /*============================================= */
 /*==================== Fonts ================== */
 /*============================================= */
@@ -327,16 +364,19 @@ a{
 }
 
 .send-btn{
-    margin: 1.5% 1.8%;
+    font-size: .8em;
+    text-align: center;
     display: inline-block;
     color: $white-text;
     cursor: pointer;
     @include transition(color .15s .15s);
+    margin-top: 1.5%;
     &:hover{
         color: $reg-green;
     };
     p{
         font-size: .8em;
+        text-align: center;
     }
 }
 
@@ -554,6 +594,10 @@ a:hover p.tabText{
     margin-bottom: 65px;
 }
 
+.margin-top{
+    margin-top: 50px;
+}
+
 /*============================================= */
 /*==================== Form =================== */
 /*============================================= */
@@ -592,7 +636,7 @@ input[type=text], textarea {
 }
  
 .chat-msg-input{
-    width: 68%;
+    width: 79.71%;
 }
 
 ::-webkit-input-placeholder {
@@ -647,7 +691,7 @@ svg#files, svg#calendar, svg#addUser{
 };
 
 svg#option-plus{
-    margin-left: 5px;
+    margin-left: 22%;
     fill:$white;
     @include transition(fill .15s .15s);
     &:hover{
@@ -665,8 +709,8 @@ svg#pencil{
 }
 
 .option-plus-position{
+    margin-top: 0.5%;
     float: left;
-    padding: 3px 5px 0 0;
 }
 
 
@@ -827,3 +871,23 @@ hr{
     border-radius: 5px;
     border: 1px solid silver;
 }
+
+
+
+@media only screen and (max-width: 320px){
+    .chat-msg-input {
+        width: 77%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

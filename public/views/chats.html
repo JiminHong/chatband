@@ -1,18 +1,45 @@
 <nav class="navbar-fixed-top">
-    <div class="lv1-nav section group"> <!-- Level 1 nav -->
-        <div class="col span_1_of_3"><button>Setting</button></div>
-        <div class="col span_1_of_3"><h1>Group Chats</h1></div>
-        <div class="col span_1_of_3">Add group</div>
+    <div class="lv1-nav reg-green-bg section group"> <!-- Level 1 nav -->
+        <div class="nav-left col span_1_of_3">
+            <div class="inline-block">
+                <p ng-click="goChats()" class="nav-text">setting</p>
+            </div>
+        </div>
+        <div class="col span_1_of_3" ><a href="/"><h1>Group Chats</h1></a></div>
+        <div class="col span_1_of_3">
+                <p ng-click="goChats()" class="nav-text">Add</p>
+        </div>
     </div>
+    
 </nav>
 
 <div class="view">
-<div class="nav-icons lv2-nav" ng-click="goChat()">
-    <div class="col span_1_of_3">Awesome Band</div>
-    <div class="col span_1_of_3">Okay See ya</div>
-    <div class="col span_1_of_3">4:15</div>
+    <div class="margin-top">
+        <ul>
+          <li ng-repeat="mail in emails">
+            <div 
+              ng-show="!mail.showActions"
+              ng-swipe-left="mail.showActions=true">
+              <div class="from">
+                From: <span>{[{ mail.from }]}</span>
+              </div>
+              <div class="body">
+                {[{ mail.body }]}
+              </div>
+            </div>
+            <div
+              ng-show="mail.showActions"
+              ng-swipe-right="mail.showActions=false">
+              <ul class="actions">
+                <li><button>Archive</button></li>
+                <li><button>Trash</button></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+    </div>
 </div>
-</div>
+
 <div class="typebox">
 	<div class="col span_1_of_2">Private</div>
     <div class="col span_1_of_2">Groups</div>

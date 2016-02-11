@@ -143,8 +143,6 @@ function ($scope, $location, $NgMap) {
     console.log("LOCATION !!",$location.path());
 
     
-    // $scope.tab = 1;
-
     if($location.path() === "/songs"){
         $scope.tab = 1;
 

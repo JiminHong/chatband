@@ -23,6 +23,7 @@
     "angular-resource": "~1.2",
     "ui-bootstrap": "^1.1.2",
     "angular-bootstrap": "^1.1.2",
-    "ngmap": "^1.16.7"
+    "ngmap": "^1.16.7",
+    "angular-touch": "^1.5.0"
   }
 }
