@@ -1,4 +1,9 @@
+@import "partials/variables";
 
 .snap-content, .snap-drawers{
 	margin-top: 100px;
+}
+
+.snap-content{
+	background-color: $light-grey;	
 }
