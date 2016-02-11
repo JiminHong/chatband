@@ -15,15 +15,16 @@
 <div class="view">
     <div ng-repeat="group in groups">
         <div class="margin-top">
-            <div class="list-groups-wrapper">
                 <snap-content>
-                    <h2>{[{ group.groupName }]}</h2>
-                    <p>{[{ group.lastMessage }]}</p>
+                    <div class="list-groups-wrapper">
+                        <h2>{[{ group.groupName }]}</h2>
+                        <p>{[{ group.lastMessage }]}</p>
+                    </div>
+                    <snap-drawer>
+                        <button class="button btn-sm">delete</button>
+                    </snap-drawer>
                 </snap-content>
-                <snap-drawer>
-                    <button class="button btn-sm">delete</button>
-                </snap-drawer>
-            </div> 
+                
         </div>    
     </div>
 </div>
