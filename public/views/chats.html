@@ -15,31 +15,17 @@
 
 <div class="view">
     <div class="margin-top">
-
-        <snap-drawer>
+        <div class="list-groups-wrapper">
             <div ng-repeat="group in groups">
-            <div class="col span_1_of_5">
-                <p>picture</p>
-            </div>
-            <div class="col span_4_of_5">
-                <h2>{[{ group.groupName }]}</h2>
-                <p>{[{ group.lastMessage }]}</p>
-            </div>
-        </div>
-        </snap-drawer>
-
-        <snap-content>
-        <div ng-repeat="group in groups">
-            <div class="col span_1_of_5">
-                <p>picture</p>
-            </div>
-            <div class="col span_4_of_5">
-                <h2>{[{ group.groupName }]}</h2>
-                <p>{[{ group.lastMessage }]}</p>
-            </div>
-        </div>
-        </snap-content>
-            
+                <snap-content>
+                    <h2>{[{ group.groupName }]}</h2>
+                    <p>{[{ group.lastMessage }]}</p>
+                </snap-content>
+                <snap-drawer>
+                    <button class="button btn-sm">delete</button>
+                </snap-drawer>
+            </div> 
+        </div>    
     </div>
 </div>
 
