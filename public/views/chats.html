@@ -17,7 +17,15 @@
     <div class="margin-top">
 
         <snap-drawer>
-            <button class="button">Leave</button>
+            <div ng-repeat="group in groups">
+            <div class="col span_1_of_5">
+                <p>picture</p>
+            </div>
+            <div class="col span_4_of_5">
+                <h2>{[{ group.groupName }]}</h2>
+                <p>{[{ group.lastMessage }]}</p>
+            </div>
+        </div>
         </snap-drawer>
 
         <snap-content>
