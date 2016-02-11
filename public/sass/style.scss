@@ -485,6 +485,15 @@ a{
     width: 10%;
 }
 
+.list-groups-wrapper{
+    div.col.span_4_of_5{
+        h2, p{
+            color: $reg-grey;
+            margin: 10px 0;
+        }
+    }
+}
+
 .listGigs-panel-content{
     background-color: $light-grey;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);

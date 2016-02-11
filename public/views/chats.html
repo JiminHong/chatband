@@ -13,32 +13,46 @@
     
 </nav>
 
-<div class="view">
+        <div class="group section">
+        <snap-drawer>
+        I'm in a drawer!
+        </snap-drawer>
+        </div>
+        <div class="group section">
+        <snap-content>
+        I'm your main content!
+        </snap-content>
+        </div>
+
+
+
+<!-- <div class="view">
     <div class="margin-top">
-        <ul>
-          <li ng-repeat="mail in emails">
-            <div 
-              ng-show="!mail.showActions"
-              ng-swipe-left="mail.showActions=true">
-              <div class="from">
-                From: <span>{[{ mail.from }]}</span>
-              </div>
-              <div class="body">
-                {[{ mail.body }]}
-              </div>
-            </div>
-            <div
-              ng-show="mail.showActions"
-              ng-swipe-right="mail.showActions=false">
-              <ul class="actions">
-                <li><button>Archive</button></li>
-                <li><button>Trash</button></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+        <div class="group section">
+            <ul>
+              <li ng-repeat="group in groups" ng-click="goChat()">
+                <div ng-show="!group.showActions" ng-swipe-left="group.showActions=true" class="list-groups-wrapper">
+                  <div class="col span_1_of_5">
+                      <p>picture</p>
+                  </div>
+                  <div class="col span_4_of_5">
+                        <h2>{[{ group.groupName }]}</h2>
+                        <p>{[{ group.lastMessage }]}</p>
+                  </div>
+                </div>
+                <div
+                  ng-show="group.showActions"
+                  ng-swipe-right="group.showActions=false">
+                  <ul class="actions">
+                    <li><button>Leave</button></li>
+                  </ul>
+                </div>
+                <hr>
+              </li>
+            </ul>
+        </div>
     </div>
-</div>
+</div> -->
 
 <div class="typebox">
 	<div class="col span_1_of_2">Private</div>
