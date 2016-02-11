@@ -5,5 +5,11 @@
 }
 
 .snap-content{
-	background-color: $light-grey;	
+	/*background-color: $light-grey;	*/
+	background-color: $white;
+	height: 70px;
+}
+
+snap-content, .snap-content{
+	position: relative;
 }
