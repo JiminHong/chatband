@@ -89,6 +89,7 @@ ul{
         position: relative;
         text-align: left;
         margin-left: 8px;
+        color: $light-brown;
     };
     background-color: $yellow-green-dark;
     margin-left: 25px;
@@ -363,7 +364,7 @@ a{
 
 .btn-sm{
     margin: 0;
-    padding: 6% 10% 4%;
+    padding: 8% 15% 7%;
     display: inline-block;
     color: $white-text;
     @include transition(color .15s .15s);
@@ -379,7 +380,7 @@ a{
 .btn-xl {
     width: 100%;
     margin: 10px 0 100px;
-    padding: 4% 23% 2%;
+    padding: 4% 20% 4%;
     p{
         margin-top: 1%;
         text-transform: uppercase;
@@ -659,8 +660,8 @@ svg#lead-sheet{
     margin-bottom:1%;
 }
 
-svg#location{
-
+svg#pencil{
+    margin-right: 8px;
 }
 
 .option-plus-position{
@@ -751,6 +752,10 @@ svg#location{
 
 .dark-green-yellow-bg{
     background-color: $yellow-green-dark;
+    @include transition(background-color .15s .15s);
+    &:hover{
+        background-color: #333333;
+    }
 }
 
 .dark-green-yellow-fill{
@@ -777,6 +782,10 @@ svg#location{
 
 .reg-grey-fill {
     fill: $reg-grey;
+    @include transition(fill .15s .15s);
+    &:hover{
+        fill: #333333;
+    }
 }
 
 /*============================================= */
