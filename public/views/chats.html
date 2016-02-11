@@ -13,22 +13,27 @@
     
 </nav>
 
-        <snap-drawer>
-        I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!I'm in a drawer!
-        </snap-drawer>
-        <snap-content>
-        I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!I'm your main content!
-        </snap-content>
-
-
-
 <div class="view">
+    <div class="margin-top">
+
+<snap-drawer>
+I'm in a drawer!
+</snap-drawer>
+
+<snap-content>
+I'm your main content!
+</snap-content>
+            
+    </div>
+</div>
+
+
+<!-- <div class="view">
     <div class="margin-top">
         <div class="group section">
             <ul>
               <li ng-repeat="group in groups" ng-click="goChat()">
-                <snap-content>
-                <div class="list-groups-wrapper">
+                <div ng-show="!group.showActions" ng-swipe-left="group.showActions=true" class="list-groups-wrapper">
                   <div class="col span_1_of_5">
                       <p>picture</p>
                   </div>
@@ -37,20 +42,19 @@
                         <p>{[{ group.lastMessage }]}</p>
                   </div>
                 </div>
-                </snap-content>
-                <snap-drawer>
-                <div>
+                <div
+                  ng-show="group.showActions"
+                  ng-swipe-right="group.showActions=false">
                   <ul class="actions">
                     <li><button>Leave</button></li>
                   </ul>
                 </div>
-                </snap-drawer>
                 <hr>
               </li>
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="typebox">
 	<div class="col span_1_of_2">Private</div>
