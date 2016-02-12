@@ -12,24 +12,70 @@
     </div>
     
 </nav>
-<div class="view">
-    <div ng-repeat="group in groups">
+<div class="margin-top">
+<ul>
+        <li>
+          <snap-drawers snap-id="'movie1'">
+            <snap-drawer="left">
+              Movie times
+            </snap-drawer>
+          </snap-drawers>
+          <snap-content snap-id="'movie1'">
+            
+              <h2>Movie 1</h2>
+            
+          </snap-content>
+        </li>
+        <li>
+          <snap-drawers snap-id="'movie2'">
+            <snap-drawer="left">
+              Movie times
+            </snap-drawer>
+            
+          </snap-drawers>
+          <snap-content snap-id="'movie2'">
+            
+              <h2>Movie 2</h2>
+            
+          </snap-content>
+        </li>
+        <li>
+          <snap-drawers="left" snap-id="'movie3'">
+            <snap-drawer="left">
+              Movie times
+            </snap-drawer>
+            
+          </snap-drawers>
+          <snap-content="left" snap-id="'movie3'">
+            
+              <h2>Movie 3</h2>
+            
+          </snap-content>
+        </li>
+      </ul>
+</div>
+
+
+
+<!-- <div ng-repeat="group in groups">
+    <div class="view">
         <div class="margin-top">
-                <snap-content>
+                <div snap-drawers>
+                <snap-drawer>
+                        <button class="button btn-sm">delete</button>
+                </snap-drawer>
+                </div>
+                 <snap-content
+                    snap-opt-disable="'right'">
                     <div class="list-groups-wrapper">
                         <h2>{[{ group.groupName }]}</h2>
                         <p>{[{ group.lastMessage }]}</p>
                     </div>
-                    <snap-drawer>
-                        <button class="button btn-sm">delete</button>
-                    </snap-drawer>
                 </snap-content>
-                
         </div>    
     </div>
 </div>
-
-            
+ -->
 
 <!-- <div class="view">
     <div class="margin-top">

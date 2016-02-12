@@ -1,15 +1,13 @@
 @import "partials/variables";
 
 .snap-content, .snap-drawers{
-	margin-top: 100px;
 }
 
-.snap-content{
-	/*background-color: $light-grey;	*/
-	background-color: $white;
-	height: 70px;
-}
 
+snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
+    position: relative;
+    display:block;
+    }
 /*snap-content, .snap-content{
 	position: relative;
 }*/

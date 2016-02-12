@@ -13,34 +13,37 @@ function ($scope, $location, $routeParams) {
         	lastMessage:"Okay give me a sec",
         	lastMessageTime:"7:25PM",
         	groupPic:""
-        },
+        }
+        ,
         {
         	groupName:"My Band",
         	lastMessage:"It was great! I hope to see you guys again soon. ",
         	lastMessageTime:"7:13PM",
         	groupPic:""
-        },
-        {
-        	groupName:"Cat Band",
-        	lastMessage:"Have you guys signed up for the gig?",
-        	lastMessageTime:"5:00PM",
-        	groupPic:""
-        },
-        {
-        	groupName:"BigBang",
-        	lastMessage:"Have you talked to them yet?",
-        	lastMessageTime:"2:15PM",
-        	groupPic:""
-        },
-        {
-        	groupName:"Hello Band",
-        	lastMessage:"Thanks",
-        	lastMessageTime:"2 days ago",
-        	groupPic:""
         }
         ]
+        // {
+        //     groupName:"Cat Band",
+        //     lastMessage:"Have you guys signed up for the gig?",
+        //     lastMessageTime:"5:00PM",
+        //     groupPic:""
+        // },
+        // {
+        //     groupName:"BigBang",
+        //     lastMessage:"Have you talked to them yet?",
+        //     lastMessageTime:"2:15PM",
+        //     groupPic:""
+        // },
+        // {
+        //     groupName:"Hello Band",
+        //     lastMessage:"Thanks",
+        //     lastMessageTime:"2 days ago",
+        //     groupPic:""
+        // }
 
-
+        $scope.opts = {
+          disable: 'right'
+        };
         
 }]);
 
