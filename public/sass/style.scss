@@ -30,10 +30,10 @@ html{
 ul{
     margin: 0;
     padding: 0;
-    li{
-        margin: 0;
-        padding: 0;
-    }
+}
+li{
+    margin: 0;
+    padding: 0;
 }
 
 /*============================================= */
@@ -486,7 +486,7 @@ a{
 }
 
 .list-groups-wrapper{
-    div.col.span_4_of_5{
+    snap-content{
         h2, p{
             color: $reg-grey;
             margin: 10px 0;

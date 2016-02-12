@@ -10,41 +10,26 @@
                 <p ng-click="goChats()" class="nav-text">Add</p>
         </div>
     </div>
-    
 </nav>
 
 
-<div class="view">
-<div class="margin-top">
-<ul>
-        <li>
-          <snap-drawers snap-id="'content'">
-            <snap-drawer="left">
-              drawer
-            </snap-drawer>
-          </snap-drawers>
-          <snap-content snap-id="'content'">
-            
-              <h2>content</h2>
-            
-          </snap-content>
-        </li>
-        
-        <li>
-          <snap-drawers snap-id="'content2'">
-            <snap-drawer="left">
-              drawer2
-            </snap-drawer>
-          </snap-drawers>
-          <snap-content snap-id="'content2'">
-            
-              <h2>content2</h2>
-            
-          </snap-content>
-        </li>
-
-      </ul>
-</div>
+<div class="view margin-top">
+  <div ng-repeat="group in groups" class="list-groups-wrapper">
+        <snap-drawers snap-id="'content'">
+          <snap-drawer="left">
+          <div class="snap-drawer-button">delete</div>
+          </snap-drawer>
+        </snap-drawers>
+        <snap-content snap-opt-disable="'right'" snap-id="'content'">
+          <div class="col span_1_of_5">
+            <p>picture</p>
+          </div>
+          <div class="col span_4_of_5">
+            <h2>{[{ group.groupName }]}</h2>
+            <p>{[{ group.lastMessage }]}</p>
+          </div>
+        </snap-content>
+  </div>
 </div>
 
 <div class="typebox">

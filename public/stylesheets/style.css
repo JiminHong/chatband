@@ -482,8 +482,9 @@ ul {
   margin: 0;
   padding: 0;
 }
-/* line 33, ../sass/style.scss */
-ul li {
+
+/* line 34, ../sass/style.scss */
+li {
   margin: 0;
   padding: 0;
 }
@@ -1064,7 +1065,7 @@ a {
 }
 
 /* line 490, ../sass/style.scss */
-.list-groups-wrapper div.col.span_4_of_5 h2, .list-groups-wrapper div.col.span_4_of_5 p {
+.list-groups-wrapper .snap-content h2, .list-groups-wrapper .snap-content p {
   color: #777A7A;
   margin: 10px 0;
 }
