@@ -12,98 +12,40 @@
     </div>
     
 </nav>
+
+
+<div class="view">
 <div class="margin-top">
 <ul>
         <li>
-          <snap-drawers snap-id="'movie1'">
+          <snap-drawers snap-id="'content'">
             <snap-drawer="left">
-              Movie times
+              drawer
             </snap-drawer>
           </snap-drawers>
-          <snap-content snap-id="'movie1'">
+          <snap-content snap-id="'content'">
             
-              <h2>Movie 1</h2>
+              <h2>content</h2>
             
           </snap-content>
         </li>
+        
         <li>
-          <snap-drawers snap-id="'movie2'">
+          <snap-drawers snap-id="'content2'">
             <snap-drawer="left">
-              Movie times
+              drawer2
             </snap-drawer>
-            
           </snap-drawers>
-          <snap-content snap-id="'movie2'">
+          <snap-content snap-id="'content2'">
             
-              <h2>Movie 2</h2>
+              <h2>content2</h2>
             
           </snap-content>
         </li>
-        <li>
-          <snap-drawers="left" snap-id="'movie3'">
-            <snap-drawer="left">
-              Movie times
-            </snap-drawer>
-            
-          </snap-drawers>
-          <snap-content="left" snap-id="'movie3'">
-            
-              <h2>Movie 3</h2>
-            
-          </snap-content>
-        </li>
+
       </ul>
 </div>
-
-
-
-<!-- <div ng-repeat="group in groups">
-    <div class="view">
-        <div class="margin-top">
-                <div snap-drawers>
-                <snap-drawer>
-                        <button class="button btn-sm">delete</button>
-                </snap-drawer>
-                </div>
-                 <snap-content
-                    snap-opt-disable="'right'">
-                    <div class="list-groups-wrapper">
-                        <h2>{[{ group.groupName }]}</h2>
-                        <p>{[{ group.lastMessage }]}</p>
-                    </div>
-                </snap-content>
-        </div>    
-    </div>
 </div>
- -->
-
-<!-- <div class="view">
-    <div class="margin-top">
-        <div class="group section">
-            <ul>
-              <li ng-repeat="group in groups" ng-click="goChat()">
-                <div ng-show="!group.showActions" ng-swipe-left="group.showActions=true" class="list-groups-wrapper">
-                  <div class="col span_1_of_5">
-                      <p>picture</p>
-                  </div>
-                  <div class="col span_4_of_5">
-                        <h2>{[{ group.groupName }]}</h2>
-                        <p>{[{ group.lastMessage }]}</p>
-                  </div>
-                </div>
-                <div
-                  ng-show="group.showActions"
-                  ng-swipe-right="group.showActions=false">
-                  <ul class="actions">
-                    <li><button>Leave</button></li>
-                  </ul>
-                </div>
-                <hr>
-              </li>
-            </ul>
-        </div>
-    </div>
-</div> -->
 
 <div class="typebox">
 	<div class="col span_1_of_2">Private</div>

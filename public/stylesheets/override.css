@@ -1,8 +1,15 @@
 /*variables.scss*/
-/* line 7, ../sass/override.scss */
+/* line 3, ../sass/override.scss */
 snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
   position: relative;
+  top: 100px;
   display: block;
+}
+
+/* line 9, ../sass/override.scss */
+.snap-content {
+  position: relative;
+  top: 80px;
 }
 
 /*snap-content, .snap-content{

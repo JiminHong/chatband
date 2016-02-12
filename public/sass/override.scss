@@ -1,13 +1,16 @@
 @import "partials/variables";
 
-.snap-content, .snap-drawers{
-}
-
-
 snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
     position: relative;
+    top: 100px;
     display:block;
     }
+
+.snap-content{
+	position: relative;
+	top: 80px;
+}
+
 /*snap-content, .snap-content{
 	position: relative;
 }*/
