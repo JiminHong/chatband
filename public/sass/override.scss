@@ -2,7 +2,7 @@
 
 snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
     position: relative;
-    top: 50px;
+    top: 33px;
     bottom: 0;
     display:block;
     }
@@ -16,6 +16,13 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
 snap-drawer, .snap-drawer{
 	top: 0;
 	background-color: $white;
+}
+
+.snap-drawer-button{
+	p{
+		color: $reg-green;
+		margin-left: 5%;
+	}
 }
 
 /*snap-content, .snap-content{

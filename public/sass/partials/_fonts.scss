@@ -1,0 +1,138 @@
+/*============================================= */
+/*==================== Fonts ================== */
+/*============================================= */
+
+h1{
+	font-weight: 300;
+    font-style: italic;
+    font-size: 1em;
+    text-align: center;
+    color: $white-text;
+    font-family: "chaparral-pro";
+    margin: 0;  
+}
+h2{
+	color: $text-green;
+    font-family: $mont;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: 0;
+}
+
+.gig-name-h2{
+    font-family: $mont;
+    color: $reg-grey;
+    font-weight: 700;
+    font-size: .9em;
+    text-align: center;
+    margin: 55px 0 30px;
+    padding-top: 10px;
+}
+
+.chap-h2{
+    color: $text-green;
+    font-family: $chap;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.4em;
+    margin: 0 0 5%;
+    @include transition(color .15s .15s);
+}
+
+h2.mont-h2{
+    font-family: $mont;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+
+}
+
+h3{
+	color: rgba(126, 138, 162, 1);
+    margin: 0;
+}
+
+.gig-title-h3{
+    font-family: $mont;
+    color: $light-reg-grey;
+    font-weight: 400;
+    font-size: .7em;
+    margin-top: 10px 0 0 0;
+    text-transform: uppercase;
+}
+
+h4{
+/*	font-weight: 600;
+*/	color: rgba(38, 50, 72, 1);
+}
+h5{
+	color: rgba(38, 50, 72, .5);
+	float: left;
+}
+p{
+	color: rgba(38, 50, 72, 1);
+    font-size: .8em;
+    margin: 0;
+    font-weight: 400;
+    font-family: $open-sans;
+}
+.gig-data-p{
+    color: $reg-grey;
+    margin: 0 0 15px 0;
+    font-size: 1em;
+}
+
+h4.subheading {
+    text-transform: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.time-giglist{
+    margin-left: 5px;
+    color: #ADADAD;
+    font-size: .7em;
+    font-style: normal;
+    font-weight: 400;
+    font-family: $open-sans;
+    @include transition(color .15s .15s);
+}
+
+
+.small-text{
+    font-size: .75em;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.send-btn{
+    font-size: .8em;
+    text-align: center;
+    display: inline-block;
+    color: $white-text;
+    cursor: pointer;
+    @include transition(color .15s .15s);
+    margin-top: 1.5%;
+    &:hover{
+        color: $reg-green;
+    };
+    p{
+        font-size: .8em;
+        text-align: center;
+    }
+}
+
+.uplowcase{
+    text-transform: unset;
+}
+
+.comment{
+    color: $white-orange;
+    font-family: $chap;
+    font-style: italic;
+}

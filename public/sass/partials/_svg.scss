@@ -1,0 +1,138 @@
+/*============================================= */
+/*==================== SVGs =================== */
+/*============================================= */
+
+svg-icon#location.tabimg svg{
+    display: block;
+    margin:  0 0 0 7px;
+}
+
+svg-icon#wardrobe.tabimg svg{
+    display: block;
+    margin: 13px 2px 5px;
+}
+
+/*svg #songs, #lineup, #datetime, #location, #wardrobe*/
+.svg-tabs{
+    &:hover path {
+        cursor: pointer;
+        fill: rgba(90,130,47,1);
+    } 
+    &:hover p {
+        color: rgba(90,130,47,1);
+    }
+    path {
+        fill: rgba(149,163,98,1);
+    } 
+display: block;
+}
+
+svg#arrow{
+    margin-top: 37px;
+    path.arrow{
+        fill: $desat-burnt-sienna;
+        @include transition(fill .15s .15s);
+    };
+}
+
+
+svg#files, svg#calendar, svg#addUser{
+    fill: $dark-green;
+    @include transition(fill .15s .15s);
+    cursor: pointer;
+    &:hover{
+        fill : $darker-green;
+    };
+};
+
+svg#option-plus{
+    margin-left: 22%;
+    fill:$white;
+    @include transition(fill .15s .15s);
+    &:hover{
+        fill:$reg-green;
+    };
+}
+
+svg#lead-sheet{
+    fill: $light-brown;
+    margin-bottom:1%;
+}
+
+svg#pencil{
+    margin-right: 8px;
+}
+
+.option-plus-position{
+    margin-top: 0.5%;
+    float: left;
+}
+
+
+.active svg path{
+    fill: rgba(90,130,47,1);
+}
+
+.active p.tabText {
+    color: rgba(90,130,47,1);
+}
+
+.text-svg{
+    float: left;
+    margin-left: 75px;
+}
+
+.margin-left{
+    margin-left: 8%;
+}
+
+.nav-right{
+    text-align: right;
+    margin-right: 15px;
+}
+
+.nav-left{
+    cursor: pointer;
+    &:hover{
+        .nav-arrow-text-svg{
+            path.nav-arrow{
+                fill : $reg-green;
+            }
+        }
+        .nav-text{
+            color: $reg-green;
+            cursor: pointer;
+        }
+    };
+    .nav-arrow-text-svg{
+        float: left;
+        margin-left: 20px;
+        line-height: 2.2em;
+        path.nav-arrow{
+            fill : $white-text;
+            @include transition(fill .15s .15s);
+        }
+    }
+
+    path.nav-arrow{
+        margin-top: 10px;
+    }
+
+    svg#nav-arrow{
+        margin: 5px 10px -3px 0;
+    }
+
+    .nav-text{
+        font-family: $mont;
+        text-transform: uppercase;
+        color: $white-text;
+        font-size: .8em;
+        font-weight: 400;
+        @include transition(color .15s .15s);
+    }
+}
+
+.clip-circle {
+-webkit-clip-path: circle(33px at 95px 35px); 
+          clip-path: circle(33px at 95px 35px); 
+}

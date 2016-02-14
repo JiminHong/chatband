@@ -15,20 +15,26 @@
 
 <div class="view margin-top">
   <div ng-repeat="group in groups" class="list-groups-wrapper">
+    <div>
         <snap-drawers snap-id="'content'">
           <snap-drawer="left">
-          <div class="snap-drawer-button">delete</div>
+          <div class="snap-drawer-button"><p>Delete</p></div>
           </snap-drawer>
         </snap-drawers>
         <snap-content snap-opt-disable="'right'">
           <div class="col span_1_of_5">
-            <p>picture</p>
+            <img ng-src="{[{group.groupPic}]}" class="clip-circle profile-img float-right">
           </div>
           <div class="col span_4_of_5">
+            <span class="float-right top-right-span"><p class="light-brown">{[{group.lastMessageTime}]}</p></span>
             <h2>{[{ group.groupName }]}</h2>
             <p>{[{ group.lastMessage }]}</p>
           </div>
         </snap-content>
+        <hr>
+
+        
+      </div>
   </div>
 </div>
 

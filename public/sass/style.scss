@@ -2,6 +2,9 @@
 @import "partials/variables";
 @import "partials/normalize";
 @import "compass/css3";
+@import "partials/col";
+@import "partials/fonts";
+@import "partials/svg";
 
 /*============================================= */
 /*============== Navigation bar =============== */
@@ -143,252 +146,9 @@ li{
     margin: 20px 0 0 5px;
     float: left;
 }
-/*============================================= */
-/*================== Columns ================== */
-/*============================================= */
-
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-}
 
 
-/*  SECTIONS  */
-.section {
-    clear: both;
-}
 
-/*  COLUMN SETUP  */
-.col {
-    display: block;
-    float:left;
-    margin-left: 1.6%;
-}
-.col:first-child { margin-left: 0; }
-
-/*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
-/*  GRID OF TWO  */
-.span_2_of_2 {
-    width: 100%;
-}
-.span_1_of_2 {
-    width: 49.2%;
-}
-/*  GRID OF THREE  */
-.span_3_of_3 { width: 100%; }
-.span_2_of_3 { width: 66.13%; }
-.span_1_of_3 { width: 32.26%; }
-
-/*  GRID OF FOUR  */
-.span_4_of_4 {
-    width: 100%;
-}
-.span_3_of_4 {
-    width: 74.6%;
-}
-.span_2_of_4 {
-    width: 49.2%;
-}
-.span_1_of_4 {
-    width: 23.8%;
-}
-
-/*  GRID OF FIVE  */
-.span_5_of_5 {
-    width: 100%;
-}
-.span_4_of_5 {
-    width: 79.68%;
-}
-.span_3_of_5 {
-    width: 59.36%;
-}
-.span_2_of_5 {
-    width: 39.04%;
-}
-.span_1_of_5 {
-    width: 18.72%;
-}
-
-/*  GRID OF NINE  */
-.span_9_of_9 {
-    width: 100%;
-}
-
-.span_8_of_9 {
-    width: 88.71%;
-}
-
-.span_7_of_9 {
-    width: 77.42%;
-}
-
-.span_6_of_9 {
-    width: 66.13%;
-}
-
-.span_5_of_9 {
-    width: 54.84%;
-}
-
-.span_4_of_9 {
-    width: 43.55%;
-}
-
-.span_3_of_9 {
-    width: 32.26%;
-}
-
-.span_2_of_9 {
-    width: 20.97%;
-}
-
-.span_1_of_9 {
-    width: 9.688%;
-}
-
-/*============================================= */
-/*==================== Fonts ================== */
-/*============================================= */
-
-h1{
-	font-weight: 300;
-    font-style: italic;
-    font-size: 1em;
-    text-align: center;
-    color: $white-text;
-    font-family: "chaparral-pro";
-    margin: 0;  
-}
-h2{
-	color: $text-green;
-    font-family: $mont;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1em;
-    margin: 0;
-}
-
-.gig-name-h2{
-    font-family: $mont;
-    color: $reg-grey;
-    font-weight: 700;
-    font-size: .9em;
-    text-align: center;
-    margin: 55px 0 30px;
-    padding-top: 10px;
-}
-
-.chap-h2{
-    color: $text-green;
-    font-family: $chap;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 1.4em;
-    margin: 0 0 5%;
-    @include transition(color .15s .15s);
-}
-
-h2.mont-h2{
-    font-family: $mont;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1em;
-
-}
-
-h3{
-	color: rgba(126, 138, 162, 1);
-    margin: 0;
-}
-
-.gig-title-h3{
-    font-family: $mont;
-    color: $light-reg-grey;
-    font-weight: 400;
-    font-size: .7em;
-    margin-top: 10px 0 0 0;
-    text-transform: uppercase;
-}
-
-h4{
-/*	font-weight: 600;
-*/	color: rgba(38, 50, 72, 1);
-}
-h5{
-	color: rgba(38, 50, 72, .5);
-	float: left;
-}
-p{
-	color: rgba(38, 50, 72, 1);
-    font-size: .8em;
-    margin: 0;
-    font-weight: 400;
-    font-family: $open-sans;
-}
-.gig-data-p{
-    color: $reg-grey;
-    margin: 0 0 15px 0;
-    font-size: 1em;
-}
-
-h4.subheading {
-    text-transform: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-.time-giglist{
-    margin-left: 5px;
-    color: #ADADAD;
-    font-size: .7em;
-    font-style: normal;
-    font-weight: 400;
-    font-family: $open-sans;
-    @include transition(color .15s .15s);
-}
-
-
-.small-text{
-    font-size: .75em;
-}
-
-.bold{
-    font-weight: bold;
-}
-
-.send-btn{
-    font-size: .8em;
-    text-align: center;
-    display: inline-block;
-    color: $white-text;
-    cursor: pointer;
-    @include transition(color .15s .15s);
-    margin-top: 1.5%;
-    &:hover{
-        color: $reg-green;
-    };
-    p{
-        font-size: .8em;
-        text-align: center;
-    }
-}
-
-.uplowcase{
-    text-transform: unset;
-}
-
-.comment{
-    color: $white-orange;
-    font-family: $chap;
-    font-style: italic;
-}
 
 /*============================================= */
 /*================== Buttons ================== */
@@ -472,7 +232,11 @@ a{
 /*============================================= */
 /*================= Contents ================== */
 /*============================================= */
-
+.content-width-9{
+    width: 90%;
+    margin: 0 0 0 5%;
+    float: left;
+}
 .content-width-8{
     width: 80%;
     margin: 0 0 0 10%;
@@ -486,10 +250,21 @@ a{
 }
 
 .list-groups-wrapper{
+    margin: 0;
+    padding: 0;
+    height: 92px;
+    background-color: $yellow-green-dark;
     snap-content{
+        height: 68px;
+        margin: -22px 0 -8px 0;
+        padding: 10px;
+
         h2, p{
             color: $reg-grey;
             margin: 10px 0;
+        }
+        span p{
+            color: $reg-green;
         }
     }
 }
@@ -652,142 +427,10 @@ input[type=text], textarea {
     color: $reg-grey;
 }
 
-/*============================================= */
-/*==================== SVGs =================== */
-/*============================================= */
 
-svg-icon#location.tabimg svg{
-    display: block;
-    margin:  0 0 0 7px;
-}
-
-svg-icon#wardrobe.tabimg svg{
-    display: block;
-    margin: 13px 2px 5px;
-}
-
-/*svg #songs, #lineup, #datetime, #location, #wardrobe*/
-.svg-tabs{
-    &:hover path {
-        cursor: pointer;
-        fill: rgba(90,130,47,1);
-    } 
-    &:hover p {
-        color: rgba(90,130,47,1);
-    }
-    path {
-        fill: rgba(149,163,98,1);
-    } 
-display: block;
-}
-
-svg#arrow{
-    margin-top: 37px;
-    path.arrow{
-        fill: $desat-burnt-sienna;
-        @include transition(fill .15s .15s);
-    };
-}
-
-
-svg#files, svg#calendar, svg#addUser{
-    fill: $dark-green;
-    @include transition(fill .15s .15s);
-    cursor: pointer;
-    &:hover{
-        fill : $darker-green;
-    };
-};
-
-svg#option-plus{
-    margin-left: 22%;
-    fill:$white;
-    @include transition(fill .15s .15s);
-    &:hover{
-        fill:$reg-green;
-    };
-}
-
-svg#lead-sheet{
-    fill: $light-brown;
-    margin-bottom:1%;
-}
-
-svg#pencil{
-    margin-right: 8px;
-}
-
-.option-plus-position{
-    margin-top: 0.5%;
-    float: left;
-}
-
-
-.active svg path{
-    fill: rgba(90,130,47,1);
-}
-
-.active p.tabText {
-    color: rgba(90,130,47,1);
-}
-
-.text-svg{
-    float: left;
-    margin-left: 75px;
-}
-
-.margin-left{
-    margin-left: 8%;
-}
-
-.nav-right{
-    text-align: right;
-    margin-right: 15px;
-}
-
-.nav-left{
-    cursor: pointer;
-    &:hover{
-        .nav-arrow-text-svg{
-            path.nav-arrow{
-                fill : $reg-green;
-            }
-        }
-        .nav-text{
-            color: $reg-green;
-            cursor: pointer;
-        }
-    };
-    .nav-arrow-text-svg{
-        float: left;
-        margin-left: 20px;
-        line-height: 2.2em;
-        path.nav-arrow{
-            fill : $white-text;
-            @include transition(fill .15s .15s);
-        }
-    }
-
-    path.nav-arrow{
-        margin-top: 10px;
-    }
-
-    svg#nav-arrow{
-        margin: 5px 10px -3px 0;
-    }
-
-    .nav-text{
-        font-family: $mont;
-        text-transform: uppercase;
-        color: $white-text;
-        font-size: .8em;
-        font-weight: 400;
-        @include transition(color .15s .15s);
-    }
-}
 
 /*============================================= */
-/*===================== BG ==================== */
+/*=================== Colors ================== */
 /*============================================= */
 
 .dark-green-bg{
@@ -864,14 +507,26 @@ svg#pencil{
     padding: 0;
 }
 
+.top-right-span{
+    margin: 0;
+    p{
+        font-size: .5em;
+    }
+}
+
 hr{
     border-top: 2px solid #e6e6e6;
     border-left: $white;
     border-bottom: 2px solid $white;
+    margin-bottom: 0;
 }
 
 .img{
     width: 100%;
+}
+
+.profile-img{
+    max-width: 130px;
 }
 
 #map { 
