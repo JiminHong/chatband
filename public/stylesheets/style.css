@@ -967,6 +967,22 @@ svg#pencil {
   clip-path: circle(33px at 95px 35px);
 }
 
+/* line 140, ../sass/partials/_svg.scss */
+.svg-center-1-of-2 {
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+}
+
+/* line 146, ../sass/partials/_svg.scss */
+.p-center-1-of-2 {
+  font-size: .5em;
+  color: #95a362;
+  position: absolute;
+  margin: 0 0 0 20%;
+  bottom: 10px;
+}
+
 /*============================================= */
 /*============== Navigation bar =============== */
 /*============================================= */
@@ -1259,7 +1275,7 @@ li {
 /* line 257, ../sass/style.scss */
 .list-groups-wrapper snap-content {
   height: 68px;
-  margin: -22px 0 -8px 0;
+  margin: -18px 0 -8px 0;
   padding: 10px;
 }
 /* line 262, ../sass/style.scss */
@@ -1380,44 +1396,43 @@ li {
 /* line 355, ../sass/style.scss */
 .tabText {
   font-size: .5em;
-  text-align: center;
   color: #95a362;
   position: absolute;
-  margin: 0 17px;
+  margin: 0 0 0 3.5%;
   bottom: 10px;
 }
 
-/* line 363, ../sass/style.scss */
+/* line 362, ../sass/style.scss */
 a:hover p.tabText {
   color: #5A822F;
 }
 
-/* line 367, ../sass/style.scss */
+/* line 366, ../sass/style.scss */
 .tabimg {
-  display: block;
-  margin: 10px 18px;
+  margin-top: 10px;
+  margin-left: 20%;
 }
 
-/* line 372, ../sass/style.scss */
+/* line 371, ../sass/style.scss */
 .gig-tabs-content {
   margin-top: 40px;
   height: 100%;
 }
 
-/* line 377, ../sass/style.scss */
+/* line 376, ../sass/style.scss */
 .song-list-wrapper:last-child {
   margin-bottom: 65px;
 }
 
-/* line 381, ../sass/style.scss */
+/* line 380, ../sass/style.scss */
 .margin-top {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 /*============================================= */
 /*==================== Form =================== */
 /*============================================= */
-/* line 389, ../sass/style.scss */
+/* line 388, ../sass/style.scss */
 .form {
   display: block;
   height: 18px;
@@ -1435,7 +1450,7 @@ a:hover p.tabText {
   -webkit-transition-delay: 0.15s;
   transition: border 0.15s 0.15s;
 }
-/* line 402, ../sass/style.scss */
+/* line 401, ../sass/style.scss */
 .form:focus {
   outline: none !important;
   border: 1px solid red;
@@ -1445,7 +1460,7 @@ a:hover p.tabText {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-/* line 412, ../sass/style.scss */
+/* line 411, ../sass/style.scss */
 input[type=text], textarea {
   -moz-transition: all 0.15s 0.15s;
   -o-transition: all 0.15s 0.15s;
@@ -1455,18 +1470,18 @@ input[type=text], textarea {
   outline: none;
   border: 1px solid #DDDDDD;
 }
-/* line 416, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 input[type=text]:focus, textarea:focus {
   box-shadow: 0 0 5px #FFA780;
   border: 1px solid #FFA780;
 }
 
-/* line 422, ../sass/style.scss */
+/* line 421, ../sass/style.scss */
 .chat-msg-input {
   width: 79.71%;
 }
 
-/* line 426, ../sass/style.scss */
+/* line 425, ../sass/style.scss */
 ::-webkit-input-placeholder {
   color: #777A7A;
 }
@@ -1474,23 +1489,23 @@ input[type=text]:focus, textarea:focus {
 /*============================================= */
 /*=================== Colors ================== */
 /*============================================= */
-/* line 436, ../sass/style.scss */
+/* line 435, ../sass/style.scss */
 .dark-green-bg {
   background-color: #515d3c;
 }
 
-/* line 440, ../sass/style.scss */
+/* line 439, ../sass/style.scss */
 .reg-green-bg {
   background-color: #6B7F48;
 }
 
-/* line 444, ../sass/style.scss */
+/* line 443, ../sass/style.scss */
 .nav-icons {
   display: block;
   margin: 10px 45px;
 }
 
-/* line 449, ../sass/style.scss */
+/* line 448, ../sass/style.scss */
 .dark-green-yellow-bg {
   background-color: #424242;
   -moz-transition: background-color 0.15s 0.15s;
@@ -1499,39 +1514,39 @@ input[type=text]:focus, textarea:focus {
   -webkit-transition-delay: 0.15s;
   transition: background-color 0.15s 0.15s;
 }
-/* line 452, ../sass/style.scss */
+/* line 451, ../sass/style.scss */
 .dark-green-yellow-bg:hover {
   background-color: #333333;
 }
 
-/* line 457, ../sass/style.scss */
+/* line 456, ../sass/style.scss */
 .dark-green-yellow-fill {
   fill: #424242;
 }
 
-/* line 461, ../sass/style.scss */
+/* line 460, ../sass/style.scss */
 .light-brown {
   color: #e2d6c5;
 }
 
-/* line 465, ../sass/style.scss */
+/* line 464, ../sass/style.scss */
 .ligth-brown-fill {
   fill: #e2d6c5;
 }
 
-/* line 469, ../sass/style.scss */
+/* line 468, ../sass/style.scss */
 .gig-content-wrapper {
   width: 100%;
   height: 100%;
   background-color: red;
 }
 
-/* line 475, ../sass/style.scss */
+/* line 474, ../sass/style.scss */
 .green-fill {
   fill: #8DAF41;
 }
 
-/* line 479, ../sass/style.scss */
+/* line 478, ../sass/style.scss */
 .reg-grey-fill {
   fill: #777A7A;
   -moz-transition: fill 0.15s 0.15s;
@@ -1540,7 +1555,7 @@ input[type=text]:focus, textarea:focus {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 482, ../sass/style.scss */
+/* line 481, ../sass/style.scss */
 .reg-grey-fill:hover {
   fill: #333333;
 }
@@ -1548,41 +1563,41 @@ input[type=text]:focus, textarea:focus {
 /*============================================= */
 /*=================== Float =================== */
 /*============================================= */
-/* line 491, ../sass/style.scss */
+/* line 490, ../sass/style.scss */
 .float-left {
   float: left;
 }
 
-/* line 495, ../sass/style.scss */
+/* line 494, ../sass/style.scss */
 .float-right {
   float: right;
 }
 
-/* line 498, ../sass/style.scss */
+/* line 497, ../sass/style.scss */
 .float-clear {
   clear: both;
 }
 
-/* line 502, ../sass/style.scss */
+/* line 501, ../sass/style.scss */
 .margin-zero {
   margin: 0;
 }
 
-/* line 506, ../sass/style.scss */
+/* line 505, ../sass/style.scss */
 .padding-zero {
   padding: 0;
 }
 
-/* line 510, ../sass/style.scss */
+/* line 509, ../sass/style.scss */
 .top-right-span {
   margin: 0;
 }
-/* line 512, ../sass/style.scss */
+/* line 511, ../sass/style.scss */
 .top-right-span p {
   font-size: .5em;
 }
 
-/* line 517, ../sass/style.scss */
+/* line 516, ../sass/style.scss */
 hr {
   border-top: 2px solid #e6e6e6;
   border-left: white;
@@ -1590,17 +1605,17 @@ hr {
   margin-bottom: 0;
 }
 
-/* line 524, ../sass/style.scss */
+/* line 523, ../sass/style.scss */
 .img {
   width: 100%;
 }
 
-/* line 528, ../sass/style.scss */
+/* line 527, ../sass/style.scss */
 .profile-img {
   max-width: 130px;
 }
 
-/* line 532, ../sass/style.scss */
+/* line 531, ../sass/style.scss */
 #map {
   height: 400px;
   margin: 20px 0;
@@ -1609,7 +1624,7 @@ hr {
 }
 
 @media only screen and (max-width: 320px) {
-  /* line 542, ../sass/style.scss */
+  /* line 540, ../sass/style.scss */
   .chat-msg-input {
     width: 77%;
   }
