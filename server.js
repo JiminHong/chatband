@@ -18,7 +18,8 @@ var port = process.env.PORT || 3000;
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url); 
+//mongodb://jhong:jhong@ds055525.mongolab.com:55545/heroku_sf66wt12'
+mongoose.connect(db.url); 
 
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public')); 
@@ -40,6 +41,25 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
+
+var Songs = mongoose.model('Songs', {
+	artist:{
+		type: String,
+		default: 'Unknown artist'
+	},
+	title:{
+		type: String,
+		default: 'Unknown Title'
+	},
+	time:{
+		type: String,
+		default: ''
+	},
+	bpm: {
+		type: Number,
+		default: 0
+	}
+});
 
 // start app ===============================================
 // startup our app at http://localhost:8080
