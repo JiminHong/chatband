@@ -19,7 +19,7 @@ var port = process.env.PORT || 3000;
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
-mongoose.connect(db.url); 
+mongoose.connect('mongodb://jhong:jhong@ds055545.mongolab.com:55545/heroku_sf66wt12'); 
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
