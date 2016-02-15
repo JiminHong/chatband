@@ -42,7 +42,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
 
-
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);               
