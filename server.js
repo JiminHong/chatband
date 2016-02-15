@@ -42,24 +42,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
 
-var Songs = mongoose.model('Songs', {
-	artist:{
-		type: String,
-		default: 'Unknown artist'
-	},
-	title:{
-		type: String,
-		default: 'Unknown Title'
-	},
-	time:{
-		type: String,
-		default: ''
-	},
-	bpm: {
-		type: Number,
-		default: 0
-	}
-});
 
 // start app ===============================================
 // startup our app at http://localhost:8080
