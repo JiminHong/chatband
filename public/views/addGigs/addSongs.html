@@ -1,20 +1,48 @@
-<nav class="navbar-fixed-top">
-    <div class="lv1-nav section group"> <!-- Level 1 nav -->
-        <div class="col span_1_of_3"><button ng-click="goGigs()">Gigs</button></div>
-        <div class="col span_1_of_3"><h1>Awesome Band</h1></div>
-        <div class="col span_1_of_3"></div>
-    </div>
-</nav>
 
-<div class="view">
-<p>Moonstone music festival</p>
+<div class="section group">
+    <div class="tabs">
+        <div class="col span_1_of_5">
+        <a href="/addSongs" ng-class="{ active: isSet(1) }">
+            <svg-icon class="tabimg svg-tabs svg-center" id="songs" p="songs"></svg-icon>
+            <p class="tabText">Songs</p>
+        </a>
+        </div>
+        <div class="col span_1_of_5">
+        <a href="/addLineup" ng-class="{ active: isSet(2) }">
+            <svg-icon class="tabimg svg-tabs svg-center" id="lineup" p="lineup"></svg-icon>
+            <p class="tabText">Lineup</p>
+        </a>
+        </div>
+        <div class="col span_1_of_5">
+        <a href="/addDatetime"ng-class="{ active: isSet(3) }">
+            <svg-icon class="tabimg svg-tabs svg-center" id="datetime" p="datetime"></svg-icon>
+            <p class="tabText">Datetime</p>
+        </a>
+        </div>
+        <div class="col span_1_of_5">
+        <a href="/addLocation" ng-class="{ active: isSet(4) }">
+            <svg-icon class="tabimg svg-tabs svg-center" id="location" p="location"></svg-icon>
+            <p class="tabText">Location</p>
+        </a>
+        </div>
+        <div class="col span_1_of_5">
+        <a href="/addWardrobe" ng-class="{ active: isSet(5) }">
+            <svg-icon class="tabimg svg-tabs svg-center" id="wardrobe" p="wardrobe"></svg-icon>
+            <p class="tabText">Wardrobe</p>
+        </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-wrapper margin-top">
+    <h2 class="mont-h2">Moonstone music festival</h2>
     <form ng-submit="addSong()" method="get">
-    <!-- {[{songs[0].artist}]} -->
-        <input type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Artist"/><br />
-        <input type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title"/><br />
-        <input type="text" ng-model="newGig.time" placeholder="Time"/><br />
-        <input type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
-        <input type="submit" ng-click="update(newGig)" value="Save" />
+        <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Artist"/><br />
+        <input class="form wide"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title"/><br />
+        <input class="form wide"type="text" ng-model="newGig.time" placeholder="Time"/><br />
+        <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
+        <input class="button btn-xl" type="submit" ng-click="update(newGig)" value="Save" />
     </form>
 </div>
 
