@@ -38,7 +38,68 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public')); 
 
 // routes ==================================================
-require('./app/routes')(app); // configure our routes
+//require('./app/routes')(app); // configure our routes
+
+	// api ---------------------------------------------------------------------
+    // get all songs
+    app.get('/api/songs', function(req, res) {
+
+        // use mongoose to get all songs in the database
+        Todo.find(function(err, songs) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(songs); // return all songs in JSON format
+        });
+    });
+
+    // create todo and send back all songs after creation
+    app.post('/api/songs', function(req, res) {
+
+        // create a todo, information comes from AJAX request from Angular
+        Todo.create({
+            text : req.body.text,
+            done : false
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the songs after you create another
+            Todo.find(function(err, songs) {
+                if (err)
+                    res.send(err)
+                res.json(songs);
+            });
+        });
+
+    });
+
+    // delete a todo
+    app.delete('/api/songs/:song_id', function(req, res) {
+        Todo.remove({
+            _id : req.params.song_id
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the songs after you create another
+            Todo.find(function(err, songs) {
+                if (err)
+                    res.send(err)
+                res.json(songs);
+            });
+        });
+    });
+
+
+
+// define model ==================================================
+
+var Songs = mongoose.model('Songs', {
+	artist : String
+});
 
 // start app ===============================================
 // startup our app at http://localhost:8080
