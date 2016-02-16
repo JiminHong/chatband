@@ -7,7 +7,11 @@ var mongoose	   = require('mongoose');
 var morgan = require('morgan');  
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+// define model ==================================================
 
+var Song = mongoose.model('Song', {
+    artist : String
+});
 
 // configuration ===========================================
     
@@ -19,7 +23,7 @@ var port = process.env.PORT || 3000;
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
-mongoose.connect('mongodb://jhong:jhong@ds055545.mongolab.com:55545/heroku_sf66wt12'); 
+mongoose.connect(db.url);
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
@@ -38,14 +42,14 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public')); 
 
 // routes ==================================================
-//require('./app/routes')(app); // configure our routes
+// require('./app/routes')(app); // configure our routes
 
 	// api ---------------------------------------------------------------------
     // get all songs
     app.get('/api/songs', function(req, res) {
 
         // use mongoose to get all songs in the database
-        Todo.find(function(err, songs) {
+        Song.find(function(err, songs) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
@@ -59,15 +63,15 @@ app.use(express.static(__dirname + '/public'));
     app.post('/api/songs', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
-        Todo.create({
-            text : req.body.text,
+        Song.create({
+            artist : req.body.artist,
             done : false
-        }, function(err, todo) {
+        }, function(err, song) {
             if (err)
                 res.send(err);
 
             // get and return all the songs after you create another
-            Todo.find(function(err, songs) {
+            Song.find(function(err, songs) {
                 if (err)
                     res.send(err)
                 res.json(songs);
@@ -78,14 +82,14 @@ app.use(express.static(__dirname + '/public'));
 
     // delete a todo
     app.delete('/api/songs/:song_id', function(req, res) {
-        Todo.remove({
+        Song.remove({
             _id : req.params.song_id
-        }, function(err, todo) {
+        }, function(err, song) {
             if (err)
                 res.send(err);
 
             // get and return all the songs after you create another
-            Todo.find(function(err, songs) {
+            Song.find(function(err, songs) {
                 if (err)
                     res.send(err)
                 res.json(songs);
@@ -94,12 +98,10 @@ app.use(express.static(__dirname + '/public'));
     });
 
 
-
-// define model ==================================================
-
-var Songs = mongoose.model('Songs', {
-	artist : String
+app.get('*', function(req, res) {
+    res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
+
 
 // start app ===============================================
 // startup our app at http://localhost:8080
@@ -109,4 +111,9 @@ app.listen(port);
 console.log('Magic happens on port ' + port);
 
 // expose app           
-exports = module.exports = app;                         
+exports = module.exports = app;  
+
+
+
+
+                       
