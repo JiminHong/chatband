@@ -1,12 +1,12 @@
-myapp.controller('SongsCtrl', ["$scope", "$location", "$routeParams", 
-function ($scope, $location, $routeParams) {
+myapp.controller('SongsCtrl', ["$scope", "$http", "$location", "$routeParams", 
+function ($scope, $http, $location, $routeParams) {
     console.log('SongsCtrl fired');
 
    $scope.goChat = function(){
             $location.path('/chat');
         }
 
-        
+
     $scope.newGig = {};
 
     // when landing on the page, get all todos and show them
