@@ -11,7 +11,10 @@ var methodOverride = require('method-override');
 // define model ==================================================
 
 var Song = mongoose.model('Song', {
-    artist : String
+    artist : String,
+    title : String,
+    time : String,
+    bpm : Number
 });
 
 // configuration ===========================================
@@ -65,8 +68,11 @@ app.use(express.static(__dirname + '/public'));
 
         // create a todo, information comes from AJAX request from Angular
         Song.create({
-            artist : req.body.artist,
-            done : false
+            artist  : req.body.artist,
+            title   : req.body.title,
+            time    : req.body.time,
+            bpm     : req.body.bpm,
+            done    : false
         }, function(err, song) {
             if (err)
                 res.send(err);
