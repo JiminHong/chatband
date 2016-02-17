@@ -1,7 +1,7 @@
 // var mongoose = require('mongoose'),
 // 	Schema = mongoose.Schema;
 
-// var SongsSchema = new Schema({
+// var SongSchema = new Schema({
 // 	artist:{
 // 		type: String,
 // 		default: 'Unknown artist'
@@ -20,6 +20,6 @@
 // 	}
 // })
 
-// mongoose.model('Songs', SongsSchema);
+// mongoose.model('Song', SongsSchema);
 
-// // module.exports = Songs;
+//  module.exports = Song;
