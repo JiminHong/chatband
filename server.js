@@ -8,6 +8,21 @@ var morgan = require('morgan');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
+ 
+var mongodbUri = 'mongodb://jhong:jhong@ds055545.mongolab.com:55545/heroku_sf66wt12';
+ 
+mongoose.connect(mongodbUri, options);
+var conn = mongoose.connection;             
+ 
+conn.on('error', console.error.bind(console, 'connection error:'));  
+ 
+conn.once('open', function() {
+  // Wait for the database connection to establish, then start the app.                         
+});
+
+
 // define model ==================================================
 
 var Song = mongoose.model('Song', {
@@ -20,14 +35,14 @@ var Song = mongoose.model('Song', {
 // configuration ===========================================
     
 // config files
-var db = require('./config/db');
+// var db = require('./config/db');
 
 // set our port
 var port = process.env.PORT || 3000; 
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
-mongoose.connect(db.url);
+// mongoose.connect(db.url);
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
