@@ -24,9 +24,7 @@ var db = require('./config/db');
 
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
- 
-// var mongodbUri = 'mongodb://jhong:jhong@ds055545.mongolab.com:55545/heroku_sf66wt12';
- 
+  
 mongoose.connect(db.url, options);
 var conn = mongoose.connection;             
  
