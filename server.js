@@ -10,12 +10,15 @@ var methodOverride = require('method-override');
 
 // define model ==================================================
 
-var Song = mongoose.model('Song', {
-    artist  : String,
-    title   : String,
-    time    : String,
-    bpm     : Number
-});
+// var Song = mongoose.model('Song', {
+//     artist  : String,
+//     title   : String,
+//     time    : String,
+//     bpm     : Number
+// });
+
+
+var Song = require('./app/models/song.server.model.js');
 
 var Lineup = require('./app/models/lineup.js');
 
@@ -102,25 +105,25 @@ app.use(express.static(__dirname + '/public'));
     });
 
     // delete a todo
-    app.delete('/api/songs/:song_id', function(req, res) {
-        Song.remove({
-            _id : req.params.song_id
-        }, function(err, song) {
-            if (err)
-                res.send(err);
+    // app.delete('/api/songs/:song_id', function(req, res) {
+    //     Song.remove({
+    //         _id : req.params.song_id
+    //     }, function(err, song) {
+    //         if (err)
+    //             res.send(err);
 
-            // get and return all the songs after you create another
-            Song.find(function(err, songs) {
-                if (err)
-                    res.send(err)
-                res.json(songs);
-            });
-        });
-    });
+    //         // get and return all the songs after you create another
+    //         Song.find(function(err, songs) {
+    //             if (err)
+    //                 res.send(err)
+    //             res.json(songs);
+    //         });
+    //     });
+    // });
 
 
 app.get('*', function(req, res) {
-    res.sendfile('./public/views/gigTabs/songs.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendfile('./public/views/gigTabs/songs.html'); 
 });
 
 
