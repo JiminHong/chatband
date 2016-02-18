@@ -44,6 +44,11 @@
         <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
         <button type="submit" class="button btn-xl" ng-click="createSong()">createSong</button>
     </form>
+
+    <div ng-repeat="data in songs">
+    {[{data}]}
+    {[{data.artist}]}
+    </div>
 </div>
 
 
