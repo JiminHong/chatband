@@ -23,7 +23,7 @@
 // mongoose.model('Song', SongsSchema);
 
 //  module.exports = Song;
-
+//==============================================================
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -36,7 +36,7 @@ var songSchema = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var Song = mongoose.model('Song', songSchema);
+var SongTest = mongoose.model('SongTest', songSchema);
 
 // make this available to our users in our Node applications
-module.exports = Song;
+module.exports = SongTest;
