@@ -18,7 +18,8 @@ var methodOverride = require('method-override');
 // });
 
 
-var Song = require('./app/models/song.server.model.js');
+var SongModel = require('./app/models/song.server.model.js');
+var Song = require(SongModel.SongSchema);
 
 var Lineup = require('./app/models/lineup.js');
 
@@ -71,12 +72,9 @@ app.use(express.static(__dirname + '/public'));
 
         // use mongoose to get all songs in the database
         Song.find(function(err, songs) {
-
-            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
                 res.send(err)
-
-            res.json(songs); // return all songs in JSON format
+            res.json(songs); 
         });
     });
 
