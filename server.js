@@ -4,26 +4,26 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 var express        = require('express');
 var app            = express();
 var mongoose	   = require('mongoose');
-var morgan = require('morgan');  
+var morgan         = require('morgan');  
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 
 // define model ==================================================
 
 var Song = mongoose.model('Song', {
-    artist : String,
-    title : String,
-    time : String,
-    bpm : Number
+    artist  : String,
+    title   : String,
+    time    : String,
+    bpm     : Number
 });
 
 var Lineup = require('./app/models/lineup.js');
 
 //Test saving
 var drummer = new Lineup({
-    instrumentation: 'drum',
-    name: 'Kali',
-    comment: 'good work'
+    instrumentation : 'drum',
+    name            : 'Kali',
+    comment         : 'good work'
 });
 
 drummer.save(function(err) {
@@ -120,7 +120,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('*', function(req, res) {
-    res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendfile('./public/views/gigTabs/songs.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 
