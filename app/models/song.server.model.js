@@ -36,7 +36,7 @@ var songSchema = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var Song = mongoose.model('Song', lineupSchema);
+var Song = mongoose.model('Song', songSchema);
 
 // make this available to our users in our Node applications
 module.exports = Song;
