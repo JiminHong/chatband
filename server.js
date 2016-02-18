@@ -17,7 +17,7 @@ var Song = mongoose.model('Song', {
     bpm : Number
 });
 
-var Lineup = require('app/models/lineup');
+var Lineup = require('./app/models/lineup.js');
 
 //Test saving
 var drummer = new Lineup({
