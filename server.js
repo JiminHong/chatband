@@ -10,8 +10,14 @@ var methodOverride = require('method-override');
 
 // define model ==================================================
 //NOT WORKING
-var Song = require('./app/models/song.js');
-// var Song = require(SongModel.SongSchema);
+// var Song = require('./app/models/song.js');
+var Song = mongoose.model('Song', {
+    artist  : String,
+    title   : String,
+    time    : String,
+    bpm     : Number
+});
+
 
 // var Lineup = require('./app/models/lineup.js');
 

@@ -1,9 +1,3 @@
-var Song = mongoose.model('Song', {
-    artist  : String,
-    title   : String,
-    time    : String,
-    bpm     : Number
-});
 
 // var mongoose = require('mongoose'),
 // 	Schema = mongoose.Schema;
