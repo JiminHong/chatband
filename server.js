@@ -18,7 +18,7 @@ var methodOverride = require('method-override');
 // });
 
 //NOT WORKING
-var Song = require('./app/models/song.server.model.js').Song;
+var Song = require('/app/models/song.server.model.js').Song;
 // var Song = require(SongModel.SongSchema);
 
 var Lineup = require('./app/models/lineup.js');
