@@ -9,7 +9,7 @@ var lineupSchema = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var Lineup = mongoose.model('Lineup', userSchema);
+var Lineup = mongoose.model('Lineup', lineupSchema);
 
 // make this available to our users in our Node applications
 module.exports = Lineup;
