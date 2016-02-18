@@ -23,10 +23,3 @@
 // mongoose.model('Song', SongsSchema);
 
 //  module.exports = Song;
-
-var Song = mongoose.model('Song', {
-    artist  : String,
-    title   : String,
-    time    : String,
-    bpm     : Number
-});
