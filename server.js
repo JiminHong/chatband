@@ -24,17 +24,17 @@ var Song = mongoose.model('Song', {
 var Lineup = require('./app/models/lineup.js');
 
 //Test saving
-// var drummer = new Lineup({
-//     instrumentation : 'drum',
-//     name            : 'Kali',
-//     comment         : 'good work'
-// });
+var drummer = new Lineup({
+    instrumentation : 'ins1',
+    name            : 'name1',
+    comment         : 'com1'
+});
 
-// drummer.save(function(err) {
-//     if (err) throw err;
+drummer.save(function(err) {
+    if (err) throw err;
 
-//     console.log("added lineup successfully")
-// })
+    console.log("added lineup successfully")
+})
 
 
 // configuration ===========================================
