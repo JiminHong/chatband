@@ -21,20 +21,20 @@ var Song = mongoose.model('Song', {
 // var Song = require('/app/models/song.server.model.js');
 // var Song = require(SongModel.SongSchema);
 
-var Lineup = require('./app/models/lineup.js');
+// var Lineup = require('./app/models/lineup.js');
 
-//Test saving
-var drummer = new Lineup({
-    instrumentation : 'ins1',
-    name            : 'name1',
-    comment         : 'com1'
-});
+// //Test saving
+// var drummer = new Lineup({
+//     instrumentation : 'ins1',
+//     name            : 'name1',
+//     comment         : 'com1'
+// });
 
-drummer.save(function(err) {
-    if (err) throw err;
+// drummer.save(function(err) {
+//     if (err) throw err;
 
-    console.log("added lineup successfully")
-})
+//     console.log("added lineup successfully");
+// })
 
 
 // configuration ===========================================

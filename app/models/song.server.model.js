@@ -23,3 +23,20 @@
 // mongoose.model('Song', SongsSchema);
 
 //  module.exports = Song;
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var songSchema = new Schema({
+  artist: String,
+  title: String,
+  time: String,
+  bpm : Number
+});
+
+// the schema is useless so far
+// we need to create a model using it
+var Song = mongoose.model('Song', lineupSchema);
+
+// make this available to our users in our Node applications
+module.exports = Song;
