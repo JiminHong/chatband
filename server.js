@@ -9,18 +9,8 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 
 // define model ==================================================
-
-var Song = mongoose.model('Song', {
-    artist  : String,
-    title   : String,
-    time    : String,
-    bpm     : Number
-});
-
 //NOT WORKING
-var SongTest = require('./app/models/song.js');
-console.log(SongTest);
-// var Song = require('/app/models/song.server.model.js');
+var Song = require('./app/models/song.js');
 // var Song = require(SongModel.SongSchema);
 
 // var Lineup = require('./app/models/lineup.js');

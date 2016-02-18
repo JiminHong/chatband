@@ -1,3 +1,10 @@
+var Song = mongoose.model('Song', {
+    artist  : String,
+    title   : String,
+    time    : String,
+    bpm     : Number
+});
+
 // var mongoose = require('mongoose'),
 // 	Schema = mongoose.Schema;
 
@@ -24,19 +31,19 @@
 
 //  module.exports = Song;
 //==============================================================
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+// var mongoose = require('mongoose');
+// var Schema = mongoose.Schema;
 
-var songSchema = new Schema({
-  artist: String,
-  title: String,
-  time: String,
-  bpm : Number
-});
+// var songSchema = new Schema({
+//   artist: String,
+//   title: String,
+//   time: String,
+//   bpm : Number
+// });
 
-// the schema is useless so far
-// we need to create a model using it
-var SongTest = mongoose.model('SongTest', songSchema);
+// // the schema is useless so far
+// // we need to create a model using it
+// var SongTest = mongoose.model('SongTest', songSchema);
 
-// make this available to our users in our Node applications
-module.exports = SongTest;
+// // make this available to our users in our Node applications
+// module.exports = SongTest;
