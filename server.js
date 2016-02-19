@@ -146,6 +146,19 @@ lineupRoute.post(function(req, res) {
   });
 });
 
+
+// Create endpoint /api/lineups for GET
+lineupRoute.get(function(req, res) {
+  // Use the Lineup model to find all lineup
+  Lineup.find(function(err, lineups) {
+    if (err)
+      res.send(err);
+
+    res.json(lineups);
+  });
+});
+
+
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);               
