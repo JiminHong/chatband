@@ -123,7 +123,7 @@ app.get('./', function(req, res) {
 });
 
 
-var lineupRoute = router.route('./app/models/lineup');
+var lineupRoute = app.route('./app/models/lineup');
 
 // Create endpoint /api/lineups for POSTS
 lineupRoute.post(function(req, res) {
