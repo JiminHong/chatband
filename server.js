@@ -68,7 +68,7 @@ app.use('/api', router);
 
 	// api ---------------------------------------------------------------------
     // get all songs
-    app.get('/songs', function(req, res) {
+    app.get('/api/songs', function(req, res) {
 
         // use mongoose to get all songs in the database
         Song.find(function(err, songs) {
@@ -79,7 +79,7 @@ app.use('/api', router);
     });
 
     // create todo and send back all songs after creation
-    app.post('/songs', function(req, res) {
+    app.post('/api/songs', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
         Song.create({
@@ -103,7 +103,7 @@ app.use('/api', router);
     });
 
     
-    app.delete('/songs/:song_id', function(req, res) {
+    app.delete('/api/songs/:song_id', function(req, res) {
         Song.remove({
             _id : req.params.song_id
         }, function(err, song) {

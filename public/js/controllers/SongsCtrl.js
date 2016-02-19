@@ -10,7 +10,7 @@ function ($scope, $http, $location, $routeParams) {
     $scope.newGig = {};
 
     // when landing on the page, get all todos and show them
-    $http.get('/songs')
+    $http.get('/api/songs')
         .success(function(data) {
             $scope.songs = data;
             console.log("here's the data",data);
@@ -21,7 +21,7 @@ function ($scope, $http, $location, $routeParams) {
 
     // when submitting the add form, send the text to the node API
     $scope.createSong = function() {
-        $http.post('/songs', $scope.newGig)
+        $http.post('/api/songs', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
@@ -34,7 +34,7 @@ function ($scope, $http, $location, $routeParams) {
 
     // delete a todo after checking it
     $scope.deleteSong = function(id) {
-        $http.delete('/songs/' + id)
+        $http.delete('/api/songs/' + id)
             .success(function(data) {
                 $scope.songs = data;
                 console.log(data);
