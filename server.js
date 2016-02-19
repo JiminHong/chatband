@@ -19,9 +19,9 @@ var Song = mongoose.model('Song', {
 });
 
 
-// var Lineup = require('./app/models/lineup.js');
+var Lineup = require('./app/models/lineup.js');
 
-// //Test saving
+//Test saving
 // var drummer = new Lineup({
 //     instrumentation : 'ins1',
 //     name            : 'name1',
@@ -100,28 +100,49 @@ app.use(express.static(__dirname + '/public'));
 
     });
 
-    // delete a todo
-    // app.delete('/api/songs/:song_id', function(req, res) {
-    //     Song.remove({
-    //         _id : req.params.song_id
-    //     }, function(err, song) {
-    //         if (err)
-    //             res.send(err);
+    delete a todo
+    app.delete('/api/songs/:song_id', function(req, res) {
+        Song.remove({
+            _id : req.params.song_id
+        }, function(err, song) {
+            if (err)
+                res.send(err);
 
-    //         // get and return all the songs after you create another
-    //         Song.find(function(err, songs) {
-    //             if (err)
-    //                 res.send(err)
-    //             res.json(songs);
-    //         });
-    //     });
-    // });
+            // get and return all the songs after you create another
+            Song.find(function(err, songs) {
+                if (err)
+                    res.send(err)
+                res.json(songs);
+            });
+        });
+    });
 
 
-app.get('*', function(req, res) {
-    res.sendfile('./public/views/gigTabs/songs.html'); 
+router.get('/', function(req, res) {
+  res.json({ message: 'You are running router.get!' });
 });
 
+
+var lineupRoute = router.route('./app/models/lineup');
+
+// Create endpoint /api/lineups for POSTS
+lineupRoute.post(function(req, res) {
+  // Create a new instance of the lineup model
+  var lineup = new Lineup();
+
+  // Set the lineup properties that came from the POST data
+  lineup.instrumentation = req.body.instrumentation;
+  lineup.name = req.body.name;
+  lineup.comment = req.body.comment;
+
+  // Save the lineup and check for errors
+  lineup.save(function(err) {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'lineup added to the locker!', data: lineup });
+  });
+});
 
 // start app ===============================================
 // startup our app at http://localhost:8080
