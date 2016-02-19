@@ -118,7 +118,7 @@ app.use(express.static(__dirname + '/public'));
     });
 
 
-router.get('./', function(req, res) {
+app.get('./', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
 
