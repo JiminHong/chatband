@@ -66,7 +66,7 @@ app.use(express.static(__dirname + '/public'));
 
 	// api ---------------------------------------------------------------------
     // get all songs
-    app.get('/api/songs', function(req, res) {
+    app.get('/songs', function(req, res) {
 
         // use mongoose to get all songs in the database
         Song.find(function(err, songs) {
@@ -77,7 +77,7 @@ app.use(express.static(__dirname + '/public'));
     });
 
     // create todo and send back all songs after creation
-    app.post('/api/songs', function(req, res) {
+    app.post('/songs', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
         Song.create({
@@ -101,7 +101,7 @@ app.use(express.static(__dirname + '/public'));
     });
 
     delete a todo
-    app.delete('/api/songs/:song_id', function(req, res) {
+    app.delete('/songs/:song_id', function(req, res) {
         Song.remove({
             _id : req.params.song_id
         }, function(err, song) {
@@ -118,7 +118,7 @@ app.use(express.static(__dirname + '/public'));
     });
 
 
-router.get('/', function(req, res) {
+router.get('./', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
 
