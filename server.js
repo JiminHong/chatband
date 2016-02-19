@@ -100,7 +100,7 @@ app.use(express.static(__dirname + '/public'));
 
     });
 
-    delete a todo
+    
     app.delete('/songs/:song_id', function(req, res) {
         Song.remove({
             _id : req.params.song_id
