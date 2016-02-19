@@ -3,6 +3,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // modules =================================================
 var express        = require('express');
 var app            = express();
+var router         = express.Router();
 var mongoose	   = require('mongoose');
 var morgan         = require('morgan');  
 var bodyParser     = require('body-parser');
@@ -60,6 +61,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(methodOverride('X-HTTP-Method-Override')); 
 app.use(express.static(__dirname + '/public')); 
+app.use('/api', router);
 
 // routes ==================================================
 // require('./app/routes')(app); // configure our routes
@@ -118,12 +120,12 @@ app.use(express.static(__dirname + '/public'));
     });
 
 
-app.get('./', function(req, res) {
+router.get('/', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
 
 
-var lineupRoute = app.route('./app/models/lineup');
+var lineupRoute = router.route('./app/models/lineup');
 
 // Create endpoint /api/lineups for POSTS
 lineupRoute.post(function(req, res) {
