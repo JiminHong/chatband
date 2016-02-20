@@ -16,21 +16,19 @@ fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/app/models/' + filename)
 });
 
-
-
 // define model ==================================================
-var Song = mongoose.model('Song', {
-    artist  : String,
-    title   : String,
-    time    : String,
-    bpm     : Number
-});
+// var Song = mongoose.model('Song', {
+//     artist  : String,
+//     title   : String,
+//     time    : String,
+//     bpm     : Number
+// });
 
-var Lineup = mongoose.model('Lineup', {
-    instrumentation  : String,
-    name   : String,
-    comment    : String
-});
+// var Lineup = mongoose.model('Lineup', {
+//     instrumentation  : String,
+//     name   : String,
+//     comment    : String
+// });
 
 // configuration ===========================================
     
@@ -180,6 +178,33 @@ app.use(express.static(__dirname + '/public'));
             res.send(locations)
         })
     })
+
+
+    app.post('/api/locations', function(req, res) {
+
+        // create a todo, information comes from AJAX request from Angular
+        mongoose.model('location').create({
+            street  : req.body.street,
+            city    : req.body.city,
+            state   : req.body.state,
+            zipcode : req.body.zipcode
+        }, function(err, location) {
+            if (err)
+                res.send(err);
+
+            // get and return all the lineups after you create another
+            mongoose.model('location').find(function(err, locations) {
+                if (err)
+                    res.send(err)
+                res.json(locations);
+            });
+        });
+
+    });
+
+
+
+
 
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
