@@ -1,4 +1,4 @@
-myapp.controller('AddChatCtrl', ["$scope", "http", "$location", "$routeParams", 
+myapp.controller('AddChatCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
     console.log('AddChatCtrl fired');
 
