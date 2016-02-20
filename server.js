@@ -175,7 +175,7 @@ app.use(express.static(__dirname + '/public'));
     // =========================== Location ==============================
     // ===================================================================
 
-    app.get('api/locations', function(req, res) {
+    app.get('/api/locations', function(req, res) {
         mongoose.model('location').find(function(err, locations) {
             res.send(locations)
         })
