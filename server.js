@@ -8,13 +8,13 @@ var mongoose	   = require('mongoose');
 var morgan         = require('morgan');  
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
-var fs             = require('fs');
+// var fs             = require('fs');
 
 
 //load all files in models dir
-fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
-  if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
-});
+// fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
+//   if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
+// });
 
 
 
