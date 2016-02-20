@@ -1,5 +1,7 @@
 myapp.controller('AddChatCtrl', ["$scope", "http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
+
+    console.log("this is AddChatCtrl")
         
         $scope.newChat = {};
         // ===================================================================
@@ -24,7 +26,7 @@ function ($scope, $http, $location, $routeParams) {
                 });
         };
 
-        $scope.deleteSong = function(id) {
+        $scope.deleteChat = function(id) {
             $http.delete('/api/chats/' + id)
                 .success(function(data) {
                     $scope.chats = data;
@@ -35,5 +37,5 @@ function ($scope, $http, $location, $routeParams) {
         };
 
 
-} ])
+}]);
         

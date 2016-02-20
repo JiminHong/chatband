@@ -30,7 +30,6 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-
 	.when('/addChat', {
 		templateUrl : 'views/addChat.html',
 		controller 	: 'AddChatCtrl', function($scope, $http){
