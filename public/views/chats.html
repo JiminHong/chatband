@@ -13,7 +13,7 @@
 
 
 <div class="view margin-top">
-  <div ng-repeat="group in groups" class="list-groups-wrapper">
+  <div ng-repeat="data in groups" class="list-groups-wrapper">
     <div>
         <snap-drawers snap-id="'content'">
           <snap-drawer="left">
@@ -22,12 +22,12 @@
         </snap-drawers>
         <snap-content ng-click="goChat()" snap-opt-disable="'right'">
           <div class="col span_1_of_5">
-            <img ng-src="{[{group.groupPic}]}" class="clip-circle profile-img float-right">
+            <img ng-src="{[{data.groupPic}]}" class="clip-circle profile-img float-right">
           </div>
           <div class="col span_4_of_5">
-            <span class="float-right top-right-span"><p class="light-brown">{[{messages.time}]}</p></span>
-            <h2>{[{ groups.groupName }]}</h2>
-            <p>{[{ messages.message }]}</p>
+            <span class="float-right top-right-span"><p class="light-brown">{[{data.lastMessageTime}]}</p></span>
+            <h2>{[{ data.groupName }]}</h2>
+            <p>{[{ data.lastMessage }]}</p>
           </div>
         </snap-content>
         <hr>
