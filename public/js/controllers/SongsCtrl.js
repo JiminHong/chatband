@@ -3,8 +3,7 @@ function ($scope, $http, $location, $routeParams) {
 
     $scope.goChat = function(){
             $location.path('/chat');
-        }
-
+    }
 
     $scope.newGig = {};
 

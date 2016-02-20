@@ -44,6 +44,54 @@ app.use(express.static(__dirname + '/public'));
 // app.use('/api', router);
 
 // routes ==================================================
+// ===================================================================
+// =============================== Chats =============================
+// ===================================================================
+app.get('/api/chats', function(req, res) {
+
+    mongoose.model('chat').find(function(err, chats) {
+        if (err)
+            res.send(err)
+        res.json(chats); 
+    });
+});
+
+app.post('/api/chats', function(req, res) {
+
+    mongoose.model('chat').create({
+        newGroupName  : req.body.newGroupName,
+        newGroupAdmin   : req.body.newGroupAdmin,
+        newGroupMembers    : req.body.newGroupMembers,
+        newGroupGigs     : req.body.newGroupGigs
+    }, function(err, chat) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('chat').find(function(err, chats) {
+            if (err)
+                res.send(err)
+            res.json(chats);
+        });
+    });
+
+});
+
+
+app.delete('/api/chats/:chat_id', function(req, res) {
+    mongoose.model('chat').remove({
+        _id : req.params.chat_id
+    }, function(err, chat) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('chat').find(function(err, chats) {
+            if (err)
+                res.send(err)
+            res.json(chats);
+        });
+    });
+});
+
 
 // ===================================================================
 // =============================== Songs =============================
