@@ -16,7 +16,6 @@ function ($scope, $location, $routeParams) {
         $location.path('/songs');
     }
 
-    
 
     $scope.listGigs = [
     {
