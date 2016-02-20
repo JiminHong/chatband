@@ -11,6 +11,7 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
 	position: relative;
 	top: 0;
 	background-color: $light-grey;
+	overflow:hidden;
 }
 
 snap-drawer, .snap-drawer{

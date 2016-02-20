@@ -12,15 +12,16 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
   position: relative;
   top: 0;
   background-color: #f5f6f4;
+  overflow: hidden;
 }
 
-/* line 16, ../sass/override.scss */
+/* line 17, ../sass/override.scss */
 snap-drawer, .snap-drawer {
   top: 0;
   background-color: white;
 }
 
-/* line 22, ../sass/override.scss */
+/* line 23, ../sass/override.scss */
 .snap-drawer-button p {
   color: #bcd37d;
   margin-left: 5%;

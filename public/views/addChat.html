@@ -1,0 +1,11 @@
+<div class="form-wrapper margin-top">
+    <h2 class="mont-h2">Add a new chat</h2>
+    <form method="get">
+        <input class="form wide" type="text" ng-model="newChat.newGroupName" ng-model-options="{ updateOn: 'blur' }" placeholder="newGroupName"/><br />
+        <input class="form wide"type="text" ng-model="newChat.newGroupAdmin" placeholder="newGroupAdmin"/><br />
+        <input class="form wide"type="text" ng-model="newChat.newGroupMembers" placeholder="newGroupMembers"/><br />
+        <input class="form wide"type="text" ng-model="newChat.newGroupGigs" placeholder="newGroupGigs"/><br />
+        <input class="button btn-xl" type="submit" ng-click="addChat()" value="Save" />
+    </form>
+</div>
+

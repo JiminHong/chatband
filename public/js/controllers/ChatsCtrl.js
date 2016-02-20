@@ -7,6 +7,10 @@ function ($scope, $location, $routeParams) {
             $location.path('/chat');
         } 
 
+        $scope.addChat = function(){
+            $location.path('/addChat');
+        }
+
         $scope.groups = [
         {
         	groupName:"Awesome Band",
