@@ -1,42 +1,5 @@
-
-<div class="section group">
-    <div class="tabs">
-        <div class="col span_1_of_5">
-        <a href="/addSongs" ng-class="{ active: isSet(1) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="songs" p="songs"></svg-icon>
-            <p class="tabText">Songs</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/addLineup" ng-class="{ active: isSet(2) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="lineup" p="lineup"></svg-icon>
-            <p class="tabText">Lineup</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/addDatetime"ng-class="{ active: isSet(3) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="datetime" p="datetime"></svg-icon>
-            <p class="tabText">Datetime</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/addLocation" ng-class="{ active: isSet(4) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="location" p="location"></svg-icon>
-            <p class="tabText">Location</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/addWardrobe" ng-class="{ active: isSet(5) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="wardrobe" p="wardrobe"></svg-icon>
-            <p class="tabText">Wardrobe</p>
-        </a>
-        </div>
-    </div>
-</div>
-
-
 <div class="form-wrapper margin-top">
-    <h2 class="mont-h2">Moonstone music festival</h2>
+    <h2 class="mont-h2">Songs</h2>
     <form method="get">
         <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Artist"/><br />
         <input class="form wide"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title"/><br />
@@ -46,5 +9,44 @@
     </form>
 </div>
 
+<div class="form-wrapper margin-top">
+    <h2 class="mont-h2">Lineup</h2>
+    <form method="get">
+        <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation"/><br />
+        <input class="form wide"type="text" ng-model="newGig.name" placeholder="Name"/><br />
+        <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
+        <input class="button btn-xl" type="submit" ng-click="createLineup()" value="Save" />
+    </form>
+</div>
 
+<div class="form-wrapper margin-top">
+    <h2 class="mont-h2">Date / Time</h2>
+    <form ng-submit="addSong()" method="get">
+        <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name"/><br />
+        <input class="form wide"type="date" ng-model="newGig.time" placeholder="Time"/><br />
+        <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="Time"/><br />
+        <input class="button btn-xl" type="submit" ng-click="update(newGig)" value="Save" />
+    </form>
+</div>
 
+<div class="form-wrapper margin-top">
+    <h2 class="mont-h2">Location</h2>
+    <form method="get">
+        <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Street"/><br />
+        <input class="form wide"type="text" ng-model="newGig.street" placeholder="City"/><br />
+        <input class="form wide"type="text" ng-model="newGig.city" placeholder="State"/><br />
+        <input class="form wide"type="text" ng-model="newGig.state" placeholder="Zipcode"/><br />
+        <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode"/><br />
+        <input class="button btn-xl" type="submit" ng-click="createLocation()" value="Save" />
+    </form>
+</div>
+
+<div class="form-wrapper margin-top">
+    <h2 class="mont-h2">Wardrobe</h2>
+    <form ng-submit="addSong()" method="get">
+        <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe"/><br />
+ 
+        <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="Comment"/><br />
+        <input class="button btn-xl" type="submit" ng-click="update(newGig)" value="Save" />
+    </form>
+</div>
