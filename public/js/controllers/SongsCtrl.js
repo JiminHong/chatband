@@ -1,7 +1,7 @@
 myapp.controller('SongsCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
-   $scope.goChat = function(){
+    $scope.goChat = function(){
             $location.path('/chat');
         }
 

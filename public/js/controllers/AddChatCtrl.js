@@ -1,6 +1,7 @@
 myapp.controller('AddChatCtrl', ["$scope", "http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
         
+        $scope.newChat = {};
         // ===================================================================
         // ============================= addChat =============================
         // ===================================================================

@@ -12,8 +12,6 @@ function ($scope, $location, $routeParams) {
         }
         
 
-
-
         $scope.groups = [
         {
         	groupName:"Awesome Band",
