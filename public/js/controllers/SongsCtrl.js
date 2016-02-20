@@ -15,7 +15,6 @@ function ($scope, $http, $location, $routeParams) {
     $http.get('/api/songs')
         .success(function(data) {
             $scope.songs = data;
-            console.log("Song : ",data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -26,7 +25,6 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
-                console.log(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -37,7 +35,6 @@ function ($scope, $http, $location, $routeParams) {
         $http.delete('/api/songs/' + id)
             .success(function(data) {
                 $scope.songs = data;
-                console.log(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -51,7 +48,6 @@ function ($scope, $http, $location, $routeParams) {
     $http.get('/api/lineups')
         .success(function(data) {
             $scope.lineup = data;
-            console.log("Lineup : ",data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -62,7 +58,6 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.lineup = data;
-                console.log(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -76,7 +71,6 @@ function ($scope, $http, $location, $routeParams) {
     $http.get('/api/locations')
         .success(function(data) {
             $scope.location = data;
-            console.log("Lineup : ",data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -87,7 +81,6 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.location = data;
-                console.log(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);

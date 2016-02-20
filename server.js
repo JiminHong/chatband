@@ -16,20 +16,6 @@ fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/app/models/' + filename)
 });
 
-// define model ==================================================
-// var Song = mongoose.model('Song', {
-//     artist  : String,
-//     title   : String,
-//     time    : String,
-//     bpm     : Number
-// });
-
-// var Lineup = mongoose.model('Lineup', {
-//     instrumentation  : String,
-//     name   : String,
-//     comment    : String
-// });
-
 // configuration ===========================================
     
 // config files
@@ -58,15 +44,12 @@ app.use(express.static(__dirname + '/public'));
 // app.use('/api', router);
 
 // routes ==================================================
-// require('./app/routes')(app); // configure our routes
 
     // ===================================================================
     // =============================== Songs =============================
     // ===================================================================
-    // get all songs
     app.get('/api/songs', function(req, res) {
 
-        // use mongoose to get all songs in the database
         mongoose.model('song').find(function(err, songs) {
             if (err)
                 res.send(err)
@@ -74,10 +57,8 @@ app.use(express.static(__dirname + '/public'));
         });
     });
 
-    // create todo and send back all songs after creation
     app.post('/api/songs', function(req, res) {
 
-        // create a todo, information comes from AJAX request from Angular
         mongoose.model('song').create({
             artist  : req.body.artist,
             title   : req.body.title,
@@ -88,7 +69,6 @@ app.use(express.static(__dirname + '/public'));
             if (err)
                 res.send(err);
 
-            // get and return all the songs after you create another
             mongoose.model('song').find(function(err, songs) {
                 if (err)
                     res.send(err)
@@ -106,7 +86,6 @@ app.use(express.static(__dirname + '/public'));
             if (err)
                 res.send(err);
 
-            // get and return all the songs after you create another
             mongoose.model('song').find(function(err, songs) {
                 if (err)
                     res.send(err)
@@ -119,10 +98,8 @@ app.use(express.static(__dirname + '/public'));
     // ===================================================================
     // ============================ Lineups ==============================
     // ===================================================================
-    // get all lineups
     app.get('/api/lineups', function(req, res) {
 
-        // use mongoose to get all lineups in the database
         mongoose.model('lineup').find(function(err, lineups) {
             if (err)
                 res.send(err)
@@ -130,10 +107,8 @@ app.use(express.static(__dirname + '/public'));
         });
     });
 
-    // create todo and send back all lineups after creation
     app.post('/api/lineups', function(req, res) {
 
-        // create a todo, information comes from AJAX request from Angular
         mongoose.model('lineup').create({
             instrumentation  : req.body.instrumentation,
             name   : req.body.name,
@@ -142,7 +117,6 @@ app.use(express.static(__dirname + '/public'));
             if (err)
                 res.send(err);
 
-            // get and return all the lineups after you create another
             mongoose.model('lineup').find(function(err, lineups) {
                 if (err)
                     res.send(err)
@@ -160,7 +134,6 @@ app.use(express.static(__dirname + '/public'));
             if (err)
                 res.send(err);
 
-            // get and return all the lineups after you create another
             mongoose.model('lineup').find(function(err, lineups) {
                 if (err)
                     res.send(err)
@@ -182,7 +155,6 @@ app.use(express.static(__dirname + '/public'));
 
     app.post('/api/locations', function(req, res) {
 
-        // create a todo, information comes from AJAX request from Angular
         mongoose.model('location').create({
             street  : req.body.street,
             city    : req.body.city,
@@ -192,7 +164,6 @@ app.use(express.static(__dirname + '/public'));
             if (err)
                 res.send(err);
 
-            // get and return all the lineups after you create another
             mongoose.model('location').find(function(err, locations) {
                 if (err)
                     res.send(err)
@@ -201,10 +172,6 @@ app.use(express.static(__dirname + '/public'));
         });
 
     });
-
-
-
-
 
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
