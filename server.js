@@ -20,19 +20,18 @@ fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
 
 // define model ==================================================
 //NOT WORKING
-// var Song = require('./app/models/song.js');
-var Song = mongoose.model('Song', {
-    artist  : String,
-    title   : String,
-    time    : String,
-    bpm     : Number
-});
+// var Song = mongoose.model('Song', {
+//     artist  : String,
+//     title   : String,
+//     time    : String,
+//     bpm     : Number
+// });
 
-var Lineup = mongoose.model('Lineup', {
-    instrumentation  : String,
-    name   : String,
-    comment    : String
-});
+// var Lineup = mongoose.model('Lineup', {
+//     instrumentation  : String,
+//     name   : String,
+//     comment    : String
+// });
 
 // configuration ===========================================
     
