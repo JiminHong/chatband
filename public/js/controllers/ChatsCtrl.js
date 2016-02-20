@@ -7,7 +7,7 @@ function ($scope, $location, $routeParams) {
             $location.path('/chat');
         } 
 
-        $scope.addChat = function(){
+        $scope.goAddChat = function(){
             $location.path('/addChat');
         }
         
