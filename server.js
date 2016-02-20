@@ -45,182 +45,132 @@ app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
 
+// ===================================================================
+// =============================== Songs =============================
+// ===================================================================
+app.get('/api/songs', function(req, res) {
 
-    // ===================================================================
-    // =============================== Songs =============================
-    // ===================================================================
-    app.get('/api/chats', function(req, res) {
-
-        mongoose.model('chat').find(function(err, chats) {
-            if (err)
-                res.send(err)
-            res.json(chats); 
-        });
+    mongoose.model('song').find(function(err, songs) {
+        if (err)
+            res.send(err)
+        res.json(songs); 
     });
+});
 
-    app.post('/api/chats', function(req, res) {
+app.post('/api/songs', function(req, res) {
 
-        mongoose.model('chat').create({
-            newGroupName    : req.body.newGroupName,
-            newGroupAdmin   : req.body.newGroupAdmin,
-            newGroupMembers : req.body.newGroupMembers,
-            newGroupGigs    : req.body.newGroupGigs
-        }, function(err, chat) {
-            if (err)
-                res.send(err);
-
-            mongoose.model('chat').find(function(err, chats) {
-                if (err)
-                    res.send(err)
-                res.json(chats);
-            });
-        });
-
-    });
-
-    
-    app.delete('/api/chats/:chat_id', function(req, res) {
-        mongoose.model('chat').remove({
-            _id : req.params.chat_id
-        }, function(err, chat) {
-            if (err)
-                res.send(err);
-
-            mongoose.model('chat').find(function(err, chats) {
-                if (err)
-                    res.send(err)
-                res.json(chats);
-            });
-        });
-    });
-
-
-    // ===================================================================
-    // =============================== Songs =============================
-    // ===================================================================
-    app.get('/api/songs', function(req, res) {
+    mongoose.model('song').create({
+        artist  : req.body.artist,
+        title   : req.body.title,
+        time    : req.body.time,
+        bpm     : req.body.bpm,
+        done    : false
+    }, function(err, song) {
+        if (err)
+            res.send(err);
 
         mongoose.model('song').find(function(err, songs) {
             if (err)
                 res.send(err)
-            res.json(songs); 
+            res.json(songs);
         });
     });
 
-    app.post('/api/songs', function(req, res) {
+});
 
-        mongoose.model('song').create({
-            artist  : req.body.artist,
-            title   : req.body.title,
-            time    : req.body.time,
-            bpm     : req.body.bpm,
-            done    : false
-        }, function(err, song) {
+
+app.delete('/api/songs/:song_id', function(req, res) {
+    mongoose.model('song').remove({
+        _id : req.params.song_id
+    }, function(err, song) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('song').find(function(err, songs) {
             if (err)
-                res.send(err);
-
-            mongoose.model('song').find(function(err, songs) {
-                if (err)
-                    res.send(err)
-                res.json(songs);
-            });
-        });
-
-    });
-
-    
-    app.delete('/api/songs/:song_id', function(req, res) {
-        mongoose.model('song').remove({
-            _id : req.params.song_id
-        }, function(err, song) {
-            if (err)
-                res.send(err);
-
-            mongoose.model('song').find(function(err, songs) {
-                if (err)
-                    res.send(err)
-                res.json(songs);
-            });
+                res.send(err)
+            res.json(songs);
         });
     });
+});
 
 
-    // ===================================================================
-    // ============================ Lineups ==============================
-    // ===================================================================
-    app.get('/api/lineups', function(req, res) {
+// ===================================================================
+// ============================ Lineups ==============================
+// ===================================================================
+app.get('/api/lineups', function(req, res) {
+
+    mongoose.model('lineup').find(function(err, lineups) {
+        if (err)
+            res.send(err)
+        res.json(lineups); 
+    });
+});
+
+app.post('/api/lineups', function(req, res) {
+
+    mongoose.model('lineup').create({
+        instrumentation  : req.body.instrumentation,
+        name   : req.body.name,
+        comment    : req.body.comment
+    }, function(err, song) {
+        if (err)
+            res.send(err);
 
         mongoose.model('lineup').find(function(err, lineups) {
             if (err)
                 res.send(err)
-            res.json(lineups); 
+            res.json(lineups);
         });
     });
 
-    app.post('/api/lineups', function(req, res) {
+});
 
-        mongoose.model('lineup').create({
-            instrumentation  : req.body.instrumentation,
-            name   : req.body.name,
-            comment    : req.body.comment
-        }, function(err, song) {
+
+app.delete('/api/lineups/:lineup_id', function(req, res) {
+    mongoose.model('lineup').remove({
+        _id : req.params.lineup_id
+    }, function(err, song) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('lineup').find(function(err, lineups) {
             if (err)
-                res.send(err);
-
-            mongoose.model('lineup').find(function(err, lineups) {
-                if (err)
-                    res.send(err)
-                res.json(lineups);
-            });
-        });
-
-    });
-
-    
-    app.delete('/api/lineups/:lineup_id', function(req, res) {
-        mongoose.model('lineup').remove({
-            _id : req.params.lineup_id
-        }, function(err, song) {
-            if (err)
-                res.send(err);
-
-            mongoose.model('lineup').find(function(err, lineups) {
-                if (err)
-                    res.send(err)
-                res.json(lineups);
-            });
+                res.send(err)
+            res.json(lineups);
         });
     });
+});
 
-    // ===================================================================
-    // =========================== Location ==============================
-    // ===================================================================
+// ===================================================================
+// =========================== Location ==============================
+// ===================================================================
 
-    app.get('/api/locations', function(req, res) {
-        mongoose.model('location').find(function(err, locations) {
-            res.send(locations)
-        })
+app.get('/api/locations', function(req, res) {
+    mongoose.model('location').find(function(err, locations) {
+        res.send(locations)
     })
+})
 
 
-    app.post('/api/locations', function(req, res) {
+app.post('/api/locations', function(req, res) {
 
-        mongoose.model('location').create({
-            street  : req.body.street,
-            city    : req.body.city,
-            state   : req.body.state,
-            zipcode : req.body.zipcode
-        }, function(err, location) {
+    mongoose.model('location').create({
+        street  : req.body.street,
+        city    : req.body.city,
+        state   : req.body.state,
+        zipcode : req.body.zipcode
+    }, function(err, location) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('location').find(function(err, locations) {
             if (err)
-                res.send(err);
-
-            mongoose.model('location').find(function(err, locations) {
-                if (err)
-                    res.send(err)
-                res.json(locations);
-            });
+                res.send(err)
+            res.json(locations);
         });
     });
+});
 
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
