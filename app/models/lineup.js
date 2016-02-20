@@ -7,5 +7,5 @@ var lineupSchema = new Schema({
   comment: String
 });
 
-mongoose.model('Lineup', lineupSchema);
+mongoose.model('lineup', lineupSchema);
 

@@ -21,7 +21,7 @@ var SongSchema = new Schema({
 	}
 })
 
-mongoose.model('Song', SongSchema);
+mongoose.model('song', SongSchema);
 
 //==============================================================
 // var mongoose = require('mongoose');

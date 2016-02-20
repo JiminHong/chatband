@@ -67,7 +67,7 @@ app.use(express.static(__dirname + '/public'));
     app.get('/api/songs', function(req, res) {
 
         // use mongoose to get all songs in the database
-        Song.find(function(err, songs) {
+        mongoose.model('song').find(function(err, songs) {
             if (err)
                 res.send(err)
             res.json(songs); 
@@ -78,7 +78,7 @@ app.use(express.static(__dirname + '/public'));
     app.post('/api/songs', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
-        Song.create({
+        mongoose.model('song').create({
             artist  : req.body.artist,
             title   : req.body.title,
             time    : req.body.time,
@@ -89,7 +89,7 @@ app.use(express.static(__dirname + '/public'));
                 res.send(err);
 
             // get and return all the songs after you create another
-            Song.find(function(err, songs) {
+            mongoose.model('song').find(function(err, songs) {
                 if (err)
                     res.send(err)
                 res.json(songs);
@@ -100,14 +100,14 @@ app.use(express.static(__dirname + '/public'));
 
     
     app.delete('/api/songs/:song_id', function(req, res) {
-        Song.remove({
+        mongoose.model('song').remove({
             _id : req.params.song_id
         }, function(err, song) {
             if (err)
                 res.send(err);
 
             // get and return all the songs after you create another
-            Song.find(function(err, songs) {
+            mongoose.model('song').find(function(err, songs) {
                 if (err)
                     res.send(err)
                 res.json(songs);
@@ -123,7 +123,7 @@ app.use(express.static(__dirname + '/public'));
     app.get('/api/lineups', function(req, res) {
 
         // use mongoose to get all lineups in the database
-        Lineup.find(function(err, lineups) {
+        mongoose.model('lineup').find(function(err, lineups) {
             if (err)
                 res.send(err)
             res.json(lineups); 
@@ -134,7 +134,7 @@ app.use(express.static(__dirname + '/public'));
     app.post('/api/lineups', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
-        Lineup.create({
+        mongoose.model('lineup').create({
             instrumentation  : req.body.instrumentation,
             name   : req.body.name,
             comment    : req.body.comment
@@ -143,7 +143,7 @@ app.use(express.static(__dirname + '/public'));
                 res.send(err);
 
             // get and return all the lineups after you create another
-            Lineup.find(function(err, lineups) {
+            mongoose.model('lineup').find(function(err, lineups) {
                 if (err)
                     res.send(err)
                 res.json(lineups);
@@ -154,14 +154,14 @@ app.use(express.static(__dirname + '/public'));
 
     
     app.delete('/api/lineups/:lineup_id', function(req, res) {
-        Lineup.remove({
+        mongoose.model('lineup').remove({
             _id : req.params.lineup_id
         }, function(err, song) {
             if (err)
                 res.send(err);
 
             // get and return all the lineups after you create another
-            Lineup.find(function(err, lineups) {
+            mongoose.model('lineup').find(function(err, lineups) {
                 if (err)
                     res.send(err)
                 res.json(lineups);
