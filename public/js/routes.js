@@ -78,37 +78,13 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 	// ======================================================== Adding a new gig
 
-	.when('/addSongs', {
-		templateUrl : 'views/addGigs/addSongs.html',
+	.when('/addGig', {
+		templateUrl : 'views/addGig.html',
 		controller 	: 'SongsCtrl', function($scope, $http){
 
 		}
 	})
-	.when('/addLineup', {
-		templateUrl : 'views/addGigs/addLineup.html',
-		controller 	: 'SongsCtrl', function($scope, $http){
-
-		}
-	})
-	.when('/addDatetime', {
-		templateUrl : 'views/addGigs/addDatetime.html',
-		controller 	: 'SongsCtrl', function($scope, $http){
-
-		}
-	})
-	.when('/addLocation', {
-		templateUrl : 'views/addGigs/addLocation.html',
-		controller 	: 'SongsCtrl', function($scope, $http){
-
-		}
-	})
-	.when('/addWardrobe', {
-		templateUrl : 'views/addGigs/addWardrobe.html',
-		controller 	: 'SongsCtrl', function($scope, $http){
-
-		}
-	})
-
+	
 })
 
 
