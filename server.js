@@ -19,19 +19,18 @@ fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
 
 
 // define model ==================================================
-//NOT WORKING
-// var Song = mongoose.model('Song', {
-//     artist  : String,
-//     title   : String,
-//     time    : String,
-//     bpm     : Number
-// });
+var Song = mongoose.model('Song', {
+    artist  : String,
+    title   : String,
+    time    : String,
+    bpm     : Number
+});
 
-// var Lineup = mongoose.model('Lineup', {
-//     instrumentation  : String,
-//     name   : String,
-//     comment    : String
-// });
+var Lineup = mongoose.model('Lineup', {
+    instrumentation  : String,
+    name   : String,
+    comment    : String
+});
 
 // configuration ===========================================
     
@@ -176,7 +175,7 @@ app.use(express.static(__dirname + '/public'));
     // =========================== Location ==============================
     // ===================================================================
 
-    app.get('/location', function(req, res) {
+    app.get('api/locations', function(req, res) {
         mongoose.model('location').find(function(err, locations) {
             res.send(locations)
         })
