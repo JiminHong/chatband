@@ -5,7 +5,6 @@ function ($scope, $location, $routeParams) {
     $scope.createChat = function(){
         console.log("this is createChat")
     }
-}
         
 }]);
 
