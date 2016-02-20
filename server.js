@@ -59,10 +59,10 @@ app.get('/api/chats', function(req, res) {
 app.post('/api/chats', function(req, res) {
 
     mongoose.model('chat').create({
-        newGroupName  : req.body.newGroupName,
-        newGroupAdmin   : req.body.newGroupAdmin,
-        newGroupMembers    : req.body.newGroupMembers,
-        newGroupGigs     : req.body.newGroupGigs
+        groupName  : req.body.groupName,
+        groupAdmin   : req.body.groupAdmin,
+        groupMembers    : req.body.groupMembers,
+        groupGigs     : req.body.groupGigs
     }, function(err, chat) {
         if (err)
             res.send(err);

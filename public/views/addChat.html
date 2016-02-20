@@ -1,10 +1,10 @@
 <div class="form-wrapper margin-top">
     <h2 class="mont-h2">Add a new chat</h2>
     <form method="get">
-        <input class="form wide" type="text" ng-model="newChat.newGroupName" ng-model-options="{ updateOn: 'blur' }" placeholder="newGroupName"/><br />
-        <input class="form wide"type="text" ng-model="newChat.newGroupAdmin" placeholder="newGroupAdmin"/><br />
-        <input class="form wide"type="text" ng-model="newChat.newGroupMembers" placeholder="newGroupMembers"/><br />
-        <input class="form wide"type="text" ng-model="newChat.newGroupGigs" placeholder="newGroupGigs"/><br />
+        <input class="form wide" type="text" ng-model="chats.newGroupName" ng-model-options="{ updateOn: 'blur' }" placeholder="newGroupName"/><br />
+        <input class="form wide"type="text" ng-model="chats.newGroupAdmin" placeholder="newGroupAdmin"/><br />
+        <input class="form wide"type="text" ng-model="chats.newGroupMembers" placeholder="newGroupMembers"/><br />
+        <input class="form wide"type="text" ng-model="chats.newGroupGigs" placeholder="newGroupGigs"/><br />
 
         <button type="submit" class="button btn-xl" ng-click="createChat()">create new chat</button>
     </form>
