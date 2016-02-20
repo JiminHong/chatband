@@ -19,22 +19,11 @@ var Song = mongoose.model('Song', {
     bpm     : Number
 });
 
-
-var Lineup = require('./app/models/lineup.js');
-
-//Test saving
-// var drummer = new Lineup({
-//     instrumentation : 'ins1',
-//     name            : 'name1',
-//     comment         : 'com1'
-// });
-
-// drummer.save(function(err) {
-//     if (err) throw err;
-
-//     console.log("added lineup successfully");
-// })
-
+var Lineup = mongoose.model('Lineup', {
+    instrumentation  : String,
+    name   : String,
+    comment    : String
+});
 
 // configuration ===========================================
     
@@ -66,7 +55,9 @@ app.use('/api', router);
 // routes ==================================================
 // require('./app/routes')(app); // configure our routes
 
-	// api ---------------------------------------------------------------------
+    // ===================================================================
+    // =============================== Songs =============================
+    // ===================================================================
     // get all songs
     app.get('/api/songs', function(req, res) {
 
@@ -120,44 +111,63 @@ app.use('/api', router);
     });
 
 
+    // ===================================================================
+    // ============================ Lineups ==============================
+    // ===================================================================
+    // get all lineups
+    app.get('/api/lineups', function(req, res) {
+
+        // use mongoose to get all lineups in the database
+        Lineup.find(function(err, lineups) {
+            if (err)
+                res.send(err)
+            res.json(lineups); 
+        });
+    });
+
+    // create todo and send back all lineups after creation
+    app.post('/api/lineups', function(req, res) {
+
+        // create a todo, information comes from AJAX request from Angular
+        Lineup.create({
+            instrumentation  : req.body.instrumentation,
+            name   : req.body.name,
+            comment    : req.body.comment
+        }, function(err, song) {
+            if (err)
+                res.send(err);
+
+            // get and return all the lineups after you create another
+            Lineup.find(function(err, lineups) {
+                if (err)
+                    res.send(err)
+                res.json(lineups);
+            });
+        });
+
+    });
+
+    
+    app.delete('/api/lineups/:lineup_id', function(req, res) {
+        Lineup.remove({
+            _id : req.params.lineup_id
+        }, function(err, song) {
+            if (err)
+                res.send(err);
+
+            // get and return all the lineups after you create another
+            Lineup.find(function(err, lineups) {
+                if (err)
+                    res.send(err)
+                res.json(lineups);
+            });
+        });
+    });
+
+
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
-
-
-var lineupRoute = router.route('./app/models/lineup');
-
-// Create endpoint /api/lineups for POSTS
-lineupRoute.post(function(req, res) {
-  // Create a new instance of the lineup model
-  var lineup = new Lineup();
-
-  // Set the lineup properties that came from the POST data
-  lineup.instrumentation = req.body.instrumentation;
-  lineup.name = req.body.name;
-  lineup.comment = req.body.comment;
-
-  // Save the lineup and check for errors
-  lineup.save(function(err) {
-    if (err)
-      res.send(err);
-
-    res.json({ message: 'lineup added to the locker!', data: lineup });
-  });
-});
-
-
-// Create endpoint /api/lineups for GET
-lineupRoute.get(function(req, res) {
-  // Use the Lineup model to find all lineup
-  Lineup.find(function(err, lineups) {
-    if (err)
-      res.send(err);
-
-    res.json(lineups);
-  });
-});
-
 
 // start app ===============================================
 // startup our app at http://localhost:8080
