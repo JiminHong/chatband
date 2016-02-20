@@ -44,7 +44,7 @@
         <div class="your-messages-wrapper" ng-show="data.donorUsername != 'Me'">
             
             <div class="section" ng-hide="data.donorUsername === 'Me'">
-                <img src="{[{data.profilePic}]}" class="message-profile-pic" alt="profile pic"/>
+                <img ng-src="{[{data.profilePic}]}" class="message-profile-pic" alt="profile pic"/>
                 <p class="donorUsername">{[{data.donorUsername}]}</p>
             </div>
             <div class="your-speech-bubble section float-left">
