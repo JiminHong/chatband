@@ -1,4 +1,4 @@
-myapp.controller('SongsCtrl', ["$scope", "$http", "$location", "$routeParams", 
+myapp.controller('NewGigCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
     $scope.goChat = function(){

@@ -78,9 +78,9 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 	// ======================================================== Adding a new gig
 
-	.when('/addGig', {
+	.when('/goAddGig', {
 		templateUrl : 'views/addGig.html',
-		controller 	: 'SongsCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 
 		}
 	})
