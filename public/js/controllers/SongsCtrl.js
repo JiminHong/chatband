@@ -69,6 +69,32 @@ function ($scope, $http, $location, $routeParams) {
             });
     };
 
+    // ===================================================================
+    // =========================== Location ==============================
+    // ===================================================================
+
+    $http.get('/api/locations')
+        .success(function(data) {
+            $scope.location = data;
+            console.log("Lineup : ",data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+
+    $scope.createLocation = function() {
+        $http.post('/api/locations', $scope.newGig)
+            .success(function(data) {
+                $scope.newGig = {}; 
+                $scope.location = data;
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+
+
         
             
 }]);
