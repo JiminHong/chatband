@@ -172,6 +172,15 @@ app.use(express.static(__dirname + '/public'));
         });
     });
 
+    // ===================================================================
+    // =========================== Location ==============================
+    // ===================================================================
+
+    app.get('/location', function(req, res) {
+        mongoose.model('location').find(function(err, locations) {
+            res.send(locations)
+        })
+    })
 
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
