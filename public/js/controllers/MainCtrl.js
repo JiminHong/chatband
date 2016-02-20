@@ -1,6 +1,6 @@
-myapp.controller('ChatCtrl', ["$scope", "$location", "$routeParams", 
+myapp.controller('MainCtrl', ["$scope", "$location", "$routeParams", 
 function ($scope, $location, $routeParams) {
-    console.log('ChatCtrl fired');
+    console.log('MainCtrl fired');
 
         $scope.currentPath = $location.path();
         console.log($location.path());
