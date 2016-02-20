@@ -35,8 +35,8 @@
 </div>
 <div class="form-wrapper margin-top">
     <h2 class="mont-h2">Moonstone music festival</h2>
-    <form ng-submit="addSong()" method="get">
-        <input class="form wide" type="text" ng-model="newGig.Instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation"/><br />
+    <form method="get">
+        <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation"/><br />
         <input class="form wide"type="text" ng-model="newGig.name" placeholder="Name"/><br />
         <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
         <input class="button btn-xl" type="submit" ng-click="createLineup()" value="Save" />

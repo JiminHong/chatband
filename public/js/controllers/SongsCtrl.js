@@ -13,7 +13,7 @@ function ($scope, $http, $location, $routeParams) {
     $http.get('/api/songs')
         .success(function(data) {
             $scope.songs = data;
-            console.log("here's the data",data);
+            console.log("Song : ",data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -46,10 +46,10 @@ function ($scope, $http, $location, $routeParams) {
 
 
     // when landing on the page, get all todos and show them
-    $http.get('/api/lineup')
+    $http.get('/api/lineups')
         .success(function(data) {
             $scope.lineup = data;
-            console.log("here's the data for lineup",data);
+            console.log("Lineup : ",data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -57,7 +57,7 @@ function ($scope, $http, $location, $routeParams) {
 
     // when submitting the add form, send the text to the node API
     $scope.createLineup = function() {
-        $http.post('/api/lineup', $scope.newGig)
+        $http.post('/api/lineups', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.lineup = data;
