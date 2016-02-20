@@ -1,5 +1,5 @@
-myapp.controller('ChatsCtrl', ["$scope", "http", "$location", "$routeParams", 
-function ($scope, $http, $location, $routeParams) {
+myapp.controller('ChatsCtrl', ["$scope", "$location", "$routeParams", 
+function ($scope, $location, $routeParams) {
     console.log('ChatCtrl fired');
 
         //Directs to the chat page
@@ -10,37 +10,7 @@ function ($scope, $http, $location, $routeParams) {
         $scope.addChat = function(){
             $location.path('/addChat');
         }
-        // ===================================================================
-        // ============================= addChat =============================
-        // ===================================================================
-        $http.get('/api/chats')
-            .success(function(data) {
-                $scope.chats = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-
-        $scope.createChat = function() {
-            $http.post('/api/chats', $scope.newChat)
-                .success(function(data) {
-                    $scope.newChat = {}; // clear the form so our user is ready to enter another
-                    $scope.chats = data;
-                })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
-        };
-
-        $scope.deleteSong = function(id) {
-            $http.delete('/api/chats/' + id)
-                .success(function(data) {
-                    $scope.chats = data;
-                })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
-        };
+        
 
 
 
