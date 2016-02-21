@@ -21,21 +21,20 @@
 
 <div class="form-wrapper margin-top">
     <h2 class="mont-h2">Date / Time</h2>
-    <form ng-submit="addSong()" method="get">
-        <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name"/><br />
-        <input class="form wide"type="date" ng-model="newGig.time" placeholder="Time"/><br />
-        <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="Time"/><br />
-        <input class="button btn-xl" type="submit" ng-click="update(newGig)" value="Save" />
+    <form method="get">
+        <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name"/><br />
+        <input class="form wide"type="date" ng-model="newGig.date" placeholder="date"/><br />
+        <input class="form wide"type="text" ng-model="newGig.time" placeholder="time"/><br />
+        <input class="button btn-xl" type="submit" ng-click="createDatetime()" value="Save" />
     </form>
 </div>
 
 <div class="form-wrapper margin-top">
     <h2 class="mont-h2">Location</h2>
     <form method="get">
-        <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Street"/><br />
-        <input class="form wide"type="text" ng-model="newGig.street" placeholder="City"/><br />
-        <input class="form wide"type="text" ng-model="newGig.city" placeholder="State"/><br />
-        <input class="form wide"type="text" ng-model="newGig.state" placeholder="Zipcode"/><br />
+        <input class="form wide"type="text" ng-model="newGig.street" placeholder="Street"/><br />
+        <input class="form wide"type="text" ng-model="newGig.city" placeholder="city"/><br />
+        <input class="form wide"type="text" ng-model="newGig.state" placeholder="state"/><br />
         <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode"/><br />
         <input class="button btn-xl" type="submit" ng-click="createLocation()" value="Save" />
     </form>

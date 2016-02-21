@@ -23,20 +23,3 @@ var SongSchema = new Schema({
 
 mongoose.model('song', SongSchema);
 
-//==============================================================
-// var mongoose = require('mongoose');
-// var Schema = mongoose.Schema;
-
-// var songSchema = new Schema({
-//   artist: String,
-//   title: String,
-//   time: String,
-//   bpm : Number
-// });
-
-// // the schema is useless so far
-// // we need to create a model using it
-// var SongTest = mongoose.model('SongTest', songSchema);
-
-// // make this available to our users in our Node applications
-// module.exports = SongTest;

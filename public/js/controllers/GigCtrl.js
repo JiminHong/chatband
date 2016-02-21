@@ -33,10 +33,25 @@ function ($scope, $http, $location, $NgMap) {
             console.log('Error: ' + data);
     });
 
+    $http.get('/api/datetimes')
+        .success(function(data) {
+            $scope.datetimes = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     $http.get('/api/locations')
         .success(function(data) {
             $scope.locations = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
+    $http.get('/api/wardrobes')
+        .success(function(data) {
+            $scope.wardrobes = data;
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -79,88 +94,88 @@ function ($scope, $http, $location, $NgMap) {
     
     // $scope.lineups = [
     // {
-    //     instrumentation : "Base Guitar",
-    //     firstName : "Gene",
-    //     lastName : "Simmons",
-    //     comment : ""
+    //     "instrumentation" : "Base Guitar",
+    //     "firstName" : "Gene",
+    //     "lastName" : "Simmons",
+    //     "comment" : ""
     // },
     // {
-    //     instrumentation : "Rhythm Guitar",
-    //     firstName : "Paul",
-    //     lastName : "Stanley",
-    //     comment : "Don't forget the gear"
+    //     "instrumentation" : "Rhythm Guitar",
+    //     "firstName" : "Paul",
+    //     "lastName" : "Stanley",
+    //     "comment" : "Don't forget the gear"
     // },
     // {
-    //     instrumentation : "Drum",
-    //     firstName : "Peter",
-    //     lastName : "Criss",
-    //     comment : "Return the gear after gig."
+    //     "instrumentation" : "Drum",
+    //     "firstName" : "Peter",
+    //     "lastName" : "Criss",
+    //     "comment" : "Return the gear after gig."
     // },
     // {
-    //     instrumentation : "Vocal",
-    //     firstName : "Matthew",
-    //     lastName : "Healy",
-    //     comment : ""
+    //     "instrumentation" : "Vocal",
+    //     "firstName" : "Matthew",
+    //     "lastName" : "Healy",
+    //     "comment" : ""
     // },
     // {
-    //     instrumentation : "Keyboard",
-    //     firstName : "Adam",
-    //     lastName : "Hann",
-    //     comment : ""
+    //     "instrumentation" : "Keyboard",
+    //     "firstName" : "Adam",
+    //     "lastName" : "Hann",
+    //     "comment" : ""
     // }
     // ];
 
-    $scope.datetimes = [
-    {
-        scheduleName: "Rehearsal",
-        day:"Friday",
-        month: "Jan",
-        date: 19,
-        time: "5:00PM"
-    },
-    {
-        scheduleName: "Call Time",
-        day:"Saturday",
-        month: "Jan",
-        date: 20,
-        time: "2:00PM"
-    },
-    {
-        scheduleName: "Set up Time",
-        day:"Saturday",
-        month: "Jan",
-        date: 20,
-        time: "3:30PM"
-    },
-    {
-        scheduleName: "Running Time",
-        duration: "1 hour"
-    },
-    {
-        scheduleName: "Break Time",
-        day:"Saturday",
-        month: "Jan",
-        date: 20,
-        time: "4:20PM"
-    }
-    ];
+    // $scope.datetimes = [
+    // {
+    //     scheduleName: "Rehearsal",
+    //     day:"Friday",
+    //     month: "Jan",
+    //     date: 19,
+    //     time: "5:00PM"
+    // },
+    // {
+    //     scheduleName: "Call Time",
+    //     day:"Saturday",
+    //     month: "Jan",
+    //     date: 20,
+    //     time: "2:00PM"
+    // },
+    // {
+    //     scheduleName: "Set up Time",
+    //     day:"Saturday",
+    //     month: "Jan",
+    //     date: 20,
+    //     time: "3:30PM"
+    // },
+    // {
+    //     scheduleName: "Running Time",
+    //     duration: "1 hour"
+    // },
+    // {
+    //     scheduleName: "Break Time",
+    //     day:"Saturday",
+    //     month: "Jan",
+    //     date: 20,
+    //     time: "4:20PM"
+    // }
+    // ];
 
-    $scope.locations = [
-    {
-        street: "420 California street",
-        city: "San Francisco",
-        state: "CA",
-        zipcode: 94108
-    }
-    ];
+    // $scope.locations = [
+    // {
+    //     street: "420 California street",
+    //     city: "San Francisco",
+    //     state: "CA",
+    //     zipcode: 94108
+    // }
+    // ];
 
-    $scope.wardrobes = [
-    {
-        wardrobe: "suit",
-        comment: "preferably black",
-        wardrobeImg : "../../img/wardrobe/black_suit.jpg"
-    }
-    ]
+    // $scope.wardrobes = [
+    // {
+    //     wardrobe: "suit",
+    //     "comment": "preferably black",
+    //     wardrobeImg : "../../img/wardrobe/black_suit.jpg"
+    // }
+    // ]
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 

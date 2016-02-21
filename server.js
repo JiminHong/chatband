@@ -192,7 +192,6 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
-
 // ===================================================================
 // ============================ Lineups ==============================
 // ===================================================================
@@ -240,6 +239,57 @@ app.delete('/api/lineups/:lineup_id', function(req, res) {
     });
 });
 
+
+
+// ===================================================================
+// =========================== Date.Time =============================
+// ===================================================================
+app.get('/api/datetimes', function(req, res) {
+
+    mongoose.model('datetime').find(function(err, datetimes) {
+        if (err)
+            res.send(err)
+        res.json(datetimes); 
+    });
+});
+
+app.post('/api/datetimes', function(req, res) {
+
+    mongoose.model('datetime').create({
+        artist  : req.body.artist,
+        title   : req.body.title,
+        time    : req.body.time,
+        bpm     : req.body.bpm,
+        done    : false
+    }, function(err, datetime) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('datetime').find(function(err, datetimes) {
+            if (err)
+                res.send(err)
+            res.json(datetimes);
+        });
+    });
+
+});
+
+
+app.delete('/api/datetimes/:datetime_id', function(req, res) {
+    mongoose.model('datetime').remove({
+        _id : req.params.datetime_id
+    }, function(err, datetime) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('datetime').find(function(err, datetimes) {
+            if (err)
+                res.send(err)
+            res.json(datetimes);
+        });
+    });
+});
+
 // ===================================================================
 // =========================== Location ==============================
 // ===================================================================
@@ -273,6 +323,41 @@ app.post('/api/locations', function(req, res) {
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
+
+
+// ===================================================================
+// =========================== Wardrobe ==============================
+// ===================================================================
+
+app.get('/api/wardrobes', function(req, res) {
+    mongoose.model('wardrobe').find(function(err, wardrobes) {
+        res.send(wardrobes)
+    })
+})
+
+
+app.post('/api/wardrobes', function(req, res) {
+
+    mongoose.model('wardrobe').create({
+        wardrobe    : req.body.wardrobe,
+        comment     : req.body.comment,
+        wardrobeImg : req.body.wardrobeImg
+    }, function(err, wardrobe) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('wardrobe').find(function(err, wardrobes) {
+            if (err)
+                res.send(err)
+            res.json(wardrobes);
+        });
+    });
+});
+
+router.get('*', function(req, res) {
+  res.json({ message: 'You are running router.get!' });
+});
+
 
 // start app ===============================================
 // startup our app at http://localhost:8080

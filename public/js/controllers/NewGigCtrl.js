@@ -62,6 +62,37 @@ function ($scope, $http, $location, $routeParams) {
                 console.log('Error: ' + data);
             });
     };
+    // ===================================================================
+    // =========================== Datetimes =============================
+    // ===================================================================
+    $http.get('/api/datetimes')
+        .success(function(data) {
+            $scope.datetimes = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+
+    $scope.createDatetime = function() {
+        $http.post('/api/datetimes', $scope.newGig)
+            .success(function(data) {
+                $scope.newGig = {}; // clear the form so our user is ready to enter another
+                $scope.datetimes = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+
+    $scope.deleteDatetime = function(id) {
+        $http.delete('/api/datetimes/' + id)
+            .success(function(data) {
+                $scope.datetimes = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
 
     // ===================================================================
     // =========================== Location ==============================
@@ -86,8 +117,37 @@ function ($scope, $http, $location, $routeParams) {
             });
     };
 
+    // ===================================================================
+    // =========================== Datetimes =============================
+    // ===================================================================
+    $http.get('/api/wardrobes')
+        .success(function(data) {
+            $scope.wardrobes = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
 
-        
+    $scope.createWardrobe = function() {
+        $http.post('/api/wardrobes', $scope.newGig)
+            .success(function(data) {
+                $scope.newGig = {}; // clear the form so our user is ready to enter another
+                $scope.wardrobes = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+
+    $scope.deleteWardrobe = function(id) {
+        $http.delete('/api/wardrobes/' + id)
+            .success(function(data) {
+                $scope.wardrobes = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
             
 }]);
 
