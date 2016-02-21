@@ -53,25 +53,25 @@ myapp.config(function ($routeProvider, $locationProvider){
 	})
 	.when('/lineup', {
 		templateUrl : 'views/gigTabs/lineup.html',
-		controller 	: 'GigCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/datetime', {
 		templateUrl : 'views/gigTabs/datetime.html',
-		controller 	: 'GigCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/location', {
 		templateUrl : 'views/gigTabs/location.html',
-		controller 	: 'GigCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/wardrobe', {
 		templateUrl : 'views/gigTabs/wardrobe.html',
-		controller 	: 'GigCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 
 		}
 	})
