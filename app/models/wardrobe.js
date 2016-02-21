@@ -10,7 +10,8 @@ var WardrobeSchema = new Schema({
 		type: String
 	},
 	wardrobeImg:{
-		type: String
+		type: String,
+		default: "../../img/wardrobe/black_suit.jpg"
 	}
 })
 
