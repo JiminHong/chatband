@@ -58,7 +58,6 @@ app.get('/api/groups', function(req, res) {
 });
 
 app.post('/api/groups', function(req, res) {
-
     mongoose.model('group').create({
         groupName        : req.body.groupName,
         lastMessage      : req.body.lastMessage,
@@ -93,6 +92,20 @@ app.delete('/api/groups/:group_id', function(req, res) {
     });
 });
 
+app.update('/api/groups/:group_id', function(req, res) {
+    mongoose.model('group').update({
+        _id : req.params.group_id
+    }, function(err, group) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('group').find(function(err, groups) {
+            if (err)
+                res.send(err)
+            res.json(groups);
+        });
+    });
+});
 
 // ===================================================================
 // =============================== Chats =============================
