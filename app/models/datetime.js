@@ -4,11 +4,10 @@ var mongoose = require('mongoose'),
 
 var DatetimeSchema = new Schema({
 	scheduleName:{
-		type: String,
+		type: String
 	},
 	date:{
-		type: Date,
-		default: 'Unknown Title'
+		type: Date
 	},
 	time:{
 		type: String,
