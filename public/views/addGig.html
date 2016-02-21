@@ -42,10 +42,10 @@
 
 <div class="form-wrapper margin-top">
     <h2 class="mont-h2">Wardrobe</h2>
-    <form ng-submit="addSong()" method="get">
+    <form method="get">
         <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe"/><br />
  
         <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="Comment"/><br />
-        <input class="button btn-xl" type="submit" ng-click="update(newGig)" value="Save" />
+        <input class="button btn-xl" type="submit" ng-click="createWardrobe()" value="Save" />
     </form>
 </div>
