@@ -24,7 +24,7 @@
           <div class="col span_1_of_5">
             <img ng-src="{[{data.groupPic}]}" class="clip-circle profile-img float-right">
           </div>
-          <div class="col span_4_of_5">
+          <div class="col span_4_of_5" ng-click="goChat()">
             <span class="float-right top-right-span"><p class="light-brown">{[{data.lastMessageTime}]}</p></span>
             <h2>{[{data.groupName}]}</h2>
             <p>{[{ data.lastMessage }]}</p>
