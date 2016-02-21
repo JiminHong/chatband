@@ -47,31 +47,31 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 	.when('/songs', {
 		templateUrl : 'views/gigTabs/songs.html',
-		controller 	: 'NewGigCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/lineup', {
 		templateUrl : 'views/gigTabs/lineup.html',
-		controller 	: 'NewGigCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/datetime', {
 		templateUrl : 'views/gigTabs/datetime.html',
-		controller 	: 'NewGigCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/location', {
 		templateUrl : 'views/gigTabs/location.html',
-		controller 	: 'NewGigCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/wardrobe', {
 		templateUrl : 'views/gigTabs/wardrobe.html',
-		controller 	: 'NewGigCtrl', function($scope, $http){
+		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})

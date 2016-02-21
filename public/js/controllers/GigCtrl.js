@@ -1,5 +1,5 @@
-myapp.controller('GigCtrl', ["$scope","$location", "NgMap",
-function ($scope, $location, $NgMap) {
+myapp.controller('GigCtrl', ["$scope","$http", "$location", "NgMap",
+function ($scope, $http, $location, $NgMap) {
 
 
 
@@ -14,9 +14,35 @@ function ($scope, $location, $NgMap) {
         console.log('shapes', map.shapes);
       });
 
-
     console.log($scope.address);
     $scope.gigName = "moonstone music festival 2016";
+
+    $http.get('/api/songs')
+        .success(function(data) {
+            $scope.songs = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
+    $http.get('/api/lineups')
+        .success(function(data) {
+            $scope.lineups = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
+
+    $http.get('/api/locations')
+        .success(function(data) {
+            $scope.locations = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
+
     // $scope.songs = [
     // {
     //     artist: 'PINK',
