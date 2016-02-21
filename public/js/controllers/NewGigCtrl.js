@@ -1,6 +1,7 @@
 myapp.controller('NewGigCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
+    console.log("NewGigCtrl fired");
     $scope.goChat = function(){
             $location.path('/chat');
     }
