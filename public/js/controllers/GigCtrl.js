@@ -17,72 +17,72 @@ function ($scope, $location, $NgMap) {
 
     console.log($scope.address);
     $scope.gigName = "moonstone music festival 2016";
-    $scope.songs = [
-    {
-        artist: 'PINK',
-        title: 'Calling Dr.Love',
-        time: '3:40',
-        bpm: '128'
-    },
-    {
-        artist: 'Disclosure',
-        title: 'Magnets',
-        time: '5:05',
-        bpm: '132'
-    },
-    {
-        artist: 'Led Zeppelin',
-        title: 'Stairway to heaven',
-        time: '8:02',
-        bpm: '66'
-    },
-    {
-        artist: 'Aerosmit',
-        title: 'Toys in the Attic',
-        time: '3:30',
-        bpm: '127'
-    },
-    {
-        artist: 'Cecil Gant',
-        title: "We're gonna rock",
-        time: '5:05',
-        bpm: '102'
-    }
-    ]
+    // $scope.songs = [
+    // {
+    //     artist: 'PINK',
+    //     title: 'Calling Dr.Love',
+    //     time: '3:40',
+    //     bpm: '128'
+    // },
+    // {
+    //     artist: 'Disclosure',
+    //     title: 'Magnets',
+    //     time: '5:05',
+    //     bpm: '132'
+    // },
+    // {
+    //     artist: 'Led Zeppelin',
+    //     title: 'Stairway to heaven',
+    //     time: '8:02',
+    //     bpm: '66'
+    // },
+    // {
+    //     artist: 'Aerosmit',
+    //     title: 'Toys in the Attic',
+    //     time: '3:30',
+    //     bpm: '127'
+    // },
+    // {
+    //     artist: 'Cecil Gant',
+    //     title: "We're gonna rock",
+    //     time: '5:05',
+    //     bpm: '102'
+    // }
+    // ]
 
     
-    $scope.lineups = [
-    {
-        instrumentation : "Base Guitar",
-        firstName : "Gene",
-        lastName : "Simmons",
-        comment : ""
-    },
-    {
-        instrumentation : "Rhythm Guitar",
-        firstName : "Paul",
-        lastName : "Stanley",
-        comment : "Don't forget the gear"
-    },
-    {
-        instrumentation : "Drum",
-        firstName : "Peter",
-        lastName : "Criss",
-        comment : "Return the gear after gig."
-    },
-    {
-        instrumentation : "Vocal",
-        firstName : "Matthew",
-        lastName : "Healy",
-        comment : ""
-    },
-    {
-        instrumentation : "Keyboard",
-        firstName : "Adam",
-        lastName : "Hann",
-        comment : ""
-    }
-    ];
+    // $scope.lineups = [
+    // {
+    //     instrumentation : "Base Guitar",
+    //     firstName : "Gene",
+    //     lastName : "Simmons",
+    //     comment : ""
+    // },
+    // {
+    //     instrumentation : "Rhythm Guitar",
+    //     firstName : "Paul",
+    //     lastName : "Stanley",
+    //     comment : "Don't forget the gear"
+    // },
+    // {
+    //     instrumentation : "Drum",
+    //     firstName : "Peter",
+    //     lastName : "Criss",
+    //     comment : "Return the gear after gig."
+    // },
+    // {
+    //     instrumentation : "Vocal",
+    //     firstName : "Matthew",
+    //     lastName : "Healy",
+    //     comment : ""
+    // },
+    // {
+    //     instrumentation : "Keyboard",
+    //     firstName : "Adam",
+    //     lastName : "Hann",
+    //     comment : ""
+    // }
+    // ];
 
     $scope.datetimes = [
     {
