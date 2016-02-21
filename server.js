@@ -256,11 +256,9 @@ app.get('/api/datetimes', function(req, res) {
 app.post('/api/datetimes', function(req, res) {
 
     mongoose.model('datetime').create({
-        artist  : req.body.artist,
-        title   : req.body.title,
-        time    : req.body.time,
-        bpm     : req.body.bpm,
-        done    : false
+        scheduleName  : req.body.scheduleName,
+        date   : req.body.date,
+        time    : req.body.time
     }, function(err, datetime) {
         if (err)
             res.send(err);
