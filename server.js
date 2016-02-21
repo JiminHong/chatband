@@ -92,21 +92,6 @@ app.delete('/api/groups/:group_id', function(req, res) {
     });
 });
 
-app.update('/api/groups/:group_id', function(req, res) {
-    mongoose.model('group').update({
-        _id : req.params.group_id
-    }, function(err, group) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('group').find(function(err, groups) {
-            if (err)
-                res.send(err)
-            res.json(groups);
-        });
-    });
-});
-
 // ===================================================================
 // =============================== Chats =============================
 // ===================================================================
@@ -204,6 +189,22 @@ app.delete('/api/songs/:song_id', function(req, res) {
         });
     });
 });
+
+app.put('/api/songs/:song_id', function(req, res) {
+    mongoose.model('song').findById(req.params.song_id, function(err, song) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('song').artist = req.body.artist;
+
+        mongoose.model('song').save(function(err) {
+            if (err)
+                res.send(err);
+            res.json(songs);
+        });
+    });
+});
+
 
 // ===================================================================
 // ============================ Lineups ==============================
