@@ -30,6 +30,10 @@ function ($scope, $http, $location, $routeParams) {
             });
     };
 
+    $scope.updateSong = function(){
+        console.log("updateSong function fires");
+    }
+
     $scope.deleteSong = function(id) {
         $http.delete('/api/songs/' + id)
             .success(function(data) {

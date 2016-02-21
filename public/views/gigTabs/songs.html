@@ -5,12 +5,12 @@
 	<h2 class="chap-h2 uplowcase margin-left">Songs</h2>
     <span>
         <a>
-        <button class="button btn-sm" href="/updateSong/{[{song.$id}]}">Update</button>
+        <button class="button btn-sm" href="/goUpdateSong/{[{song._id}]}">Update</button>
         </a>
     </span>
 	<div ng-repeat="song in songs" class="song-list-wrapper">
 		<div class="section group">
-			<h3 class="gig-title-h3">Artist & Title</h3><span>{[{song.$id}]}</span>
+			<h3 class="gig-title-h3">Artist & Title</h3><span>{[{song._id}]}</span>
 			<p class="gig-data-p">{[{song.artist}]} - {[{song.title}]}</p>
 		</div>
 		<div class="section group">
