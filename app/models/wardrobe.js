@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 var WardrobeSchema = new Schema({
-	wardrobe:{
+	wardrobeConcept:{
 		type: String
 	},
 	comment:{

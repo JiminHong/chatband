@@ -337,7 +337,7 @@ app.get('/api/wardrobes', function(req, res) {
 app.post('/api/wardrobes', function(req, res) {
 
     mongoose.model('wardrobe').create({
-        wardrobe    : req.body.wardrobe,
+        wardrobeConcept    : req.body.wardrobeConcept,
         comment     : req.body.comment,
         wardrobeImg : req.body.wardrobeImg
     }, function(err, wardrobe) {
