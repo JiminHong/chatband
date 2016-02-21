@@ -61,7 +61,7 @@ myapp.config(function ($routeProvider, $locationProvider){
 	.when('/updateSong', {
 		//its gonna load this page and run this controller.
 		templateUrl : 'views/gigTabs/songs.html',
-		controller 	: 'GigCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 			
 		}
 	})
