@@ -7,12 +7,12 @@
 	<div ng-repeat="datetime in datetimes" class="song-list-wrapper">
 		<div class="section group">
 				<h3 class="gig-title-h3">{[{datetime.scheduleName}]}</h3>
-				<p class="gig-data-p" ng-show="datetime.day != none">
-					{[{datetime.date}]}
-				<p>
-				<p class="gig-data-p" ng-show="datetime.duration != none">
-					{[{datetime.time}]}
-				<p>
+				<p class="gig-data-p" >
+                   {[{datetime.date}]}
+                <p>
+                <p class="gig-data-p" >
+                   {[{datetime.time}]}
+                <p>
 		</div>
 		<hr>
 	</div>
