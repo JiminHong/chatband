@@ -10,7 +10,17 @@ function ($scope, $location, $routeParams) {
         $scope.goAddChat = function(){
             $location.path('/addChat');
         }
-        
+
+        $scope.deleteGroup = function(id) {
+            $http.delete('/api/groups/' + id)
+                .success(function(data) {
+                    $scope.groups = data;
+                    console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+        };
 
         $scope.groups = [
         {

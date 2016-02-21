@@ -44,6 +44,56 @@ app.use(express.static(__dirname + '/public'));
 // app.use('/api', router);
 
 // routes ==================================================
+
+// ===================================================================
+// ============================== Groups =============================
+// ===================================================================
+app.get('/api/groups', function(req, res) {
+
+    mongoose.model('group').find(function(err, groups) {
+        if (err)
+            res.send(err)
+        res.json(groups); 
+    });
+});
+
+app.post('/api/groups', function(req, res) {
+
+    mongoose.model('group').create({
+        groupName        : req.body.groupName,
+        lastMessage      : req.body.lastMessage,
+        lastMessageTime  : req.body.lastMessageTime,
+        groupPic         : req.body.groupPic
+    }, function(err, group) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('group').find(function(err, groups) {
+            if (err)
+                res.send(err)
+            res.json(groups);
+        });
+    });
+
+});
+
+
+app.delete('/api/groups/:group_id', function(req, res) {
+    mongoose.model('group').remove({
+        _id : req.params.group_id
+    }, function(err, group) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('group').find(function(err, groups) {
+            if (err)
+                res.send(err)
+            res.json(groups);
+        });
+    });
+});
+
+
 // ===================================================================
 // =============================== Chats =============================
 // ===================================================================

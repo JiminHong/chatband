@@ -17,7 +17,7 @@
     <div>
         <snap-drawers snap-id="'content'">
           <snap-drawer="left">
-          <div class="snap-drawer-button"><p>Delete</p></div>
+          <div class="snap-drawer-button" ng-click="deleteGroup(data._id)"><p>Delete</p></div>
           </snap-drawer>
         </snap-drawers>
         <snap-content ng-click="goChat()" snap-opt-disable="'right'">
