@@ -8,8 +8,8 @@ function ($scope, $location, $routeParams) {
         $location.path('/chat');
     } 
 
-    $scope.goAddGigs = function(){
-    	$location.path('/addSongs');
+    $scope.goAddGig = function(){
+    	$location.path('/goAddGig');
     }
 
     $scope.goSongs = function(){
