@@ -33,6 +33,14 @@ function ($scope, $http, $location, $routeParams) {
     $scope.updateSong = function(){
         // $http.put
         console.log("updateSong function fires");
+        $http.put('/api/songs', $scope.updateGig)
+            .success(function(data) {
+                $scope.updateGig = {}; // clear the form so our user is ready to enter another
+                $scope.songs = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
     }
 
     $scope.deleteSong = function(id) {
