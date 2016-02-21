@@ -80,7 +80,7 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 	.when('/goAddGig', {
 		templateUrl : 'views/addGig.html',
-		controller 	: 'AddChatCtrl', function($scope, $http){
+		controller 	: 'NewGigCtrl', function($scope, $http){
 
 		}
 	})
