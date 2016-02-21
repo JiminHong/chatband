@@ -31,6 +31,7 @@ function ($scope, $http, $location, $routeParams) {
     };
 
     $scope.updateSong = function(){
+        // $http.put
         console.log("updateSong function fires");
     }
 
