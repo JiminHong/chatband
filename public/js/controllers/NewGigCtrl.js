@@ -37,7 +37,7 @@ function ($scope, $http, $location, $routeParams) {
 
     $scope.updateSong = function(updateGig){
         console.log("updateSong function fires","ID :: ",$routeParams);
-        $http.put('/api/songs/' + $scope.updateGig)
+        $http.put('/api/songs/' + $routeParams)
             .success(function(response, status, headers, config){
                 $scope.updateGig = response.updateGig;
                 })
