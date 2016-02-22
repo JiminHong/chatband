@@ -31,11 +31,19 @@ function ($scope, $http, $location, $routeParams) {
     };
 
     $scope.updateSong = function(){
+
+        var updateSong = $.param({
+            artist: $scope.artist,
+            title: $scope.title,
+            time: $scope.time,
+            bpm: $scope.bpm
+        })
         // $http.put
-        console.log("updateSong function fires");
-        $http.put('/api/songs', $scope.updateGig)
+        console.log("updateSong function fires", newSong);
+        $http.put('/api/songs' + updateSong)
             .success(function(data) {
                 console.log("$scope.updateGig" , $scope.updateGig);
+                $scope.ServerResponse = updateSong;
                 // $scope.updateGig = {}; // clear the form so our user is ready to enter another
                 // $scope.songs = data;
             })
