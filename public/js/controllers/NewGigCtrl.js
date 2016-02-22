@@ -32,18 +32,13 @@ function ($scope, $http, $location, $routeParams) {
 
     $scope.updateSong = function(){
 
-        var updateSong = $.param({
-            artist: $scope.artist,
-            title: $scope.title,
-            time: $scope.time,
-            bpm: $scope.bpm
-        })
+
         // $http.put
-        console.log("updateSong function fires", newSong);
-        $http.put('/api/songs' + updateSong)
+        console.log("updateSong function fires", $scope.updateGig);
+        $http.put('/api/songs' + $scope.updateGig)
             .success(function(data) {
                 console.log("$scope.updateGig" , $scope.updateGig);
-                $scope.ServerResponse = updateSong;
+                $scope.ServerResponse = $scope.updateGig;
                 // $scope.updateGig = {}; // clear the form so our user is ready to enter another
                 // $scope.songs = data;
             })
