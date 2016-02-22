@@ -190,7 +190,7 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
-app.put('/api/songs/:song_id/edit', function(req, res){
+app.put('/songs/:song_id', function(req, res){
     var artist = req.body.artist;
     var title = req.body.title;
     var time = req.body.time;
@@ -198,10 +198,10 @@ app.put('/api/songs/:song_id/edit', function(req, res){
 
     mongoose.model('song').findById(req.songId, function(err, song){
         song.update({
-            name: name,
-            title: title, 
-            time: time,
-            bpm: bpm
+            name: req.body.artist,
+            title: req.body.title, 
+            time: req.body.time,
+            bpm: req.body.bpm
         }, function(err, songId){
             if (err){
             res.send("There was a problem updating the information to the database: " + err);
@@ -219,7 +219,6 @@ app.put('/api/songs/:song_id/edit', function(req, res){
         })
     })
 })
-
 
 // ===================================================================
 // ============================ Lineups ==============================
