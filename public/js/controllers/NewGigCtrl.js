@@ -32,8 +32,7 @@ function ($scope, $http, $location, $routeParams) {
     };
 
     $scope.updateSong = function(updateGig){
-        console.log("updateSong function fires", $scope.updateGig);
-        console.log("$routeParams.songId", $routeParams.songId)
+        console.log("updateSong function fires", $scope.songs, "ID :: ",$scope.song._id);
         $http.put('/api/songs' + $scope.updateGig)
             .success(function(response, status, headers, config){
                 $scope.updateGig = response.updateGig;
