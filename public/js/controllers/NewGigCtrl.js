@@ -36,14 +36,23 @@ function ($scope, $http, $location, $routeParams) {
     }
 
     $scope.updateSong = function(updateGig){
-        console.log("updateSong function fires","ID :: ",$routeParams.songId);
-        $http.put('api/songs/' + $routeParams.songId, $scope.updateGig)
-            .success(function(response, status, headers, config){
-                $scope.updateGig = response.updateGig;
-                })
-            .error(function(response, status, headers, config){
-                $scope.error_message = response.error_message;
-                });
+
+        $http.post('/api/songs', $scope.updateGig)
+            .success(function(data) {
+                $scope.updateGig = {}; // clear the form so our user is ready to enter another
+                $scope.songs = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+        // console.log("updateSong function fires","ID :: ",$routeParams.songId);
+        // $http.put('api/songs/' + $routeParams.songId, $scope.updateGig)
+        //     .success(function(response, status, headers, config){
+        //         $scope.updateGig = response.updateGig;
+        //         })
+        //     .error(function(response, status, headers, config){
+        //         $scope.error_message = response.error_message;
+        //         });
     };
 
     $scope.deleteSong = function(id) {
