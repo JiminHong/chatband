@@ -32,19 +32,18 @@ function ($scope, $http, $location, $routeParams) {
 
     $scope.updateSong = function(){
 
-
         // $http.put
         console.log("updateSong function fires", $scope.updateGig);
-        $http.put('/api/songs' + $scope.updateGig)
-            .success(function(data) {
-                console.log("$scope.updateGig" , $scope.updateGig);
-                $scope.ServerResponse = $scope.updateGig;
-                // $scope.updateGig = {}; // clear the form so our user is ready to enter another
-                // $scope.songs = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
+        // $http.put('/api/songs' + $scope.updateGig)
+        //     .success(function(data) {
+        //         console.log("$scope.updateGig" , $scope.updateGig);
+        //         $scope.ServerResponse = $scope.updateGig;
+        //         // $scope.updateGig = {}; // clear the form so our user is ready to enter another
+        //         // $scope.songs = data;
+        //     })
+        //     .error(function(data) {
+        //         console.log('Error: ' + data);
+        //     });
     }
 
     $scope.deleteSong = function(id) {
