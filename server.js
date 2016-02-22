@@ -190,7 +190,7 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
-app.put('/api/songs', function(req, res) {
+app.put('/api/songs/:song_id', function(req, res) {
     mongoose.model('song').findById(req.params.song_id, function(err, song) {
         if (err)
             res.send(err);
@@ -207,7 +207,6 @@ app.put('/api/songs', function(req, res) {
         });
     });
 });
-
 
 // ===================================================================
 // ============================ Lineups ==============================
