@@ -51,7 +51,7 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	.when('/goUpdateSong/:songId', {
+	.when('/song/:songId/edit', {
 		//its gonna load this page and run this controller.
 		templateUrl : 'views/updateSongForm.html',
 		controller 	: 'NewGigCtrl', function($scope, $http){

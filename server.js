@@ -190,6 +190,34 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
+app.put('/api/songs/:song_id/edit', function(req, res){
+    var artist = req.body.artist;
+    var title = req.body.title;
+    var time = req.body.time;
+    var bpm = req.body.bpm;
+
+    mongoose.model('song').findById(req.songId, function(err, song){
+        song.update({
+            name: name,
+            title: title, 
+            time: time,
+            bpm: bpm
+        } function(err, songId){
+            res.send("There was a problem updating the information to the database: " + err);
+        }
+        else{
+            res.format({
+                html: function(){
+                    res.redirect("/songs/"+ song_id);
+                },
+                json: function(){
+                    res.json(song);
+                }
+            })
+        })
+    })
+})
+
 
 // ===================================================================
 // ============================ Lineups ==============================
