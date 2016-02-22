@@ -37,7 +37,7 @@ function ($scope, $http, $location, $routeParams) {
 
     $scope.updateSong = function(updateGig){
 
-        $http.post('/api/songs', $scope.updateGig)
+        $http.put('/api/songs', $scope.updateGig)
             .success(function(data) {
                 $scope.updateGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
