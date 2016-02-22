@@ -192,7 +192,7 @@ app.delete('/api/songs/:song_id', function(req, res) {
 
 app.put('/api/songs/:song_id', function(req, res) {
 
-    var query = {"song_id", req.params.songId};
+    var query = {song_id: req.params.songId};
     var update = {artist:req.body.artist};
     var options = {new: true};
     mongoose.model('song').findOneAndUpdate(query, update, options}, function(err, song) {
