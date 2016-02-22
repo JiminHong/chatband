@@ -193,6 +193,8 @@ app.delete('/api/songs/:song_id', function(req, res) {
 app.put('/api/songs/:song_id', function(req, res) {
     mongoose.model('song').findByIdAndUpdate({
         _id : req.params.song_id
+
+        console.log("this is song id in server.js", req.params.song_id);
     }, function(err, song) {
         if (err)
             res.send(err);
