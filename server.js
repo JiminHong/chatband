@@ -191,33 +191,38 @@ app.delete('/api/songs/:song_id', function(req, res) {
 });
 
 app.put('api/songs/:song_id', function(req, res){
-    var artist = req.body.artist;
-    var title = req.body.title;
-    var time = req.body.time;
-    var bpm = req.body.bpm;
 
-    mongoose.model('song').findById(req.songId, function(err, song){
-        song.update({
-            name: req.body.artist,
-            title: req.body.title, 
-            time: req.body.time,
-            bpm: req.body.bpm
-        }, function(err, songId){
-            if (err){
-            res.send("There was a problem updating the information to the database: " + err);
-        }
-        else{
-            res.format({
-                html: function(){
-                    res.redirect("/songs/"+ song_id);
-                },
-                json: function(){
-                    res.json(song);
-                }
-            })
-            }
-        })
-    })
+    var query = { artist: 'Lorde'},
+        update = {artist: 'new one'}
+        options = { multi: true };
+    mongoose.model('song').update(query, update, options)
+    // var artist = req.body.artist;
+    // var title = req.body.title;
+    // var time = req.body.time;
+    // var bpm = req.body.bpm;
+
+    // mongoose.model('song').findById(req.songId, function(err, song){
+    //     song.update({
+    //         name: req.body.artist,
+    //         title: req.body.title, 
+    //         time: req.body.time,
+    //         bpm: req.body.bpm
+    //     }, function(err, songId){
+    //         if (err){
+    //         res.send("There was a problem updating the information to the database: " + err);
+    //     }
+    //     else{
+    //         res.format({
+    //             html: function(){
+    //                 res.redirect("/songs/"+ song_id);
+    //             },
+    //             json: function(){
+    //                 res.json(song);
+    //             }
+    //         })
+    //         }
+    //     })
+    // })
 })
 
 // ===================================================================
