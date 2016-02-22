@@ -191,7 +191,7 @@ app.delete('/api/songs/:song_id', function(req, res) {
 });
 
 app.put('/api/songs/:song_id', function(req, res) {
-    mongoose.model('song').findByIdAndUpdate(req.params.song_id, {
+    mongoose.model('song').findByIdAndUpdate({ artist: Lorde}, {
         artist: 'new updates'
     }, function(err, song) {
         if (err)
