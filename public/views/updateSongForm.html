@@ -1,10 +1,11 @@
 <div class="form-wrapper margin-top">
     <h2 class="mont-h2">Update Songs</h2>
-    <form method="get">
+    <form ng-submit="updateSong()">
         <input class="form wide" type="text" ng-model="updateGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Artist"/><br />
         <input class="form wide"type="text" ng-model="updateGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title"/><br />
         <input class="form wide"type="text" ng-model="updateGig.time" placeholder="Time"/><br />
         <input class="form wide"type="text" ng-model="updateGig.bpm" placeholder="BPM"/><br />
-        <button type="submit" class="button btn-xl" ng-click="updateSong()">Update Song</button>
+        <input type="submit" val="update data" />
+        {[{ ServerResponse }]}
     </form>
 </div>
