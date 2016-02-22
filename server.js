@@ -195,7 +195,7 @@ app.put('/api/songs/:song_id', function(req, res) {
     var query = {"song_id": req.params.songId};
     var update = {artist:req.body.artist};
     var options = {new: true};
-    mongoose.model('song').findOneAndUpdate(query, update, options}, function(err, song) {
+    mongoose.model('song').findOneAndUpdate(query, update, options, function(err, song) {
         res.render (
                 'song',
                 {title: 'song api' + song.name, song:song}
