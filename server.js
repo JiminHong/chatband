@@ -203,7 +203,7 @@ app.put('/api/songs/:song_id/edit', function(req, res){
             time: time,
             bpm: bpm
         }, function(err, songId){
-            if (err)
+            if (err){
             res.send("There was a problem updating the information to the database: " + err);
         }
         else{
@@ -215,7 +215,7 @@ app.put('/api/songs/:song_id/edit', function(req, res){
                     res.json(song);
                 }
             })
-            
+            }
         })
     })
 })
