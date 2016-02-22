@@ -19,6 +19,7 @@ function ($scope, $http, $location, $routeParams) {
             console.log('Error: ' + data);
         });
 
+
     $scope.createSong = function() {
         $http.post('/api/songs', $scope.newGig)
             .success(function(data) {
