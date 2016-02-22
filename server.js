@@ -191,8 +191,8 @@ app.delete('/api/songs/:song_id', function(req, res) {
 });
 
 app.put('/api/songs/:song_id', function(req, res) {
-    mongoose.model('song').findByIdAndUpdate({
-        _id : req.params.song_id
+    mongoose.model('song').findByIdAndUpdate(req.params.song_id{
+        artist: 'new updates'
     }, function(err, song) {
         if (err)
             res.send(err);
