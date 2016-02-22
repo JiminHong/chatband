@@ -192,12 +192,7 @@ app.delete('/api/songs/:song_id', function(req, res) {
 
 app.put('api/songs/:song_id', function(req, res){
 
-    // var query = { artist: 'Lorde'},
-    //     update = {artist: 'new one'}
-    //     options = { multi: true };
-    // mongoose.model('song').update(query, update, options);
-
-    var id="56c898564978391100985fd8",
+    var id="56c898564978391100985fd8";
 
     mongoose.model('song').findByIdAndUpdate(id, { $set: { artist: 'new one' }}, function (err, song) {
       if (err) return handleError(err);
