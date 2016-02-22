@@ -197,11 +197,13 @@ app.put('/api/songs/:song_id', function(req, res) {
         if (err)
             res.send(err);
 
-        mongoose.model('song').find(function(err, songs) {
-            if (err)
-                res.send(err)
-            res.json(songs);
-        });
+        console.log("song",song);
+
+        // mongoose.model('song').find(function(err, songs) {
+        //     if (err)
+        //         res.send(err)
+        //     res.json(songs);
+        // });
     });
 });
 
