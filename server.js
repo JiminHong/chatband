@@ -190,12 +190,15 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
-app.put('/api/songs/:song_id', function(req, res) {
+app.put('/api/songs', function(req, res) {
     mongoose.model('song').findById(req.params.song_id, function(err, song) {
         if (err)
             res.send(err);
 
         mongoose.model('song').artist = req.body.artist;
+        mongoose.model('song').title = req.body.title;
+        mongoose.model('song').time = req.body.time;
+        mongoose.model('song').bpm = req.body.bpm;
 
         mongoose.model('song').save(function(err) {
             if (err)
