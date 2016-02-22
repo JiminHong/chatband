@@ -190,7 +190,7 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
-app.put('/songs/:song_id', function(req, res){
+app.put('api/songs/:song_id', function(req, res){
     var artist = req.body.artist;
     var title = req.body.title;
     var time = req.body.time;
