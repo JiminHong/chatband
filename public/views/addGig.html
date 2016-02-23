@@ -13,7 +13,8 @@
     <h2 class="gig-name-h2">Lineup</h2>
     <form method="get">
         <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation"/><br />
-        <input class="form wide"type="text" ng-model="newGig.name" placeholder="Name"/><br />
+        <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="Name"/><br />
+        <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Name"/><br />
         <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
         <input class="button btn-xl dark-green-yellow-bg" type="submit" ng-click="createLineup()" value="Create Lineup" />
     </form>
