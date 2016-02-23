@@ -17,7 +17,7 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	.when('#/chat', {
+	.when('/chat', {
 		//its gonna load this page and run this controller.
 		templateUrl : 'views/chat.html',
 		controller 	: 'ChatCtrl', function($scope, $http){
