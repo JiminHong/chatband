@@ -388,7 +388,7 @@ app.post('/api/wardrobes', function(req, res) {
 });
 
 app.get('*', function(req, res){
-    res.render('public/index');
+    res.render('index');
 })
 
 router.get('*', function(req, res) {
