@@ -106,7 +106,7 @@ function ($scope, $http, $location, $NgMap) {
         console.log($scope.lineup._id, $scope.lineup);
         $http.post('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
              .success(function(data){
-                refresh();
+                $scope.lineup = data;
              })
     } 
     
