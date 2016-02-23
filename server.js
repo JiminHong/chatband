@@ -96,7 +96,7 @@ app.delete('/api/groups/:group_id', function(req, res) {
 // =============================== Chats =============================
 // ===================================================================
 app.get('/api/chats', function(req, res) {
-    res.send('/api/chats');
+
     mongoose.model('chat').find(function(err, chats) {
         if (err)
             res.send(err)
@@ -145,7 +145,7 @@ app.delete('/api/chats/:chat_id', function(req, res) {
 // =============================== Songs =============================
 // ===================================================================
 app.get('/api/songs', function(req, res) {
-    res.send('/api/songs');
+
     mongoose.model('song').find(function(err, songs) {
         if (err)
             res.send(err)
@@ -190,11 +190,21 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
+app.put('api/songs/:song_id', function(req, res){
+
+    var id="56c898564978391100985fd8";
+
+    mongoose.model('song').findByIdAndUpdate(id, { $set: { artist: 'new one' }}, function (err, song) {
+      if (err) return handleError(err);
+      res.send(song);
+    });
+})
+
 // ===================================================================
 // ============================ Lineups ==============================
 // ===================================================================
 app.get('/api/lineups', function(req, res) {
-    res.send('/api/lineups');
+
     mongoose.model('lineup').find(function(err, lineups) {
         if (err)
             res.send(err)
@@ -222,7 +232,6 @@ app.post('/api/lineups', function(req, res) {
 });
 
 app.get('/api/lineups/:lineup_id', function(req, res){
-    res.send('/api/lineups/:lineup_id');
     _id : req.params.lineup_id;
     mongoose.model('lineup').findOne({_id:req.params.lineup_id}, function(err, lineups){
         res.json(lineups);
@@ -271,7 +280,7 @@ app.delete('/api/lineups/:lineup_id', function(req, res) {
 // =========================== Date.Time =============================
 // ===================================================================
 app.get('/api/datetimes', function(req, res) {
-    res.send('/api/datetimes');
+
     mongoose.model('datetime').find(function(err, datetimes) {
         if (err)
             res.send(err)
@@ -319,7 +328,6 @@ app.delete('/api/datetimes/:datetime_id', function(req, res) {
 // ===================================================================
 
 app.get('/api/locations', function(req, res) {
-    res.send('/api/locations');
     mongoose.model('location').find(function(err, locations) {
         res.send(locations)
     })
@@ -355,7 +363,6 @@ router.get('*', function(req, res) {
 // ===================================================================
 
 app.get('/api/wardrobes', function(req, res) {
-    res.send('/api/wardrobes');
     mongoose.model('wardrobe').find(function(err, wardrobes) {
         res.send(wardrobes)
     })
