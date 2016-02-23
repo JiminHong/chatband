@@ -264,18 +264,23 @@ app.get('/api/lineups/:lineup_id', function(req, res){
     _id : req.params.lineup_id;
     mongoose.model('lineup').findOne({_id:req.params.lineup_id}, function(err, lineups){
         res.json(lineups);
-    })
-})
+    });
+});
 
 app.put('/api/lineups/:lineup_id', function(req, res){
-    id: '56ca066ce4b0fee2d9c43798';
-    doc: {$set : {instrumentation: 'yayaya'}}
-    mongoose.model('lineup').findOneAndUpdate({id, doc}, function(err, lineups){
+    mongoose.model('lineup').findOneAndUpdate(
+        {_id: req.params.lineup_id},
+        {$set: {instrumentation: req.body.instrumentation}},
+        {udpset: true}
+        , function(err, newLineups){
         if(err){
             console.log("something wrong");
+        }else{
+            console.log(newLineups);
+            res.send(204);
         }
-    })
-})
+    });
+});
 
 app.delete('/api/lineups/:lineup_id', function(req, res) {
     mongoose.model('lineup').remove({
