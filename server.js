@@ -232,7 +232,7 @@ app.put('api/songs/:song_id', function(req, res){
 // ===================================================================
 // ============================ Lineups ==============================
 // ===================================================================
-app.get('/api/lineups', function(req, res) {
+app.get('#/api/lineups', function(req, res) {
 
     mongoose.model('lineup').find(function(err, lineups) {
         if (err)
@@ -241,7 +241,7 @@ app.get('/api/lineups', function(req, res) {
     });
 });
 
-app.post('/api/lineups', function(req, res) {
+app.post('#/api/lineups', function(req, res) {
 
     mongoose.model('lineup').create({
         instrumentation  : req.body.instrumentation,
@@ -260,14 +260,14 @@ app.post('/api/lineups', function(req, res) {
 
 });
 
-app.get('/api/lineups/:lineup_id', function(req, res){
+app.get('#/api/lineups/:lineup_id', function(req, res){
     _id : req.params.lineup_id;
     mongoose.model('lineup').findOne({_id:req.params.lineup_id}, function(err, lineups){
         res.json(lineups);
     });
 });
 
-app.post('/api/lineups/:lineup_id', function(req, res){
+app.post('#/api/lineups/:lineup_id', function(req, res){
     mongoose.model('lineup').findOneAndUpdate(
         {_id: req.params.lineup_id},
         {$set: {
@@ -288,7 +288,7 @@ app.post('/api/lineups/:lineup_id', function(req, res){
     });
 });
 
-app.delete('/api/lineups/:lineup_id', function(req, res) {
+app.delete('#/api/lineups/:lineup_id', function(req, res) {
     mongoose.model('lineup').remove({
         _id : req.params.lineup_id
     }, function(err, song) {

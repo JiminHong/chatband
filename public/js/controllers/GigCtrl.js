@@ -87,16 +87,16 @@ function ($scope, $http, $location, $NgMap) {
     }
 
     $scope.goGig = function(){
-        $location.path('/songs');
+        $location.path('#/songs');
     }
 
     //Directs to the chat page
     $scope.goChat = function(){
-        $location.path('/chat');
+        $location.path('#/chat');
     }
 
     $scope.editLineup = function(id){
-        $http.get('/api/lineups/' + id)
+        $http.get('#/api/lineups/' + id)
              .success(function(data){
               $scope.lineup = data;
         })
@@ -104,7 +104,7 @@ function ($scope, $http, $location, $NgMap) {
 
     $scope.updateLineup = function(){
         console.log($scope.lineup._id, $scope.lineup);
-        $http.post('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
+        $http.post('#/api/lineups/'+ $scope.lineup._id, $scope.lineup)
              .success(function(data){
                 $scope.lineup = data;
              })
