@@ -95,15 +95,20 @@ function ($scope, $http, $location, $NgMap) {
         $location.path('/chat');
     }
 
-    $scope.editLineup = function(_id){
-        console.log("lineup _id in GigCtrl : ", _id);
-        $http.get('/api/lineups/' + _id).success(function(response){
-            $scope.lineup = response;
+    $scope.editLineup = function(id){
+        console.log("lineup _id in GigCtrl : ", id);
+        $http.get('/api/lineups/' + id)
+             .success(function(data){
+              $scope.lineup = data;
         })
     } 
 
     $scope.updateLineup = function(){
         console.log("updateLineup id !! : ",$scope.lineup._id);
+        $http.put('api/lineups/'+ $scope.lineup._id, $scope.lineup)
+             .success(function(data){
+                refresh();
+             })
     } 
     
     

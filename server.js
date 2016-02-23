@@ -262,11 +262,28 @@ app.post('/api/lineups', function(req, res) {
 
 app.get('/api/lineups/:lineup_id', function(req, res){
     _id : req.params.lineup_id;
-    mongoose.model('lineup').findOne({_id:_id}, function(err, lineups){
+    mongoose.model('lineup').findOne({_id:req.params.lineup_id}, function(err, lineups){
         res.json(lineups);
     })
 })
 
+app.put('/api/lineups/:lineup_id', function(req, res){
+    _id : req.params.lineup_id;
+    // findOneAndUpdate([query], [doc], [options], [callback])
+    mongoose.model('lineup').findOneAndUpdate({
+        query: {_id: req.params.lineup_id},
+        doc: {$set : {
+            instrumentation : req.body.instrumentation,
+            firstName       : req.body.firstName,
+            lastName        : req.body.lastName,
+            comment         : req.body.comment
+        }},
+        new: true
+    }, function(err, lineups){
+        if (err) res.send(err)
+        res.json(lineups);
+    })
+})
 
 app.delete('/api/lineups/:lineup_id', function(req, res) {
     mongoose.model('lineup').remove({
