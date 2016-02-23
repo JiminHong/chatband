@@ -270,7 +270,7 @@ app.get('/api/lineups/:lineup_id', function(req, res){
 app.post('/api/lineups/:lineup_id', function(req, res){
     mongoose.model('lineup').findOneAndUpdate(
         {_id: req.params.lineup_id},
-        {$set: {instrumentation: req.body.instrumentation}},
+        {$set: {instrumentation: req.body.instrumentation, firstName: req.body.firstName}},
         {udpset: true}
         , function(err, newLineups){
         if(err){
