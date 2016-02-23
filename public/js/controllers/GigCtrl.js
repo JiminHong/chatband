@@ -93,7 +93,18 @@ function ($scope, $http, $location, $NgMap) {
     //Directs to the chat page
     $scope.goChat = function(){
         $location.path('/chat');
-    }  
+    }
+
+    $scope.editLineup = function(_id){
+        console.log("lineup _id in GigCtrl : ", _id);
+        $http.get('/lineup/' + _id).success(function(response){
+            $scope.lineup = response;
+        })
+    } 
+
+    $scope.updateLineup = function(){
+        console.log("updateLineup id !! : ",$scope.lineup._id);
+    } 
     
     
 }]);

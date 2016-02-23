@@ -31,40 +31,6 @@ function ($scope, $http, $location, $routeParams) {
             });
     };
 
-    $scope.goUpdateSong = function(id){
-        $location.path('/goUpdateSong/'+id);
-    }
-
-    $scope.updateSong = function(updateGig){
-        console.log($scope.updateGig)
-        $http.put('/api/songs', $scope.updateGig)
-            .success(function(data) {
-                $scope.updateGig = {}; // clear the form so our user is ready to enter another
-                $scope.songs = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-        // console.log("updateSong function fires","ID :: ",$routeParams.songId);
-        // $http.put('api/songs/' + $routeParams.songId, $scope.updateGig)
-        //     .success(function(response, status, headers, config){
-        //         $scope.updateGig = response.updateGig;
-        //         })
-        //     .error(function(response, status, headers, config){
-        //         $scope.error_message = response.error_message;
-        //         });
-    };
-
-    $scope.deleteSong = function(id) {
-        $http.delete('/api/songs/' + id)
-            .success(function(data) {
-                $scope.songs = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-
     // ===================================================================
     // ============================ Lineups ==============================
     // ===================================================================
