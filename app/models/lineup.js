@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var lineupSchema = new Schema({
   instrumentation: String,
-  name: String,
+  firstName: String,
+  lastName: String,
   comment: String
 });
 
