@@ -11,26 +11,26 @@ var methodOverride = require('method-override');
 var fs             = require('fs');
 app.use('/api', require('./app/modules/api.js'))
 //load all files in models dir
-fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
-  if (~filename.indexOf('.js')) require(__dirname + '/app/models/' + filename)
-});
+// fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
+//   if (~filename.indexOf('.js')) require(__dirname + '/app/models/' + filename)
+// });
 
-// configuration ===========================================
+// // configuration ===========================================
     
-// config files
-var db = require('./config/db');
+// // config files
+// var db = require('./config/db');
 
-var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
+// var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
+//                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
   
-mongoose.connect(db.url, options);
-var conn = mongoose.connection;             
+// mongoose.connect(db.url, options);
+// var conn = mongoose.connection;             
  
-conn.on('error', console.error.bind(console, 'connection error:'));  
+// conn.on('error', console.error.bind(console, 'connection error:'));  
  
-conn.once('open', function() {
-  // Wait for the database connection to establish, then start the app.                         
-});
+// conn.once('open', function() {
+//   // Wait for the database connection to establish, then start the app.                         
+// });
 
 
 // set our port
