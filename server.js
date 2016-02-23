@@ -387,8 +387,11 @@ app.post('/api/wardrobes', function(req, res) {
     });
 });
 
-router.get('*', function(req, res) {
+app.get('*', function(req, res){
     res.render('public/index');
+})
+
+router.get('*', function(req, res) {
     res.json({ message: 'You are running router.get!' });
 });
 

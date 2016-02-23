@@ -5,9 +5,9 @@ function ($scope, $http, $location, $NgMap) {
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
     $NgMap.getMap().then(function(map) {
-        console.log(map.getCenter());
+        // console.log(map.getCenter());
         // console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
+        // console.log('shapes', map.shapes);
       });
 
     $scope.gigName = "moonstone music festival 2016";
