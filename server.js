@@ -391,6 +391,10 @@ router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
 
+app.get('*', function(req, res) {
+    res.sendfile('./public/index.html'); // load our public/index.html file
+});
+
 
 // start app ===============================================
 // startup our app at http://localhost:8080
