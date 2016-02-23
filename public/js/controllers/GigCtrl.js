@@ -105,7 +105,7 @@ function ($scope, $http, $location, $NgMap) {
 
     $scope.updateLineup = function(){
         console.log("updateLineup() id !! : ",$scope.lineup._id);
-        $http.put('api/lineups/'+ $scope.lineup._id, $scope.lineup)
+        $http.put('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
              .success(function(data){
                 refresh();
              })

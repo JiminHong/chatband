@@ -280,8 +280,9 @@ app.put('/api/lineups/:lineup_id', function(req, res){
         }},
         new: true
     }, function(err, lineups){
-        if (err) res.send(err)
-        res.json(lineups);
+        if(err){
+            console.log("something wrong");
+        }
     })
 })
 
