@@ -6,11 +6,10 @@ function ($scope, $http, $location, $NgMap) {
 
     $NgMap.getMap().then(function(map) {
         console.log(map.getCenter());
-        console.log('markers', map.markers);
+        // console.log('markers', map.markers);
         console.log('shapes', map.shapes);
       });
 
-    console.log($scope.address);
     $scope.gigName = "moonstone music festival 2016";
 
     $http.get('/api/songs')
@@ -56,9 +55,6 @@ function ($scope, $http, $location, $NgMap) {
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
-    console.log('GigsCtrl fired');
-
-    console.log("LOCATION !!",$location.path());
 
     
     if($location.path() === "/songs"){
