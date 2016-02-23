@@ -4,7 +4,7 @@ function ($scope, $http, $location, $routeParams) {
 
         //Directs to the chat page
         $scope.goChat = function(){
-            $location.path('/chat');
+            $location.path('#/chat');
         } 
 
         $scope.goAddChat = function(){
