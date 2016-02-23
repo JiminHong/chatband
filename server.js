@@ -4,7 +4,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 var express        = require('express');
 var app            = express();
 var router         = express.Router();
-var mongoose	   = require('mongoose');
+var mongoose       = require('mongoose');
 var morgan         = require('morgan');  
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
@@ -401,7 +401,6 @@ console.log('Magic happens on port ' + port);
 
 // expose app           
 exports = module.exports = app;  
-
 
 
 
