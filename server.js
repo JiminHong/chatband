@@ -260,6 +260,13 @@ app.post('/api/lineups', function(req, res) {
 
 });
 
+app.get('/api/lineups/:lineup_id', function(req, res){
+    _id : req.params.lineup_id;
+    mongoose.model('lineup').findOne({_id:_id}, function(err, lineups){
+        res.json(lineups);
+    })
+})
+
 
 app.delete('/api/lineups/:lineup_id', function(req, res) {
     mongoose.model('lineup').remove({

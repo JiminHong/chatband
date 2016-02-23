@@ -97,7 +97,7 @@ function ($scope, $http, $location, $NgMap) {
 
     $scope.editLineup = function(_id){
         console.log("lineup _id in GigCtrl : ", _id);
-        $http.get('/lineup/' + _id).success(function(response){
+        $http.get('/api/lineups/' + _id).success(function(response){
             $scope.lineup = response;
         })
     } 
