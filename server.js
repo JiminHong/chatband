@@ -270,6 +270,7 @@ app.get('/api/lineups/:lineup_id', function(req, res){
 app.put('/api/lineups/:lineup_id', function(req, res){
     _id : req.params.lineup_id;
     // findOneAndUpdate([query], [doc], [options], [callback])
+    console.log("id in server.js app.put :: ",_id);
     mongoose.model('lineup').findOneAndUpdate({
         query: {_id: req.params.lineup_id},
         doc: {$set : {

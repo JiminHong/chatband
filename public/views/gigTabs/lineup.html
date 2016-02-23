@@ -5,16 +5,14 @@
 
     <div class="form-wrapper margin-top">
         <h2 class="gig-name-h2">Lineup</h2>
-        <form method="get">
             <input class="form wide" type="text" ng-model="lineup.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation"/><br />
             <input class="form wide"type="text" ng-model="lineup.firstName" placeholder="Name"/><br />
             <input class="form wide"type="text" ng-model="lineup.lastName" placeholder="Name"/><br />
             <input class="form wide"type="text" ng-model="lineup.comment" placeholder="Comment"/><br />
-            <input class="button btn-xl dark-green-yellow-bg" type="submit" ng-click="updateLineup()" value="updateLineup" />
-        </form>
+            <button class="btn btn-info" ng-click="updateLineup()">Update</button>
     </div>
 
-                
+
 	<div ng-repeat="lineup in lineups" class="song-list-wrapper">
 		<div class="section group">
 			<div class="col span_3_of_5">

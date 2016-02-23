@@ -96,7 +96,6 @@ function ($scope, $http, $location, $NgMap) {
     }
 
     $scope.editLineup = function(id){
-        console.log("lineup _id in GigCtrl : ", id);
         $http.get('/api/lineups/' + id)
              .success(function(data){
               $scope.lineup = data;
@@ -104,7 +103,6 @@ function ($scope, $http, $location, $NgMap) {
     } 
 
     $scope.updateLineup = function(){
-        console.log("updateLineup() id !! : ",$scope.lineup._id);
         $http.put('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
              .success(function(data){
                 refresh();
