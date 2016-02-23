@@ -33,14 +33,6 @@ function ($scope, $http, $location, $NgMap) {
             console.log('Error: ' + data);
     });
 
-    $http.put('/api/lineups')
-        .success(function(data) {
-            $scope.lineups = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
-
     $http.get('/api/datetimes')
         .success(function(data) {
             $scope.datetimes = data;
@@ -112,7 +104,7 @@ function ($scope, $http, $location, $NgMap) {
 
     $scope.updateLineup = function(){
         console.log($scope.lineup._id, $scope.lineup);
-        $http.put('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
+        $http.post('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
              .success(function(data){
                 refresh();
              })

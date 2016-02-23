@@ -267,7 +267,7 @@ app.get('/api/lineups/:lineup_id', function(req, res){
     });
 });
 
-app.put('/api/lineups/:lineup_id', function(req, res){
+app.post('/api/lineups/:lineup_id', function(req, res){
     mongoose.model('lineup').findOneAndUpdate(
         {_id: req.params.lineup_id},
         {$set: {instrumentation: req.body.instrumentation}},
