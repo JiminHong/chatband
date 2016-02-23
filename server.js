@@ -278,11 +278,11 @@ app.post('/api/lineups/:lineup_id', function(req, res){
             }
         },
         {udpset: true}
-        , function(err, newLineups){
+        , function(err, lineups){
         if(err){
             console.log("something wrong");
         }else{
-            console.log(newLineups);
+            console.log(lineups);
             res.send(204);
         }
     });
