@@ -11,14 +11,12 @@ myapp.config(function ($routeProvider, $locationProvider){
 	$locationProvider.html5Mode(true);
 	$routeProvider
 	.when('/', {
-		//its gonna load this page and run this controller.
 		templateUrl : 'views/chats.html',
 		controller 	: 'ChatsCtrl', function($scope, $http){
 
 		}
 	})
 	.when('/chat', {
-		//its gonna load this page and run this controller.
 		templateUrl : 'views/chat.html',
 		controller 	: 'ChatCtrl', function($scope, $http){
 

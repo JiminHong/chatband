@@ -96,7 +96,7 @@ app.delete('/api/groups/:group_id', function(req, res) {
 // =============================== Chats =============================
 // ===================================================================
 app.get('/api/chats', function(req, res) {
-
+    res.send('/api/chats');
     mongoose.model('chat').find(function(err, chats) {
         if (err)
             res.send(err)
@@ -145,7 +145,6 @@ app.delete('/api/chats/:chat_id', function(req, res) {
 // =============================== Songs =============================
 // ===================================================================
 app.get('/api/songs', function(req, res) {
-
     mongoose.model('song').find(function(err, songs) {
         if (err)
             res.send(err)
@@ -387,9 +386,9 @@ app.post('/api/wardrobes', function(req, res) {
     });
 });
 
-app.get('*', function(req, res){
-    res.render('index');
-})
+app.route('/*').get(function(req, res) { 
+    return res.sendFile(path.join(config.root, 'index.html')); 
+});
 
 router.get('*', function(req, res) {
     res.json({ message: 'You are running router.get!' });
