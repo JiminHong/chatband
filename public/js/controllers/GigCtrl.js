@@ -2,10 +2,6 @@ myapp.controller('GigCtrl', ["$scope","$http", "$location", "NgMap",
 function ($scope, $http, $location, $NgMap) {
 
 
-
-// myapp.controller('GigCtrl', ["$scope","$location",
-// function ($scope, $location) {   
-
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
     $NgMap.getMap().then(function(map) {
