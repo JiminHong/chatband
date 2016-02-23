@@ -9,7 +9,7 @@ var morgan         = require('morgan');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var fs             = require('fs');
-
+var modules        = require('/app/modules/api.js');
 
 //load all files in models dir
 fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
@@ -45,52 +45,7 @@ app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
 
-// ===================================================================
-// ============================== Groups =============================
-// ===================================================================
-app.get('/api/groups', function(req, res) {
 
-    mongoose.model('group').find(function(err, groups) {
-        if (err)
-            res.send(err)
-        res.json(groups); 
-    });
-});
-
-app.post('/api/groups', function(req, res) {
-    mongoose.model('group').create({
-        groupName        : req.body.groupName,
-        lastMessage      : req.body.lastMessage,
-        lastMessageTime  : req.body.lastMessageTime,
-        groupPic         : req.body.groupPic
-    }, function(err, group) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('group').find(function(err, groups) {
-            if (err)
-                res.send(err)
-            res.json(groups);
-        });
-    });
-
-});
-
-
-app.delete('/api/groups/:group_id', function(req, res) {
-    mongoose.model('group').remove({
-        _id : req.params.group_id
-    }, function(err, group) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('group').find(function(err, groups) {
-            if (err)
-                res.send(err)
-            res.json(groups);
-        });
-    });
-});
 
 // ===================================================================
 // =============================== Chats =============================
