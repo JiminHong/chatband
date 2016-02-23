@@ -6,10 +6,11 @@ var morgan         = require('morgan');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var fs             = require('fs');
+
 // ===================================================================
 // ============================== Groups =============================
 // ===================================================================
-app.get('/api/groups', function(req, res) {
+app.get('/groups', function(req, res) {
 
     mongoose.model('group').find(function(err, groups) {
         if (err)
@@ -18,7 +19,7 @@ app.get('/api/groups', function(req, res) {
     });
 });
 
-app.post('/api/groups', function(req, res) {
+app.post('/groups', function(req, res) {
     mongoose.model('group').create({
         groupName        : req.body.groupName,
         lastMessage      : req.body.lastMessage,
@@ -38,7 +39,7 @@ app.post('/api/groups', function(req, res) {
 });
 
 
-app.delete('/api/groups/:group_id', function(req, res) {
+app.delete('/groups/:group_id', function(req, res) {
     mongoose.model('group').remove({
         _id : req.params.group_id
     }, function(err, group) {

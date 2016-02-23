@@ -9,8 +9,8 @@ var morgan         = require('morgan');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var fs             = require('fs');
-var modules        = require('./app/modules/api.js');
-
+var modules        = require('./app/modules/api');
+app.use('/api', modules);
 //load all files in models dir
 fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/app/models/' + filename)

@@ -22,12 +22,6 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
-	.when('/chats', {
-		templateUrl : 'views/chats.html',
-		controller 	: 'ChatsCtrl', function($scope, $http){
-
-		}
-	})
 	.when('/addChat', {
 		templateUrl : 'views/addChat.html',
 		controller 	: 'AddChatCtrl', function($scope, $http){
