@@ -8,8 +8,8 @@ var methodOverride = require('method-override');
 var fs             = require('fs');
 
 
-fs.readdirSync(__dirname + '/app/models').forEach(function(filename) {
-  if (~filename.indexOf('.js')) require(__dirname + '/app/models/' + filename)
+fs.readdirSync(__dirname + '../models').forEach(function(filename) {
+  if (~filename.indexOf('.js')) require(__dirname + '../models/' + filename)
 });
 
 // configuration ===========================================
