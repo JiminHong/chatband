@@ -11,7 +11,7 @@
             <input class="form wide"type="text" ng-model="newGig.songDuration" placeholder="Song duration"/><br />
             <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
             <button type="submit" class="button btn-xl dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown">Add {[{newGig.title}]}</p></button>
-            <button type="submit" class="button " ng-click="songPanelBody = !songPanelBody"><p class="light-brown">Done adding songs</p></button>
+            <button type="submit" class="button " ng-click="songPanelBody = !songPanelBody">
         </form>
     </div>
 </div>
@@ -41,8 +41,8 @@
     <div class="panel-body" ng-show="datetimePanelBody">
         <form method="get">
             <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name"/><br />
-            <input class="form wide"type="date" ng-model="newGig.date" placeholder="date"/><br />
-            <input class="form wide"type="text" ng-model="newGig.time" placeholder="time"/><br />
+            <input class="form wide" type="date" ng-model="newGig.date" placeholder="date"/><br />
+            <input class="form wide" type="time" ng-model="newGig.time" placeholder="time"/><br />
             <input class="button btn-xl dark-green-yellow-bg" type="submit" ng-click="createDatetime()" value="Create Date/Time" />
         </form>
     </div>
