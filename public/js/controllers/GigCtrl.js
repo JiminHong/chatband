@@ -1,5 +1,5 @@
-myapp.controller('GigCtrl', ["$scope","$http", "$location", "NgMap",
-function ($scope, $http, $location, $NgMap) {
+myapp.controller('GigCtrl', ["$scope", "$http", "route", "$location", "NgMap",
+function ($scope, $http, $route, $location, $NgMap) {
 
 
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
@@ -100,7 +100,7 @@ function ($scope, $http, $location, $NgMap) {
                 $scope.lineup = data;
              })
              .finally(function(){
-                console.log("Hello, I am finally.")
+                $route.reload();
              })
     } 
     
