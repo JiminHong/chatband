@@ -1,4 +1,4 @@
-myapp.controller('GigCtrl', ["$scope", "$http", "route", "$location", "NgMap",
+myapp.controller('GigCtrl', ["$scope", "$http", "$route", "$location", "NgMap",
 function ($scope, $http, $route, $location, $NgMap) {
 
 
