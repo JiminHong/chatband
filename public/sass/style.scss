@@ -440,7 +440,15 @@ input[type=text], textarea {
     border: 1px solid $white-orange;
   };
 }
- 
+
+input[type=date]{
+    -webkit-appearance:none 
+}
+
+input[type=time]{
+    -webkit-appearance:none 
+}
+
 .wide {
     display:block; 
     width:100%;

@@ -281,12 +281,13 @@ textarea {
   /* 1 */
   margin: 0;
   /* 2 */
+  -webkit-appearance: none;
 }
 
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-/* line 277, ../sass/partials/_normalize.scss */
+/* line 278, ../sass/partials/_normalize.scss */
 button {
   overflow: visible;
 }
@@ -297,7 +298,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 288, ../sass/partials/_normalize.scss */
+/* line 289, ../sass/partials/_normalize.scss */
 button,
 select {
   text-transform: none;
@@ -310,7 +311,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 301, ../sass/partials/_normalize.scss */
+/* line 302, ../sass/partials/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -324,7 +325,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 313, ../sass/partials/_normalize.scss */
+/* line 314, ../sass/partials/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -333,7 +334,7 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 322, ../sass/partials/_normalize.scss */
+/* line 323, ../sass/partials/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -343,7 +344,7 @@ input::-moz-focus-inner {
 /**
  * Restore focus style in Firefox 4+ (unset by a rule above)
  */
-/* line 332, ../sass/partials/_normalize.scss */
+/* line 333, ../sass/partials/_normalize.scss */
 button:-moz-focusring,
 input:-moz-focusring {
   outline: 1px dotted ButtonText;
@@ -353,9 +354,10 @@ input:-moz-focusring {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 342, ../sass/partials/_normalize.scss */
+/* line 343, ../sass/partials/_normalize.scss */
 input {
   line-height: normal;
+  -webkit-appearance: none;
 }
 
 /**
@@ -365,7 +367,7 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 354, ../sass/partials/_normalize.scss */
+/* line 356, ../sass/partials/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -379,7 +381,7 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 366, ../sass/partials/_normalize.scss */
+/* line 368, ../sass/partials/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -388,7 +390,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /**
  * Address `appearance` set to `searchfield` in Safari and Chrome.
  */
-/* line 375, ../sass/partials/_normalize.scss */
+/* line 377, ../sass/partials/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
 }
@@ -398,7 +400,7 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 385, ../sass/partials/_normalize.scss */
+/* line 387, ../sass/partials/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -407,7 +409,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 394, ../sass/partials/_normalize.scss */
+/* line 396, ../sass/partials/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -418,7 +420,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 405, ../sass/partials/_normalize.scss */
+/* line 407, ../sass/partials/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -429,7 +431,7 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 414, ../sass/partials/_normalize.scss */
+/* line 416, ../sass/partials/_normalize.scss */
 textarea {
   overflow: auto;
 }
@@ -438,12 +440,12 @@ textarea {
  * Restore font weight (unset by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 423, ../sass/partials/_normalize.scss */
+/* line 425, ../sass/partials/_normalize.scss */
 optgroup {
   font-weight: bold;
 }
 
-/* line 427, ../sass/partials/_normalize.scss */
+/* line 429, ../sass/partials/_normalize.scss */
 ul li {
   list-style-type: none;
 }
