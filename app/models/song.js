@@ -11,7 +11,7 @@ var SongSchema = new Schema({
 		type: String,
 		default: 'Unknown Title'
 	},
-	time:{
+	songDuration:{
 		type: String,
 		default: ''
 	},

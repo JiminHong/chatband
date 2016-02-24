@@ -1,10 +1,15 @@
 myapp.controller('NewGigCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
-    console.log("NewGigCtrl fired");
     $scope.goChat = function(){
-            $location.path('/chat');
+        $location.path('/chat');
     }
+
+    $scope.songPanelBody     = false;
+    $scope.lineupPanelBody   = false;
+    $scope.datetimePanelBody = false;
+    $scope.locationPanelBody = false;
+    $scope.wardrobePanelBody = false;
 
     $scope.newGig = {};
 

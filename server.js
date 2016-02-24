@@ -158,7 +158,7 @@ app.post('/api/songs', function(req, res) {
     mongoose.model('song').create({
         artist  : req.body.artist,
         title   : req.body.title,
-        time    : req.body.time,
+        songDuration    : req.body.time,
         bpm     : req.body.bpm,
         done    : false
     }, function(err, song) {
@@ -190,15 +190,6 @@ app.delete('/api/songs/:song_id', function(req, res) {
     });
 });
 
-app.put('api/songs/:song_id', function(req, res){
-
-    var id="56c898564978391100985fd8";
-
-    mongoose.model('song').findByIdAndUpdate(id, { $set: { artist: 'new one' }}, function (err, song) {
-      if (err) return handleError(err);
-      res.send(song);
-    });
-})
 
 // ===================================================================
 // ============================ Lineups ==============================
