@@ -1,4 +1,4 @@
-<div class="form-wrapper margin-top">
+<div class="form-wrapper">
     <div class="panel-header" ng-click="songPanelBody = !songPanelBody" ng-class="{active : songPanel}">
         <h2 class="gig-name-h2" >Add Songs
         <span ng-show="songPanelBody">-</span>
@@ -6,11 +6,11 @@
     </div>
     <div class="panel-body" ng-show="songPanelBody">
         <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.artist" ng-model-options="{ updateOn: 'blur' }" placeholder="Artist"/><br />
-            <input class="form wide"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title"/><br />
-            <input class="form wide"type="text" ng-model="newGig.songDuration" placeholder="Song duration"/><br />
-            <input class="form wide"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
-            <button type="submit" class="button btn-xl dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown">Add {[{newGig.title}]}</p></button>
+            <input class="form" type="text" ng-model="newGig.artist" placeholder="Artist name" required /><br />
+            <input class="form"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
+            <input class="form"type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/><br />
+            <input class="form"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
+            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown lowercase">Add {[{newGig.title}]}</p></button>
         </form>
     </div>
 </div>
@@ -22,11 +22,11 @@
     </div>
     <div class="panel-body" ng-show="lineupPanelBody">
         <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation"/><br />
-            <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="Name"/><br />
-            <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Name"/><br />
+            <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation (e.g., Drum)" required /><br />
+            <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="First name" required/><br />
+            <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Last name"/><br />
             <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
-            <button type="submit" class="button btn-xl dark-green-yellow-bg" ng-click="createLineup()"><p class="light-brown">Add {[{newGig.instrumentation}]}</p></button>
+            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLineup()"><p class="light-brown lowercase">Add {[{newGig.instrumentation}]}</p></button>
         </form>
     </div>
 </div>
@@ -39,10 +39,10 @@
     </div>
     <div class="panel-body" ng-show="datetimePanelBody">
         <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name"/><br />
+            <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required /><br />
             <input class="form wide" type="date" ng-model="newGig.date" placeholder="date"/><br />
-            <input class="form wide" type="time" ng-model="newGig.time" placeholder="time"/><br />
-            <input class="button btn-xl dark-green-yellow-bg" type="submit" ng-click="createDatetime()" value="Create Date/Time" />
+            <input class="form wide" type="time" ng-model="newGig.time" placeholder="time" required /><br />
+            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createDatetime()"><p class="light-brown lowercase">Add {[{newGig.scheduleName}]}</p></button>
         </form>
     </div>
 </div>
@@ -55,11 +55,11 @@
     </div>
     <div class="panel-body" ng-show="locationPanelBody">
         <form method="get">
-            <input class="form wide"type="text" ng-model="newGig.street" placeholder="Street"/><br />
-            <input class="form wide"type="text" ng-model="newGig.city" placeholder="city"/><br />
-            <input class="form wide"type="text" ng-model="newGig.state" placeholder="state"/><br />
-            <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode"/><br />
-            <input class="button btn-xl dark-green-yellow-bg" type="submit" ng-click="createLocation()" value="Create Location" />
+            <input class="form wide"type="text" ng-model="newGig.street" placeholder="Street" required/><br />
+            <input class="form wide"type="text" ng-model="newGig.city" placeholder="city" required/><br />
+            <input class="form wide"type="text" ng-model="newGig.state" placeholder="state" required/><br />
+            <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode" required/><br /> 
+            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLocation()"><p class="light-brown lowercase">Add Location</p></button>
         </form>
     </div>
 </div>
@@ -72,9 +72,9 @@
     </div>
     <div class="panel-body" ng-show="wardrobePanelBody">
         <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.wardrobeConcept" ng-model-options="{ updateOn: 'blur' }" placeholder="wardrobeConcept"/><br />
+            <input class="form wide" type="text" ng-model="newGig.wardrobeConcept" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe concept (e.g., suit)"/><br />
             <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
-            <input class="button btn-xl dark-green-yellow-bg" type="submit" ng-click="createWardrobe()" value="Create Wardrobe" />
+            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createWardrobe()"><p class="light-brown lowercase">Add {[{newGig.wardrobeConcept}]}</p></button>
         </form>
     </div>
 </div>

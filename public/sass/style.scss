@@ -236,11 +236,12 @@ li{
 
 .panel-body{
     @include transition(all .15s .15s);
-    height: 260px;
-    top: 0;
+    position: relative;
+    top: 0;  
 }
 
 .ng-hide {
+    position: relative;
     height: 0;
     top:-200px;
 }
@@ -411,12 +412,12 @@ a:hover p.tabText{
     width: 100%;
     display: block;
     height: 18px;
-    padding: 6px 12px;
+    padding: 25px 12px;
     font-size: 14px;
     line-height: 1.4em;
     color: #555;
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 3px;
     -webkit-box-shadow: inset 0 1px 1px rgba(59, 68, 39, .075);
     box-shadow: inset 0 1px 1px rgba(59, 68, 39, .075);
     @include transition(border .15s .15s);
@@ -432,13 +433,13 @@ a:hover p.tabText{
 }
 
 input[type=text], textarea {
-  @include transition(all .15s .15s);
-  outline: none;
-  border: 1px solid #DDDDDD;
-  &:focus{
+    @include transition(all .15s .15s);
+    outline: none;
+    border: 1px solid #DDDDDD;
+    &:focus{
     box-shadow: 0 0 5px $white-orange;
     border: 1px solid $white-orange;
-  };
+    };
 }
 
 input[type=date]{
@@ -449,28 +450,38 @@ input[type=time]{
     -webkit-appearance:none; 
 }
 
+input{
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+}
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $reg-grey;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $reg-grey;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $reg-grey;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $reg-grey;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    $reg-grey;
+}
+
 .wide {
     display:block; 
-    width:100%;
-    padding: 10px 0;
     border-width:0
 }
 
 .chat-msg-input{
     width: 79.71%;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: pink;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: pink;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: pink;
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: pink;
 }
 
 
@@ -544,6 +555,10 @@ input[type=time]{
     clear: both;
 }
 
+.lowercase{
+    text-transform: lowercase;
+}
+
 .margin-zero{
     margin: 0;
 }
@@ -580,11 +595,6 @@ hr{
     border-radius: 5px;
     border: 1px solid silver;
 }
-
-
-
-
-
 
 
 @media only screen and (max-width: 320px){
