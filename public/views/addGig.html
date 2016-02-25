@@ -1,80 +1,90 @@
-<div class="form-wrapper">
-    <div class="panel-header" ng-click="songPanelBody = !songPanelBody" ng-class="{active : songPanel}">
-        <h2 class="gig-name-h2" >Add Songs
-        <span ng-show="songPanelBody">-</span>
-        <span ng-hide="songPanelBody">+</span></h2>
-    </div>
-    <div class="panel-body" ng-show="songPanelBody">
-        <form method="get">
-            <input class="form" type="text" ng-model="newGig.artist" placeholder="Artist name" required /><br />
-            <input class="form"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
-            <input class="form"type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/><br />
-            <input class="form"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
-            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown lowercase">Add {[{newGig.title}]}</p></button>
-        </form>
-    </div>
-</div>
 <div class="form-wrapper margin-top">
-    <div class="panel-header" ng-click="lineupPanelBody = !lineupPanelBody" ng-class="{active : songPanel}">
-        <h2 class="gig-name-h2">Add Lineup
-        <span ng-show="lineupPanelBody">-</span>
-        <span ng-hide="lineupPanelBody">+</span></h2>
-    </div>
-    <div class="panel-body" ng-show="lineupPanelBody">
-        <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation (e.g., Drum)" required /><br />
-            <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="First name" required/><br />
-            <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Last name"/><br />
-            <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
-            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLineup()"><p class="light-brown lowercase">Add {[{newGig.instrumentation}]}</p></button>
-        </form>
-    </div>
+    <form method="get">
+        <input class="form" type="text" ng-model="newGig.gigName" placeholder="Enter a new gig name" />
+        <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createGig()"><p class="light-brown lowercase">Add {[{newGig.title}]}</p></button>
+    </form>
 </div>
 
-<div class="form-wrapper margin-top">
-    <div class="panel-header" ng-click="datetimePanelBody = !datetimePanelBody" ng-class="{active : songPanel}">
-        <h2 class="gig-name-h2">Add Date/Time
-        <span ng-show="datetimePanelBody">-</span>
-        <span ng-hide="datetimePanelBody">+</span></h2>
-    </div>
-    <div class="panel-body" ng-show="datetimePanelBody">
-        <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required /><br />
-            <input class="form wide" type="date" ng-model="newGig.date" placeholder="date"/><br />
-            <input class="form wide" type="time" ng-model="newGig.time" placeholder="time" required /><br />
-            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createDatetime()"><p class="light-brown lowercase">Add {[{newGig.scheduleName}]}</p></button>
-        </form>
-    </div>
-</div>
 
-<div class="form-wrapper margin-top">
-    <div class="panel-header" ng-click="locationPanelBody = !locationPanelBody" ng-class="{active : songPanel}">
-        <h2 class="gig-name-h2">Add Location
-        <span ng-show="locationPanelBody">-</span>
-        <span ng-hide="locationPanelBody">+</span></h2>
+<div class="newgig-wrapper">
+    <div class="form-wrapper">
+        <div class="panel-header" ng-click="songPanelBody = !songPanelBody" ng-class="{active : songPanel}">
+            <h2 class="gig-name-h2" >Add Songs
+            <span ng-show="songPanelBody">-</span>
+            <span ng-hide="songPanelBody">+</span></h2>
+        </div>
+        <div class="panel-body" ng-show="songPanelBody">
+            <form method="get">
+                <input class="form" type="text" ng-model="newGig.artist" placeholder="Artist name" required /><br />
+                <input class="form"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
+                <input class="form"type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/><br />
+                <input class="form"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
+                <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown lowercase">Add {[{newGig.title}]}</p></button>
+            </form>
+        </div>
     </div>
-    <div class="panel-body" ng-show="locationPanelBody">
-        <form method="get">
-            <input class="form wide"type="text" ng-model="newGig.street" placeholder="Street" required/><br />
-            <input class="form wide"type="text" ng-model="newGig.city" placeholder="city" required/><br />
-            <input class="form wide"type="text" ng-model="newGig.state" placeholder="state" required/><br />
-            <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode" required/><br /> 
-            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLocation()"><p class="light-brown lowercase">Add Location</p></button>
-        </form>
+    <div class="form-wrapper">
+        <div class="panel-header" ng-click="lineupPanelBody = !lineupPanelBody" ng-class="{active : songPanel}">
+            <h2 class="gig-name-h2">Add Lineup
+            <span ng-show="lineupPanelBody">-</span>
+            <span ng-hide="lineupPanelBody">+</span></h2>
+        </div>
+        <div class="panel-body" ng-show="lineupPanelBody">
+            <form method="get">
+                <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation (e.g., Drum)" required /><br />
+                <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="First name" required/><br />
+                <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Last name"/><br />
+                <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
+                <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLineup()"><p class="light-brown lowercase">Add {[{newGig.instrumentation}]}</p></button>
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="form-wrapper margin-top">
-    <div class="panel-header" ng-click="wardrobePanelBody = !wardrobePanelBody" ng-class="{active : songPanel}">
-        <h2 class="gig-name-h2">Add Wardrobe
-        <span ng-show="wardrobePanelBody">-</span>
-        <span ng-hide="wardrobePanelBody">+</span></h2>
+    <div class="form-wrapper">
+        <div class="panel-header" ng-click="datetimePanelBody = !datetimePanelBody" ng-class="{active : songPanel}">
+            <h2 class="gig-name-h2">Add Date/Time
+            <span ng-show="datetimePanelBody">-</span>
+            <span ng-hide="datetimePanelBody">+</span></h2>
+        </div>
+        <div class="panel-body" ng-show="datetimePanelBody">
+            <form method="get">
+                <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required /><br />
+                <input class="form wide" type="date" ng-model="newGig.date" placeholder="date"/><br />
+                <input class="form wide" type="time" ng-model="newGig.time" placeholder="time" required /><br />
+                <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createDatetime()"><p class="light-brown lowercase">Add {[{newGig.scheduleName}]}</p></button>
+            </form>
+        </div>
     </div>
-    <div class="panel-body" ng-show="wardrobePanelBody">
-        <form method="get">
-            <input class="form wide" type="text" ng-model="newGig.wardrobeConcept" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe concept (e.g., suit)"/><br />
-            <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
-            <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createWardrobe()"><p class="light-brown lowercase">Add {[{newGig.wardrobeConcept}]}</p></button>
-        </form>
+
+    <div class="form-wrapper">
+        <div class="panel-header" ng-click="locationPanelBody = !locationPanelBody" ng-class="{active : songPanel}">
+            <h2 class="gig-name-h2">Add Location
+            <span ng-show="locationPanelBody">-</span>
+            <span ng-hide="locationPanelBody">+</span></h2>
+        </div>
+        <div class="panel-body" ng-show="locationPanelBody">
+            <form method="get">
+                <input class="form wide"type="text" ng-model="newGig.street" placeholder="Street" required/><br />
+                <input class="form wide"type="text" ng-model="newGig.city" placeholder="city" required/><br />
+                <input class="form wide"type="text" ng-model="newGig.state" placeholder="state" required/><br />
+                <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode" required/><br /> 
+                <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLocation()"><p class="light-brown lowercase">Add Location</p></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-wrapper">
+        <div class="panel-header" ng-click="wardrobePanelBody = !wardrobePanelBody" ng-class="{active : songPanel}">
+            <h2 class="gig-name-h2">Add Wardrobe
+            <span ng-show="wardrobePanelBody">-</span>
+            <span ng-hide="wardrobePanelBody">+</span></h2>
+        </div>
+        <div class="panel-body" ng-show="wardrobePanelBody">
+            <form method="get">
+                <input class="form wide" type="text" ng-model="newGig.wardrobeConcept" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe concept (e.g., suit)"/><br />
+                <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
+                <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createWardrobe()"><p class="light-brown lowercase">Add {[{newGig.wardrobeConcept}]}</p></button>
+            </form>
+        </div>
     </div>
 </div>

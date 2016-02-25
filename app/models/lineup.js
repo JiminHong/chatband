@@ -5,7 +5,10 @@ var lineupSchema = new Schema({
   instrumentation: String,
   firstName: String,
   lastName: String,
-  comment: String
+  comment: String,
+	gigId: {
+		type: Schema.Types.ObjectId
+	}
 });
 
 mongoose.model('lineup', lineupSchema);

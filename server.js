@@ -139,7 +139,34 @@ app.delete('/api/chats/:chat_id', function(req, res) {
         });
     });
 });
+// ===================================================================
+// =============================== Gigs ==============================
+// ===================================================================
+app.get('/api/Gigs', function(req, res) {
 
+    mongoose.model('gig').find(function(err, Gigs) {
+        if (err)
+            res.send(err)
+        res.json(Gigs); 
+    });
+});
+
+app.post('/api/Gigs', function(req, res) {
+
+    mongoose.model('gig').create({
+        gigName  : req.body.gigName
+    }, function(err, gig) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('gig').find(function(err, Gigs) {
+            if (err)
+                res.send(err)
+            res.json(Gigs);
+        });
+    });
+
+});
 
 // ===================================================================
 // =============================== Songs =============================
@@ -153,7 +180,22 @@ app.get('/api/songs', function(req, res) {
     });
 });
 
+app.get('/api/songs/:id', function(req, res) {
+
+    mongoose.model('song').findOne({
+        _id: req.params.id
+    }, function(err, song){
+        if (err){
+            res.send(err)
+        }else{
+            res.json(song);
+        }
+    });
+});
+
 app.post('/api/songs', function(req, res) {
+
+    gigUniId : '56ce7d8c1a7ea4b94a59a7a4';
 
     mongoose.model('song').create({
         artist  : req.body.artist,

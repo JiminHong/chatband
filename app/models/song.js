@@ -13,11 +13,14 @@ var SongSchema = new Schema({
 	},
 	songDuration:{
 		type: String,
-		default: ''
+		default: 'default String'
 	},
 	bpm: {
 		type: Number,
 		default: 0
+	},
+	gigId: {
+		type: Schema.Types.ObjectId
 	}
 })
 

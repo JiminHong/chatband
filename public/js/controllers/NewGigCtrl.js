@@ -1,6 +1,10 @@
 myapp.controller('NewGigCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
+    $scope.createGigName = function(){
+        console.log($scope.gigName);
+    }
+
     $scope.goChat = function(){
         $location.path('/chat');
     }
@@ -12,6 +16,29 @@ function ($scope, $http, $location, $routeParams) {
     $scope.wardrobePanelBody = false;
 
     $scope.newGig = {};
+
+    // ===================================================================
+    // =============================== GIG ===============================
+    // ===================================================================
+    $http.get('/api/gigs')
+        .success(function(data) {
+            $scope.gigs = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+
+
+    $scope.createGig = function() {
+        $http.post('/api/gigs', $scope.newGig)
+            .success(function(data) {
+                $scope.newGig = {}; // clear the form so our user is ready to enter another
+                $scope.gigs = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
 
     // ===================================================================
     // =============================== Songs =============================

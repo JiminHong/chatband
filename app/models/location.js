@@ -5,7 +5,10 @@ var locationSchema = new Schema({
   street: String,
   city: String,
   state: String,
-  zipcode: Number
+  zipcode: Number,
+	gigId: {
+		type: Schema.Types.ObjectId
+	}
 });
 
 // the schema is useless so far

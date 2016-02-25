@@ -12,6 +12,9 @@ var WardrobeSchema = new Schema({
 	wardrobeImg:{
 		type: String,
 		default: "../../img/wardrobe/black_suit.jpg"
+	},
+	gigId: {
+		type: Schema.Types.ObjectId
 	}
 })
 

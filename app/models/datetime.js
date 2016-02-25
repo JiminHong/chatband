@@ -12,6 +12,9 @@ var DatetimeSchema = new Schema({
 	time:{
 		type: String,
 		default: ''
+	},
+	gigId: {
+		type: Schema.Types.ObjectId
 	}
 })
 
