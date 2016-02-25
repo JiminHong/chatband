@@ -142,16 +142,16 @@ app.delete('/api/chats/:chat_id', function(req, res) {
 // ===================================================================
 // =============================== Gigs ==============================
 // ===================================================================
-app.get('/api/Gigs', function(req, res) {
-
-    mongoose.model('gig').find(function(err, Gigs) {
+app.get('/api/gigs', function(req, res) {
+    mongoose.model('gig').find(function(err, gigs) {
         if (err)
             res.send(err)
-        res.json(Gigs); 
+        res.json(gigs); 
     });
 });
 
-app.post('/api/Gigs', function(req, res) {
+
+app.post('/api/gigs', function(req, res) {
 
     mongoose.model('gig').create({
         gigName  : req.body.gigName
@@ -159,10 +159,10 @@ app.post('/api/Gigs', function(req, res) {
         if (err)
             res.send(err);
 
-        mongoose.model('gig').find(function(err, Gigs) {
+        mongoose.model('gig').find(function(err, gigs) {
             if (err)
                 res.send(err)
-            res.json(Gigs);
+            res.json(gigs);
         });
     });
 
@@ -172,7 +172,6 @@ app.post('/api/Gigs', function(req, res) {
 // =============================== Songs =============================
 // ===================================================================
 app.get('/api/songs', function(req, res) {
-
     mongoose.model('song').find(function(err, songs) {
         if (err)
             res.send(err)

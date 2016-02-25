@@ -28,10 +28,11 @@ function ($scope, $http, $location, $routeParams) {
     $scope.createGig = function() {
         $http.post('/api/gigs', $scope.newGig)
             .success(function(data) {
-                $scope.newGig = {}; // clear the form so our user is ready to enter another
+                $scope.newGig = {};
                 $scope.gigs = data;
                 lastGig = data.length - 1;
-                console.log(data[lastGig]._id);
+                console.log(data[lastGig]._id); //gigId
+                $location.path('/goAddGig/'+ data[lastGig]._id)
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -51,7 +52,7 @@ function ($scope, $http, $location, $routeParams) {
 
 
     $scope.createSong = function(gigId) {
-        $http.post('/api/songs/' + gigId, $scope.newGig)
+        $http.post('/api/songs', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
