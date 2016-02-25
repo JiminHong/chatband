@@ -20,7 +20,7 @@ var SongSchema = new Schema({
 		default: 0
 	},
 	gigId: {
-		type: Schema.Types.ObjectId
+		type: String
 	}
 })
 

@@ -1,10 +1,6 @@
 myapp.controller('NewGigCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
-    $scope.createGigName = function(){
-        console.log($scope.gigName);
-    }
-
     $scope.goChat = function(){
         $location.path('/chat');
     }
@@ -34,6 +30,8 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.gigs = data;
+                lastGig = data.length - 1;
+                console.log(data[lastGig]._id);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -52,8 +50,8 @@ function ($scope, $http, $location, $routeParams) {
         });
 
 
-    $scope.createSong = function() {
-        $http.post('/api/songs', $scope.newGig)
+    $scope.createSong = function(gigId) {
+        $http.post('/api/songs/' + gigId, $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;

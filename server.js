@@ -181,8 +181,7 @@ app.get('/api/songs', function(req, res) {
 });
 
 app.get('/api/songs/:id', function(req, res) {
-
-    mongoose.model('song').findOne({
+    mongoose.model('song').find({
         _id: req.params.id
     }, function(err, song){
         if (err){
@@ -193,10 +192,24 @@ app.get('/api/songs/:id', function(req, res) {
     });
 });
 
+app.post('/api/songs/:id', function(req, res) {
+    mongoose.model('song').create({
+        gigId: req.params.id,
+        artist  : req.body.artist,
+        title   : req.body.title,
+        songDuration    : req.body.time,
+        bpm     : req.body.bpm,
+        done    : false
+    }, function(err, song){
+        if (err){
+            res.send(err)
+        }else{
+            res.json(song);
+        }
+    });
+});
+
 app.post('/api/songs', function(req, res) {
-
-    gigUniId : '56ce7d8c1a7ea4b94a59a7a4';
-
     mongoose.model('song').create({
         artist  : req.body.artist,
         title   : req.body.title,
