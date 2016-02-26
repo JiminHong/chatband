@@ -33,6 +33,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
                 $scope.gigs = data;
                 lastGig = data.length - 1;
                 $location.path('/goAddGig/'+ data[lastGig]._id);
+                console.log("gigId : ", data[lastGig]._id);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -52,17 +53,19 @@ function ($scope, $timeout, $http, $location, $routeParams) {
 
 
     $scope.createSong = function(gigId) {
-        $http.post('/api/songs', $scope.newGig)
+        $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
+                // console.log("$routeParams", $routeParams.gigId);
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
-                $scope.doneIndicator = "Added!";
+                $scope.doneIndicator = "Successfully added! :)";
                 $scope.add = "";
                 goBack = function(){
                     $scope.doneIndicator = "";
-                    $scope.add = "Add";
+                    $scope.add = "Add More";
                 }
                 $timeout(goBack, 1000);
+                console.log($scope.songs);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
