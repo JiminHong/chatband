@@ -1,5 +1,5 @@
-myapp.controller('NewGigCtrl', ["$scope", "$http", "$location", "$routeParams", 
-function ($scope, $http, $location, $routeParams) {
+myapp.controller('NewGigCtrl', ["$scope", "$timeout", "$http", "$location", "$routeParams", 
+function ($scope, $timeout, $http, $location, $routeParams) {
 
     $scope.goChat = function(){
         $location.path('/chat');
@@ -12,6 +12,8 @@ function ($scope, $http, $location, $routeParams) {
     $scope.wardrobePanelBody = false;
 
     $scope.newGig = {};
+    $scope.add = "Add";
+    $scope.doneIndicator = "";
 
     // ===================================================================
     // =============================== GIG ===============================
@@ -24,15 +26,14 @@ function ($scope, $http, $location, $routeParams) {
             console.log('Error: ' + data);
         });
 
-
     $scope.createGig = function() {
         $http.post('/api/gigs', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {};
                 $scope.gigs = data;
                 lastGig = data.length - 1;
-                console.log(data[lastGig]._id); //gigId
-                $location.path('/goAddGig/'+ data[lastGig]._id)
+                console.log($timeout)
+                $location.path('/goAddGig/'+ data[lastGig]._id);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -56,11 +57,20 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
+                $scope.doneIndicator = "Added!";
+                $scope.add = "";
+                goBack = function(){
+                    $scope.doneIndicator = "";
+                    $scope.add = "Add";
+                }
+                $timeout(goBack, 1000);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+        $timeout(500);
     };
+
 
     // ===================================================================
     // ============================ Lineups ==============================
@@ -79,10 +89,18 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.lineup = data;
+                $scope.doneIndicator = "Added!";
+                $scope.add = "";
+                goBack = function(){
+                    $scope.doneIndicator = "";
+                    $scope.add = "Add";
+                }
+                $timeout(goBack, 1000);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+        $timeout(500);
     };
     // ===================================================================
     // =========================== Datetimes =============================
@@ -100,10 +118,18 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.datetimes = data;
+                $scope.doneIndicator = "Added!";
+                $scope.add = "";
+                goBack = function(){
+                    $scope.doneIndicator = "";
+                    $scope.add = "Add";
+                }
+                $timeout(goBack, 1000);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+        $timeout(500);
     };
 
     $scope.deleteDatetime = function(id) {
@@ -133,10 +159,18 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.location = data;
+                $scope.doneIndicator = "Added!";
+                $scope.add = "";
+                goBack = function(){
+                    $scope.doneIndicator = "";
+                    $scope.add = "Add";
+                }
+                $timeout(goBack, 1000);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+        $timeout(500);
     };
 
     // ===================================================================
@@ -155,10 +189,18 @@ function ($scope, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.wardrobes = data;
+                $scope.doneIndicator = "Added!";
+                $scope.add = "";
+                goBack = function(){
+                    $scope.doneIndicator = "";
+                    $scope.add = "Add";
+                }
+                $timeout(goBack, 1000);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+        $timeout(500);
     };
 
     $scope.deleteWardrobe = function(id) {
