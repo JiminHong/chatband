@@ -92,21 +92,20 @@ function ($scope, $http, $route, $location, $NgMap) {
              .success(function(data){
               $scope.lineup = data;
               $scope.commentId = id;
-              console.log($scope.commentId);
-              //make ALL editCommentLine true... so it's gonna pull up all of them..
-              if($scope.commentId === id){
-
-              }
+                console.log("id is ", id);
+                console.log("commend Id is ", $scope.commentId);
         })
     } 
 
-    $scope.updateLineup = function(){
-        $http.post('/api/lineups/'+ $scope.lineup._id, $scope.lineup)
+    $scope.updateLineup = function(id){
+        $http.post('/api/lineups/'+ id, $scope.lineup)
              .success(function(data){
                 $scope.lineup = data;
+                console.log($scope);
              })
              .finally(function(){
                 $route.reload();
+                console.log("id : ", id)
              })
     } 
     
