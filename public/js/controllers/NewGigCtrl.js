@@ -32,7 +32,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
                 $scope.newGig = {};
                 $scope.gigs = data;
                 lastGig = data.length - 1;
-                console.log($timeout)
                 $location.path('/goAddGig/'+ data[lastGig]._id);
             })
             .error(function(data) {

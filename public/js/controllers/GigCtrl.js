@@ -91,6 +91,12 @@ function ($scope, $http, $route, $location, $NgMap) {
         $http.get('/api/lineups/' + id)
              .success(function(data){
               $scope.lineup = data;
+              $scope.commentId = id;
+              console.log($scope.commentId);
+              //make ALL editCommentLine true... so it's gonna pull up all of them..
+              if($scope.commentId === id){
+
+              }
         })
     } 
 
