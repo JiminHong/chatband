@@ -25,13 +25,16 @@ function ($scope, $http, $location, $routeParams) {
                 // monthNum = data[i].gigDate.charAt(5)+data[i].gigDate.charAt(6);                
                 // $scope.gigData.gigDate = gigMonth;
                 for(i=0; i<data.length; i++){
-                     monthNum = data[i].gigDate.charAt(5)+data[i].gigDate.charAt(6);
+                    //Month
+                    monthNum = data[i].gigDate.charAt(5)+data[i].gigDate.charAt(6);
                     monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                     monthNumIndex   = Number(monthNum)-1;
-                    // $scope.test = monthNames[monthNumIndex];
-                    // console.log($scope.test);
-                    console.log(monthNum);
-                    data[i].gigDate = monthNames[monthNumIndex];
+                    data[i].gigMonth = monthNames[monthNumIndex];
+                    //Date
+                    dateNum = data[i].gigDate.charAt(8)+data[i].gigDate.charAt(9);
+                    data[i].gigDate = dateNum;
+
+                    console.log(data[i].gigTime)
                 };
             }
 

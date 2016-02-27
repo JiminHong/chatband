@@ -19,16 +19,18 @@
 	</div>
 
 <!-- 	<div ng-repeat="song in songs">
- -->		<div class="listGigs-panel" ng-click="goSongs()">
-			<div class="giglist-panel-header" ng-repeat="gigData in gigs">
+ -->		<div class="listGigs-panel" ng-click="goSongs()" ng-repeat="gigData in gigs">
+			<div class="giglist-panel-header" >
 				<div class="content-width-8">
-					<p class="chap-h2">{[{test}]} {[{ gigData.gigDate }]}<span class="time-giglist">{[{ gigData.gigTime }]}</span></p>
+					<p class="chap-h2">{[{ gigData.gigMonth }]} {[{ gigData.gigDate }]}<span class="time-giglist">{[{ gigData.gigTime }]}</span></p>
 				</div>	
 			</div>
 			<div class="listGigs-panel-content">
 				<div class="content-width-8">
-					<h2>{[{ listGig.name }]}</h2>
-					<p class="small-text">{[{ listGig.location }]}</p>
+					<div>
+					<h2>{[{ gigData.gigName }]}</h2>
+					<p class="small-text">{[{ gigData.gigLocation }]}</p>
+					</div>
 					<p class="small-text bold">{[{ listGig.songArtist }]} - 
 					<span class="bold">{[{ listGig.title }]}</span><span> &amp; {[{ listGig.songCount }]} more</span></p>
 				</div>

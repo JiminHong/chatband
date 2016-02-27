@@ -28,7 +28,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
             .success(function(data) {
                 $scope.newGig   = {};
                 $scope.gigs     = data;
-                // lastGig         = data.length - 1;
+                lastGig         = data.length - 1;
                 // monthNum        = data[lastGig].gigDate.charAt(5)+data[lastGig].gigDate.charAt(6);
                 // monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                 // monthNumIndex   = Number(monthNum)-1;
