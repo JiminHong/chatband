@@ -154,7 +154,10 @@ app.get('/api/gigs', function(req, res) {
 app.post('/api/gigs', function(req, res) {
 
     mongoose.model('gig').create({
-        gigName  : req.body.gigName
+        gigName     : req.body.gigName,
+        gigDate     : req.body.gigDate,
+        gigTime     : req.body.gigTime,
+        gigLocation : req.body.gigLocation
     }, function(err, gig) {
         if (err)
             res.send(err);
@@ -179,9 +182,9 @@ app.get('/api/songs', function(req, res) {
     });
 });
 
-app.get('/api/songs/:id', function(req, res) {
+app.get('/api/songs/:gigId', function(req, res) {
     mongoose.model('song').find({
-        _id: req.params.id
+        gigId: req.params.gigId
     }, function(err, song){
         if (err){
             res.send(err)

@@ -12,7 +12,7 @@ function ($scope, $location, $routeParams) {
             $location.path('/chats');
         } 
 
-        $scope.goGigs = function(){
+        $scope.goListGigs = function(){
             $location.path('/listGigs');
         }
         

@@ -4,6 +4,10 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     $scope.goChat = function(){
         $location.path('/chat');
     }
+    $scope.goGigList = function(){
+        $location.path('/listGigs');
+    }
+
 
     $scope.songPanelBody     = false;
     $scope.lineupPanelBody   = false;
@@ -18,22 +22,19 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =============================== GIG ===============================
     // ===================================================================
-    $http.get('/api/gigs')
-        .success(function(data) {
-            $scope.gigs = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
 
     $scope.createGig = function() {
         $http.post('/api/gigs', $scope.newGig)
             .success(function(data) {
-                $scope.newGig = {};
-                $scope.gigs = data;
-                lastGig = data.length - 1;
+                $scope.newGig   = {};
+                $scope.gigs     = data;
+                // lastGig         = data.length - 1;
+                // monthNum        = data[lastGig].gigDate.charAt(5)+data[lastGig].gigDate.charAt(6);
+                // monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                // monthNumIndex   = Number(monthNum)-1;
+                // gigMonth = monthNames[monthNumIndex];
+                // console.log(gigMonth);
                 $location.path('/goAddGig/'+ data[lastGig]._id);
-                console.log("gigId : ", data[lastGig]._id);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -43,19 +44,10 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =============================== Songs =============================
     // ===================================================================
-    $http.get('/api/songs')
-        .success(function(data) {
-            $scope.songs = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
-
 
     $scope.createSong = function(gigId) {
         $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
-                // console.log("$routeParams", $routeParams.gigId);
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
                 $scope.doneIndicator = "Successfully added! :)";
@@ -65,7 +57,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
                     $scope.add = "Add More";
                 }
                 $timeout(goBack, 1000);
-                console.log($scope.songs);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -77,14 +68,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // ============================ Lineups ==============================
     // ===================================================================
-
-    $http.get('/api/lineups')
-        .success(function(data) {
-            $scope.lineup = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
 
     $scope.createLineup = function() {
         $http.post('/api/lineups', $scope.newGig)
@@ -107,13 +90,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =========================== Datetimes =============================
     // ===================================================================
-    $http.get('/api/datetimes')
-        .success(function(data) {
-            $scope.datetimes = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
 
     $scope.createDatetime = function() {
         $http.post('/api/datetimes', $scope.newGig)
@@ -148,14 +124,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // =========================== Location ==============================
     // ===================================================================
 
-    $http.get('/api/locations')
-        .success(function(data) {
-            $scope.location = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
-
     $scope.createLocation = function() {
         $http.post('/api/locations', $scope.newGig)
             .success(function(data) {
@@ -176,15 +144,8 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     };
 
     // ===================================================================
-    // =========================== Datetimes =============================
+    // =========================== Wardrobes =============================
     // ===================================================================
-    $http.get('/api/wardrobes')
-        .success(function(data) {
-            $scope.wardrobes = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
 
     $scope.createWardrobe = function() {
         $http.post('/api/wardrobes', $scope.newGig)
