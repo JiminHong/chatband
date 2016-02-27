@@ -33,6 +33,9 @@ function ($scope, $http, $location, $routeParams) {
                     //Date
                     dateNum = data[i].gigDate.charAt(8)+data[i].gigDate.charAt(9);
                     data[i].gigDate = dateNum;
+                    //Time
+                    timeNum = Number(data[i].gigTime.charAt(12))+5;
+                    data[i].gigTime = timeNum;
 
                     console.log(data[i].gigTime)
                 };
