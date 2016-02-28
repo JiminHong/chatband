@@ -27,36 +27,15 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
         $http.post('/api/gigs', $scope.newGig)
             .success(function(data) {
-                console.log($scope.newGig.gigLocation.formatted_address);//this one works...!
-                // $scope.newGig.gigName = $scope.newGig.gigName;
-                // $scope.newGig.gigDate = $scope.newGig.gigDate;
-                // $scope.newGig.gigTime = $scope.newGig.gigTime;
                 $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-                data = $scope.newGig;
                 $scope.gigs = data;
-                console.log(data);// nope not working
+                lastGig         = data.length - 1;
+                $location.path('/goAddGig/'+ data[lastGig]._id);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
     };
-
-
-    // $scope.createGig = function() {
-    //     $http.post('/api/gigs', $scope.newGig)
-    //         .success(function(data) {
-    //             $scope.newGig   = {};
-    //             $scope.gigs     = data;
-    //             lastGig         = data.length - 1;
-    //             console.log(data);
-    //             // $scope.newGig.gigLocation = null;
-    //             // $scope.newGig.gigLocation = $scope.newGig.gigLocationBefore.formatted_address;
-    //             $location.path('/goAddGig/'+ data[lastGig]._id);
-    //         })
-    //         .error(function(data) {
-    //             console.log('Error: ' + data);
-    //         });
-    // };
 
     // ===================================================================
     // =============================== Songs =============================
