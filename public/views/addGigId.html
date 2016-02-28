@@ -1,13 +1,16 @@
 <div class="form-wrapper margin-top">
     <form method="get">
-        <input class="form" type="text" ng-model="newGig.gigName" placeholder="Name of gig" />
-        <input type="date" class="form" name="input" ng-model="newGig.gigDate"
-       placeholder="yyyy-MM-dd" required />
-        <input type="time" class="form" name="input" ng-model="newGig.gigTime"
-       placeholder="HH:mm:ss" required />
-       <!-- Google places auto complete -->
-       <input class="form" type="text" ng-model="newGig.gigLocation"  gm-places-autocomplete="autocompleteOptions" ng-model="autocompleteModel" />
-        <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createGig()"><p class="light-brown lowercase">Add {[{newGig.title}]}</p></button>
+      <label>Name of new gig</label>
+      <input class="form" type="text" ng-model="newGig.gigName" placeholder="Name of gig" required/><br>
+      <label>Date</label>
+      <input type="date" class="form" name="input" ng-model="newGig.gigDate"
+      placeholder="Date" required /><br>
+      <label>Time</label>
+      <input type="time" class="form" name="input" ng-model="newGig.gigTime"
+      placeholder="Time" required /><br>
+      <label>Location</label>
+      <input class="form" type="text" g-places-autocomplete ng-model="newGig.gigLocation" placeholder="Location" required/><br>
+      <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createGig(newGig)"><p class="light-brown lowercase">Add {[{newGig.title}]}</p></button>
     </form>
 </div>
 

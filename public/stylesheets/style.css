@@ -791,6 +791,12 @@ a {
   font-style: italic;
 }
 
+/* line 140, ../sass/partials/_fonts.scss */
+label {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
 /*============================================= */
 /*==================== SVGs =================== */
 /*============================================= */

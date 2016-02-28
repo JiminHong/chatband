@@ -22,24 +22,41 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =============================== GIG ===============================
     // ===================================================================
-
+    
     $scope.createGig = function() {
+        $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
         $http.post('/api/gigs', $scope.newGig)
             .success(function(data) {
-                $scope.newGig   = {};
-                $scope.gigs     = data;
-                lastGig         = data.length - 1;
-                // monthNum        = data[lastGig].gigDate.charAt(5)+data[lastGig].gigDate.charAt(6);
-                // monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                // monthNumIndex   = Number(monthNum)-1;
-                // gigMonth = monthNames[monthNumIndex];
-                // console.log(gigMonth);
-                $location.path('/goAddGig/'+ data[lastGig]._id);
+                console.log($scope.newGig.gigLocation.formatted_address);//this one works...!
+                // $scope.newGig.gigName = $scope.newGig.gigName;
+                // $scope.newGig.gigDate = $scope.newGig.gigDate;
+                // $scope.newGig.gigTime = $scope.newGig.gigTime;
+                $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+                data = $scope.newGig;
+                $scope.gigs = data;
+                console.log(data);// nope not working
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
     };
+
+
+    // $scope.createGig = function() {
+    //     $http.post('/api/gigs', $scope.newGig)
+    //         .success(function(data) {
+    //             $scope.newGig   = {};
+    //             $scope.gigs     = data;
+    //             lastGig         = data.length - 1;
+    //             console.log(data);
+    //             // $scope.newGig.gigLocation = null;
+    //             // $scope.newGig.gigLocation = $scope.newGig.gigLocationBefore.formatted_address;
+    //             $location.path('/goAddGig/'+ data[lastGig]._id);
+    //         })
+    //         .error(function(data) {
+    //             console.log('Error: ' + data);
+    //         });
+    // };
 
     // ===================================================================
     // =============================== Songs =============================

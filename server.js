@@ -157,6 +157,7 @@ app.post('/api/gigs', function(req, res) {
         gigName     : req.body.gigName,
         gigDate     : req.body.gigDate,
         gigTime     : req.body.gigTime,
+        gigLocationBefore : req.body.gigLocationBefore,
         gigLocation : req.body.gigLocation
     }, function(err, gig) {
         if (err)

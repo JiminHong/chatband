@@ -5,7 +5,8 @@ var GigSchema = new Schema({
   gigName		: String,
   gigDate		: Date,
   gigTime		: String, 
-  gigLocation	: String
+  gigLocation	: String,
+  gigLocationBefore : String
 });
 
 mongoose.model('gig', GigSchema);

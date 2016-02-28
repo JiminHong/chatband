@@ -1,4 +1,4 @@
-var myapp = angular.module('myapp', ['ngMap', 'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngTouch', 'snap', 'gm'])
+var myapp = angular.module('myapp', ['ngMap', 'ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngTouch', 'snap', 'google.places'])
 
 myapp.config(['$interpolateProvider', function($interpolateProvider){
   // $interpolateProvider used to differentiate uses for angular from express
