@@ -11,13 +11,13 @@ function ($scope, $http, $location, $routeParams) {
             $location.path('/addChat');
         }
 
-        $http.get('/api/groups')
-            .success(function(data) {
-                $scope.groups = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-        });
+        // $http.get('/api/groups')
+        //     .success(function(data) {
+        //         $scope.groups = data;
+        //     })
+        //     .error(function(data) {
+        //         console.log('Error: ' + data);
+        // });
 
         $scope.deleteGroup = function(id) {
             $http.delete('/api/groups/' + id)
