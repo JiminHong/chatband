@@ -15,10 +15,24 @@ function ($scope, $http, $route, $location, $NgMap) {
     $http.get('/api/songs')
         .success(function(data) {
             $scope.songs = data;
+            console.log($scope.songs[0].songDuration);
         })
         .error(function(data) {
             console.log('Error: ' + data);
     });
+
+
+// app.get('/api/songs/:gigId', function(req, res) {
+//     mongoose.model('song').find({
+//         gigId: req.params.gigId
+//     }, function(err, song){
+//         if (err){
+//             res.send(err)
+//         }else{
+//             res.json(song);
+//         }
+//     });
+// });
 
     $http.get('/api/lineups')
         .success(function(data) {
@@ -86,6 +100,27 @@ function ($scope, $http, $route, $location, $NgMap) {
     $scope.goChat = function(){
         $location.path('/chat');
     }
+
+    $scope.editSong = function(id){
+        $http.get('/api/songs/' + id)
+             .success(function(data){
+              $scope.song = data;
+              $scope.songId = id;
+              console.log("scope", $scope.song);
+        })
+    } 
+
+    $scope.updateSong = function(id){
+        $http.post('/api/songs/'+ id, $scope.song)
+             .success(function(data){
+                $scope.song = data;
+                console.log($scope);
+             })
+             .finally(function(){
+                $route.reload();
+                console.log("id : ", id)
+             })
+    } 
 
     $scope.editLineup = function(id){
         $http.get('/api/lineups/' + id)

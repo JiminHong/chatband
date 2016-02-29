@@ -40,6 +40,14 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =============================== Songs =============================
     // ===================================================================
+    $http.get('/api/songs')
+        .success(function(data) {
+            $scope.songs = data;
+            console.log($scope.songs[0].artist);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     $scope.createSong = function(gigId) {
         $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)

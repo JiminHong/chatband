@@ -176,6 +176,7 @@ app.post('/api/gigs', function(req, res) {
 // =============================== Songs =============================
 // ===================================================================
 app.get('/api/songs', function(req, res) {
+
     mongoose.model('song').find(function(err, songs) {
         if (err)
             res.send(err)
@@ -183,42 +184,13 @@ app.get('/api/songs', function(req, res) {
     });
 });
 
-app.get('/api/songs/:gigId', function(req, res) {
-    mongoose.model('song').find({
-        gigId: req.params.gigId
-    }, function(err, song){
-        if (err){
-            res.send(err)
-        }else{
-            res.json(song);
-        }
-    });
-});
-
-app.post('/api/songs/:id', function(req, res) {
-    mongoose.model('song').create({
-        gigId: req.params.id,
-        artist  : req.body.artist,
-        title   : req.body.title,
-        songDuration    : req.body.time,
-        bpm     : req.body.bpm,
-        done    : false
-    }, function(err, song){
-        if (err){
-            res.send(err)
-        }else{
-            res.json(song);
-        }
-    });
-});
-
 app.post('/api/songs', function(req, res) {
+
     mongoose.model('song').create({
         artist  : req.body.artist,
         title   : req.body.title,
-        songDuration    : req.body.time,
-        bpm     : req.body.bpm,
-        done    : false
+        songDuration   : req.body.songDuration,
+        bpm    : req.body.bpm
     }, function(err, song) {
         if (err)
             res.send(err);
@@ -232,6 +204,33 @@ app.post('/api/songs', function(req, res) {
 
 });
 
+app.get('/api/songs/:song_id', function(req, res){
+    _id : req.params.song_id;
+    mongoose.model('song').findOne({_id:req.params.song_id}, function(err, songs){
+        res.json(songs);
+    });
+});
+
+app.post('/api/songs/:song_id', function(req, res){
+    mongoose.model('song').findOneAndUpdate(
+        {_id: req.params.song_id},
+        {$set: {
+            artist  : req.body.artist,
+            title   : req.body.title,
+            songDuration   : req.body.songDuration,
+            bpm    : req.body.bpm
+            }
+        },
+        {udpset: true}
+        , function(err, songs){
+        if(err){
+            console.log("something wrong");
+        }else{
+            console.log(songs);
+            res.send(204);
+        }
+    });
+});
 
 app.delete('/api/songs/:song_id', function(req, res) {
     mongoose.model('song').remove({
@@ -265,7 +264,8 @@ app.post('/api/lineups', function(req, res) {
 
     mongoose.model('lineup').create({
         instrumentation  : req.body.instrumentation,
-        name   : req.body.name,
+        firstName   : req.body.firstName,
+        lastName   : req.body.lastName,
         comment    : req.body.comment
     }, function(err, song) {
         if (err)
@@ -328,46 +328,73 @@ app.delete('/api/lineups/:lineup_id', function(req, res) {
 // ===================================================================
 // =========================== Date.Time =============================
 // ===================================================================
-app.get('/api/datetimes', function(req, res) {
 
-    mongoose.model('datetime').find(function(err, datetimes) {
+app.get('/api/datetime', function(req, res) {
+
+    mongoose.model('datetime').find(function(err, datetime) {
         if (err)
             res.send(err)
-        res.json(datetimes); 
+        res.json(datetime); 
     });
 });
 
-app.post('/api/datetimes', function(req, res) {
+app.post('/api/datetime', function(req, res) {
 
     mongoose.model('datetime').create({
         scheduleName  : req.body.scheduleName,
         date   : req.body.date,
-        time    : req.body.time
-    }, function(err, datetime) {
+        time   : req.body.time,
+    }, function(err, song) {
         if (err)
             res.send(err);
 
-        mongoose.model('datetime').find(function(err, datetimes) {
+        mongoose.model('datetime').find(function(err, datetime) {
             if (err)
                 res.send(err)
-            res.json(datetimes);
+            res.json(datetime);
         });
     });
 
 });
 
+app.get('/api/datetime/:datetime_id', function(req, res){
+    _id : req.params.datetime_id;
+    mongoose.model('datetime').findOne({_id:req.params.datetime_id}, function(err, datetime){
+        res.json(datetime);
+    });
+});
 
-app.delete('/api/datetimes/:datetime_id', function(req, res) {
+app.post('/api/datetime/:datetime_id', function(req, res){
+    mongoose.model('datetime').findOneAndUpdate(
+        {_id: req.params.datetime_id},
+        {$set: {
+            scheduleName: req.body.scheduleName,
+            date: req.body.date,
+            time: req.body.time,
+            }
+        },
+        {udpset: true}
+        , function(err, datetime){
+        if(err){
+            console.log("something wrong");
+        }else{
+            console.log(datetime);
+            res.send(204);
+        }
+    });
+});
+
+app.delete('/api/datetime/:datetime_id', function(req, res) {
     mongoose.model('datetime').remove({
         _id : req.params.datetime_id
     }, function(err, datetime) {
         if (err)
             res.send(err);
 
-        mongoose.model('datetime').find(function(err, datetimes) {
+        mongoose.model('datetime').find(function(err, datetime) {
             if (err)
                 res.send(err)
-            res.json(datetimes);
+            res.json(datetime);
         });
     });
 });
@@ -377,20 +404,63 @@ app.delete('/api/datetimes/:datetime_id', function(req, res) {
 // ===================================================================
 
 app.get('/api/locations', function(req, res) {
-    mongoose.model('location').find(function(err, locations) {
-        res.send(locations)
-    })
-})
 
+    mongoose.model('location').find(function(err, locations) {
+        if (err)
+            res.send(err)
+        res.json(locations); 
+    });
+});
 
 app.post('/api/locations', function(req, res) {
 
     mongoose.model('location').create({
-        street  : req.body.street,
-        city    : req.body.city,
-        state   : req.body.state,
-        zipcode : req.body.zipcode
-    }, function(err, location) {
+        scheduleName  : req.body.scheduleName,
+        date   : req.body.date,
+        time   : req.body.time,
+    }, function(err, song) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('location').find(function(err, locations) {
+            if (err)
+                res.send(err)
+            res.json(locations);
+        });
+    });
+
+});
+app.get('/api/locations/:location_id', function(req, res){
+    _id : req.params.location_id;
+    mongoose.model('location').findOne({_id:req.params.location_id}, function(err, locations){
+        res.json(locations);
+    });
+});
+
+app.post('/api/locations/:location_id', function(req, res){
+    mongoose.model('location').findOneAndUpdate(
+        {_id: req.params.location_id},
+        {$set: {
+            scheduleName: req.body.scheduleName,
+            date: req.body.date,
+            time: req.body.time,
+            }
+        },
+        {udpset: true}
+        , function(err, locations){
+        if(err){
+            console.log("something wrong");
+        }else{
+            console.log(location);
+            res.send(204);
+        }
+    });
+});
+
+app.delete('/api/locations/:location_id', function(req, res) {
+    mongoose.model('location').remove({
+        _id : req.params.location_id
+    }, function(err, locations) {
         if (err)
             res.send(err);
 
@@ -404,24 +474,72 @@ app.post('/api/locations', function(req, res) {
 
 
 
+
 // ===================================================================
 // =========================== Wardrobe ==============================
 // ===================================================================
 
 app.get('/api/wardrobes', function(req, res) {
-    mongoose.model('wardrobe').find(function(err, wardrobes) {
-        res.send(wardrobes)
-    })
-})
 
+    mongoose.model('wardrobe').find(function(err, wardrobes) {
+        if (err)
+            res.send(err)
+        res.json(wardrobes); 
+    });
+});
 
 app.post('/api/wardrobes', function(req, res) {
 
     mongoose.model('wardrobe').create({
-        wardrobeConcept    : req.body.wardrobeConcept,
-        comment     : req.body.comment,
-        wardrobeImg : req.body.wardrobeImg
-    }, function(err, wardrobe) {
+        instrumentation  : req.body.instrumentation,
+        firstName   : req.body.firstName,
+        lastName   : req.body.lastName,
+        comment    : req.body.comment
+    }, function(err, song) {
+        if (err)
+            res.send(err);
+
+        mongoose.model('wardrobe').find(function(err, wardrobes) {
+            if (err)
+                res.send(err)
+            res.json(wardrobes);
+        });
+    });
+
+});
+
+app.get('/api/wardrobes/:wardrobe_id', function(req, res){
+    _id : req.params.wardrobe_id;
+    mongoose.model('wardrobe').findOne({_id:req.params.wardrobe_id}, function(err, wardrobes){
+        res.json(wardrobes);
+    });
+});
+
+app.post('/api/wardrobes/:wardrobe_id', function(req, res){
+    mongoose.model('wardrobe').findOneAndUpdate(
+        {_id: req.params.wardrobe_id},
+        {$set: {
+            instrumentation: req.body.instrumentation,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            comment: req.body.comment
+            }
+        },
+        {udpset: true}
+        , function(err, wardrobes){
+        if(err){
+            console.log("something wrong");
+        }else{
+            console.log(wardrobes);
+            res.send(204);
+        }
+    });
+});
+
+app.delete('/api/wardrobes/:wardrobe_id', function(req, res) {
+    mongoose.model('wardrobe').remove({
+        _id : req.params.wardrobe_id
+    }, function(err, song) {
         if (err)
             res.send(err);
 
@@ -432,6 +550,12 @@ app.post('/api/wardrobes', function(req, res) {
         });
     });
 });
+
+
+// ===================================================================
+// ============================ route ================================
+// ===================================================================
+
 
 router.get('*', function(req, res) {
   res.json({ message: 'You are running router.get!' });
