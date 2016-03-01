@@ -15,7 +15,6 @@ function ($scope, $http, $route, $location, $NgMap) {
     $http.get('/api/songs')
         .success(function(data) {
             $scope.songs = data;
-            console.log($scope.songs[0].songDuration);
         })
         .error(function(data) {
             console.log('Error: ' + data);
