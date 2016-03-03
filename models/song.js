@@ -1,9 +1,11 @@
+module.exports = function(){
 
-var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+var mongoose 	= require('mongoose');
+var db 			= require('../config/db');
+var Schema 		= mongoose.Schema;
 
-var SongSchema = new Schema({
-	artist:{
+var songSchema = new Schema({
+  	artist:{
 		type: String,
 		default: 'Unknown artist'
 	},
@@ -18,11 +20,68 @@ var SongSchema = new Schema({
 	bpm: {
 		type: Number,
 		default: 0
-	},
-	gigId: {
-		type: String
 	}
-})
+});
 
-mongoose.model('song', SongSchema);
+var _model = mongoose.model('song', songSchema);
 
+	_save = function(req, success, fail) {
+		var newGig = new _model({
+			artist     		: req.artist,
+	        title     		: req.title,
+	        songDuration    : req.songDuration,
+	        bpm 			: req.bpm,
+		});
+
+		newGig.save(function(err, doc) {
+			if(err){
+				console.log(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
+
+	_findAll = function(success, fail ){
+		_model.find({}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				console.log(doc);
+				success(doc);
+			}
+		})
+	};
+
+	_findOne = function(id ,success, fail){
+		objectID = 'ObjectId("'+id+'")';
+		_model.findOne({'_id': objectID}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
+
+	_remove = function(id, success, fail){
+		console.log(id);
+		_model.remove({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
+
+
+return{
+	schema  : songSchema,
+	add 	: _save,
+    findAll : _findAll,
+    findOne : _findOne,
+    delete  : _remove
+}
+
+}();

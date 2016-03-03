@@ -16,6 +16,13 @@ function ($scope, $http, $location, $routeParams) {
         $location.path('/songs');
     }
 
+    // $http.get('/getGigs', $scope.allGigs)
+    //     .then(function(data){
+    //         $scope.allGigs = data;
+    //         console.log(data);
+    //     })
+
+
     $http.get('/api/gigs')
         .success(function(data) {
             $scope.gigs = data;

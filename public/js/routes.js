@@ -81,6 +81,12 @@ myapp.config(function ($routeProvider, $locationProvider){
 
 		}
 	})
+	.when('/goAddGig', {
+		templateUrl : 'views/addGig.html',
+		controller 	: 'NewGigCtrl', function($scope, $http){
+
+		}
+	})
 	
 })
 

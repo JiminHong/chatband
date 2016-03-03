@@ -8,7 +8,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $location.path('/listGigs');
     }
 
-
     $scope.songPanelBody     = false;
     $scope.lineupPanelBody   = false;
     $scope.datetimePanelBody = false;
@@ -22,57 +21,25 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // =============================== GIG ===============================
     // ===================================================================
 
-    $scope.addGig = function(){
-        
-        $http.post('/addGigJSON', $scope.newGig);
-            // .success(function(data) {
-            //     $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-            //     $scope.gigs = data;
-            //     lastGig         = data.length - 1;
-            //     $location.path('/goAddGig/'+ data[lastGig]._id);
-            // })
-            // .error(function(data) {
-            //     console.log('Error: ' + data);
-            // });
+    // this is working
+    $scope.createGig = function(){
+        $http.post('/addGigJSON', $scope.newGig)
+        .success(function(data) {
+                $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+                $scope.gigs = data;
+                $location.path('/goAddGig/'+ data._id);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });;
     }
-    
-    // $scope.createGig = function() {
-    //     $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-    //     $http.post('/api/gigs', $scope.newGig)
-    //         .success(function(data) {
-    //             $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-    //             $scope.gigs = data;
-    //             lastGig         = data.length - 1;
-    //             $location.path('/goAddGig/'+ data[lastGig]._id);
-    //         })
-    //         .error(function(data) {
-    //             console.log('Error: ' + data);
-    //         });
-    // };
 
     // ===================================================================
     // =============================== Songs =============================
     // ===================================================================
 
-
-    $scope.createSong = function(gigId) {
-        $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)
-            .success(function(data) {
-                $scope.newGig = {}; // clear the form so our user is ready to enter another
-                $scope.songs = data;
-                console.log($scope.songs);
-                $scope.doneIndicator = "Successfully added! :)";
-                $scope.add = "";
-                goBack = function(){
-                    $scope.doneIndicator = "";
-                    $scope.add = "Add More";
-                }
-                $timeout(goBack, 1000);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-        $timeout(500);
+    $scope.createSong = function() {
+        $http.post('/addSongJSON', $scope.newGig)
     };
 
 
@@ -81,7 +48,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createLineup = function() {
-        $http.post('/api/lineups', $scope.newGig)
+        $http.post('/addLineupJSON', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.lineup = data;

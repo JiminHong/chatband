@@ -7,9 +7,9 @@ module.exports = function(app){
 // ===================================================================
 
 app.get('/getGigs', function(req, res){
-    gigs = require('../models/gig.js');
-    allGigs = gigs.findAll(function(result){
-        res.send(JSON.stringify({gigs: result}));
+    Gig.findAll(function(result){
+        console.log(result);
+        //res.send(result);
     })
 });
 
@@ -20,36 +20,22 @@ app.post('/addGigJSON', function (req, res) {
     });
 });
 
+app.post('/addSongJSON', function (req, res) {
+    songs = require('../models/song.js');
+    songs.add(req.body, function(doc){
+        res.send(doc);
+        console.log(doc);
+    });
+});
 
-// app.get('/gigs', function(req, res) {
-//     Gig.find(function(err, gigs) {
-//         if (err)
-//             res.send(err)
-//         res.json(gigs); 
-//     });
-// });
+app.post('/addLineupJSON', function (req, res) {
+    lineups = require('../models/lineup.js');
+    lineups.add(req.body, function(doc){
+        res.send(doc);
+        console.log(doc);
+    });
+});
 
-// app.post('/gigs', function(req, res) {
-//     Gig.create({
-//         gigName     : req.body.gigName,
-//         gigDate     : req.body.gigDate,
-//         gigTime     : req.body.gigTime,
-//         gigLocationBefore : req.body.gigLocationBefore,
-//         gigLocation : req.body.gigLocation
-//     }, function(err, gig) {
-//         if (err)
-//             res.send(err);
 
-//         Gig.find(function(err, gigs) {
-//             if (err){
-//                 res.send(err)
-//             }else{
-//                 res.status(200).json(gigs);
-//             }
-            
-//         });
-//     });
-
-// });
 
 };
