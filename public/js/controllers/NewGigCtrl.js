@@ -40,6 +40,21 @@ function ($scope, $timeout, $http, $location, $routeParams) {
 
     $scope.createSong = function() {
         $http.post('/addSongJSON', $scope.newGig)
+        .success(function(data) {
+                $scope.newGig = {}; 
+                $scope.lineup = data;
+                $scope.doneIndicator = "Added!";
+                $scope.add = "";
+                goBack = function(){
+                    $scope.doneIndicator = "";
+                    $scope.add = "Add";
+                }
+                $timeout(goBack, 1000);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+        $timeout(500);
     };
 
 
@@ -70,7 +85,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createDatetime = function() {
-        $http.post('/api/datetimes', $scope.newGig)
+        $http.post('/addDatetimeJSON', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.datetimes = data;
@@ -94,7 +109,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
 
     $scope.createLocation = function() {
         $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
-        $http.post('/api/locations', $scope.newGig)
+        $http.post('/addLocationJSON', $scope.newGig)
             .success(function(data) {
                 $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
                 $scope.location = data;
@@ -118,7 +133,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createWardrobe = function() {
-        $http.post('/api/wardrobes', $scope.newGig)
+        $http.post('/addWardrobeJSON', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.wardrobes = data;

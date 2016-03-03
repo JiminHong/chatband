@@ -36,6 +36,29 @@ app.post('/addLineupJSON', function (req, res) {
     });
 });
 
+app.post('/addDatetimeJSON', function (req, res) {
+    lineups = require('../models/lineup.js');
+    lineups.add(req.body, function(doc){
+        res.send(doc);
+        console.log(doc);
+    });
+});
+
+app.post('/addLocationJSON', function (req, res) {
+    lineups = require('../models/lineup.js');
+    lineups.add(req.body, function(doc){
+        res.send(doc);
+        console.log(doc);
+    });
+});
+
+app.post('/addWardrobeJSON', function (req, res) {
+    lineups = require('../models/lineup.js');
+    lineups.add(req.body, function(doc){
+        res.send(doc);
+        console.log(doc);
+    });
+});
 
 
 };
