@@ -9,8 +9,8 @@
         <div class="panel-body" ng-show="songPanelBody">
             <form method="get">
                 <input class="form" type="text" ng-model="newGig.artist" placeholder="Artist name" required /><br />
-                <input class="form"type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
-                <input class="form"type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/><br />
+                <input class="form" type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
+                <input class="form" type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/><br />
                 <input class="form"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.title}]}</p></button>
             </form>
@@ -57,10 +57,7 @@
         </div>
         <div class="panel-body" ng-show="locationPanelBody">
             <form method="get">
-                <input class="form wide"type="text" ng-model="newGig.street" placeholder="Street" required/><br />
-                <input class="form wide"type="text" ng-model="newGig.city" placeholder="city" required/><br />
-                <input class="form wide"type="text" ng-model="newGig.state" placeholder="state" required/><br />
-                <input class="form wide"type="text" ng-model="newGig.zipcode" placeholder="Zipcode" required/><br /> 
+                <input class="form" type="text" g-places-autocomplete ng-model="newGig.gigAddress" placeholder="Location" required/><br>
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLocation()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} Location</p></button>
             </form>
         </div>

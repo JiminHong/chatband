@@ -8,12 +8,9 @@
     <div ng-repeat="location in locations" class="song-list-wrapper">
         <div class="section group">
                 <p class="gig-data-p margin-zero">
-                    {[{location.street}]}
+                    {[{location.gigAddress}]}
                 <p>
-                <p class="gig-data-p">
-                    {[{location.city}]}, {[{location.state}]} {[{location.zipcode}]}
-                </p>
-                <ng-map center="san francisco" scrollwheel="false">
+                <ng-map center="12350 E Colonial Dr, Orlando, FL 32826, USA" scrollwheel="false">
                     <marker position="san francisco"></div>
                 </ng-map>   
         </div>

@@ -579,7 +579,7 @@ ul li {
 
 /* line 77, ../sass/partials/_col.scss */
 .span_8_of_9 {
-  width: 88.71%;
+  width: 88.71% !important;
 }
 
 /* line 81, ../sass/partials/_col.scss */
@@ -629,9 +629,10 @@ h1 {
   color: #efefef;
   font-family: "chaparral-pro";
   margin: 0;
+  cursor: pointer;
 }
 
-/* line 14, ../sass/partials/_fonts.scss */
+/* line 15, ../sass/partials/_fonts.scss */
 h2 {
   color: #8DAF41;
   font-family: "Montserrat", sans-serif;
@@ -641,7 +642,7 @@ h2 {
   margin: 0;
 }
 
-/* line 23, ../sass/partials/_fonts.scss */
+/* line 24, ../sass/partials/_fonts.scss */
 .gig-name-h2 {
   font-family: "Montserrat", sans-serif;
   color: #777A7A;
@@ -652,7 +653,7 @@ h2 {
   padding-top: 10px;
 }
 
-/* line 33, ../sass/partials/_fonts.scss */
+/* line 34, ../sass/partials/_fonts.scss */
 .chap-h2 {
   color: #8DAF41;
   font-family: "chaparral-pro";
@@ -667,7 +668,7 @@ h2 {
   transition: color 0.15s 0.15s;
 }
 
-/* line 43, ../sass/partials/_fonts.scss */
+/* line 44, ../sass/partials/_fonts.scss */
 h2.mont-h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -675,13 +676,13 @@ h2.mont-h2 {
   font-size: 1em;
 }
 
-/* line 51, ../sass/partials/_fonts.scss */
+/* line 52, ../sass/partials/_fonts.scss */
 h3 {
   color: #7e8aa2;
   margin: 0;
 }
 
-/* line 56, ../sass/partials/_fonts.scss */
+/* line 57, ../sass/partials/_fonts.scss */
 .gig-title-h3 {
   font-family: "Montserrat", sans-serif;
   color: #b7b7b7;
@@ -691,20 +692,20 @@ h3 {
   text-transform: uppercase;
 }
 
-/* line 65, ../sass/partials/_fonts.scss */
+/* line 66, ../sass/partials/_fonts.scss */
 h4 {
   /*	font-weight: 600;
   */
   color: #263248;
 }
 
-/* line 69, ../sass/partials/_fonts.scss */
+/* line 70, ../sass/partials/_fonts.scss */
 h5 {
   color: rgba(38, 50, 72, 0.5);
   float: left;
 }
 
-/* line 73, ../sass/partials/_fonts.scss */
+/* line 74, ../sass/partials/_fonts.scss */
 p {
   color: #263248;
   font-size: .8em;
@@ -713,24 +714,24 @@ p {
   font-family: "open-sans", sans-serif;
 }
 
-/* line 80, ../sass/partials/_fonts.scss */
+/* line 81, ../sass/partials/_fonts.scss */
 .gig-data-p {
   color: #777A7A;
   margin: 0 0 15px 0;
   font-size: 1em;
 }
 
-/* line 86, ../sass/partials/_fonts.scss */
+/* line 87, ../sass/partials/_fonts.scss */
 h4.subheading {
   text-transform: none;
 }
 
-/* line 90, ../sass/partials/_fonts.scss */
+/* line 91, ../sass/partials/_fonts.scss */
 a {
   text-decoration: none;
 }
 
-/* line 94, ../sass/partials/_fonts.scss */
+/* line 95, ../sass/partials/_fonts.scss */
 .time-giglist {
   margin-left: 5px;
   color: #ADADAD;
@@ -745,17 +746,17 @@ a {
   transition: color 0.15s 0.15s;
 }
 
-/* line 105, ../sass/partials/_fonts.scss */
+/* line 106, ../sass/partials/_fonts.scss */
 .small-text {
   font-size: .75em;
 }
 
-/* line 109, ../sass/partials/_fonts.scss */
+/* line 110, ../sass/partials/_fonts.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 113, ../sass/partials/_fonts.scss */
+/* line 114, ../sass/partials/_fonts.scss */
 .send-btn {
   font-size: .8em;
   text-align: center;
@@ -769,32 +770,33 @@ a {
   transition: color 0.15s 0.15s;
   margin-top: 1.5%;
 }
-/* line 121, ../sass/partials/_fonts.scss */
+/* line 122, ../sass/partials/_fonts.scss */
 .send-btn:hover {
   color: #bcd37d;
 }
-/* line 124, ../sass/partials/_fonts.scss */
+/* line 125, ../sass/partials/_fonts.scss */
 .send-btn p {
   font-size: .8em;
   text-align: center;
 }
 
-/* line 130, ../sass/partials/_fonts.scss */
+/* line 131, ../sass/partials/_fonts.scss */
 .uplowcase {
   text-transform: unset;
 }
 
-/* line 134, ../sass/partials/_fonts.scss */
+/* line 135, ../sass/partials/_fonts.scss */
 .comment {
   color: #FFA780;
   font-family: "chaparral-pro";
   font-style: italic;
 }
 
-/* line 140, ../sass/partials/_fonts.scss */
+/* line 141, ../sass/partials/_fonts.scss */
 label {
   margin-top: 20px;
   font-family: "Montserrat", sans-serif;
+  color: #777A7A;
 }
 
 /*============================================= */
@@ -862,7 +864,6 @@ svg#files:hover, svg#calendar:hover, svg#addUser:hover {
 
 /* line 48, ../sass/partials/_svg.scss */
 svg#option-plus {
-  margin-left: 22%;
   fill: white;
   -moz-transition: fill 0.15s 0.15s;
   -o-transition: fill 0.15s 0.15s;
@@ -870,75 +871,74 @@ svg#option-plus {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 52, ../sass/partials/_svg.scss */
+/* line 51, ../sass/partials/_svg.scss */
 svg#option-plus:hover {
   fill: #bcd37d;
 }
 
-/* line 57, ../sass/partials/_svg.scss */
+/* line 56, ../sass/partials/_svg.scss */
 svg#lead-sheet {
   fill: #e2d6c5;
   margin-bottom: 1%;
 }
 
-/* line 62, ../sass/partials/_svg.scss */
+/* line 61, ../sass/partials/_svg.scss */
 svg#pencil {
   margin-right: 8px;
 }
 
-/* line 66, ../sass/partials/_svg.scss */
+/* line 65, ../sass/partials/_svg.scss */
 .option-plus-position {
-  margin-top: 0.5%;
   float: left;
 }
 
-/* line 72, ../sass/partials/_svg.scss */
+/* line 70, ../sass/partials/_svg.scss */
 .active svg path {
   fill: #5a822f;
 }
 
-/* line 76, ../sass/partials/_svg.scss */
+/* line 74, ../sass/partials/_svg.scss */
 .active p.tabText {
   color: #5a822f;
 }
 
-/* line 80, ../sass/partials/_svg.scss */
+/* line 78, ../sass/partials/_svg.scss */
 .text-svg {
   float: left;
   margin-left: 75px;
 }
 
-/* line 85, ../sass/partials/_svg.scss */
+/* line 83, ../sass/partials/_svg.scss */
 .margin-left {
   margin-left: 8%;
 }
 
-/* line 89, ../sass/partials/_svg.scss */
+/* line 87, ../sass/partials/_svg.scss */
 .nav-right {
   text-align: right;
   margin-right: 15px;
 }
 
-/* line 94, ../sass/partials/_svg.scss */
+/* line 92, ../sass/partials/_svg.scss */
 .nav-left {
   cursor: pointer;
 }
-/* line 98, ../sass/partials/_svg.scss */
+/* line 96, ../sass/partials/_svg.scss */
 .nav-left:hover .nav-arrow-text-svg path.nav-arrow {
   fill: #bcd37d;
 }
-/* line 102, ../sass/partials/_svg.scss */
+/* line 100, ../sass/partials/_svg.scss */
 .nav-left:hover .nav-text {
   color: #bcd37d;
   cursor: pointer;
 }
-/* line 107, ../sass/partials/_svg.scss */
+/* line 105, ../sass/partials/_svg.scss */
 .nav-left .nav-arrow-text-svg {
   float: left;
   margin-left: 20px;
   line-height: 2.2em;
 }
-/* line 111, ../sass/partials/_svg.scss */
+/* line 109, ../sass/partials/_svg.scss */
 .nav-left .nav-arrow-text-svg path.nav-arrow {
   fill: #efefef;
   -moz-transition: fill 0.15s 0.15s;
@@ -947,15 +947,15 @@ svg#pencil {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 117, ../sass/partials/_svg.scss */
+/* line 115, ../sass/partials/_svg.scss */
 .nav-left path.nav-arrow {
   margin-top: 10px;
 }
-/* line 121, ../sass/partials/_svg.scss */
+/* line 119, ../sass/partials/_svg.scss */
 .nav-left svg#nav-arrow {
   margin: 5px 10px -3px 0;
 }
-/* line 125, ../sass/partials/_svg.scss */
+/* line 123, ../sass/partials/_svg.scss */
 .nav-left .nav-text {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -969,20 +969,20 @@ svg#pencil {
   transition: color 0.15s 0.15s;
 }
 
-/* line 135, ../sass/partials/_svg.scss */
+/* line 133, ../sass/partials/_svg.scss */
 .clip-circle {
   -webkit-clip-path: circle(33px at 95px 35px);
   clip-path: circle(33px at 95px 35px);
 }
 
-/* line 140, ../sass/partials/_svg.scss */
+/* line 138, ../sass/partials/_svg.scss */
 .svg-center-1-of-2 {
   display: block;
   margin: auto;
   margin-top: 5%;
 }
 
-/* line 146, ../sass/partials/_svg.scss */
+/* line 144, ../sass/partials/_svg.scss */
 .p-center-1-of-2 {
   font-size: .5em;
   color: #95a362;
@@ -1582,31 +1582,26 @@ input {
   border-width: 0;
 }
 
-/* line 491, ../sass/style.scss */
-.chat-msg-input {
-  width: 79.71%;
-}
-
 /*============================================= */
 /*=================== Colors ================== */
 /*============================================= */
-/* line 500, ../sass/style.scss */
+/* line 497, ../sass/style.scss */
 .dark-green-bg {
   background-color: #515d3c;
 }
 
-/* line 504, ../sass/style.scss */
+/* line 501, ../sass/style.scss */
 .reg-green-bg {
   background-color: #6B7F48;
 }
 
-/* line 508, ../sass/style.scss */
+/* line 505, ../sass/style.scss */
 .nav-icons {
   display: block;
   margin: 10px 45px;
 }
 
-/* line 513, ../sass/style.scss */
+/* line 510, ../sass/style.scss */
 .dark-green-yellow-bg {
   background-color: #424242;
   -moz-transition: background-color 0.15s 0.15s;
@@ -1615,39 +1610,39 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: background-color 0.15s 0.15s;
 }
-/* line 516, ../sass/style.scss */
+/* line 513, ../sass/style.scss */
 .dark-green-yellow-bg:hover {
   background-color: #333333;
 }
 
-/* line 521, ../sass/style.scss */
+/* line 518, ../sass/style.scss */
 .dark-green-yellow-fill {
   fill: #424242;
 }
 
-/* line 525, ../sass/style.scss */
+/* line 522, ../sass/style.scss */
 .light-brown {
   color: #e2d6c5;
 }
 
-/* line 529, ../sass/style.scss */
+/* line 526, ../sass/style.scss */
 .ligth-brown-fill {
   fill: #e2d6c5;
 }
 
-/* line 533, ../sass/style.scss */
+/* line 530, ../sass/style.scss */
 .gig-content-wrapper {
   width: 100%;
   height: 100%;
   background-color: red;
 }
 
-/* line 539, ../sass/style.scss */
+/* line 536, ../sass/style.scss */
 .green-fill {
   fill: #8DAF41;
 }
 
-/* line 543, ../sass/style.scss */
+/* line 540, ../sass/style.scss */
 .reg-grey-fill {
   fill: #777A7A;
   -moz-transition: fill 0.15s 0.15s;
@@ -1656,7 +1651,7 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 546, ../sass/style.scss */
+/* line 543, ../sass/style.scss */
 .reg-grey-fill:hover {
   fill: #333333;
 }
@@ -1664,46 +1659,46 @@ input {
 /*============================================= */
 /*=================== Float =================== */
 /*============================================= */
-/* line 555, ../sass/style.scss */
+/* line 552, ../sass/style.scss */
 .float-left {
   float: left;
 }
 
-/* line 559, ../sass/style.scss */
+/* line 556, ../sass/style.scss */
 .float-right {
   float: right;
 }
 
-/* line 562, ../sass/style.scss */
+/* line 559, ../sass/style.scss */
 .float-clear {
   clear: both;
 }
 
-/* line 566, ../sass/style.scss */
+/* line 563, ../sass/style.scss */
 .lowercase {
   text-transform: lowercase;
 }
 
-/* line 570, ../sass/style.scss */
+/* line 567, ../sass/style.scss */
 .margin-zero {
   margin: 0;
 }
 
-/* line 574, ../sass/style.scss */
+/* line 571, ../sass/style.scss */
 .padding-zero {
   padding: 0;
 }
 
-/* line 578, ../sass/style.scss */
+/* line 575, ../sass/style.scss */
 .top-right-span {
   margin: 0;
 }
-/* line 580, ../sass/style.scss */
+/* line 577, ../sass/style.scss */
 .top-right-span p {
   font-size: .5em;
 }
 
-/* line 585, ../sass/style.scss */
+/* line 582, ../sass/style.scss */
 hr {
   border-top: 2px solid #e6e6e6;
   border-left: white;
@@ -1711,17 +1706,17 @@ hr {
   margin-bottom: 0;
 }
 
-/* line 592, ../sass/style.scss */
+/* line 589, ../sass/style.scss */
 .img {
   width: 100%;
 }
 
-/* line 596, ../sass/style.scss */
+/* line 593, ../sass/style.scss */
 .profile-img {
   max-width: 130px;
 }
 
-/* line 600, ../sass/style.scss */
+/* line 597, ../sass/style.scss */
 #map {
   height: 400px;
   margin: 20px 0;
@@ -1730,7 +1725,7 @@ hr {
 }
 
 @media only screen and (max-width: 320px) {
-  /* line 609, ../sass/style.scss */
+  /* line 606, ../sass/style.scss */
   .chat-msg-input {
     width: 77%;
   }

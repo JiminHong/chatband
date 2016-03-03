@@ -46,7 +46,6 @@ svg#files, svg#calendar, svg#addUser{
 };
 
 svg#option-plus{
-    margin-left: 22%;
     fill:$white;
     @include transition(fill .15s .15s);
     &:hover{
@@ -64,8 +63,8 @@ svg#pencil{
 }
 
 .option-plus-position{
-    margin-top: 0.5%;
     float: left;
+    margin: 0 auto;
 }
 
 

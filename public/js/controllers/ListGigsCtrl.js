@@ -20,10 +20,6 @@ function ($scope, $http, $location, $routeParams) {
         .success(function(data) {
             $scope.gigs = data;
             gigMonthObject = {};
-            for(i=0;i<data.length;i++){
-                // console.log(data[i].gigDate);
-                // monthNum = data[i].gigDate.charAt(5)+data[i].gigDate.charAt(6);                
-                // $scope.gigData.gigDate = gigMonth;
                 for(i=0; i<data.length; i++){
                     //Month
                     monthNum = data[i].gigDate.charAt(5)+data[i].gigDate.charAt(6);
@@ -34,13 +30,18 @@ function ($scope, $http, $location, $routeParams) {
                     dateNum = data[i].gigDate.charAt(8)+data[i].gigDate.charAt(9);
                     data[i].gigDate = dateNum;
                     //Time
-                    timeNum = Number(data[i].gigTime.charAt(12))+5;
-                    data[i].gigTime = timeNum;
+                    timeStr = data[i].gigTime;
+                    utcTimeHour = timeStr.slice(11, 13);
+                    utcTimeMin = timeStr.slice(14, 16);
+                    if(Number(utcTimeHour)>12){
+                        utcTimeHour = Number(utcTimeHour)-12;
+                        console.log(utcTimeHour);
+                        $scope.ampm = "PM";
+                    };
+                    data[i].gigTime = utcTimeHour +":"+ utcTimeMin;
 
                     console.log(data[i].gigTime)
                 };
-            }
-
         })
         .error(function(data) {
             console.log('Error: ' + data);

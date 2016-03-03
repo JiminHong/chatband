@@ -11,9 +11,9 @@ var SongSchema = new Schema({
 		type: String,
 		default: 'Unknown Title'
 	},
-	songDuration:{
+	songDuration : {
 		type: String,
-		default: 'default String'
+		default: '00:00'
 	},
 	bpm: {
 		type: Number,

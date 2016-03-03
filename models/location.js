@@ -2,10 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var locationSchema = new Schema({
-  street: String,
-  city: String,
-  state: String,
-  zipcode: Number,
+	gigAddress: String,
 	gigId: {
 		type: Schema.Types.ObjectId
 	}

@@ -15,45 +15,52 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     $scope.locationPanelBody = false;
     $scope.wardrobePanelBody = false;
 
-    $scope.newGig = {};
     $scope.add = "Add";
     $scope.doneIndicator = "";
-
+    $scope.newGig = {};
     // ===================================================================
     // =============================== GIG ===============================
     // ===================================================================
+
+    $scope.addGig = function(){
+        
+        $http.post('/addGigJSON', $scope.newGig);
+            // .success(function(data) {
+            //     $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+            //     $scope.gigs = data;
+            //     lastGig         = data.length - 1;
+            //     $location.path('/goAddGig/'+ data[lastGig]._id);
+            // })
+            // .error(function(data) {
+            //     console.log('Error: ' + data);
+            // });
+    }
     
-    $scope.createGig = function() {
-        $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-        $http.post('/api/gigs', $scope.newGig)
-            .success(function(data) {
-                $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-                $scope.gigs = data;
-                lastGig         = data.length - 1;
-                $location.path('/goAddGig/'+ data[lastGig]._id);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
+    // $scope.createGig = function() {
+    //     $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+    //     $http.post('/api/gigs', $scope.newGig)
+    //         .success(function(data) {
+    //             $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+    //             $scope.gigs = data;
+    //             lastGig         = data.length - 1;
+    //             $location.path('/goAddGig/'+ data[lastGig]._id);
+    //         })
+    //         .error(function(data) {
+    //             console.log('Error: ' + data);
+    //         });
+    // };
 
     // ===================================================================
     // =============================== Songs =============================
     // ===================================================================
-    $http.get('/api/songs')
-        .success(function(data) {
-            $scope.songs = data;
-            console.log($scope.songs[0].artist);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
+
 
     $scope.createSong = function(gigId) {
         $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.songs = data;
+                console.log($scope.songs);
                 $scope.doneIndicator = "Successfully added! :)";
                 $scope.add = "";
                 goBack = function(){
@@ -114,25 +121,17 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $timeout(500);
     };
 
-    $scope.deleteDatetime = function(id) {
-        $http.delete('/api/datetimes/' + id)
-            .success(function(data) {
-                $scope.datetimes = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-
     // ===================================================================
     // =========================== Location ==============================
     // ===================================================================
 
     $scope.createLocation = function() {
+        $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
         $http.post('/api/locations', $scope.newGig)
             .success(function(data) {
-                $scope.newGig = {}; 
+                $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
                 $scope.location = data;
+                console.log(data);
                 $scope.doneIndicator = "Added!";
                 $scope.add = "";
                 goBack = function(){
@@ -144,7 +143,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
             .error(function(data) {
                 console.log('Error: ' + data);
             });
-        $timeout(500);
+            $timeout(500);
     };
 
     // ===================================================================
@@ -170,15 +169,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $timeout(500);
     };
 
-    $scope.deleteWardrobe = function(id) {
-        $http.delete('/api/wardrobes/' + id)
-            .success(function(data) {
-                $scope.wardrobes = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
             
 }]);
 

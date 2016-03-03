@@ -5,9 +5,9 @@ function ($scope, $http, $route, $location, $NgMap) {
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
     $NgMap.getMap().then(function(map) {
-        // console.log(map.getCenter());
-        // console.log('markers', map.markers);
-        // console.log('shapes', map.shapes);
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
       });
 
     $scope.gigName = "moonstone music festival 2016";
@@ -44,6 +44,28 @@ function ($scope, $http, $route, $location, $NgMap) {
     $http.get('/api/datetimes')
         .success(function(data) {
             $scope.datetimes = data;
+                for(i=0; i<data.length; i++){
+                    //Month
+                    monthNum = data[i].date.charAt(5)+data[i].date.charAt(6);
+                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    monthNumIndex   = Number(monthNum)-1;
+                    data[i].month = monthNames[monthNumIndex];
+                    //Date
+                    dateNum = data[i].date.charAt(8)+data[i].date.charAt(9);
+                    data[i].date = dateNum;
+                    //Time
+                    timeStr = data[i].time;
+                    utcTimeHour = timeStr.slice(11, 13);
+                    utcTimeMin = timeStr.slice(14, 16);
+                    if(Number(utcTimeHour)>12){
+                        utcTimeHour = Number(utcTimeHour)-12;
+                        console.log(utcTimeHour);
+                        $scope.ampm = "PM";
+                    };
+                    data[i].time = utcTimeHour +":"+ utcTimeMin;
+
+                    console.log(data[i].time)
+                };
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -67,7 +89,6 @@ function ($scope, $http, $route, $location, $NgMap) {
 
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-
 
     
     if($location.path() === "/songs"){
@@ -95,10 +116,13 @@ function ($scope, $http, $route, $location, $NgMap) {
         $location.path('/songs');
     }
 
-    //Directs to the chat page
     $scope.goChat = function(){
         $location.path('/chat');
     }
+
+    // ===================================================================
+    // ============================== Song ===============================
+    // ===================================================================
 
     $scope.editSong = function(id){
         $http.get('/api/songs/' + id)
@@ -120,6 +144,10 @@ function ($scope, $http, $route, $location, $NgMap) {
                 console.log("id : ", id)
              })
     } 
+
+    // ===================================================================
+    // ============================ Lineup ===============================
+    // ===================================================================
 
     $scope.editLineup = function(id){
         $http.get('/api/lineups/' + id)
