@@ -7,9 +7,10 @@ var Schema 		= mongoose.Schema;
 var gigSchema = new Schema({
   	gigName		: String,
   	gigDate		: Date,
-  	gigTime		: String,
-  	gigLocation	: String,
-  	gigLocationBefore : String
+  	gigTime		: String
+  	// ,
+  	// gigLocation	: String,
+  	// gigLocationBefore : String
 });
 
 var _model = mongoose.model('gig', gigSchema);
@@ -18,9 +19,10 @@ var _model = mongoose.model('gig', gigSchema);
 		var newGig = new _model({
 			gigName     : req.gigName,
 	        gigDate     : req.gigDate,
-	        gigTime     : req.gigTime,
-	        gigLocationBefore : req.gigLocationBefore,
-	        gigLocation : req.gigLocation
+	        gigTime     : req.gigTime
+	        // ,
+	        // gigLocationBefore : req.gigLocationBefore,
+	        // gigLocation : req.gigLocation
 		});
 
 		newGig.save(function(err, doc) {

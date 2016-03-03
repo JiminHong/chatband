@@ -1,17 +1,16 @@
 module.exports = function(app){
     var express = require('express');
     var router = express.Router();
-    var Gig = require('../models/gig.js');
 // ===================================================================
 // =============================== Gigs ==============================
 // ===================================================================
 
-app.get('/getGigs', function(req, res){
-    Gig.findAll(function(result){
-        console.log(result);
-        //res.send(result);
-    })
-});
+// app.get('/getGigs', function(req, res){
+//     Gig.findAll(function(result){
+//         console.log(result, 'hi');
+//         //res.send(result);
+//     })
+// });
 
 app.post('/addGigJSON', function (req, res) {
     gigs = require('../models/gig.js');

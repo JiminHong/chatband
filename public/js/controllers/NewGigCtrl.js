@@ -23,9 +23,9 @@ function ($scope, $timeout, $http, $location, $routeParams) {
 
     // this is working
     $scope.createGig = function(){
-        $http.post('/addGigJSON', $scope.newGig)
+        $http.post('/api/gig', $scope.newGig)
         .success(function(data) {
-                $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+                // $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
                 $scope.gigs = data;
                 $location.path('/goAddGig/'+ data._id);
         })

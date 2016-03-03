@@ -16,14 +16,7 @@ function ($scope, $http, $location, $routeParams) {
         $location.path('/songs');
     }
 
-    // $http.get('/getGigs', $scope.allGigs)
-    //     .then(function(data){
-    //         $scope.allGigs = data;
-    //         console.log(data);
-    //     })
-
-
-    $http.get('/api/gigs')
+    $http.get('/api/gig')
         .success(function(data) {
             $scope.gigs = data;
             gigMonthObject = {};
@@ -54,13 +47,13 @@ function ($scope, $http, $location, $routeParams) {
             console.log('Error: ' + data);
         });
 
-    $http.get('/api/songs')
-        .success(function(data) {
-            $scope.songs = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+    // $http.get('/api/songs')
+    //     .success(function(data) {
+    //         $scope.songs = data;
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    //     });
 
 
     // $scope.listGigs = [
