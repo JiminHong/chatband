@@ -24,40 +24,23 @@ app.post('/api/songs', function(req, res) {
 app.get('/api/songs/:id', function(req, res) {
     objectId = req.params.id;
     song.findOne({_id:objectId},function(doc) {
-        console.log("in api doc ",doc);
-
             res.status(200).json(doc);
-            console.log("DOC in api/song.js :::::::::::::::::::: ",doc)
     });
 });
-
-    // _findOne = function(id ,success, fail){
-    //     objectId = 'ObjectId("'+id+'")';
-    //     _model.findOne({'id': objectId}, function(err, doc){
-    //         if(err){
-    //             console.log(err);
-    //         }else{
-    //             success(doc);
-    //         }
-    //     })
-    // };
-
-
-
 
 // Update
-app.put('api/songs/:id', function(req, res) {
-    req.body.id = req.params.id;
-    song.update(req.body,function(err){
-      // Error Encountered
-      res.status(500).json(err);
-    },function(data) {
-      res.status(200).json(data);
+app.post('/api/songs/:id', function(req, res) {
+    objectId = req.params.id;
+    console.log("in api", objectId);
+    song.update(req.body,function(doc){
+      console.log("in api data",doc);
+      res.status(200).json(doc);
     });
 });
 
+
 // Delete One
-app.delete('api/songs/:id', function(req, res) {
+app.delete('/api/songs/:id', function(req, res) {
     req.body.id = req.params.id;
     song.remove(req.body,function(err){
       // Error Encountered

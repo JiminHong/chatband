@@ -116,12 +116,11 @@ function ($scope, $http, $route, $location, $NgMap) {
              .success(function(data){
               $scope.song = data;
               $scope.songId = id;
-              console.log("scope.song", $scope.songId);
         })
     } 
 
     $scope.updateSong = function(id){
-        $http.put('/api/songs/'+ id, $scope.song)
+        $http.post('/api/songs/'+ id, $scope.song)
              .success(function(data){
                 $scope.song = data;
                 console.log($scope);
