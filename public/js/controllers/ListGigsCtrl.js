@@ -35,12 +35,9 @@ function ($scope, $http, $location, $routeParams) {
                     utcTimeMin = timeStr.slice(14, 16);
                     if(Number(utcTimeHour)>12){
                         utcTimeHour = Number(utcTimeHour)-12;
-                        console.log(utcTimeHour);
                         $scope.ampm = "PM";
                     };
                     data[i].gigTime = utcTimeHour +":"+ utcTimeMin;
-
-                    console.log(data[i].gigTime)
                 };
         })
         .error(function(data) {

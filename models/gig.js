@@ -39,7 +39,6 @@ var _model = mongoose.model('gig', gigSchema);
 			if(err){
 				fail(err);
 			}else{
-				console.log(doc);
 				success(doc);
 			}
 		})

@@ -356,6 +356,8 @@ app.get('/', function(req, res) {
 });
 
 require('./routes/api/gig.js')(app);
+require('./routes/api/song.js')(app);
+
 
 // start app ===============================================
 // startup our app at http://localhost:8080

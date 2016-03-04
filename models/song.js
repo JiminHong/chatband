@@ -47,19 +47,21 @@ var _model = mongoose.model('song', songSchema);
 			if(err){
 				fail(err);
 			}else{
-				console.log(doc);
 				success(doc);
 			}
 		})
 	};
 
 	_findOne = function(id ,success, fail){
-		objectID = 'ObjectId("'+id+'")';
-		_model.findOne({'_id': objectID}, function(err, doc){
+		objectId = id._id;
+		console.log("in model",objectId);
+		_model.findOne({'_id': objectId}, function(err, doc){
 			if(err){
+				console.log(err);
 				fail(err);
 			}else{
 				success(doc);
+				console.log("in model ",doc);
 			}
 		})
 	};

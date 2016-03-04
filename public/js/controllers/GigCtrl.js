@@ -20,72 +20,59 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     });
 
+    // $http.get('/api/lineups')
+    //     .success(function(data) {
+    //         $scope.lineups = data;
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    // });
 
-// app.get('/api/songs/:gigId', function(req, res) {
-//     mongoose.model('song').find({
-//         gigId: req.params.gigId
-//     }, function(err, song){
-//         if (err){
-//             res.send(err)
-//         }else{
-//             res.json(song);
-//         }
-//     });
-// });
+    // $http.get('/api/datetimes')
+    //     .success(function(data) {
+    //         $scope.datetimes = data;
+    //             for(i=0; i<data.length; i++){
+    //                 //Month
+    //                 monthNum = data[i].date.charAt(5)+data[i].date.charAt(6);
+    //                 monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    //                 monthNumIndex   = Number(monthNum)-1;
+    //                 data[i].month = monthNames[monthNumIndex];
+    //                 //Date
+    //                 dateNum = data[i].date.charAt(8)+data[i].date.charAt(9);
+    //                 data[i].date = dateNum;
+    //                 //Time
+    //                 timeStr = data[i].time;
+    //                 utcTimeHour = timeStr.slice(11, 13);
+    //                 utcTimeMin = timeStr.slice(14, 16);
+    //                 if(Number(utcTimeHour)>12){
+    //                     utcTimeHour = Number(utcTimeHour)-12;
+    //                     console.log(utcTimeHour);
+    //                     $scope.ampm = "PM";
+    //                 };
+    //                 data[i].time = utcTimeHour +":"+ utcTimeMin;
 
-    $http.get('/api/lineups')
-        .success(function(data) {
-            $scope.lineups = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
+    //                 console.log(data[i].time)
+    //             };
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    // });
 
-    $http.get('/api/datetimes')
-        .success(function(data) {
-            $scope.datetimes = data;
-                for(i=0; i<data.length; i++){
-                    //Month
-                    monthNum = data[i].date.charAt(5)+data[i].date.charAt(6);
-                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    monthNumIndex   = Number(monthNum)-1;
-                    data[i].month = monthNames[monthNumIndex];
-                    //Date
-                    dateNum = data[i].date.charAt(8)+data[i].date.charAt(9);
-                    data[i].date = dateNum;
-                    //Time
-                    timeStr = data[i].time;
-                    utcTimeHour = timeStr.slice(11, 13);
-                    utcTimeMin = timeStr.slice(14, 16);
-                    if(Number(utcTimeHour)>12){
-                        utcTimeHour = Number(utcTimeHour)-12;
-                        console.log(utcTimeHour);
-                        $scope.ampm = "PM";
-                    };
-                    data[i].time = utcTimeHour +":"+ utcTimeMin;
+    // $http.get('/api/locations')
+    //     .success(function(data) {
+    //         $scope.locations = data;
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    // });
 
-                    console.log(data[i].time)
-                };
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
-
-    $http.get('/api/locations')
-        .success(function(data) {
-            $scope.locations = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
-
-    $http.get('/api/wardrobes')
-        .success(function(data) {
-            $scope.wardrobes = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
+    // $http.get('/api/wardrobes')
+    //     .success(function(data) {
+    //         $scope.wardrobes = data;
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    // });
 
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
@@ -129,12 +116,12 @@ function ($scope, $http, $route, $location, $NgMap) {
              .success(function(data){
               $scope.song = data;
               $scope.songId = id;
-              console.log("scope", $scope.song);
+              console.log("scope.song", $scope.songId);
         })
     } 
 
     $scope.updateSong = function(id){
-        $http.post('/api/songs/'+ id, $scope.song)
+        $http.put('/api/songs/'+ id, $scope.song)
              .success(function(data){
                 $scope.song = data;
                 console.log($scope);
