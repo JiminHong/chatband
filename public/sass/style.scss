@@ -217,16 +217,17 @@ li{
 .list-groups-wrapper{
     margin: 0;
     padding: 0;
-    height: 92px;
+    height: 100px;
     background-color: $yellow-green-dark;
     snap-content{
-        height: 68px;
-        margin: -18px 0 -8px 0;
+        height: 76px;
+        margin: -20px 0 -8px 0;
         padding: 10px;
+
 
         h2, p{
             color: $reg-grey;
-            margin: 10px 0;
+            margin: 5px 0 10px;
         }
         span p{
             color: $light-reg-grey;

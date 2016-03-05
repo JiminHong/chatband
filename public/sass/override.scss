@@ -2,7 +2,7 @@
 
 snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
     position: relative;
-    top: 33px;
+    top: 40px;
     bottom: 0;
     display:block;
     }
@@ -12,6 +12,7 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
 	top: 0;
 	background-color: $light-grey;
 	overflow:hidden;
+
 }
 
 snap-drawer, .snap-drawer{

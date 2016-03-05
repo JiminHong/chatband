@@ -2,7 +2,7 @@
 /* line 3, ../sass/override.scss */
 snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
   position: relative;
-  top: 33px;
+  top: 40px;
   bottom: 0;
   display: block;
 }
@@ -15,13 +15,13 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
   overflow: hidden;
 }
 
-/* line 17, ../sass/override.scss */
+/* line 18, ../sass/override.scss */
 snap-drawer, .snap-drawer {
   top: 0;
   background-color: white;
 }
 
-/* line 23, ../sass/override.scss */
+/* line 24, ../sass/override.scss */
 .snap-drawer-button p {
   color: #bcd37d;
   margin-left: 5%;
@@ -30,11 +30,3 @@ snap-drawer, .snap-drawer {
 /*snap-content, .snap-content{
 	position: relative;
 }*/
-
-.less_span_8_of_9{
-  width: 87%;
-}
-
-.chat-msg-input{
-  padding: 20px 12px;
-}

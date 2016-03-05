@@ -38,7 +38,7 @@
                     {[{data.senderUsername}]}
                 <span class="message-time" ng-if="data.senderUsername != messages[$index-1].senderUsername">{[{data.time}]}</span>
                 </p>
-                <p ng-class="{repeatmsg : data.senderUsername == messages[$index-1].senderUsername}">{[{data.message}]}</p>
+                <p ng-class="{repeatmsg : data.senderUsername == messages[$index-1].senderUsername}" class="display-box">{[{data.message}]}</p>
             </div>
         </div>
 
