@@ -9,7 +9,7 @@ svg-icon#location.tabimg svg{
 
 svg-icon#wardrobe.tabimg svg{
     display: block;
-    margin: 13px 2px 5px;
+    margin: 16px 2px 5px;
 }
 
 /*svg #songs, #lineup, #datetime, #location, #wardrobe*/
@@ -28,7 +28,7 @@ display: block;
 }
 
 svg#arrow{
-    margin-top: 37px;
+    margin-top: 20px;
     path.arrow{
         fill: $desat-burnt-sienna;
         @include transition(fill .15s .15s);

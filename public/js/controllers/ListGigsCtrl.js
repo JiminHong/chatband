@@ -22,20 +22,22 @@ function ($scope, $http, $location, $routeParams) {
             gigMonthObject = {};
                 for(i=0; i<data.length; i++){
                     //Month
-                    monthNum = data[i].gigDate.charAt(5)+data[i].gigDate.charAt(6);
+                    monthNum = Number(data[i].gigDate.charAt(0)) + Number(data[i].gigDate.charAt(1));
                     monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    monthNumIndex   = Number(monthNum)-1;
-                    data[i].gigMonth = monthNames[monthNumIndex];
+                    data[i].gigMonth = monthNames[Number(monthNum)-1];
+
                     //Date
-                    dateNum = data[i].gigDate.charAt(8)+data[i].gigDate.charAt(9);
-                    data[i].gigDate = dateNum;
+                    data[i].gigDate = data[i].gigDate.charAt(3)+data[i].gigDate.charAt(4);
+
                     //Time
                     timeStr = data[i].gigTime;
-                    utcTimeHour = timeStr.slice(11, 13);
-                    utcTimeMin = timeStr.slice(14, 16);
+                    utcTimeHour = timeStr.slice(0, 2);
+                    utcTimeMin = timeStr.slice(3, 5);
                     if(Number(utcTimeHour)>12){
                         utcTimeHour = Number(utcTimeHour)-12;
                         $scope.ampm = "PM";
+                    }else{
+                        $scope.ampm = "AM";
                     };
                     data[i].gigTime = utcTimeHour +":"+ utcTimeMin;
                 };

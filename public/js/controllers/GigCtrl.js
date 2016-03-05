@@ -58,13 +58,13 @@ function ($scope, $http, $route, $location, $NgMap) {
     //         console.log('Error: ' + data);
     // });
 
-    // $http.get('/api/locations')
-    //     .success(function(data) {
-    //         $scope.locations = data;
-    //     })
-    //     .error(function(data) {
-    //         console.log('Error: ' + data);
-    // });
+    $http.get('/api/locations')
+        .success(function(data) {
+            $scope.locations = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    }); 
 
     // $http.get('/api/wardrobes')
     //     .success(function(data) {

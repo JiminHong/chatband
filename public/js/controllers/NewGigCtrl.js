@@ -23,9 +23,10 @@ function ($scope, $timeout, $http, $location, $routeParams) {
 
     // this is working
     $scope.createGig = function(){
+        $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
         $http.post('/api/gig', $scope.newGig)
         .success(function(data) {
-                // $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+                $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
                 $scope.gigs = data;
                 $location.path('/goAddGig/'+ data._id);
         })
@@ -63,7 +64,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createLineup = function() {
-        $http.post('/addLineupJSON', $scope.newGig)
+        $http.post('/api/lineups', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.lineup = data;
@@ -85,7 +86,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createDatetime = function() {
-        $http.post('/addDatetimeJSON', $scope.newGig)
+        $http.post('/api/datetimes', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.datetimes = data;
@@ -108,12 +109,12 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createLocation = function() {
-        $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
-        $http.post('/addLocationJSON', $scope.newGig)
+    $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
+        $http.post('/api/locations', $scope.newGig)
             .success(function(data) {
+                $scope.newGig = {}; 
                 $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
                 $scope.location = data;
-                console.log(data);
                 $scope.doneIndicator = "Added!";
                 $scope.add = "";
                 goBack = function(){
@@ -128,12 +129,13 @@ function ($scope, $timeout, $http, $location, $routeParams) {
             $timeout(500);
     };
 
+
     // ===================================================================
     // =========================== Wardrobes =============================
     // ===================================================================
 
     $scope.createWardrobe = function() {
-        $http.post('/addWardrobeJSON', $scope.newGig)
+        $http.post('/api/wardrobes', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.wardrobes = data;

@@ -58,6 +58,8 @@ app.get('/', function(req, res) {
 
 require('./routes/api/gig.js')(app);
 require('./routes/api/song.js')(app);
+require('./routes/api/location.js')(app);
+
 
 
 // start app ===============================================

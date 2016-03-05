@@ -1,75 +1,52 @@
-var express        = require('express');
-var app            = express();
-
+module.exports = function(app){
+    var express = require('express');
+    var router = express.Router();
+    var location = require('../../models/location.js');
 // ===================================================================
-// =========================== Location ==============================
+// =============================== Gigs ==============================
 // ===================================================================
 
+// Read All
 app.get('/api/locations', function(req, res) {
-
-    mongoose.model('location').find(function(err, locations) {
-        if (err)
-            res.send(err)
-        res.json(locations); 
+    location.findAll(function(data) {
+      res.status(200).json(data);
     });
 });
 
+// Create
 app.post('/api/locations', function(req, res) {
-
-    mongoose.model('location').create({
-        gigAddress  : req.body.gigAddress
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('location').find(function(err, locations) {
-            if (err)
-                res.send(err)
-            res.json(locations);
-        });
-    });
-
-});
-
-app.get('/api/locations/:location_id', function(req, res){
-    _id : req.params.location_id;
-    mongoose.model('location').findOne({_id:req.params.location_id}, function(err, locations){
-        res.json(locations);
+    location.add(req.body, function(doc){
+        res.send(doc);
     });
 });
 
-app.post('/api/locations/:location_id', function(req, res){
-    mongoose.model('location').findOneAndUpdate(
-        {_id: req.params.location_id},
-        {$set: {
-            gigAddress: req.body.gigAddress
-            }
-        },
-        {udpset: true}
-        , function(err, locations){
-        if(err){
-            console.log("something wrong");
-        }else{
-            console.log(locations);
-            res.send(204);
-        }
+ // Read One
+app.get('/api/locations/:id', function(req, res) {
+    objectId = req.params.id;
+    location.findOne({_id:objectId},function(doc) {
+            res.status(200).json(doc);
     });
 });
 
-app.delete('/api/locations/:location_id', function(req, res) {
-    mongoose.model('location').remove({
-        _id : req.params.location_id
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('location').find(function(err, locations) {
-            if (err)
-                res.send(err)
-            res.json(locations);
-        });
+// Update
+app.post('/api/locations/:id', function(req, res) {
+    objectId = req.params.id;
+    console.log("in api", objectId);
+    location.update(req.body,function(doc){
+      console.log("in api data",doc);
+      res.status(200).json(doc);
     });
 });
 
 
+// Delete One
+app.delete('/api/locations/:id', function(req, res) {
+    objectId = req.params.id;
+    location.remove({_id:objectId},function(doc){
+        res.status(200).json("doc in api",doc);
+    });
+});
 
+
+return app;
+};

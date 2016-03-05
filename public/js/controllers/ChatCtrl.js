@@ -27,51 +27,51 @@ function ($scope, $location, $routeParams) {
         $scope.messages = [
             
             {
-                profilePic: "",
+                profilePic: "/img/profile_pics/pug.jpg",
                 message:"Good morning, group.",
-                donorUsername: $scope.username,
+                senderUsername: $scope.username,
                 recipientUsername: $scope.group,
                 time:"9:10"
             },
             {
-                profilePic: "",
+                profilePic: "/img/profile_pics/pug.jpg",
                 message:"Let me know when you guys get up",
-                donorUsername: $scope.username,
+                senderUsername: $scope.username,
                 recipientUsername: $scope.group,
                 time:"9:10"
             },
             {
                 profilePic: "/img/profile_pics/matt.jpg",
                 message:"Hey John, I just got up. What's up?",
-                donorUsername:"Matt",
+                senderUsername:"Matt",
                 recipientUsername:$scope.group,
                 time:"9:25"
             },
             {
-                profilePic: "",
+                profilePic: "/img/profile_pics/pug.jpg",
                 message:"Hi Matt, I'm going to upload songs for the gig.",
-                donorUsername: $scope.username,
+                senderUsername: $scope.username,
                 recipientUsername: $scope.group,
                 time:"9:10"
             },
             {
                 profilePic: "/img/profile_pics/lorde.jpg",
                 message:"Didn't you say you have a video you were going to show us?",
-                donorUsername:"Lorde",
+                senderUsername:"Lorde",
                 recipientUsername:$scope.group,
                 time:"9:27"
             },
             {
                 profilePic: "/img/profile_pics/lorde.jpg",
                 message:"Wanna watch the video",
-                donorUsername:"Lorde",
+                senderUsername:"Lorde",
                 recipientUsername:$scope.group,
                 time:"9:27"
             },
             {
-                profilePic: "",
+                profilePic: "/img/profile_pics/pug.jpg",
                 message:"Okay, give me a sec.",
-                donorUsername:$scope.username,
+                senderUsername:$scope.username,
                 recipientUsername: $scope.group,
                 time:"9:29"
             }
