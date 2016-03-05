@@ -712,26 +712,27 @@ p {
   margin: 0;
   font-weight: 400;
   font-family: "open-sans", sans-serif;
+  display: -webkit-box;
 }
 
-/* line 81, ../sass/partials/_fonts.scss */
+/* line 82, ../sass/partials/_fonts.scss */
 .gig-data-p {
   color: #777A7A;
   margin: 0 0 15px 0;
   font-size: 1em;
 }
 
-/* line 87, ../sass/partials/_fonts.scss */
+/* line 88, ../sass/partials/_fonts.scss */
 h4.subheading {
   text-transform: none;
 }
 
-/* line 91, ../sass/partials/_fonts.scss */
+/* line 92, ../sass/partials/_fonts.scss */
 a {
   text-decoration: none;
 }
 
-/* line 95, ../sass/partials/_fonts.scss */
+/* line 96, ../sass/partials/_fonts.scss */
 .time-giglist {
   margin-left: 5px;
   color: #ADADAD;
@@ -746,17 +747,17 @@ a {
   transition: color 0.15s 0.15s;
 }
 
-/* line 106, ../sass/partials/_fonts.scss */
+/* line 107, ../sass/partials/_fonts.scss */
 .small-text {
   font-size: .75em;
 }
 
-/* line 110, ../sass/partials/_fonts.scss */
+/* line 111, ../sass/partials/_fonts.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 114, ../sass/partials/_fonts.scss */
+/* line 115, ../sass/partials/_fonts.scss */
 .send-btn {
   font-size: .8em;
   text-align: center;
@@ -771,29 +772,29 @@ a {
   margin-top: 1.5%;
   line-height: 2.1em;
 }
-/* line 123, ../sass/partials/_fonts.scss */
+/* line 124, ../sass/partials/_fonts.scss */
 .send-btn:hover {
   color: #bcd37d;
 }
-/* line 126, ../sass/partials/_fonts.scss */
+/* line 127, ../sass/partials/_fonts.scss */
 .send-btn p {
   font-size: .8em;
   text-align: center;
 }
 
-/* line 132, ../sass/partials/_fonts.scss */
+/* line 133, ../sass/partials/_fonts.scss */
 .uplowcase {
   text-transform: unset;
 }
 
-/* line 136, ../sass/partials/_fonts.scss */
+/* line 137, ../sass/partials/_fonts.scss */
 .comment {
   color: #FFA780;
   font-family: "chaparral-pro";
   font-style: italic;
 }
 
-/* line 142, ../sass/partials/_fonts.scss */
+/* line 143, ../sass/partials/_fonts.scss */
 label {
   margin-top: 20px;
   margin-bottom: 5px;
@@ -1055,7 +1056,7 @@ li {
   width: 9%;
   border-radius: 8px;
   float: left;
-  margin: 0 2% 5% 5%;
+  margin: 0 2% 0 5%;
 }
 
 /* line 58, ../sass/style.scss */
@@ -1081,7 +1082,7 @@ li {
 
 /* line 76, ../sass/style.scss */
 .senderMessage {
-  width: 95%;
+  width: 92%;
 }
 
 /*============================================= */

@@ -26,7 +26,7 @@
 
 <div class="view">
     <div class="chat-view">
-        <div ng-repeat="data in messages" class="section">
+        <div ng-repeat="data in messages" class="section senderMessage">
 
         <div ng-class="{messages-wrapper : data.senderUsername != messages[$index-1].senderUsername}">
             <div ng-class="{section : data.senderUsername != messages[$index-1].senderUsername}">
