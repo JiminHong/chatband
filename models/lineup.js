@@ -5,10 +5,10 @@ var db 			= require('../config/db');
 var Schema 		= mongoose.Schema;
 
 var lineupSchema = new Schema({
-  	instrumentation: String,
-  firstName: String,
-  lastName: String,
-  comment: String,
+	instrumentation: String,
+	firstName: String,
+	lastName: String,
+	comment: String,
 	gigId: {
 		type: Schema.Types.ObjectId
 	}

@@ -70,22 +70,30 @@ var _model = mongoose.model('song', songSchema);
 		var id = req._id;
 		var songArtist = req.artist;
 		var songTitle = req.title;
+		var songSongDuration = req.songDuration;
+		var songBpm = req.bpm;
 
 
-        _model.update({_id: id}, {$set:{artist:songArtist,title:songTitle}}, function(err,doc){
-            if (err) {
-                fail(err);
-                
-            }else{
-                success(doc);
-                
-            }
-        });
+        _model.update({_id: id}, 
+        			  {$set:{
+        			  		artist:songArtist,
+        			  		title:songTitle, 
+        			  		songDuration: songSongDuration, 
+        			  		bpm: songBpm
+        			  }}, function(err,doc){
+			            if (err) {
+			                fail(err);
+			                
+			            }else{
+			                success(doc);
+			                
+			            }
+        				});
     }
 
 
 	_remove = function(id, success, fail){
-		console.log(id);
+		console.log("id in model",id);
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
 				fail(err);
@@ -99,6 +107,7 @@ var _model = mongoose.model('song', songSchema);
 return{
 	schema  : songSchema,
 	add 	: _save,
+	remove  : _remove, 
 	update  : _update,
     findAll : _findAll,
     findOne : _findOne,

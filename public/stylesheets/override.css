@@ -30,3 +30,11 @@ snap-drawer, .snap-drawer {
 /*snap-content, .snap-content{
 	position: relative;
 }*/
+
+.less_span_8_of_9{
+  width: 87%;
+}
+
+.chat-msg-input{
+  padding: 20px 12px;
+}

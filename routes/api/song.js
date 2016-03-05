@@ -41,15 +41,11 @@ app.post('/api/songs/:id', function(req, res) {
 
 // Delete One
 app.delete('/api/songs/:id', function(req, res) {
-    req.body.id = req.params.id;
-    song.remove(req.body,function(err){
-      // Error Encountered
-      res.status(500).json(err);
-    },function(data) {
-      res.status(200).json({success:data});
+    objectId = req.params.id;
+    song.remove({_id:objectId},function(doc){
+        res.status(200).json("doc in api",doc);
     });
 });
-
 
 
 return app;

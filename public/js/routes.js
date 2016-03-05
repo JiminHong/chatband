@@ -7,8 +7,7 @@ myapp.config(['$interpolateProvider', function($interpolateProvider){
 }])
 
 
-myapp.config(function ($routeProvider, $locationProvider){
-	$locationProvider.html5Mode(true);
+myapp.config(function ($routeProvider){
 	$routeProvider
 	.when('/', {
 		templateUrl : 'views/chats.html',

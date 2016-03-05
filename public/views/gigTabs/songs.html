@@ -12,8 +12,10 @@
                 <p class="gig-data-p">{[{songData.artist}]} - {[{songData.title}]}</p>
             </div>
             <div class="col span_2_of_5">
+                <div><button ng-click="deleteSong(songData._id)">Delete</button></div>
                 <div ng-click="editSong(songData._id)">
-                <svg id="speech-bubble" width="30" class="float-right" viewBox="0 0 38.23 38.97"><path class="speech-bubble reg-grey-fill" d="M11.13,39h0a5.08,5.08,0,0,1-5.08-5.08V30.64A8,8,0,0,1,0,22.87V8A8,8,0,0,1,8,0H30.23a8,8,0,0,1,8,8V22.88a8,8,0,0,1-8,8H20.94a1.17,1.17,0,0,0-1,.53,24.13,24.13,0,0,1-5.75,6.48A4.92,4.92,0,0,1,11.13,39ZM8,3.89A4.12,4.12,0,0,0,3.89,8V22.88A4.12,4.12,0,0,0,8,27a1.94,1.94,0,0,1,1.94,1.94v5a1.18,1.18,0,0,0,1.18,1.18h0a1.09,1.09,0,0,0,.68-0.25,20.28,20.28,0,0,0,4.82-5.45,5.06,5.06,0,0,1,4.3-2.4h9.29a4.12,4.12,0,0,0,4.11-4.11V8a4.12,4.12,0,0,0-4.11-4.11H8Z"/></div>
+                <svg id="pencil" width="30" class="float-right" viewBox="0 0 38.97 38.97"><path class="pencil reg-grey-fill" d="M38.44,6.28L32.69,0.53a1.81,1.81,0,0,0-2.56,0L4.83,25.83a1.79,1.79,0,0,0-.39.57l-4.3,10a1.82,1.82,0,0,0,2.39,2.38l10-4.3a1.77,1.77,0,0,0,.57-0.39L33.24,14l5.21-5.2A1.82,1.82,0,0,0,38.44,6.28Zm-27.61,25L5.26,33.7l2.38-5.56,18-18,3.18,3.18ZM30.76,11.39h0l-0.1.09,0.09-.09L27.58,8.21l-0.09.09,0.09-.1h0l3.83-3.83,3.18,3.18Z M27.58,8.21l-0.09.09,0.09-.1h0Z M30.77,11.39l-0.1.09,0.09-.09h0Z M27.58,8.21l-0.09.09,0.09-.1h0Z M30.77,11.39l-0.1.09,0.09-.09h0Z"/></svg>
+                </div>
             </div>
 		</div>
 		<div class="section group">
@@ -33,6 +35,7 @@
 			</div>
 		</div>
         <div ng-if="songId == songData._id">
+
             <form method="get">
                 <input class="form" type="text" ng-model="song.artist" placeholder="Artist name" required /><br />
                 <input class="form"type="text" ng-model="song.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
@@ -49,31 +52,31 @@
 <div class="section group">
     <div class="tabs">
         <div class="col span_1_of_5">
-        <a href="/songs" ng-class="{ active: isSet(1) }">
+        <a href="/#/songs" ng-class="{ active: isSet(1) }">
             <svg-icon class="tabimg svg-tabs svg-center" id="songs" p="songs"></svg-icon>
             <p class="tabText">Songs</p>
         </a>
         </div>
         <div class="col span_1_of_5">
-        <a href="/lineup" ng-class="{ active: isSet(2) }">
+        <a href="/#/lineup" ng-class="{ active: isSet(2) }">
             <svg-icon class="tabimg svg-tabs svg-center" id="lineup" p="lineup"></svg-icon>
             <p class="tabText">Lineup</p>
         </a>
         </div>
         <div class="col span_1_of_5">
-        <a href="/datetime"ng-class="{ active: isSet(3) }">
+        <a href="/#/datetime"ng-class="{ active: isSet(3) }">
             <svg-icon class="tabimg svg-tabs svg-center" id="datetime" p="datetime"></svg-icon>
             <p class="tabText">Datetime</p>
         </a>
         </div>
         <div class="col span_1_of_5">
-        <a href="/location" ng-class="{ active: isSet(4) }">
+        <a href="/#/location" ng-class="{ active: isSet(4) }">
             <svg-icon class="tabimg svg-tabs svg-center" id="location" p="location"></svg-icon>
             <p class="tabText">Location</p>
         </a>
         </div>
         <div class="col span_1_of_5">
-        <a href="/wardrobe" ng-class="{ active: isSet(5) }">
+        <a href="/#/wardrobe" ng-class="{ active: isSet(5) }">
             <svg-icon class="tabimg svg-tabs svg-center" id="wardrobe" p="wardrobe"></svg-icon>
             <p class="tabText">Wardrobe</p>
         </a>

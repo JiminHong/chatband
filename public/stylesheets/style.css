@@ -769,30 +769,31 @@ a {
   -webkit-transition-delay: 0.15s;
   transition: color 0.15s 0.15s;
   margin-top: 1.5%;
+  line-height: 2.1em;
 }
-/* line 122, ../sass/partials/_fonts.scss */
+/* line 123, ../sass/partials/_fonts.scss */
 .send-btn:hover {
   color: #bcd37d;
 }
-/* line 125, ../sass/partials/_fonts.scss */
+/* line 126, ../sass/partials/_fonts.scss */
 .send-btn p {
   font-size: .8em;
   text-align: center;
 }
 
-/* line 131, ../sass/partials/_fonts.scss */
+/* line 132, ../sass/partials/_fonts.scss */
 .uplowcase {
   text-transform: unset;
 }
 
-/* line 135, ../sass/partials/_fonts.scss */
+/* line 136, ../sass/partials/_fonts.scss */
 .comment {
   color: #FFA780;
   font-family: "chaparral-pro";
   font-style: italic;
 }
 
-/* line 141, ../sass/partials/_fonts.scss */
+/* line 142, ../sass/partials/_fonts.scss */
 label {
   margin-top: 20px;
   font-family: "Montserrat", sans-serif;
@@ -865,80 +866,83 @@ svg#files:hover, svg#calendar:hover, svg#addUser:hover {
 /* line 48, ../sass/partials/_svg.scss */
 svg#option-plus {
   fill: white;
+  margin-left: 8%;
+  margin-top: 9%;
   -moz-transition: fill 0.15s 0.15s;
   -o-transition: fill 0.15s 0.15s;
   -webkit-transition: fill 0.15s;
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 51, ../sass/partials/_svg.scss */
+/* line 53, ../sass/partials/_svg.scss */
 svg#option-plus:hover {
   fill: #bcd37d;
 }
 
-/* line 56, ../sass/partials/_svg.scss */
+/* line 58, ../sass/partials/_svg.scss */
 svg#lead-sheet {
   fill: #e2d6c5;
   margin-bottom: 1%;
 }
 
-/* line 61, ../sass/partials/_svg.scss */
+/* line 63, ../sass/partials/_svg.scss */
 svg#pencil {
   margin-right: 8px;
 }
 
-/* line 65, ../sass/partials/_svg.scss */
+/* line 67, ../sass/partials/_svg.scss */
 .option-plus-position {
   float: left;
+  margin: 0 auto;
 }
 
-/* line 70, ../sass/partials/_svg.scss */
+/* line 73, ../sass/partials/_svg.scss */
 .active svg path {
   fill: #5a822f;
 }
 
-/* line 74, ../sass/partials/_svg.scss */
+/* line 77, ../sass/partials/_svg.scss */
 .active p.tabText {
   color: #5a822f;
 }
 
-/* line 78, ../sass/partials/_svg.scss */
+/* line 81, ../sass/partials/_svg.scss */
 .text-svg {
   float: left;
   margin-left: 75px;
 }
 
-/* line 83, ../sass/partials/_svg.scss */
+/* line 86, ../sass/partials/_svg.scss */
 .margin-left {
   margin-left: 8%;
 }
 
-/* line 87, ../sass/partials/_svg.scss */
+/* line 90, ../sass/partials/_svg.scss */
 .nav-right {
   text-align: right;
   margin-right: 15px;
 }
 
-/* line 92, ../sass/partials/_svg.scss */
+/* line 95, ../sass/partials/_svg.scss */
 .nav-left {
   cursor: pointer;
 }
-/* line 96, ../sass/partials/_svg.scss */
+/* line 99, ../sass/partials/_svg.scss */
 .nav-left:hover .nav-arrow-text-svg path.nav-arrow {
   fill: #bcd37d;
 }
-/* line 100, ../sass/partials/_svg.scss */
+/* line 103, ../sass/partials/_svg.scss */
 .nav-left:hover .nav-text {
   color: #bcd37d;
   cursor: pointer;
 }
-/* line 105, ../sass/partials/_svg.scss */
+/* line 108, ../sass/partials/_svg.scss */
 .nav-left .nav-arrow-text-svg {
   float: left;
   margin-left: 20px;
   line-height: 2.2em;
 }
-/* line 109, ../sass/partials/_svg.scss */
+/* line 112, ../sass/partials/_svg.scss */
 .nav-left .nav-arrow-text-svg path.nav-arrow {
   fill: #efefef;
   -moz-transition: fill 0.15s 0.15s;
@@ -947,15 +951,15 @@ svg#pencil {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 115, ../sass/partials/_svg.scss */
+/* line 118, ../sass/partials/_svg.scss */
 .nav-left path.nav-arrow {
   margin-top: 10px;
 }
-/* line 119, ../sass/partials/_svg.scss */
+/* line 122, ../sass/partials/_svg.scss */
 .nav-left svg#nav-arrow {
   margin: 5px 10px -3px 0;
 }
-/* line 123, ../sass/partials/_svg.scss */
+/* line 126, ../sass/partials/_svg.scss */
 .nav-left .nav-text {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -969,20 +973,20 @@ svg#pencil {
   transition: color 0.15s 0.15s;
 }
 
-/* line 133, ../sass/partials/_svg.scss */
+/* line 136, ../sass/partials/_svg.scss */
 .clip-circle {
   -webkit-clip-path: circle(33px at 95px 35px);
   clip-path: circle(33px at 95px 35px);
 }
 
-/* line 138, ../sass/partials/_svg.scss */
+/* line 141, ../sass/partials/_svg.scss */
 .svg-center-1-of-2 {
   display: block;
   margin: auto;
   margin-top: 5%;
 }
 
-/* line 144, ../sass/partials/_svg.scss */
+/* line 147, ../sass/partials/_svg.scss */
 .p-center-1-of-2 {
   font-size: .5em;
   color: #95a362;

@@ -39,21 +39,21 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
 
     $scope.createSong = function() {
-        $http.post('/addSongJSON', $scope.newGig)
+        $http.post('/api/songs', $scope.newGig)
         .success(function(data) {
-                $scope.newGig = {}; 
-                $scope.lineup = data;
-                $scope.doneIndicator = "Added!";
-                $scope.add = "";
-                goBack = function(){
-                    $scope.doneIndicator = "";
-                    $scope.add = "Add";
-                }
-                $timeout(goBack, 1000);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
+            $scope.newGig = {}; 
+            $scope.song = data;
+            $scope.doneIndicator = "Added!";
+            $scope.add = "";
+            goBack = function(){
+                $scope.doneIndicator = "";
+                $scope.add = "Add";
+            }
+            $timeout(goBack, 1000);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
         $timeout(500);
     };
 

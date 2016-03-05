@@ -123,13 +123,23 @@ function ($scope, $http, $route, $location, $NgMap) {
         $http.post('/api/songs/'+ id, $scope.song)
              .success(function(data){
                 $scope.song = data;
-                console.log($scope);
+             })
+             .finally(function(){
+                $route.reload();
+             })
+    } 
+
+    $scope.deleteSong = function(id){
+        $http.delete('/api/songs/'+ id)
+             .success(function(data){
+                $scope.song = data;
+                console.log("deleted!!");
              })
              .finally(function(){
                 $route.reload();
                 console.log("id : ", id)
              })
-    } 
+    }
 
     // ===================================================================
     // ============================ Lineup ===============================

@@ -119,6 +119,7 @@ a{
     cursor: pointer;
     @include transition(color .15s .15s);
     margin-top: 1.5%;
+    line-height: 2.1em;
     &:hover{
         color: $reg-green;
     };

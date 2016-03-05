@@ -47,6 +47,8 @@ svg#files, svg#calendar, svg#addUser{
 
 svg#option-plus{
     fill:$white;
+    margin-left: 8%;
+    margin-top: 9%;
     @include transition(fill .15s .15s);
     &:hover{
         fill:$reg-green;
