@@ -42,8 +42,8 @@
         <div class="panel-body" ng-show="datetimePanelBody">
             <form method="get">
                 <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required /><br />
-                <input class="form wide" type="date" ng-model="newGig.date" placeholder="date"/><br />
-                <input class="form wide" type="time" ng-model="newGig.time" placeholder="time" required /><br />
+                <input class="form wide" type="text" ng-model="newGig.date" placeholder="date"/><br />
+                <input class="form wide" type="text" ng-model="newGig.time" placeholder="time" required /><br />
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createDatetime()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.scheduleName}]}</p></button>
             </form>
         </div>
@@ -77,5 +77,4 @@
             </form>
         </div>
     </div>
-     <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="goGigList()"><p class="light-brown lowercase">Done</p></button>
 </div>

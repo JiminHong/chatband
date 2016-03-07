@@ -23,8 +23,13 @@ snap-drawer, .snap-drawer {
 
 /* line 24, ../sass/override.scss */
 .snap-drawer-button p {
-  color: #bcd37d;
+  color: #DEF3A4;
   margin-left: 5%;
+}
+
+/* line 30, ../sass/override.scss */
+*:focus {
+  outline: none;
 }
 
 /*snap-content, .snap-content{

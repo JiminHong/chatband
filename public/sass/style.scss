@@ -28,6 +28,13 @@ html{
 
 .lv2-nav{
     height: 55px;
+    background-color: #98B964;
+    @media only screen and (min-width: $lg){
+        height: 100%;
+        position: fixed;
+        width: 500px;
+        background-color: #272824;
+    }
 }
 
 ul{
@@ -42,20 +49,46 @@ li{
 /*============================================= */
 /*============== message-styles =============== */
 /*============================================= */
+
+#gig-view{
+    display: none;
+    @media only screen and (min-width: $lg){
+        display: block;
+    }
+}
+
+.chat-icons{
+    display: block;
+    @media only screen and (min-width: $lg){
+        display: none;
+    }
+}
+
 .chat-view{
     background-color: $light-grey;
     padding-bottom: 80px;
-    margin: 80px 0 30px;
+    margin: 80px 0 50px;
     z-index: 2;
+    @media only screen and (min-width: $lg){
+        margin-left: 500px;
+    }
 }
 
 .message-profile-pic{
-    width: 9%;
+    width: 40px;
     border-radius: 8px;
     float: left;
-    margin: 0 2% 0 5%;
+    margin-right: 10px;
+    margin-left: 20px;
 }
-.messages-wrapper{
+
+.repeatmsg{
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+
+.messagesWrapper{
     margin-top: 25px; 
 }
 
@@ -69,7 +102,7 @@ li{
     font-family: $mont;
     text-transform: uppercase;
     font-weight: 700;
-    color: $reg-grey;
+    color: #7D6542;
     margin: 20px 0 5px 5px;
 }
 
@@ -78,10 +111,61 @@ li{
 }
 
 .message-time{
-    float: right;
     font-weight: normal;
     font-family: $chap;
-    margin-left: 10px;
+    margin-left: 3px;
+    color: #CEC9C5;
+}
+
+.typebox{
+    background-color: #515D3C;
+    position: fixed;
+    bottom:0;
+    padding: 0;
+    z-index: 3;
+    height: 50px;
+    width: 100%;
+    display: table;
+    @media only screen and (min-width: $lg){
+        margin-left:500px;
+    }
+}
+
+.left, .right{
+    display: table-cell;
+}
+
+.filler{
+    display: table-cell;
+    width: auto !important;
+}
+
+.plus-icon-div{
+    width: 43px;
+}
+
+.send-btn-div{
+    width: 50px;
+}
+
+.send-btn{
+    font-size: .8em;
+    text-align: center;
+    display: inline-block;
+    color: $white-text;
+    cursor: pointer;
+    position: fixed;
+    right: 5px;
+    @include transition(color .15s .15s);
+    margin: 0.5%;
+    line-height: 3.5em;
+    &:hover{
+        color: $reg-green;
+    };
+    p{
+        font-size: .8em;
+        text-align: center;
+    }
 }
 
 /*============================================= */
@@ -154,10 +238,15 @@ li{
 
     svg#plus{
         width: 1.5em;
-        display: block;
-        margin-top: 1.2em;
-        
+        display: inline-block;
+        margin-top: 18px;
+        float: left;
     }
+}
+
+.center-content{
+    margin: 0 auto;
+    display: table;
 }
 
 /*============================================= */
@@ -204,8 +293,7 @@ li{
 }
 .content-width-8{
     width: 80%;
-    margin: 0 0 0 10%;
-    float: left;
+    margin: 0 auto;
 }
 .content-width-9{
     width: 90%;
@@ -237,12 +325,10 @@ li{
 }
 
 .listGigs-panel-content{
-    background-color: $light-grey;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-    height: 100px;
+    height: 75px;
     cursor: pointer;
+    padding-top: 15px;
     @include transition(background-color .15s .15s);
-    
     h2, p{
         color: $reg-grey;
         margin: 0;
@@ -251,7 +337,9 @@ li{
     h2.mont-h2{
         padding-top: 15px;
     }
-    
+    @media only screen and (min-width: $lg){
+/*        background-color: green;
+*/    }
 }
 
 .giglist-panel-header{
@@ -259,7 +347,7 @@ li{
     height: 37px;
     width: 100%;
     line-height: 2.5em;
-    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
     background-color: $white;
     @include transition(background-color .15s .15s);
 }
@@ -302,14 +390,6 @@ li{
     width: 100px;
 }
 
-.typebox{
-    background-color: #515D3C;
-    position: fixed;
-    bottom:0;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 3;
-}
 
 .tabs{
     background-color: #BCD37D;
@@ -317,6 +397,7 @@ li{
     bottom: 0;
     width: 100%;
     height: 70px;
+    z-index: 2;
 }
 
 .tabText{
@@ -344,8 +425,16 @@ a:hover p.tabText{
     margin-bottom: 65px;
 }
 
+.chats-nav{
+    height: 70px;
+}
+
 .margin-top{
     margin-top: 40px;
+}
+
+.more-margin-top{
+    margin-top: 70px;
 }
 
 /*============================================= */
@@ -367,6 +456,7 @@ a:hover p.tabText{
     @include transition(border .15s .15s);
 
   &:focus{
+
     outline: none !important;
     border:1px solid red;
     box-shadow: 0 0 10px #719ECE;
@@ -379,10 +469,23 @@ a:hover p.tabText{
 input[type=text], textarea {
     @include transition(all .15s .15s);
     outline: none;
-    border: 1px solid #DDDDDD;
+    border: 1px solid #515D3C;
+    background-color: #515D3C;
+    color: white;
     &:focus{
-    box-shadow: 0 0 5px $white-orange;
-    border: 1px solid $white-orange;
+        outline: 0;
+        box-shadow: 0 0 0 #515D3C;
+        border: 1px solid $white-orange;
+    };
+}
+
+.chat-msg-input{
+    display: inline;
+    position: fixed;
+    border: 0 !important;
+    &:focus{
+    box-shadow: 0 !important;
+    border: 0 !important;
     };
 }
 
@@ -401,23 +504,21 @@ input{
 }
 
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    $reg-grey;
+::-webkit-input-placeholder { 
+    color:    $light-grey;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    $reg-grey;
+:-moz-placeholder { 
+   color:    $light-grey;
    opacity:  1;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    $reg-grey;
+::-moz-placeholder { 
+   color:    $light-grey;
    opacity:  1;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    $reg-grey;
+:-ms-input-placeholder { 
+   color:    $light-grey;
 }
-:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-  color:    $reg-grey;
-}
+
 
 .wide {
     display:block; 
@@ -435,12 +536,12 @@ input{
 }
 
 .reg-green-bg{
-    background-color: $reg-lighter-green;
+    background-color: #98B964;
 }
 
 .nav-icons{
     display: block;
-    margin: 10px 45px;
+    margin: 0 auto;
 }
 
 .dark-green-yellow-bg{
@@ -479,6 +580,10 @@ input{
     &:hover{
         fill: #333333;
     }
+}
+
+.light-grey{
+    color: #7C8181;
 }
 
 /*============================================= */
@@ -540,10 +645,7 @@ hr{
     margin-bottom: 19px;
 }
 
-.repeatmsg{
-    margin-left: 16%;
-    margin-top: 1%;
-}
+
 
 @media only screen and (max-width: 320px){
     .chat-msg-input {

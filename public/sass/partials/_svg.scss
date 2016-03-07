@@ -31,8 +31,12 @@ svg#arrow{
     margin-top: 20px;
     path.arrow{
         fill: $desat-burnt-sienna;
-        @include transition(fill .15s .15s);
+        @include transition(all .15s .15s);
     };
+}
+
+svg#logo{
+    margin: 12px 44%;
 }
 
 
@@ -46,9 +50,9 @@ svg#files, svg#calendar, svg#addUser{
 };
 
 svg#option-plus{
-    fill:$white;
-    margin-left: 8%;
-    margin-top: 9%;
+    fill: $reg-green-hover;
+    margin-bottom: -12px;
+    margin-left: 5px;
     @include transition(fill .15s .15s);
     &:hover{
         fill:$reg-green;

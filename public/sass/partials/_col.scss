@@ -36,7 +36,12 @@
 /*  GRID OF THREE  */
 .span_3_of_3 { width: 100%; }
 .span_2_of_3 { width: 66.13%; }
-.span_1_of_3 { width: 32.26%; }
+.span_1_of_3 { 
+    width: 32.26%; 
+/*    @media only screen and (min-width: $lg){
+        width: 100%;
+    }*/
+}
 
 /*  GRID OF FOUR  */
 .span_4_of_4 {
@@ -79,7 +84,7 @@
 }
 
 .span_7_of_9 {
-    width: 77.42%;
+    width: 77.42% !important;
 }
 
 .span_6_of_9 {

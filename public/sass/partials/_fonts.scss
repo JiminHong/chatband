@@ -111,23 +111,7 @@ a{
     font-weight: bold;
 }
 
-.send-btn{
-    font-size: .8em;
-    text-align: center;
-    display: inline-block;
-    color: $white-text;
-    cursor: pointer;
-    @include transition(color .15s .15s);
-    margin-top: 1.5%;
-    line-height: 2.1em;
-    &:hover{
-        color: $reg-green;
-    };
-    p{
-        font-size: .8em;
-        text-align: center;
-    }
-}
+
 
 .uplowcase{
     text-transform: unset;
