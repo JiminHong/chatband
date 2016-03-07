@@ -148,6 +148,15 @@ li{
     width: 50px;
 }
 
+.div-30{
+    width: 30px;
+    margin-right: 15px;
+}
+
+.div-40{
+    width: 40px;
+}
+
 .send-btn{
     font-size: .8em;
     text-align: center;
@@ -645,6 +654,9 @@ hr{
     margin-bottom: 19px;
 }
 
+.anchor{
+    cursor: pointer;
+}
 
 
 @media only screen and (max-width: 320px){
