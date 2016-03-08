@@ -1,76 +1,52 @@
-var express        = require('express');
-var app            = express();
-
+module.exports = function(app){
+    var express = require('express');
+    var router = express.Router();
+    var wardrobe = require('../../models/wardrobe.js');
 // ===================================================================
-// =========================== Wardrobe ==============================
+// =============================== Gigs ==============================
 // ===================================================================
 
+// Read All
 app.get('/api/wardrobes', function(req, res) {
-
-    mongoose.model('wardrobe').find(function(err, wardrobes) {
-        if (err)
-            res.send(err)
-        res.json(wardrobes); 
+    wardrobe.findAll(function(data) {
+      res.status(200).json(data);
     });
 });
 
+// Create
 app.post('/api/wardrobes', function(req, res) {
-
-    mongoose.model('wardrobe').create({
-        wardrobeConcept: req.body.wardrobeConcept,
-        comment : req.body.comment,
-        wardrobeImg: req.body.wardrobeImg
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('wardrobe').find(function(err, wardrobes) {
-            if (err)
-                res.send(err)
-            res.json(wardrobes);
-        });
-    });
-
-});
-
-app.get('/api/wardrobes/:wardrobe_id', function(req, res){
-    _id : req.params.wardrobe_id;
-    mongoose.model('wardrobe').findOne({_id:req.params.wardrobe_id}, function(err, wardrobes){
-        res.json(wardrobes);
+    wardrobe.add(req.body, function(doc){
+        res.send(doc);
     });
 });
 
-app.post('/api/wardrobes/:wardrobe_id', function(req, res){
-    mongoose.model('wardrobe').findOneAndUpdate(
-        {_id: req.params.wardrobe_id},
-        {$set: {
-            wardrobeConcept: req.body.wardrobeConcept,
-            comment : req.body.comment,
-            wardrobeImg: req.body.wardrobeImg
-            }
-        },
-        {udpset: true}
-        , function(err, wardrobes){
-        if(err){
-            console.log("something wrong");
-        }else{
-            console.log(wardrobes);
-            res.send(204);
-        }
+ // Read One
+app.get('/api/wardrobes/:id', function(req, res) {
+    objectId = req.params.id;
+    wardrobe.findOne({_id:objectId},function(doc) {
+            res.status(200).json(doc);
     });
 });
 
-app.delete('/api/wardrobes/:wardrobe_id', function(req, res) {
-    mongoose.model('wardrobe').remove({
-        _id : req.params.wardrobe_id
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('wardrobe').find(function(err, wardrobes) {
-            if (err)
-                res.send(err)
-            res.json(wardrobes);
-        });
+// Update
+app.post('/api/wardrobes/:id', function(req, res) {
+    objectId = req.params.id;
+    console.log("in api", objectId);
+    wardrobe.update(req.body,function(doc){
+      console.log("in api data",doc);
+      res.status(200).json(doc);
     });
 });
+
+
+// Delete One
+app.delete('/api/wardrobes/:id', function(req, res) {
+    objectId = req.params.id;
+    wardrobe.remove({_id:objectId},function(doc){
+        res.status(200).json("doc in api",doc);
+    });
+});
+
+
+return app;
+};

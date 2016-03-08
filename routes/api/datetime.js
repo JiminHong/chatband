@@ -1,77 +1,52 @@
-var express        = require('express');
-var app            = express();
-
+module.exports = function(app){
+    var express = require('express');
+    var router = express.Router();
+    var datetime = require('../../models/datetime.js');
 // ===================================================================
-// =========================== Date.Time =============================
+// =============================== Gigs ==============================
 // ===================================================================
 
+// Read All
 app.get('/api/datetimes', function(req, res) {
-
-    mongoose.model('datetime').find(function(err, datetimes) {
-        if (err)
-            res.send(err)
-        res.json(datetimes); 
+    datetime.findAll(function(data) {
+      res.status(200).json(data);
     });
 });
 
+// Create
 app.post('/api/datetimes', function(req, res) {
-
-    mongoose.model('datetime').create({
-        scheduleName  : req.body.scheduleName,
-        date   : req.body.date,
-        time   : req.body.time,
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('datetime').find(function(err, datetimes) {
-            if (err)
-                res.send(err)
-            res.json(datetimes);
-        });
-    });
-
-});
-
-app.get('/api/datetimes/:datetime_id', function(req, res){
-    _id : req.params.datetime_id;
-    mongoose.model('datetime').findOne({_id:req.params.datetime_id}, function(err, datetimes){
-        res.json(datetime);
+    datetime.add(req.body, function(doc){
+        res.send(doc);
     });
 });
 
-app.post('/api/datetimes/:datetime_id', function(req, res){
-    mongoose.model('datetime').findOneAndUpdate(
-        {_id: req.params.datetime_id},
-        {$set: {
-            scheduleName: req.body.scheduleName,
-            date: req.body.date,
-            time: req.body.time,
-            }
-        },
-        {udpset: true}
-        , function(err, datetimes){
-        if(err){
-            console.log("something wrong");
-        }else{
-            console.log(datetimes);
-            res.send(204);
-        }
+ // Read One
+app.get('/api/datetimes/:id', function(req, res) {
+    objectId = req.params.id;
+    datetime.findOne({_id:objectId},function(doc) {
+            res.status(200).json(doc);
     });
 });
 
-app.delete('/api/datetimes/:datetime_id', function(req, res) {
-    mongoose.model('datetime').remove({
-        _id : req.params.datetime_id
-    }, function(err, datetimes) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('datetime').find(function(err, datetimes) {
-            if (err)
-                res.send(err)
-            res.json(datetimes);
-        });
+// Update
+app.post('/api/datetimes/:id', function(req, res) {
+    objectId = req.params.id;
+    console.log("in api", objectId);
+    datetime.update(req.body,function(doc){
+      console.log("in api data",doc);
+      res.status(200).json(doc);
     });
 });
 
+
+// Delete One
+app.delete('/api/datetimes/:id', function(req, res) {
+    objectId = req.params.id;
+    datetime.remove({_id:objectId},function(doc){
+        res.status(200).json("doc in api",doc);
+    });
+});
+
+
+return app;
+};

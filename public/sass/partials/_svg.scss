@@ -16,10 +16,10 @@ svg-icon#wardrobe.tabimg svg{
 .svg-tabs{
     &:hover path {
         cursor: pointer;
-        fill: rgba(90,130,47,1);
+        fill: #E1EFCB;
     } 
     &:hover p {
-        color: rgba(90,130,47,1);
+        color: #E1EFCB;
     }
     path {
         fill: rgba(149,163,98,1);
@@ -79,11 +79,11 @@ svg#trash{
 
 
 .active svg path{
-    fill: rgba(90,130,47,1);
+    fill: #E1EFCB;
 }
 
 .active p.tabText {
-    color: rgba(90,130,47,1);
+    color: #E1EFCB;
 }
 
 .text-svg{

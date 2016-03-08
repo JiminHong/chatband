@@ -18,13 +18,11 @@
           <div class="snap-drawer-button" ><p>Delete</p></div>
           </snap-drawer>
         </snap-drawers>
-        <snap-content snap-opt-disable="'right'">
-          <div class="col span_1_of_5">
-            <img ng-src="{[{data.groupPic}]}" class="clip-circle profile-img float-right">
-          </div>
-          <div class="col span_4_of_5" ng-click="goChat()">
+        <snap-content snap-opt-disable="'right'" ng-style="{'background-image' : 'url(' + data.groupPic + ')'}">
+          <div class="col span_5_of_5" ng-click="goChat()">
+<!--             <img ng-src="{[{data.groupPic}]}" > -->
             <span class="float-right top-right-span"><p class="light-brown">{[{data.lastMessageTime}]}</p></span>
-            <h2>{[{data.groupName}]}</h2>
+            <h2 class="brown-color">{[{data.groupName}]}</h2>
             <p>{[{ data.lastMessage }]}</p>
           </div>
         </snap-content>

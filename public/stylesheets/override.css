@@ -11,23 +11,22 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
 .snap-content {
   position: relative;
   top: 0;
-  background-color: #f5f6f4;
   overflow: hidden;
 }
 
-/* line 18, ../sass/override.scss */
+/* line 17, ../sass/override.scss */
 snap-drawer, .snap-drawer {
   top: 0;
   background-color: white;
 }
 
-/* line 24, ../sass/override.scss */
+/* line 23, ../sass/override.scss */
 .snap-drawer-button p {
   color: #DEF3A4;
   margin-left: 5%;
 }
 
-/* line 30, ../sass/override.scss */
+/* line 29, ../sass/override.scss */
 *:focus {
   outline: none;
 }

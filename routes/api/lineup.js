@@ -1,80 +1,52 @@
-var express        = require('express');
-var app            = express();
+module.exports = function(app){
+    var express = require('express');
+    var router = express.Router();
+    var lineup = require('../../models/lineup.js');
+// ===================================================================
+// =============================== Gigs ==============================
+// ===================================================================
 
-// ===================================================================
-// ============================ Lineups ==============================
-// ===================================================================
+// Read All
 app.get('/api/lineups', function(req, res) {
-
-    mongoose.model('lineup').find(function(err, lineups) {
-        if (err)
-            res.send(err)
-        res.json(lineups); 
+    lineup.findAll(function(data) {
+      res.status(200).json(data);
     });
 });
 
+// Create
 app.post('/api/lineups', function(req, res) {
-
-    mongoose.model('lineup').create({
-        instrumentation  : req.body.instrumentation,
-        firstName   : req.body.firstName,
-        lastName   : req.body.lastName,
-        comment    : req.body.comment
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('lineup').find(function(err, lineups) {
-            if (err)
-                res.send(err)
-            res.json(lineups);
-        });
-    });
-
-});
-
-app.get('/api/lineups/:lineup_id', function(req, res){
-    _id : req.params.lineup_id;
-    mongoose.model('lineup').findOne({_id:req.params.lineup_id}, function(err, lineups){
-        res.json(lineups);
+    lineup.add(req.body, function(doc){
+        res.send(doc);
     });
 });
 
-app.post('/api/lineups/:lineup_id', function(req, res){
-    mongoose.model('lineup').findOneAndUpdate(
-        {_id: req.params.lineup_id},
-        {$set: {
-            instrumentation: req.body.instrumentation,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            comment: req.body.comment
-            }
-        },
-        {udpset: true}
-        , function(err, lineups){
-        if(err){
-            console.log("something wrong");
-        }else{
-            console.log(lineups);
-            res.send(204);
-        }
+ // Read One
+app.get('/api/lineups/:id', function(req, res) {
+    objectId = req.params.id;
+    lineup.findOne({_id:objectId},function(doc) {
+            res.status(200).json(doc);
     });
 });
 
-app.delete('/api/lineups/:lineup_id', function(req, res) {
-    mongoose.model('lineup').remove({
-        _id : req.params.lineup_id
-    }, function(err, song) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('lineup').find(function(err, lineups) {
-            if (err)
-                res.send(err)
-            res.json(lineups);
-        });
+// Update
+app.post('/api/lineups/:id', function(req, res) {
+    objectId = req.params.id;
+    console.log("in api", objectId);
+    lineup.update(req.body,function(doc){
+      console.log("in api data",doc);
+      res.status(200).json(doc);
     });
 });
 
 
+// Delete One
+app.delete('/api/lineups/:id', function(req, res) {
+    objectId = req.params.id;
+    lineup.remove({_id:objectId},function(doc){
+        res.status(200).json("doc in api",doc);
+    });
+});
 
+
+return app;
+};

@@ -317,14 +317,11 @@ li{
     height: 100px;
     background-color: $yellow-green-dark;
     snap-content{
-        height: 76px;
+        height: 96px;
         margin: -20px 0 -8px 0;
-        padding: 10px;
-
-
-        h2, p{
-            color: $reg-grey;
+        h2{
             margin: 5px 0 10px;
+            font-size: 1em;
         }
         span p{
             color: $light-reg-grey;
@@ -401,7 +398,7 @@ li{
 
 
 .tabs{
-    background-color: #BCD37D;
+    background-color: #515D3C;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -417,7 +414,7 @@ li{
     bottom: 10px;
 }
 a:hover p.tabText{
-    color: #5A822F;
+    color: #E1EFCB;
 }
 
 .tabimg{
@@ -546,6 +543,10 @@ input{
 
 .reg-green-bg{
     background-color: #98B964;
+}
+
+.brown-color{
+    color: #7D6542;
 }
 
 .nav-icons{
