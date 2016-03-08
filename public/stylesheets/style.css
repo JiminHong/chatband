@@ -1433,6 +1433,11 @@ li {
   transition: background-color 0.15s 0.15s;
 }
 
+/* line 345, ../sass/style.scss */
+.giglist-panel-body h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
 /* line 352, ../sass/style.scss */
 .listGigs-panel:hover .giglist-panel-header {
   background-color: #DADDE5;
