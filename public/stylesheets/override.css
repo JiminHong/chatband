@@ -12,21 +12,46 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
   position: relative;
   top: 0;
   overflow: hidden;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: bottom right, left, right;
 }
 
-/* line 17, ../sass/override.scss */
+/* line 18, ../sass/override.scss */
 snap-drawer, .snap-drawer {
   top: 0;
   background-color: white;
 }
 
-/* line 23, ../sass/override.scss */
+/* line 24, ../sass/override.scss */
 .snap-drawer-button p {
   color: #DEF3A4;
   margin-left: 5%;
 }
 
-/* line 29, ../sass/override.scss */
+/* line 30, ../sass/override.scss */
+.list-groups-wrapper {
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  background-color: #424242;
+}
+/* line 35, ../sass/override.scss */
+.list-groups-wrapper snap-content {
+  height: 200px;
+  margin: -20px 0 -8px 0;
+}
+/* line 38, ../sass/override.scss */
+.list-groups-wrapper snap-content h2 {
+  margin: 5px 0 10px;
+  font-size: 1em;
+}
+/* line 42, ../sass/override.scss */
+.list-groups-wrapper snap-content span p {
+  color: #b7b7b7;
+  font-size: 0.7em;
+}
+
+/* line 50, ../sass/override.scss */
 *:focus {
   outline: none;
 }

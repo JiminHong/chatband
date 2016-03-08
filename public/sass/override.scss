@@ -11,7 +11,8 @@ snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-cont
 	position: relative;
 	top: 0;
 	overflow:hidden;
-
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: bottom right, left, right;
 }
 
 snap-drawer, .snap-drawer{
@@ -26,9 +27,30 @@ snap-drawer, .snap-drawer{
 	}
 }
 
+.list-groups-wrapper{
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    background-color: $yellow-green-dark;
+    snap-content{
+        height: 200px;
+        margin: -20px 0 -8px 0;
+        h2{
+            margin: 5px 0 10px;
+            font-size: 1em;
+        }
+        span p{
+            color: $light-reg-grey;
+            font-size: 0.7em;
+        }
+    }
+}
+
+
 *:focus {
 outline: none;
 }
+
 
 
 /*snap-content, .snap-content{
