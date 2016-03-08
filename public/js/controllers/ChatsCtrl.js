@@ -33,7 +33,7 @@ function ($scope, $http, $location, $routeParams) {
         $scope.groups = [
         {
             groupName:"Awesome Band",
-            lastMessage:"Okay give me a sec",
+            lastMessage:"Okay, see you guys @ 3PM. Have you guys checked the video I uploaded yesterday?",
             lastMessageTime:"7:25PM",
             groupPic:"/img/bands/band1.jpg",
             headerColor: "#5E5D34"

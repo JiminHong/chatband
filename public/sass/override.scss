@@ -40,6 +40,24 @@ snap-drawer, .snap-drawer{
 	        font-size: .8em;
 	    }
 	}
+	.chats-panel-body{
+		padding: 20px 0;
+	    h3{
+	        font-family: $mont;
+	        font-size: .7em;
+	        color: #ACB59C;
+	    }
+	    p{
+	    	font-family: "clavo",sans-serif;
+			font-style: normal;
+			font-weight: 100;
+			color: white;
+    		font-size: 1.2em;
+    		margin-top: 5px;
+    		line-height: 1.5em;
+	    }
+	}
+
 
     snap-content{
         height: 200px;

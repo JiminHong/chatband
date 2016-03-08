@@ -304,8 +304,9 @@ li{
     width: 80%;
     margin: 0 auto;
 }
-.content-width-9{
-    width: 90%;
+.content-width-7{
+    width: 70%;
+    margin: 0 auto;
 }
 .content-width-1{
     width: 10%;
@@ -341,11 +342,6 @@ li{
     @include transition(background-color .15s .15s);
 }
 
-.giglist-panel-body{
-    h3{
-        font-family: $mont;
-    }
-}
 
 .listGigs-panel{
     &:hover{

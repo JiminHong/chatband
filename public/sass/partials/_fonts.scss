@@ -84,6 +84,10 @@ p{
     text-align: center;
 }
 
+.text-next-svg{
+    margin-left: 7px;
+}
+
 .gig-data-p{
     color: $reg-grey;
     margin: 0 0 15px 0;
@@ -98,6 +102,10 @@ a{
     text-decoration: none;
 }
 
+.time-span{
+    font-size: .5em;
+}
+
 .time-giglist{
     margin-left: 5px;
     color: #ADADAD;
@@ -107,7 +115,6 @@ a{
     font-family: $open-sans;
     @include transition(color .15s .15s);
 }
-
 
 .small-text{
     font-size: .75em;
