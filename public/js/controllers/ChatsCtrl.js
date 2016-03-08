@@ -35,14 +35,17 @@ function ($scope, $http, $location, $routeParams) {
             groupName:"Awesome Band",
             lastMessage:"Okay give me a sec",
             lastMessageTime:"7:25PM",
-            groupPic:"/img/bands/band1.jpg"
+            groupPic:"/img/bands/band1.jpg",
+            headerColor: "#5E5D34"
         }
         ,
         {
             groupName:"My Band",
             lastMessage:"It was great! I hope to see you guys again soon. ",
             lastMessageTime:"7:13PM",
-            groupPic:"/img/bands/band2.jpg"
+            groupPic:"/img/bands/band2.jpg",
+            headerColor: "#4F371F"
+
         },
         {
             groupName:"Cat Band",

@@ -32,12 +32,20 @@ snap-drawer, .snap-drawer{
     padding: 0;
     height: 200px;
     background-color: $yellow-green-dark;
+    .chats-panel-header{
+	    margin: 0;
+	    padding: 0.5px 0;
+	    h2{
+	        color: #E2DDD5;
+	        font-size: .8em;
+	    }
+	}
+
     snap-content{
         height: 200px;
         margin: -20px 0 -8px 0;
         h2{
-            margin: 5px 0 10px;
-            font-size: 1em;
+            margin: 10px 0 10px 20px;
         }
         span p{
             color: $light-reg-grey;
@@ -45,6 +53,7 @@ snap-drawer, .snap-drawer{
         }
     }
 }
+
 
 
 *:focus {

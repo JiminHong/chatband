@@ -18,7 +18,8 @@
           <div class="snap-drawer-button" ><p>Delete</p></div>
           </snap-drawer>
         </snap-drawers>
-        <snap-content snap-opt-disable="'right'" class="desat" 
+        <snap-content ng-click="goChat()"
+                      snap-opt-disable="'right'" 
                       ng-style="{
                         'background' : 
                                    'linear-gradient(rgba(0, 0, 0, 0.65), 
@@ -26,11 +27,19 @@
                                     url(' + data.groupPic + ') 
                                     no-repeat',
                           'background-size': '100% '};">
-          <div class="col span_5_of_5" ng-click="goChat()">
-<!--             <img ng-src="{[{data.groupPic}]}" > -->
-            <span class="float-right top-right-span"><p class="light-brown">{[{data.lastMessageTime}]}</p></span>
-            <h2 class="brown-color">{[{data.groupName}]}</h2>
-            <p>{[{ data.lastMessage }]}</p>
+          <div class="col span_5_of_5">
+            
+            <div class="chats-panel-header" ng-style="{'background-color':'{[{data.headerColor}]}'};">
+              <h2 class="brown-color">{[{data.groupName}]}</h2>
+            </div>
+            <div class="chats-panel-body">
+            <svg id="message" width="15" viewBox="0 0 26.83 32.09"><defs><style>.cls-1{fill:#818974;}</style></defs><title>message</title><path class="cls-1" d="M16.92,0C11.44,0.43,1.42,2.75.31,9.21c-0.61,3.54-.35,8.93,1,12.3C2.27,23.79,4.69,25,7,25.79a5.44,5.44,0,0,1-2.56,2.55,1.52,1.52,0,0,0-.3,2.36c1.88,2.2,5.55,1.39,7.82.39A9.63,9.63,0,0,0,17.3,26.3c6.53,1.13,9-7.6,9.42-12.68C27.32,6.2,25.58-.58,16.92,0ZM16.59,23a1.22,1.22,0,0,0-1.27.18,1.15,1.15,0,0,0-.41.56,1.76,1.76,0,0,0-.13.53,5.23,5.23,0,0,1-3,3.57,11,11,0,0,1-3.44,1.28,8.36,8.36,0,0,0,2.06-4A1.57,1.57,0,0,0,8.9,23.2c-5.4-1.48-5.57-5.8-5.7-10.77C3.05,6.86,7.89,5.15,12.43,3.92c1.83-.5,4.23-1.19,6.15-1,4.54,0.56,5.09,3.16,5.26,6.66C24,13.61,23.4,25.53,16.59,23Z"/></svg>
+            <h3 class="inline">New message</h3>
+              <p>{[{ data.lastMessage }]}</p>
+              <span class="float-right top-right-span">
+                <p class="light-brown">{[{data.lastMessageTime}]}</p>
+              </span>
+            </div>
           </div>
         </snap-content>
       </div>
