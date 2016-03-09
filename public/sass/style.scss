@@ -118,7 +118,7 @@ li{
 }
 
 .typebox{
-    background-color: #515D3C;
+    background-color: white;
     position: fixed;
     bottom:0;
     padding: 0;
@@ -161,7 +161,7 @@ li{
     font-size: .8em;
     text-align: center;
     display: inline-block;
-    color: $white-text;
+    color: $reg-grey;
     cursor: pointer;
     position: fixed;
     right: 5px;
@@ -313,7 +313,8 @@ li{
 }
 
 .listGigs-panel-content{
-    height: 75px;
+    background-color: $light-grey;    
+    height: 95px;
     cursor: pointer;
     padding: 15px 0 25px 0;
     @include transition(background-color .15s .15s);
@@ -460,15 +461,19 @@ a:hover p.tabText{
 }
 
 input[type=text], textarea {
-    @include transition(all .15s .15s);
     outline: none;
-    border: 1px solid #515D3C;
-    background-color: #515D3C;
-    color: white;
+    border: none;
+    border-bottom: solid 2px $text-green;
+    transition: border 0.3s;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0);
     &:focus{
+        box-shadow: none;
+        outline: none;
         outline: 0;
-        box-shadow: 0 0 0 #515D3C;
-        border: 1px solid $white-orange;
+        border: none;
+        border-bottom: 2px solid $white-orange;
     };
 }
 
@@ -498,18 +503,18 @@ input{
 
 
 ::-webkit-input-placeholder { 
-    color:    $light-grey;
+    color:    #D9DBD7;
 }
 :-moz-placeholder { 
-   color:    $light-grey;
+   color:    #D9DBD7;
    opacity:  1;
 }
 ::-moz-placeholder { 
-   color:    $light-grey;
+   color:    #D9DBD7;
    opacity:  1;
 }
 :-ms-input-placeholder { 
-   color:    $light-grey;
+   color:    #D9DBD7;
 }
 
 
@@ -632,12 +637,17 @@ input{
 .margin-top-sm{
     margin-top: 7px;
 }
+
 .margin-left-sm{
     margin-left: 15px;
 }
 
 .padding-zero{
     padding: 0;
+}
+
+.padding-bottom{
+    padding-bottom: 10px;
 }
 
 hr{
