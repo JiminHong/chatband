@@ -77,7 +77,10 @@
 }
 
 .bigger-span_1_of_5{
-    width: 28.72%;
+    width: 30%; 
+    @media (min-width: 300px) and (max-width: $x-small){
+        width: 37%; 
+    }
 }
 
 /*  GRID OF NINE  */
