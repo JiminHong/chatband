@@ -31,7 +31,7 @@ snap-drawer, .snap-drawer {
   color: #FFA780;
   position: relative;
   top: 60px;
-  left: 20px;
+  margin-left: 25px;
 }
 
 /* line 33, ../sass/override.scss */
@@ -74,7 +74,7 @@ snap-drawer, .snap-drawer {
 /* line 65, ../sass/override.scss */
 .list-groups-wrapper snap-content {
   height: 200px;
-  margin: -41px 0 -8px 0;
+  margin: -39px 0 -8px 0;
 }
 /* line 68, ../sass/override.scss */
 .list-groups-wrapper snap-content h2 {
