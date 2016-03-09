@@ -51,7 +51,8 @@ function ($scope, $http, $location, $routeParams) {
             groupName:"Cat Band",
             lastMessage:"Have you guys signed up for the gig?",
             lastMessageTime:"5:00PM",
-            groupPic:"/img/bands/band3.jpg"
+            groupPic:"/img/bands/band3.jpg",
+            headerColor: "#332A1A"
         }
         ]
 
