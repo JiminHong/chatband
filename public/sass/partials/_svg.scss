@@ -12,6 +12,10 @@ svg-icon#wardrobe.tabimg svg{
     margin: 16px 2px 5px;
 }
 
+.calendar-margin{
+        margin: 7px 7px 0 0;
+}
+
 /*svg #songs, #lineup, #datetime, #location, #wardrobe*/
 .svg-tabs{
     &:hover path {
@@ -28,7 +32,7 @@ display: block;
 }
 
 svg#arrow{
-    margin-top: 20px;
+    margin-top: 25px;
     path.arrow{
         fill: $desat-burnt-sienna;
         @include transition(all .15s .15s);
@@ -70,11 +74,11 @@ svg#lead-sheet{
 }
 
 svg#pencil{
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 svg#trash{
-    margin-left: 4px;
+    margin-left: 10px;
 }
 
 .option-plus-position{

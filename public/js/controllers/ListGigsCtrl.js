@@ -16,6 +16,21 @@ function ($scope, $http, $location, $routeParams) {
         $location.path('/songs');
     }
 
+    $scope.createGig = function(){
+        $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+        $http.post('/api/gig', $scope.newGig)
+        .success(function(data) {
+                $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+                $scope.gigs = data;
+                $location.path('/goAddGig/'+ data._id);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });;
+    }
+
+    
+
     $http.get('/api/gig')
         .success(function(data) {
             $scope.gigs = data;
@@ -46,53 +61,18 @@ function ($scope, $http, $location, $routeParams) {
             console.log('Error: ' + data);
         });
 
-    // $http.get('/api/songs')
-    //     .success(function(data) {
-    //         $scope.songs = data;
-    //     })
-    //     .error(function(data) {
-    //         console.log('Error: ' + data);
-    //     });
+    $scope.deleteGig = function(id){
+        $http.delete('/api/gig/'+ id)
+             .success(function(data){
+                $scope.gig = data;
+                console.log("deleted!!");
+             })
+             .finally(function(){
+                $route.reload();
+                console.log("id : ", id)
+             })
+    }
 
-
-    // $scope.listGigs = [
-    // {
-    //     date:'Tomorrow',
-    //     time:'18:00-19:00',
-    //     name:'MOONSTONE MUSIC FESTIVAL',
-    //     location:'Central Florida Fairgrounds, Orlando, FL',
-    //     songArtist:'PINK',
-    //     songTitle:'Calling Dr.Love',
-    //     songCount:'3'
-    // },
-    // {
-    //     date:'Jan 23',
-    //     time:'14:00-16:00',
-    //     name:'PERFORMING ARTS',
-    //     location:'Dr. Phillips Center, Orlando, FL',
-    //     songArtist:'Led Zeppelin',
-    //     songTitle:'Stairway to ...',
-    //     songCount:'3'
-    // },
-    // {
-    //     date:'Feb 5',
-    //     time:'17:00-18:30',
-    //     name:'WAKA FLOCKA FLAME',
-    //     location:'Beacham Theater, Orlando, FL',
-    //     songArtist:'The Beatles',
-    //     songTitle:'Hey Jude',
-    //     songCount:'2'
-    // },
-    // {
-    //     date:'Mar 14',
-    //     time:'18:00-19:00',
-    //     name:'WE THE KINGS',
-    //     location:'The Social, Orlando, FL',
-    //     songArtist:'PINK',
-    //     songTitle:'Calling Dr.Love',
-    //     songCount:'2'
-    // },
-    // ]
 }]);
 
 

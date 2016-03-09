@@ -53,8 +53,9 @@ var _model = mongoose.model('gig', gigSchema);
 		})
 	};
 
+
 	_remove = function(id, success, fail){
-		console.log(id);
+		console.log("id in model",id);
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
 				fail(err);
@@ -65,9 +66,11 @@ var _model = mongoose.model('gig', gigSchema);
 	};
 
 
+
 return{
 	schema  : gigSchema,
 	add 	: _save,
+	remove  : _remove, 
     findAll : _findAll,
     findOne : _findOne,
     delete  : _remove

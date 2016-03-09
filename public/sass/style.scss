@@ -315,15 +315,16 @@ li{
 .listGigs-panel-content{
     height: 75px;
     cursor: pointer;
-    padding-top: 15px;
+    padding: 15px 0 25px 0;
     @include transition(background-color .15s .15s);
-    h2, p{
+    p{
         color: $reg-grey;
-        margin: 0;
+        margin-top: 7px;
         @include transition(color .15s .15s);
     }
-    h2.mont-h2{
-        padding-top: 15px;
+    h2{
+        padding-top: 10px;
+        color: #2D6262;
     }
     @media only screen and (min-width: $lg){
 /*        background-color: green;
@@ -343,7 +344,7 @@ li{
 }
 
 
-.listGigs-panel{
+/*.listGigs-panel{
     &:hover{
         .giglist-panel-header{
             background-color: $white-cool-grey;
@@ -367,7 +368,7 @@ li{
             }
         }
     }
-}
+}*/
 
 
 .inline-block{
@@ -414,6 +415,7 @@ a:hover p.tabText{
 
 .song-list-wrapper:last-child{
     margin-bottom: 65px;
+    margin-top: 20px;
 }
 
 .chats-nav{
@@ -586,6 +588,14 @@ input{
     }
 }
 
+.light-grey-fill{
+    fill: #D8D6D6;
+    @include transition(fill .15s .15s);
+    &:hover{
+        fill: #333333;
+    }
+}
+
 .light-grey{
     color: #7C8181;
 }
@@ -606,6 +616,7 @@ input{
 .float-right{
     float: right;
 }
+
 .float-clear{
     clear: both;
 }
@@ -616,6 +627,13 @@ input{
 
 .margin-zero{
     margin: 0;
+}
+
+.margin-top-sm{
+    margin-top: 7px;
+}
+.margin-left-sm{
+    margin-left: 15px;
 }
 
 .padding-zero{

@@ -66,13 +66,13 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     }); 
 
-    $http.get('/api/wardrobes')
-        .success(function(data) {
-            $scope.wardrobes = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
+    // $http.get('/api/wardrobes')
+    //     .success(function(data) {
+    //         $scope.wardrobes = data;
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    // });
 
 
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
@@ -160,6 +160,18 @@ function ($scope, $http, $route, $location, $NgMap) {
              .success(function(data){
                 $scope.lineup = data;
                 console.log($scope);
+             })
+             .finally(function(){
+                $route.reload();
+                console.log("id : ", id)
+             })
+    }
+
+    $scope.deleteLineup = function(id){
+        $http.delete('/api/lineups/'+ id)
+             .success(function(data){
+                $scope.lineup = data;
+                console.log("deleted!!");
              })
              .finally(function(){
                 $route.reload();

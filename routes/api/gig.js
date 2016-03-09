@@ -20,6 +20,32 @@ app.post('/api/gig', function(req, res) {
     });
 });
 
+ // Read One
+app.get('/api/gig/:id', function(req, res) {
+    objectId = req.params.id;
+    gig.findOne({_id:objectId},function(doc) {
+            res.status(200).json(doc);
+    });
+});
+
+// Update
+app.post('/api/gig/:id', function(req, res) {
+    objectId = req.params.id;
+    console.log("in api", objectId);
+    gig.update(req.body,function(doc){
+      console.log("in api data",doc);
+      res.status(200).json(doc);
+    });
+});
+
+
+// Delete One
+app.delete('/api/gig/:id', function(req, res) {
+    objectId = req.params.id;
+    gig.remove({_id:objectId},function(doc){
+        res.status(200).json(doc);
+    });
+});
 
 return app;
 };

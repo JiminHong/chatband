@@ -7,7 +7,7 @@
 
 <div class="view more-margin-top">
   <div ng-repeat="data in groups" class="list-groups-wrapper">
-    <div>
+    <div ng-click="goChat()">
         <snap-drawers snap-id="'content'">
           <snap-drawer="left" ng-click="deleteGroup(data._id)">
           <div class="snap-drawer-button" >
