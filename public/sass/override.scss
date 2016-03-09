@@ -21,9 +21,12 @@ snap-drawer, .snap-drawer{
 }
 
 .snap-drawer-button{
+	margin: 0;
 	p{
-		color: $reg-green;
-		margin-left: 5%;
+		color: $white-orange;
+		position: relative;
+    	top: 60px;
+    	left: 20px;
 	}
 }
 
@@ -31,7 +34,7 @@ snap-drawer, .snap-drawer{
     margin: 0;
     padding: 0;
     height: 200px;
-    background-color: $yellow-green-dark;
+    background-color: #1C1B18;
     .chats-panel-header{
 	    margin: 0;
 	    padding: 0.5px 0;
@@ -61,7 +64,7 @@ snap-drawer, .snap-drawer{
 
     snap-content{
         height: 200px;
-        margin: -20px 0 -8px 0;
+        margin: -41px 0 -8px 0;
         h2{
             margin: 10px 0 10px 20px;
         }

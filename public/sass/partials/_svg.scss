@@ -39,6 +39,11 @@ svg#logo{
     margin: 12px 44%;
 }
 
+svg#leave{
+    position: relative;
+    top: 60px;
+    left: 18px;
+}
 
 svg#files, svg#calendar, svg#addUser{
     fill: $dark-green;
