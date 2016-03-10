@@ -31,9 +31,7 @@ app.get('/api/locations/:id', function(req, res) {
 // Update
 app.post('/api/locations/:id', function(req, res) {
     objectId = req.params.id;
-    console.log("in api", objectId);
     location.update(req.body,function(doc){
-      console.log("in api data",doc);
       res.status(200).json(doc);
     });
 });
