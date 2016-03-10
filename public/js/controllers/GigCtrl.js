@@ -46,12 +46,10 @@ function ($scope, $http, $route, $location, $NgMap) {
                     utcTimeMin = timeStr.slice(14, 16);
                     if(Number(utcTimeHour)>12){
                         utcTimeHour = Number(utcTimeHour)-12;
-                        console.log(utcTimeHour);
                         $scope.ampm = "PM";
                     };
                     data[i].time = utcTimeHour +":"+ utcTimeMin;
 
-                    console.log(data[i].time)
                 };
         })
         .error(function(data) {
