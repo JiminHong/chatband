@@ -856,9 +856,10 @@ svg-icon#wardrobe.tabimg svg {
 
 /* line 34, ../sass/partials/_svg.scss */
 svg#arrow {
-  margin-top: 33px;
+  margin-top: 45px;
+  margin-left: 30px;
 }
-/* line 36, ../sass/partials/_svg.scss */
+/* line 37, ../sass/partials/_svg.scss */
 svg#arrow path.arrow {
   fill: #8E7E2F;
   -moz-transition: all 0.15s 0.15s;
@@ -868,19 +869,19 @@ svg#arrow path.arrow {
   transition: all 0.15s 0.15s;
 }
 
-/* line 42, ../sass/partials/_svg.scss */
+/* line 43, ../sass/partials/_svg.scss */
 svg#logo {
   margin: 12px 44%;
 }
 
-/* line 46, ../sass/partials/_svg.scss */
+/* line 47, ../sass/partials/_svg.scss */
 svg#leave {
   position: relative;
   top: 60px;
   left: 18px;
 }
 
-/* line 52, ../sass/partials/_svg.scss */
+/* line 53, ../sass/partials/_svg.scss */
 svg#files, svg#calendar, svg#addUser {
   fill: #515d3c;
   -moz-transition: fill 0.15s 0.15s;
@@ -890,12 +891,12 @@ svg#files, svg#calendar, svg#addUser {
   transition: fill 0.15s 0.15s;
   cursor: pointer;
 }
-/* line 56, ../sass/partials/_svg.scss */
+/* line 57, ../sass/partials/_svg.scss */
 svg#files:hover, svg#calendar:hover, svg#addUser:hover {
   fill: #3b4427;
 }
 
-/* line 61, ../sass/partials/_svg.scss */
+/* line 62, ../sass/partials/_svg.scss */
 svg#option-plus {
   fill: #d9ea9d;
   margin-bottom: -12px;
@@ -906,80 +907,80 @@ svg#option-plus {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 66, ../sass/partials/_svg.scss */
+/* line 67, ../sass/partials/_svg.scss */
 svg#option-plus:hover {
   fill: #DEF3A4;
 }
 
-/* line 71, ../sass/partials/_svg.scss */
+/* line 72, ../sass/partials/_svg.scss */
 svg#lead-sheet {
   fill: #e2d6c5;
   margin-bottom: 1%;
 }
 
-/* line 76, ../sass/partials/_svg.scss */
+/* line 77, ../sass/partials/_svg.scss */
 svg#pencil {
   margin-left: 10px;
 }
 
-/* line 80, ../sass/partials/_svg.scss */
+/* line 81, ../sass/partials/_svg.scss */
 svg#trash {
   margin-left: 10px;
 }
 
-/* line 84, ../sass/partials/_svg.scss */
+/* line 85, ../sass/partials/_svg.scss */
 .option-plus-position {
   float: left;
   margin: 0 auto;
 }
 
-/* line 90, ../sass/partials/_svg.scss */
+/* line 91, ../sass/partials/_svg.scss */
 .active svg path {
   fill: #E1EFCB;
 }
 
-/* line 94, ../sass/partials/_svg.scss */
+/* line 95, ../sass/partials/_svg.scss */
 .active p.tabText {
   color: #E1EFCB;
 }
 
-/* line 98, ../sass/partials/_svg.scss */
+/* line 99, ../sass/partials/_svg.scss */
 .text-svg {
   float: left;
   margin-left: 75px;
 }
 
-/* line 103, ../sass/partials/_svg.scss */
+/* line 104, ../sass/partials/_svg.scss */
 .margin-left {
   margin-left: 8%;
 }
 
-/* line 107, ../sass/partials/_svg.scss */
+/* line 108, ../sass/partials/_svg.scss */
 .nav-right {
   text-align: right;
   margin-right: 15px;
 }
 
-/* line 112, ../sass/partials/_svg.scss */
+/* line 113, ../sass/partials/_svg.scss */
 .nav-left {
   cursor: pointer;
 }
-/* line 116, ../sass/partials/_svg.scss */
+/* line 117, ../sass/partials/_svg.scss */
 .nav-left:hover .nav-arrow-text-svg path.nav-arrow {
   fill: #DEF3A4;
 }
-/* line 120, ../sass/partials/_svg.scss */
+/* line 121, ../sass/partials/_svg.scss */
 .nav-left:hover .nav-text {
   color: #DEF3A4;
   cursor: pointer;
 }
-/* line 125, ../sass/partials/_svg.scss */
+/* line 126, ../sass/partials/_svg.scss */
 .nav-left .nav-arrow-text-svg {
   float: left;
   margin-left: 20px;
   line-height: 2.2em;
 }
-/* line 129, ../sass/partials/_svg.scss */
+/* line 130, ../sass/partials/_svg.scss */
 .nav-left .nav-arrow-text-svg path.nav-arrow {
   fill: #efefef;
   -moz-transition: fill 0.15s 0.15s;
@@ -988,15 +989,15 @@ svg#trash {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 135, ../sass/partials/_svg.scss */
+/* line 136, ../sass/partials/_svg.scss */
 .nav-left path.nav-arrow {
   margin-top: 10px;
 }
-/* line 139, ../sass/partials/_svg.scss */
+/* line 140, ../sass/partials/_svg.scss */
 .nav-left svg#nav-arrow {
   margin: 5px 10px -3px 0;
 }
-/* line 143, ../sass/partials/_svg.scss */
+/* line 144, ../sass/partials/_svg.scss */
 .nav-left .nav-text {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -1010,20 +1011,20 @@ svg#trash {
   transition: color 0.15s 0.15s;
 }
 
-/* line 153, ../sass/partials/_svg.scss */
+/* line 154, ../sass/partials/_svg.scss */
 .clip-circle {
   -webkit-clip-path: circle(33px at 95px 35px);
   clip-path: circle(33px at 95px 35px);
 }
 
-/* line 158, ../sass/partials/_svg.scss */
+/* line 159, ../sass/partials/_svg.scss */
 .svg-center-1-of-2 {
   display: block;
   margin: auto;
   margin-top: 5%;
 }
 
-/* line 164, ../sass/partials/_svg.scss */
+/* line 165, ../sass/partials/_svg.scss */
 .p-center-1-of-2 {
   font-size: .5em;
   color: #95a362;

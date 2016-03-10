@@ -1,56 +1,24 @@
-module.exports = function(express){
-
+module.exports = function(app){
+    var express = require('express');
     var router = express.Router();
-    var Gig = require('../models/gig.js');
-
+    var chat = require('../../models/chat.js');
 // ===================================================================
-// =============================== Chats =============================
+// =============================== Gigs ==============================
 // ===================================================================
-router.get('/chats', function(req, res) {
 
-    mongoose.model('chat').find(function(err, chats) {
-        if (err)
-            res.send(err)
-        res.json(chats); 
+// Read All
+app.get('/api/chats', function(req, res) {
+    chat.findAll(function(data) {
+      res.status(200).json(data);
     });
 });
 
-router.post('/chats', function(req, res) {
-
-    mongoose.model('chat').create({
-        groupName  : req.body.groupName,
-        groupAdmin   : req.body.groupAdmin,
-        groupMembers    : req.body.groupMembers,
-        groupGigs     : req.body.groupGigs
-    }, function(err, chat) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('chat').find(function(err, chats) {
-            if (err)
-                res.send(err)
-            res.json(chats);
-        });
-    });
-
-});
-
-
-router.delete('/chats/:chat_id', function(req, res) {
-    mongoose.model('chat').remove({
-        _id : req.params.chat_id
-    }, function(err, chat) {
-        if (err)
-            res.send(err);
-
-        mongoose.model('chat').find(function(err, chats) {
-            if (err)
-                res.send(err)
-            res.json(chats);
-        });
+// Create
+app.post('/api/chats', function(req, res) {
+    chat.add(req.body, function(doc){
+        res.send(doc);
     });
 });
 
-return router;
-
-}
+return app;
+};

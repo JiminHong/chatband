@@ -36,7 +36,8 @@ function ($scope, $http, $location, $routeParams) {
             lastMessage:"Okay, see you guys @ 3PM. Have you guys checked the video I uploaded yesterday?",
             lastMessageTime:"7:25PM",
             groupPic:"/img/bands/band1.jpg",
-            headerColor: "#5E5D34"
+            headerColor: "#5E5D34",
+            newGig: "Orlando Rock Festival 2016"
         }
         ,
         {

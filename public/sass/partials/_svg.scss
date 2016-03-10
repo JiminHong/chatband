@@ -32,7 +32,8 @@ display: block;
 }
 
 svg#arrow{
-    margin-top: 33px;
+    margin-top: 45px;
+    margin-left: 30px;
     path.arrow{
         fill: $desat-burnt-sienna;
         @include transition(all .15s .15s);

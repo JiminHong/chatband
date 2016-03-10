@@ -57,6 +57,7 @@ app.get('/', function(req, res) {
 });
 
 require('./routes/api/gig.js')(app);
+require('./routes/api/chat.js')(app);
 require('./routes/api/song.js')(app);
 require('./routes/api/lineup.js')(app);
 require('./routes/api/location.js')(app);
