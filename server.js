@@ -56,17 +56,10 @@ app.get('/', function(req, res) {
     res.sendfile('./public/index.html');
 });
 
-require('./routes/api/gig.js')(app);
-require('./routes/api/chat.js')(app);
-require('./routes/api/song.js')(app);
-require('./routes/api/lineup.js')(app);
-require('./routes/api/location.js')(app);
-require('./routes/api/datetime.js')(app);
-require('./routes/api/wardrobe.js')(app);
-
-// fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
-//   if (~filename.indexOf('.js')) require(__dirname + '/routes/api/' + filename)
-// });
+// Require all APIs
+fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
+  if (~filename.indexOf('.js')) require(__dirname + '/routes/api/' + filename)(app)
+});
 
 // start app ===============================================
 app.listen(port);               

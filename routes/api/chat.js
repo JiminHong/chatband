@@ -2,9 +2,6 @@ module.exports = function(app){
     var express = require('express');
     var router = express.Router();
     var chat = require('../../models/chat.js');
-// ===================================================================
-// =============================== Gigs ==============================
-// ===================================================================
 
 // Read All
 app.get('/api/chats', function(req, res) {

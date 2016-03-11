@@ -7,6 +7,7 @@ function ($scope, $http, $location, $routeParams) {
     // ===================================================================
     // =============================== Chats =============================
     // ===================================================================
+    // Get all chats 
     $http.get('/api/chats')
         .success(function(data) {
             $scope.chats = data;
@@ -15,6 +16,7 @@ function ($scope, $http, $location, $routeParams) {
             console.log('Error: ' + data);
         });
 
+    // Create a new chat
     $scope.createChat = function() {
         $http.post('/api/chats', $scope.newChat)
             .success(function(data) {
@@ -26,6 +28,7 @@ function ($scope, $http, $location, $routeParams) {
             });
     };
 
+    //Delete Chat
     $scope.deleteChat = function(id) {
         $http.delete('/api/chats/' + id)
             .success(function(data) {
