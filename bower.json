@@ -26,7 +26,6 @@
     "ngmap": "^1.16.7",
     "angular-touch": "^1.5.0",
     "angular-snap": "^1.8.5",
-    "firebase": "^2.4.0",
     "angularjs-google-maps": "^0.4.0",
     "angular-google-places-autocomplete": "^0.2.7"
   }

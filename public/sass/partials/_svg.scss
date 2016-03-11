@@ -41,13 +41,14 @@ svg#arrow{
 }
 
 svg#logo{
-    margin: 12px 44%;
+    margin: 6px auto;
+    display: block;
 }
 
 svg#leave{
     position: relative;
-    top: 60px;
     left: 18px;
+        top: 90px;
 }
 
 svg#files, svg#calendar, svg#addUser{

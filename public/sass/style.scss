@@ -13,6 +13,7 @@ html{
     width: 100%;
     height: 100%;
     background-color: $light-grey;
+    background-color: red;
 }
 .navbar-fixed-top {
     position: fixed;
@@ -402,6 +403,7 @@ li{
 }
 a:hover p.tabText{
     color: #E1EFCB;
+    text-decoration-style: none;
 }
 
 .tabimg{
@@ -420,7 +422,7 @@ a:hover p.tabText{
 }
 
 .chats-nav{
-    height: 70px;
+    height: 40px;
     z-index: 3;
 }
 
@@ -429,7 +431,7 @@ a:hover p.tabText{
 }
 
 .more-margin-top{
-    margin-top: 31px;
+    margin-top: 39px;
 }
 
 /*============================================= */
