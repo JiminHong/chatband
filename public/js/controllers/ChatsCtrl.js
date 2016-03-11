@@ -11,14 +11,7 @@ function ($scope, $http, $location, $routeParams) {
             $location.path('/addChat');
         }
 
-        // $http.get('/api/groups')
-        //     .success(function(data) {
-        //         $scope.groups = data;
-        //     })
-        //     .error(function(data) {
-        //         console.log('Error: ' + data);
-        // });
-
+        //Delete a group chat
         $scope.deleteGroup = function(id) {
             $http.delete('/api/groups/' + id)
                 .success(function(data) {
@@ -30,6 +23,7 @@ function ($scope, $http, $location, $routeParams) {
                 });
         };
 
+        // Currently using scope data for testing.
         $scope.groups = [
         {
             groupName:"Awesome Band",

@@ -1,7 +1,7 @@
 myapp.controller('GigCtrl', ["$scope", "$http", "$route", "$location", "NgMap",
 function ($scope, $http, $route, $location, $NgMap) {
 
-
+    //google map
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
     $NgMap.getMap().then(function(map) {
@@ -10,8 +10,10 @@ function ($scope, $http, $route, $location, $NgMap) {
         console.log('shapes', map.shapes);
       });
 
+    // Gig name. Using scope db for now.
     $scope.gigName = "moonstone music festival 2016";
 
+    // getting all songs
     $http.get('/api/songs')
         .success(function(data) {
             $scope.songs = data;
@@ -20,6 +22,7 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     });
 
+    // getting all lineups
     $http.get('/api/lineups')
         .success(function(data) {
             $scope.lineups = data;
@@ -28,22 +31,24 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     });
 
+    // getting all data and times
     $http.get('/api/datetimes')
         .success(function(data) {
             $scope.datetimes = data;
                 for(i=0; i<data.length; i++){
-                    //Month
+                    // Code for getitng month
                     monthNum = data[i].date.charAt(5)+data[i].date.charAt(6);
                     monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                     monthNumIndex   = Number(monthNum)-1;
                     data[i].month = monthNames[monthNumIndex];
-                    //Date
+                    // Code for getting dates
                     dateNum = data[i].date.charAt(8)+data[i].date.charAt(9);
                     data[i].date = dateNum;
-                    //Time
+                    // Code for getting time
                     timeStr = data[i].time;
                     utcTimeHour = timeStr.slice(11, 13);
                     utcTimeMin = timeStr.slice(14, 16);
+                    // PM and AM
                     if(Number(utcTimeHour)>12){
                         utcTimeHour = Number(utcTimeHour)-12;
                         $scope.ampm = "PM";
@@ -56,6 +61,7 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     });
 
+    // Getting a location
     $http.get('/api/locations')
         .success(function(data) {
             $scope.locations = data;
@@ -64,18 +70,11 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     }); 
 
-    // $http.get('/api/wardrobes')
-    //     .success(function(data) {
-    //         $scope.wardrobes = data;
-    //     })
-    //     .error(function(data) {
-    //         console.log('Error: ' + data);
-    // });
-
-
+    // using this scope for now.
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
     
+    // Tabs hover and active.
     if($location.path() === "/songs"){
         $scope.tab = 1;
 
@@ -97,10 +96,12 @@ function ($scope, $http, $route, $location, $NgMap) {
         return $scope.tab === tabNum;
     }
 
+    // It goes to detail page
     $scope.goGig = function(){
         $location.path('/songs');
     }
 
+    // it goes to chat page
     $scope.goChat = function(){
         $location.path('/chat');
     }
@@ -109,7 +110,9 @@ function ($scope, $http, $route, $location, $NgMap) {
     // ============================== Song ===============================
     // ===================================================================
 
+    // Editing song 
     $scope.editSong = function(id){
+        //get song by id
         $http.get('/api/songs/' + id)
              .success(function(data){
               $scope.song = data;
@@ -117,6 +120,7 @@ function ($scope, $http, $route, $location, $NgMap) {
         })
     } 
 
+    // After getting an id of the certain song and upload it.
     $scope.updateSong = function(id){
         $http.post('/api/songs/'+ id, $scope.song)
              .success(function(data){
@@ -127,6 +131,7 @@ function ($scope, $http, $route, $location, $NgMap) {
              })
     } 
 
+    // Delete a song using id
     $scope.deleteSong = function(id){
         $http.delete('/api/songs/'+ id)
              .success(function(data){
@@ -180,6 +185,7 @@ function ($scope, $http, $route, $location, $NgMap) {
 }]);
 
 
+// Using directives to get tab icons 
 myapp.directive('svgIcon', function(){
     function link(scope, element, attrs) {
         function path(icon) {

@@ -68,7 +68,7 @@ li{
 .chat-view{
     background-color: $light-grey;
     padding-bottom: 80px;
-    margin: 80px 0 50px;
+    margin: 110px 0 50px;
     z-index: 2;
     @media only screen and (min-width: $lg){
         margin-left: 500px;
@@ -243,7 +243,7 @@ li{
     }
 
     path {
-        fill: rgba(142,147,121,1);
+        fill: #6B792F;
     } 
 
     svg#plus{
@@ -313,36 +313,38 @@ li{
     width: 10%;
 }
 
+.giglist-wrapper{
+    margin: -20px;
+}
+
 .listGigs-panel-content{
-    background-color: $light-grey;    
-    height: 95px;
     cursor: pointer;
-    padding: 15px 0 25px 0;
-    @include transition(background-color .15s .15s);
+        @include transition(background-color .15s .15s);
     p{
         color: $reg-grey;
         margin-top: 7px;
         @include transition(color .15s .15s);
     }
     h2{
-        padding-top: 10px;
         color: #2D6262;
+        margin-top: 10px;
     }
     @media only screen and (min-width: $lg){
 /*        background-color: green;
 */    }
 }
 
-
-
 .giglist-panel-header{
-    z-index: 2;
-    height: 37px;
+    display: inline-block;
     width: 100%;
     line-height: 2.5em;
     box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
     background-color: $white;
+    margin-top: 20px;
     @include transition(background-color .15s .15s);
+    p{
+        margin: 0;
+    }
 }
 
 
@@ -506,18 +508,18 @@ input{
 
 
 ::-webkit-input-placeholder { 
-    color:    #D9DBD7;
+    color:    #939089;
 }
 :-moz-placeholder { 
-   color:    #D9DBD7;
+   color:    #939089;
    opacity:  1;
 }
 ::-moz-placeholder { 
-   color:    #D9DBD7;
+   color:    #939089;
    opacity:  1;
 }
 :-ms-input-placeholder { 
-   color:    #D9DBD7;
+   color:    #939089;
 }
 
 

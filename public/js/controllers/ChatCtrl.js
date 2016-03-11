@@ -21,6 +21,7 @@ function ($scope, $location, $http, $routeParams) {
         $scope.username = "Me";
         $scope.group = "Awesome Group";
 
+        // Currently using scope data for testing.
         $scope.messages = [
             
             {

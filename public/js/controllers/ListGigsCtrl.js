@@ -8,15 +8,19 @@ function ($scope, $http, $location, $routeParams) {
         $location.path('/chat');
     } 
 
+    // Directs to th page to add a new gig 
     $scope.goAddGigId = function(){
     	$location.path('/goAddGigId');
     }
 
+    // Goes to the detail page
     $scope.goSongs = function(){
         $location.path('/songs');
     }
 
+    // Create a new gig
     $scope.createGig = function(){
+        // If you add just a gigLocation it will add a object now a string. 
         $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
         $http.post('/api/gig', $scope.newGig)
         .success(function(data) {
@@ -29,8 +33,7 @@ function ($scope, $http, $location, $routeParams) {
         });;
     }
 
-    
-
+    // Getting all gigs
     $http.get('/api/gig')
         .success(function(data) {
             $scope.gigs = data;
@@ -61,6 +64,7 @@ function ($scope, $http, $location, $routeParams) {
             console.log('Error: ' + data);
         });
 
+    // Delete a gig
     $scope.deleteGig = function(id){
         $http.delete('/api/gig/'+ id)
              .success(function(data){

@@ -1,27 +1,31 @@
 myapp.controller('NewGigCtrl', ["$scope", "$timeout", "$http", "$location", "$routeParams", 
 function ($scope, $timeout, $http, $location, $routeParams) {
-
+    // go to the chat page
     $scope.goChat = function(){
         $location.path('/chat');
     }
+    // go to the list of gigs
     $scope.goGigList = function(){
         $location.path('/listGigs');
     }
 
+    // This is for toggle. 
     $scope.songPanelBody     = false;
     $scope.lineupPanelBody   = false;
     $scope.datetimePanelBody = false;
     $scope.locationPanelBody = false;
     $scope.wardrobePanelBody = false;
 
+    // Before you add anything
     $scope.add = "Add";
+    // Before done adding
     $scope.doneIndicator = "";
-    $scope.newGig = {};
+
     // ===================================================================
     // =============================== GIG ===============================
     // ===================================================================
 
-    // this is working
+    // Creating a gig
     $scope.createGig = function(){
         $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
         $http.post('/api/gig', $scope.newGig)
