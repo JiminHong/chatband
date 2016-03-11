@@ -1,8 +1,6 @@
-## Synopsis
+## Chatband
 
-Name of the app : Chatband
-It is using a MEAN Stack (MongoDB, ExpressJS, AngularJS, and NodeJS). 
-The version of this app is 5.0.0.
+It is currently using a MEAN Stack (MongoDB, ExpressJS, AngularJS, and NodeJS) and version of this app is 5.0.0.
 
 ## Installation
 
