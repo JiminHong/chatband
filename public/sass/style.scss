@@ -313,8 +313,8 @@ li{
     width: 10%;
 }
 
-.giglist-wrapper{
-    margin: -20px;
+.listGigs-panel{
+    margin-top: -20px;
 }
 
 .listGigs-panel-content{
@@ -329,6 +329,7 @@ li{
         color: #2D6262;
         margin-top: 10px;
     }
+
     @media only screen and (min-width: $lg){
 /*        background-color: green;
 */    }
