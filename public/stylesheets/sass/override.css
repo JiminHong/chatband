@@ -1,0 +1,105 @@
+/*variables.scss*/
+/* line 3, ../../sass/override.scss */
+snap-content, [snap\:content], [snap-content], [data-snap-content], [x-snap-content], .snap-content, .x-snap-content, snap-drawers, [snap\:drawers], [snap-drawers], [data-snap-drawers], [x-snap-drawers], .snap-drawers, .x-snap-drawers, .snap-drawers, .snap-content {
+  position: relative;
+  /*    top: 40px;
+      bottom: 0;*/
+  display: block;
+  margin-top: -38px;
+}
+
+/* line 11, ../../sass/override.scss */
+.snap-content {
+  position: relative;
+  top: 0;
+  overflow: hidden;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: bottom right, left, right;
+}
+
+/* line 19, ../../sass/override.scss */
+snap-drawer, .snap-drawer {
+  top: 0;
+  background-color: white;
+}
+
+/* line 23, ../../sass/override.scss */
+snap-drawers, .snap-drawers {
+  /*	margin: -39px 0 -8px 0;
+  */
+}
+
+/* line 28, ../../sass/override.scss */
+.snap-drawer-button {
+  margin: 0;
+}
+/* line 30, ../../sass/override.scss */
+.snap-drawer-button p {
+  color: #FFA780;
+  /*		position: relative;
+      	top: 60px;*/
+  margin-left: 25px;
+}
+
+/* line 38, ../../sass/override.scss */
+.list-groups-wrapper {
+  margin: 0;
+  padding: 0;
+  /*    height: 200px;
+  */
+  background-color: #1C1B18;
+}
+/* line 43, ../../sass/override.scss */
+.list-groups-wrapper .chats-panel-header {
+  margin: 0;
+  padding: 0.5px 0;
+}
+/* line 46, ../../sass/override.scss */
+.list-groups-wrapper .chats-panel-header h2 {
+  color: #E2DDD5;
+  font-size: .8em;
+}
+/* line 51, ../../sass/override.scss */
+.list-groups-wrapper .chats-panel-body {
+  padding: 20px 0;
+}
+/* line 53, ../../sass/override.scss */
+.list-groups-wrapper .chats-panel-body h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: .7em;
+  color: #ACB59C;
+}
+/* line 58, ../../sass/override.scss */
+.list-groups-wrapper .chats-panel-body p {
+  font-family: "clavo",sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  color: white;
+  font-size: 1em;
+  margin-top: 15px;
+  line-height: 1.5em;
+}
+/* line 70, ../../sass/override.scss */
+.list-groups-wrapper snap-content {
+  /*        height: 200px;
+  */
+  margin: -22px 0 0 0;
+}
+/* line 73, ../../sass/override.scss */
+.list-groups-wrapper snap-content h2 {
+  margin: 10px 0 10px 20px;
+}
+/* line 76, ../../sass/override.scss */
+.list-groups-wrapper snap-content span p {
+  color: #b7b7b7;
+  font-size: 0.7em;
+}
+
+/* line 85, ../../sass/override.scss */
+*:focus {
+  outline: none;
+}
+
+/*snap-content, .snap-content{
+	position: relative;
+}*/

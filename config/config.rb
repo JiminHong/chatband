@@ -2,10 +2,9 @@ require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "public/"
-css_dir = "public/stylesheets"
-sass_dir = "public/sass"
-images_dir = "public/images"
+http_path = "../public/"
+css_dir = "../public/stylesheets"
+sass_dir = "../public/sass"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
