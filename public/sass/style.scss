@@ -419,8 +419,7 @@ a:hover p.tabText{
     height: 100%;
 }
 
-.song-list-wrapper:last-child{
-    margin-bottom: 65px;
+.song-list-wrapper{
     margin-top: 20px;
 }
 
@@ -579,6 +578,21 @@ input{
 
 .ligth-brown-fill{
     fill:$light-brown;
+}
+
+.burnt-sienna-fill{
+    fill: $burnt-sienna;
+    color: #8E7053;
+}
+
+.goldenrod{
+    fill: goldenrod;
+    color: goldenrod;
+}
+
+.chocolate{
+    fill: chocolate;
+    color: chocolate;
 }
 
 .gig-content-wrapper{
