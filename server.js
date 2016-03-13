@@ -2,13 +2,12 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // modules =================================================
 // This is app
-var express        = require('express');
-
+var express        = require('express')();
 var http 		       = require('http').Server(express);
 var app            = express();
 var server         = http.createServer(app);
 // initialize a new instance of socket.io by passing the http(the HTTP server) object
-var io 			       = require('socket.io').(http);
+var io 			       = require('socket.io')(http);
 var router         = express.Router();
 var mongoose       = require('mongoose');
 var morgan         = require('morgan');  
