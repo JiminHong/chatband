@@ -62,9 +62,8 @@ app.get('/', function(req, res) {
 });
 
 //Integrating Socket IO
-io.sockets.on('connection', function(socket){
-	console.log('user connected')
-  	
+io.on('connection', function(socket){
+  console.log('a user connected');
 });
 
 // Require all APIs
@@ -72,8 +71,12 @@ fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/routes/api/' + filename)(app)
 });
 
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+
 // start app ===============================================
-app.listen(port);               
+// app.listen(port);               
 
 // shoutout to the user                     
 console.log('Magic happens on port ' + port);
