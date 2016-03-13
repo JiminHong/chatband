@@ -12,10 +12,6 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var fs             = require('fs');
 
-
-
-
-
 // //load all files in models dir
 fs.readdirSync(__dirname + '/models').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
@@ -63,10 +59,12 @@ app.get('/', function(req, res){
 
 
 // //Integrating Socket IO
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
-
+// io.on('connection', function(socket){
+//   console.log('a user connected');
+//   socket.on('disconnect', function(){
+//     console.log('user disconnected');
+//   });
+// });
 // // Require all APIs
 fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/routes/api/' + filename)(app)
