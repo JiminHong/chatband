@@ -62,10 +62,10 @@ app.get('/', function(req, res) {
 });
 
 //Integrating Socket IO
-// io.sockets.on('connection', function(socket){
-// 	console.log('user connected')
+io.sockets.on('connection', function(socket){
+	console.log('user connected')
   	
-// });
+});
 
 // Require all APIs
 fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
