@@ -1,13 +1,14 @@
 // server.js
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // modules =================================================
+// This is app
 var express        = require('express');
 
-var http 		       = require('http');
+var http 		       = require('http').Server(express);
 var app            = express();
 var server         = http.createServer(app);
 // initialize a new instance of socket.io by passing the http(the HTTP server) object
-var io 			       = require('socket.io').listen(server);
+var io 			       = require('socket.io').(http);
 var router         = express.Router();
 var mongoose       = require('mongoose');
 var morgan         = require('morgan');  
@@ -61,12 +62,8 @@ app.get('/', function(req, res) {
 });
 
 //Integrating Socket IO
-console.log();
 io.sockets.on('connection', function(socket){
-	socket.emit('chat', { hello: 'world' });
-	socket.on('my event', function(data){
-		console.log(data);
-	})
+	console.log('user connected')
   	
 });
 
