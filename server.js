@@ -75,8 +75,6 @@ http.listen(port, function(){
   console.log('listening on '+port);
 });               
 
-// app.listen(port);
-
 // // expose app           
 exports = module.exports = http;  
 
