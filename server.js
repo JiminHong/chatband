@@ -1,14 +1,10 @@
-// server.js
-process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-// modules =================================================
-// This is app
+// // server.js
+// process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+// // modules =================================================
 var express        = require('express');
-var app            = express();
-var http 		       = require('http').Server(app);
-
-// var server         = http.createServer(app);
-// initialize a new instance of socket.io by passing the http(the HTTP server) object
-var io 			       = require('socket.io')(http);
+var app            = require('express')();
+var http           = require('http').Server(app);
+var io             = require('socket.io')(http);
 var router         = express.Router();
 var mongoose       = require('mongoose');
 var morgan         = require('morgan');  
@@ -16,14 +12,15 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var fs             = require('fs');
 
-//load all files in models dir
+
+// //load all files in models dir
 fs.readdirSync(__dirname + '/models').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
 });
 
-// configuration ===========================================
+// // configuration ===========================================
     
-// config files
+// // config files
 var db = require('./config/db');
 
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
@@ -39,7 +36,7 @@ conn.once('open', function() {
 });
 
 
-// set our port
+// // set our port
 var port = process.env.PORT || 3000; 
 app.use(bodyParser.json()); 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
@@ -48,38 +45,40 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public')); 
 
 
-// ===================================================================
-// ============================ route ================================
-// ===================================================================
+// // ===================================================================
+// // ============================ route ================================
+// // ===================================================================
 
 
 router.get('/', function(req, res) {
   res.json({ message: 'You are running router.get!' });
 });
 
-app.get('/', function(req, res) {
-    res.sendfile('./public/index.html');
+app.get('/', function(req, res){
+  res.sendfile('./public/index.html');
 });
 
-//Integrating Socket IO
+
+// //Integrating Socket IO
 io.on('connection', function(socket){
   console.log('a user connected');
 });
 
-// Require all APIs
+// // Require all APIs
 fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/routes/api/' + filename)(app)
 });
 
-http.listen(port, function(){
-  console.log('listening on '+port);
-});
+// // start app ===============================================
+// app.listen(port);
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});               
 
-// start app ===============================================
-// app.listen(port);               
-
-
-// expose app           
+// // expose app           
 exports = module.exports = app;  
+
+
+
 
 
