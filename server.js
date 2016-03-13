@@ -2,8 +2,10 @@
 // process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // // modules =================================================
 var express        = require('express');
-var app            = require('express')();
-var http           = require('http').Server(app);
+
+var app            = express();
+var http           = require('http').createServer(app);
+
 var io             = require('socket.io')(http);
 var router         = express.Router();
 var mongoose       = require('mongoose');
@@ -58,7 +60,6 @@ app.get('/', function(req, res){
   res.sendfile('./public/index.html');
 });
 
-
 // //Integrating Socket IO
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -70,13 +71,14 @@ fs.readdirSync(__dirname + '/routes/api').forEach(function(filename) {
 });
 
 // // start app ===============================================
-// app.listen(port);
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(port, function(){
+  console.log('listening on '+port);
 });               
 
+// app.listen(port);
+
 // // expose app           
-exports = module.exports = app;  
+exports = module.exports = http;  
 
 
 
