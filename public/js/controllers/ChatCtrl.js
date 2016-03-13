@@ -18,59 +18,51 @@ function ($scope, $location, $http, $routeParams) {
             $location.path('/songs');
         }
 
-        $scope.username = "Me";
         $scope.group = "Awesome Group";
 
         // Currently using scope data for testing.
         $scope.messages = [
             
             {
-                profilePic: "/img/profile_pics/pug.jpg",
+                senderProfilePic: "/img/profile_pics/pug.jpg",
                 message:"Good morning, group.",
-                senderUsername: $scope.username,
-                recipientUsername: $scope.group,
+                senderUsername: "John",
                 time:"9:10"
             },
             {
-                profilePic: "/img/profile_pics/pug.jpg",
+                senderProfilePic: "/img/profile_pics/pug.jpg",
                 message:"Let me know when you guys get up",
-                senderUsername: $scope.username,
-                recipientUsername: $scope.group,
+                senderUsername: "John",
                 time:"9:10"
             },
             {
-                profilePic: "/img/profile_pics/matt.jpg",
+                senderProfilePic: "/img/profile_pics/matt.jpg",
                 message:"Hey John, I just got up. What's up?",
                 senderUsername:"Matt",
-                recipientUsername:$scope.group,
                 time:"9:25"
             },
             {
-                profilePic: "/img/profile_pics/pug.jpg",
+                senderProfilePic: "/img/profile_pics/pug.jpg",
                 message:"Hi Matt, I'm going to upload songs for the gig.",
-                senderUsername: $scope.username,
-                recipientUsername: $scope.group,
+                senderUsername: "John",
                 time:"9:10"
             },
             {
-                profilePic: "/img/profile_pics/lorde.jpg",
+                senderProfilePic: "/img/profile_pics/lorde.jpg",
                 message:"Didn't you say you have a video you were going to show us?",
                 senderUsername:"Lorde",
-                recipientUsername:$scope.group,
                 time:"9:27"
             },
             {
-                profilePic: "/img/profile_pics/lorde.jpg",
+                senderProfilePic: "/img/profile_pics/lorde.jpg",
                 message:"Wanna watch the video",
                 senderUsername:"Lorde",
-                recipientUsername:$scope.group,
                 time:"9:27"
             },
             {
-                profilePic: "/img/profile_pics/pug.jpg",
+                senderProfilePic: "/img/profile_pics/pug.jpg",
                 message:"Okay, give me a sec.",
-                senderUsername:$scope.username,
-                recipientUsername: $scope.group,
+                senderUsername:"John",
                 time:"9:29"
             }
         ];
