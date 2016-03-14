@@ -52,7 +52,7 @@ svg#leave{
 }
 
 svg#files, svg#calendar, svg#addUser{
-    fill: $dark-green;
+    fill: #C7D3B3;
     @include transition(fill .15s .15s);
     cursor: pointer;
     &:hover{

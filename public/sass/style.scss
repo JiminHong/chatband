@@ -12,8 +12,24 @@
 html{
     width: 100%;
     height: 100%;
+/*    background-color: $light-grey;
+*/    
+background: #51918d; /* Old browsers */
+background: -moz-linear-gradient(top, #51918d 0%, #d1eac5 13%, #e3f2c1 48%, #f1f2ea 84%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #51918d 0%,#d1eac5 13%,#e3f2c1 48%,#f1f2ea 84%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #51918d 0%,#d1eac5 13%,#e3f2c1 48%,#f1f2ea 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.height100{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+}
+
+.white-wrapper{
     background-color: $light-grey;
-    
+    height: 100%;
 }
 .navbar-fixed-top {
     position: fixed;
@@ -25,11 +41,14 @@ html{
 .lv1-nav{
     height: 40px;
     line-height: 2.4em;
+    background-color: #3C7366;
 }
 
 .lv2-nav{
-    height: 55px;
-    background-color: #98B964;
+    height: 45px;
+    padding: 5px 0 0 0;
+    /*background-color: #98B964;*/
+    background-color: #3C7366;
     @media only screen and (min-width: $lg){
         height: 100%;
         position: fixed;
@@ -66,9 +85,8 @@ li{
 }
 
 .chat-view{
-    background-color: $light-grey;
-    padding-bottom: 80px;
-    margin: 110px 0 50px;
+/*    background-color: $light-grey;*/
+    padding: 80px 0;
     z-index: 2;
     @media only screen and (min-width: $lg){
         margin-left: 500px;
@@ -103,7 +121,7 @@ li{
     font-family: $mont;
     text-transform: uppercase;
     font-weight: 700;
-    color: #7D6542;
+    color: #67502F;
     margin: 20px 0 5px 5px;
 }
 
@@ -119,7 +137,7 @@ li{
 }
 
 .typebox{
-    background-color: white;
+    background-color: rgba(255,255,255,1);
     position: fixed;
     bottom:0;
     padding: 0;
@@ -221,12 +239,14 @@ li{
 .full-width-btn{
     width: 100%;
     height: 60px;
-    background-color: $reg-green;
+/*    margin-top: 40px;
+*/    padding-top: 40px;
+    background-color: #609F90;
     padding: 0 -105px 0 105px;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);  
     @include transition(background-color .15s .15s);
     &:hover{
-        background-color: $reg-green-hover;
+        background-color: #609F90;
         cursor: pointer;
     }
     
@@ -234,7 +254,7 @@ li{
         font-family: $mont; 
         font-size: 1em;
         text-transform: uppercase;
-        color: $dark-desat-green;
+        color: #F2F2EE;
         text-align: center;
         display: inline;
         text-align: center;
@@ -243,7 +263,7 @@ li{
     }
 
     path {
-        fill: #6B792F;
+        fill: #EEFFA5;
     } 
 
     svg#plus{
@@ -283,7 +303,9 @@ li{
 /*============================================= */
 /*================= Contents ================== */
 /*============================================= */
-
+.empty{
+    height: 40px;
+}
 .newgig-wrapper{
 /*    display: none;
 */}
@@ -314,7 +336,7 @@ li{
 }
 
 .listGigs-panel{
-    margin-top: -20px;
+    /*margin-top: 40px;*/
 }
 
 .listGigs-panel-content{
@@ -340,8 +362,9 @@ li{
     width: 100%;
     line-height: 2.5em;
     box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
-    background-color: $white;
-    margin-top: 20px;
+    /*background-color: $white;*/
+    background-color: rgba(255,255,255,0.8);
+    /*margin-top: 20px;*/
     @include transition(background-color .15s .15s);
     p{
         margin: 0;
@@ -614,7 +637,7 @@ input{
 }
 
 .light-grey-fill{
-    fill: #D8D6D6;
+    fill: #B1B1B1;
     @include transition(fill .15s .15s);
     &:hover{
         fill: #333333;
