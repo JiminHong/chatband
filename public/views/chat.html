@@ -74,10 +74,10 @@
     </div>
     <div class="filler chat-msg-div">
         <form>
-            <input class="form border-zero" type="text" placeholder="Write a message here">
+            <input class="form border-zero" ng-model="newChat.message" type="text" placeholder="Write a message here">
         </form>
     </div>
     <div class="right send-btn-div">
-        <button class="button send-btn">Send</button>
+        <button type="submit" ng-click="newMessage()" class="button send-btn">Send</button>
     </div>
 </div>

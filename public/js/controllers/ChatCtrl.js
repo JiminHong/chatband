@@ -18,6 +18,17 @@ function ($scope, $location, $http, $routeParams) {
             $location.path('/songs');
         }
 
+        $scope.newMessage = function(){
+            $http.post('/api/chats', $scope.newChat)
+            .success(function(data) {
+                    $scope.chats = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });;
+        }
+
+
         $scope.group = "Awesome Group";
 
         // Currently using scope data for testing.

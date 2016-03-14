@@ -61,7 +61,7 @@ app.get('/', function(req, res){
 });
 
 // //Integrating Socket IO
-io.on('connection', function(socket){
+io.sockets.on('connection', function(socket){
   console.log('a user connected');
 });
 
