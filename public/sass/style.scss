@@ -15,9 +15,9 @@ html{
 /*    background-color: $light-grey;
 */    
 background: #51918d; /* Old browsers */
-background: -moz-linear-gradient(top, #51918d 0%, #d1eac5 13%, #e3f2c1 48%, #f1f2ea 84%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #51918d 0%,#d1eac5 13%,#e3f2c1 48%,#f1f2ea 84%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #51918d 0%,#d1eac5 13%,#e3f2c1 48%,#f1f2ea 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: -moz-linear-gradient(top, #51918d 0%, #d1eac5 9%, #e3f2c1 18%, #e3f2c1 29%, #f1f2ea 62%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #51918d 0%,#d1eac5 9%,#e3f2c1 18%,#e3f2c1 29%,#f1f2ea 62%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #51918d 0%,#d1eac5 9%,#e3f2c1 18%,#e3f2c1 29%,#f1f2ea 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .height100{
     height: 100%;
@@ -41,14 +41,14 @@ body{
 .lv1-nav{
     height: 40px;
     line-height: 2.4em;
-    background-color: #3C7366;
+    background-color: #98B964;
 }
 
 .lv2-nav{
     height: 45px;
     padding: 5px 0 0 0;
-    /*background-color: #98B964;*/
-    background-color: #3C7366;
+    background-color: #98B964;
+    /*background-color: #3C7366;*/
     @media only screen and (min-width: $lg){
         height: 100%;
         position: fixed;
@@ -133,7 +133,8 @@ li{
     font-weight: normal;
     font-family: $chap;
     margin-left: 3px;
-    color: #CEC9C5;
+    color: #B7AFA9;
+    display: none;
 }
 
 .typebox{
@@ -613,10 +614,17 @@ input{
     color: goldenrod;
 }
 
-.chocolate{
-    fill: chocolate;
-    color: chocolate;
+.edit-color{
+    fill:#307B7D;
+    color: #7D999A;
 }
+
+.chocolate{
+    fill: #D87039;
+    color: #A28B7A;
+}
+
+
 
 .gig-content-wrapper{
     width: 100%;

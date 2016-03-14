@@ -13,6 +13,11 @@ function ($scope, $location, $http, $routeParams) {
             $location.path('/listGigs');
         }
 
+        // It goes to list of gig
+        $scope.goFiles = function(){
+            $location.path('/listFiles');
+        }
+
         // It gets you to the detail page
         $scope.goSongs = function(){
             $location.path('/songs');

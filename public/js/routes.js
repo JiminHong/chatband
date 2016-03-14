@@ -34,6 +34,13 @@ myapp.config(function ($routeProvider){
 		}
 	})
 
+	.when('/listFiles', {
+		templateUrl : 'views/listFiles.html',
+		controller 	: 'ListFilesCtrl', function($scope, $http){
+
+		}
+	})
+
 	// ======================================================== Gig info
 
 	.when('/songs', {
