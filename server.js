@@ -63,6 +63,19 @@ app.get('/', function(req, res){
 // //Integrating Socket IO
 io.sockets.on('connection', function(socket){
   console.log('a user connected');
+  //Listens for a new chat message
+  socket.on('new message', function(data) {
+    //Create message
+    var newMsg = new Chat({
+      message: data.message,
+      time: new Date()
+    });
+    //Save it to database
+    newMsg.save(function(err, msg){
+      //Send message to those connected in the room
+      io.in(msg.room).emit('message created', msg);
+    });
+  });
 });
 
 // // Require all APIs

@@ -49,19 +49,19 @@
 </nav>
 <div class="view">
     <div class="chat-view">
-        <div ng-repeat="data in messages" class="section senderMessage">
+        <div ng-repeat="data in chats" class="section senderMessage">
 
-        <div ng-class="{messagesWrapper : data.senderUsername != messages[$index-1].senderUsername}">
-            <div ng-class="{section : data.senderUsername != messages[$index-1].senderUsername}">
+        <div ng-class="{messagesWrapper : data.senderUsername != chats[$index-1].senderUsername}">
+            <div ng-class="{section : data.senderUsername != chats[$index-1].senderUsername}">
                 <img ng-src="{[{data.senderProfilePic}]}" 
-                     ng-if="data.senderProfilePic != messages[$index-1].senderProfilePic" 
+                     ng-if="data.senderProfilePic != chats[$index-1].senderProfilePic" 
                      class="message-profile-pic" alt="profile pic"/>
                 <p class="senderUsername" 
-                   ng-if="data.senderUsername != messages[$index-1].senderUsername">
+                   ng-if="data.senderUsername != chats[$index-1].senderUsername">
                     {[{data.senderUsername}]}
-                <span class="message-time" ng-if="data.senderUsername != messages[$index-1].senderUsername">{[{data.time}]}</span>
+                <span class="message-time" ng-if="data.senderUsername != chats[$index-1].senderUsername">{[{data.time}]}</span>
                 </p>
-                <p ng-class="{repeatmsg : data.senderUsername == messages[$index-1].senderUsername}" class="display-box light-grey">{[{data.message}]}</p>
+                <p ng-class="{repeatmsg : data.senderUsername == chats[$index-1].senderUsername}" class="display-box light-grey">{[{data.message}]}</p>
             </div>
         </div>
         </div>

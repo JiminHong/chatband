@@ -10,6 +10,8 @@ app.get('/api/chats', function(req, res) {
     });
 });
 
+
+
 // Create
 app.post('/api/chats', function(req, res) {
     chat.add(req.body, function(doc){
