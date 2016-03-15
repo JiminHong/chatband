@@ -124,8 +124,6 @@ a{
     font-weight: bold;
 }
 
-
-
 .uplowcase{
     text-transform: unset;
 }
@@ -143,6 +141,11 @@ label{
     font-size: .8em;
     color: $reg-grey;
     text-transform: uppercase;
+    display: block;
+}
+
+.label-margin-bottom{
+    margin-bottom: -20px;
 }
 
 .display-box{

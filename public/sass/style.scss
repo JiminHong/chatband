@@ -504,6 +504,7 @@ input[type=text], textarea {
     border-radius: 0;
     box-shadow: none;
     background-color: rgba(0,0,0,0);
+    margin-bottom: 10px;
     &:focus{
         box-shadow: none;
         outline: none;

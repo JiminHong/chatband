@@ -788,19 +788,19 @@ a {
   font-weight: bold;
 }
 
-/* line 129, ../sass/partials/_fonts.scss */
+/* line 127, ../sass/partials/_fonts.scss */
 .uplowcase {
   text-transform: unset;
 }
 
-/* line 133, ../sass/partials/_fonts.scss */
+/* line 131, ../sass/partials/_fonts.scss */
 .comment {
   color: #FFA780;
   font-family: "chaparral-pro";
   font-style: italic;
 }
 
-/* line 139, ../sass/partials/_fonts.scss */
+/* line 137, ../sass/partials/_fonts.scss */
 label {
   margin-top: 20px;
   margin-bottom: 5px;
@@ -808,9 +808,15 @@ label {
   font-size: .8em;
   color: #777A7A;
   text-transform: uppercase;
+  display: block;
 }
 
-/* line 148, ../sass/partials/_fonts.scss */
+/* line 147, ../sass/partials/_fonts.scss */
+.label-margin-bottom {
+  margin-bottom: -20px;
+}
+
+/* line 151, ../sass/partials/_fonts.scss */
 .display-box {
   display: -webkit-box;
 }
@@ -1661,8 +1667,9 @@ input[type=text], textarea {
   border-radius: 0;
   box-shadow: none;
   background-color: transparent;
+  margin-bottom: 10px;
 }
-/* line 507, ../sass/style.scss */
+/* line 508, ../sass/style.scss */
 input[type=text]:focus, textarea:focus {
   box-shadow: none;
   outline: none;
@@ -1671,69 +1678,69 @@ input[type=text]:focus, textarea:focus {
   border-bottom: 2px solid #FFA780;
 }
 
-/* line 516, ../sass/style.scss */
+/* line 517, ../sass/style.scss */
 .placeholder-icon {
   position: relative;
   top: 36px;
 }
 
-/* line 521, ../sass/style.scss */
+/* line 522, ../sass/style.scss */
 .text-indent {
   text-indent: 15px;
 }
 
-/* line 525, ../sass/style.scss */
+/* line 526, ../sass/style.scss */
 .chat-msg-input {
   display: inline;
   position: fixed;
   border: 0 !important;
 }
-/* line 529, ../sass/style.scss */
+/* line 530, ../sass/style.scss */
 .chat-msg-input:focus {
   box-shadow: 0 !important;
   border: 0 !important;
 }
 
-/* line 535, ../sass/style.scss */
+/* line 536, ../sass/style.scss */
 input[type=date] {
   -webkit-appearance: none;
 }
 
-/* line 539, ../sass/style.scss */
+/* line 540, ../sass/style.scss */
 input[type=time] {
   -webkit-appearance: none;
 }
 
-/* line 543, ../sass/style.scss */
+/* line 544, ../sass/style.scss */
 input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 550, ../sass/style.scss */
+/* line 551, ../sass/style.scss */
 ::-webkit-input-placeholder {
   color: #939089;
 }
 
-/* line 553, ../sass/style.scss */
+/* line 554, ../sass/style.scss */
 :-moz-placeholder {
   color: #939089;
   opacity: 1;
 }
 
-/* line 557, ../sass/style.scss */
+/* line 558, ../sass/style.scss */
 ::-moz-placeholder {
   color: #939089;
   opacity: 1;
 }
 
-/* line 561, ../sass/style.scss */
+/* line 562, ../sass/style.scss */
 :-ms-input-placeholder {
   color: #939089;
 }
 
-/* line 566, ../sass/style.scss */
+/* line 567, ../sass/style.scss */
 .wide {
   display: block;
   border-width: 0;
@@ -1742,39 +1749,39 @@ input {
 /*============================================= */
 /*=================== Colors ================== */
 /*============================================= */
-/* line 577, ../sass/style.scss */
+/* line 578, ../sass/style.scss */
 .redorange {
   fill: #FC6232;
 }
 
-/* line 581, ../sass/style.scss */
+/* line 582, ../sass/style.scss */
 .desat {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
-/* line 586, ../sass/style.scss */
+/* line 587, ../sass/style.scss */
 .dark-green-bg {
   background-color: #515d3c;
 }
 
-/* line 590, ../sass/style.scss */
+/* line 591, ../sass/style.scss */
 .reg-green-bg {
   background-color: #98B964;
 }
 
-/* line 594, ../sass/style.scss */
+/* line 595, ../sass/style.scss */
 .brown-color {
   color: #7D6542;
 }
 
-/* line 598, ../sass/style.scss */
+/* line 599, ../sass/style.scss */
 .nav-icons {
   display: block;
   margin: 0 auto;
 }
 
-/* line 603, ../sass/style.scss */
+/* line 604, ../sass/style.scss */
 .dark-green-yellow-bg {
   background-color: #424242;
   -moz-transition: background-color 0.15s 0.15s;
@@ -1783,63 +1790,63 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: background-color 0.15s 0.15s;
 }
-/* line 606, ../sass/style.scss */
+/* line 607, ../sass/style.scss */
 .dark-green-yellow-bg:hover {
   background-color: #333333;
 }
 
-/* line 611, ../sass/style.scss */
+/* line 612, ../sass/style.scss */
 .dark-green-yellow-fill {
   fill: #424242;
 }
 
-/* line 615, ../sass/style.scss */
+/* line 616, ../sass/style.scss */
 .light-brown {
   color: #e2d6c5;
 }
 
-/* line 619, ../sass/style.scss */
+/* line 620, ../sass/style.scss */
 .ligth-brown-fill {
   fill: #e2d6c5;
 }
 
-/* line 623, ../sass/style.scss */
+/* line 624, ../sass/style.scss */
 .burnt-sienna-fill {
   fill: #C39263;
   color: #8E7053;
 }
 
-/* line 628, ../sass/style.scss */
+/* line 629, ../sass/style.scss */
 .goldenrod {
   fill: goldenrod;
   color: goldenrod;
 }
 
-/* line 633, ../sass/style.scss */
+/* line 634, ../sass/style.scss */
 .edit-color {
   fill: #307B7D;
   color: #7D999A;
 }
 
-/* line 638, ../sass/style.scss */
+/* line 639, ../sass/style.scss */
 .chocolate {
   fill: #D87039;
   color: #A28B7A;
 }
 
-/* line 643, ../sass/style.scss */
+/* line 644, ../sass/style.scss */
 .gig-content-wrapper {
   width: 100%;
   height: 100%;
   background-color: red;
 }
 
-/* line 649, ../sass/style.scss */
+/* line 650, ../sass/style.scss */
 .green-fill {
   fill: #8DAF41;
 }
 
-/* line 653, ../sass/style.scss */
+/* line 654, ../sass/style.scss */
 .reg-grey-fill {
   fill: #777A7A;
   -moz-transition: fill 0.15s 0.15s;
@@ -1848,12 +1855,12 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 656, ../sass/style.scss */
+/* line 657, ../sass/style.scss */
 .reg-grey-fill:hover {
   fill: #333333;
 }
 
-/* line 661, ../sass/style.scss */
+/* line 662, ../sass/style.scss */
 .light-grey-fill {
   fill: #B1B1B1;
   -moz-transition: fill 0.15s 0.15s;
@@ -1862,12 +1869,12 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 664, ../sass/style.scss */
+/* line 665, ../sass/style.scss */
 .light-grey-fill:hover {
   fill: #333333;
 }
 
-/* line 669, ../sass/style.scss */
+/* line 670, ../sass/style.scss */
 .light-grey {
   color: #7C8181;
   fill: #939089;
@@ -1876,58 +1883,58 @@ input {
 /*============================================= */
 /*=================== Float =================== */
 /*============================================= */
-/* line 678, ../sass/style.scss */
+/* line 679, ../sass/style.scss */
 .center-div {
   margin: 0 auto;
   display: table;
 }
 
-/* line 683, ../sass/style.scss */
+/* line 684, ../sass/style.scss */
 .float-left {
   float: left;
 }
 
-/* line 687, ../sass/style.scss */
+/* line 688, ../sass/style.scss */
 .float-right {
   float: right;
 }
 
-/* line 691, ../sass/style.scss */
+/* line 692, ../sass/style.scss */
 .float-clear {
   clear: both;
 }
 
-/* line 695, ../sass/style.scss */
+/* line 696, ../sass/style.scss */
 .lowercase {
   text-transform: lowercase;
 }
 
-/* line 699, ../sass/style.scss */
+/* line 700, ../sass/style.scss */
 .margin-zero {
   margin: 0;
 }
 
-/* line 703, ../sass/style.scss */
+/* line 704, ../sass/style.scss */
 .margin-top-sm {
   margin-top: 7px;
 }
 
-/* line 707, ../sass/style.scss */
+/* line 708, ../sass/style.scss */
 .margin-left-sm {
   margin-left: 15px;
 }
 
-/* line 711, ../sass/style.scss */
+/* line 712, ../sass/style.scss */
 .padding-zero {
   padding: 0;
 }
 
-/* line 715, ../sass/style.scss */
+/* line 716, ../sass/style.scss */
 .padding-bottom {
   padding-bottom: 10px;
 }
 
-/* line 719, ../sass/style.scss */
+/* line 720, ../sass/style.scss */
 hr {
   border-top: 2px solid #e6e6e6;
   border-left: white;
@@ -1935,17 +1942,17 @@ hr {
   margin-bottom: 0;
 }
 
-/* line 726, ../sass/style.scss */
+/* line 727, ../sass/style.scss */
 .img {
   width: 100%;
 }
 
-/* line 730, ../sass/style.scss */
+/* line 731, ../sass/style.scss */
 .profile-img {
   max-width: 130px;
 }
 
-/* line 734, ../sass/style.scss */
+/* line 735, ../sass/style.scss */
 #map {
   height: 400px;
   margin: 20px 0;
@@ -1953,19 +1960,19 @@ hr {
   border: 1px solid silver;
 }
 
-/* line 741, ../sass/style.scss */
+/* line 742, ../sass/style.scss */
 .margin-more {
   margin-top: 62px;
   margin-bottom: 19px;
 }
 
-/* line 746, ../sass/style.scss */
+/* line 747, ../sass/style.scss */
 .anchor {
   cursor: pointer;
 }
 
 @media only screen and (max-width: 320px) {
-  /* line 752, ../sass/style.scss */
+  /* line 753, ../sass/style.scss */
   .chat-msg-input {
     width: 77%;
   }
