@@ -28,5 +28,6 @@
     "angular-snap": "^1.8.5",
     "angularjs-google-maps": "^0.4.0",
     "angular-google-places-autocomplete": "^0.2.7",
+    "angularjs-datepicker": "^0.2.16"
   }
 }
