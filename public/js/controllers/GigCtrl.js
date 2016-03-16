@@ -47,13 +47,14 @@ function ($scope, $http, $route, $location, $NgMap) {
                     // Code for getting time
                     timeStr = data[i].time;
                     utcTimeHour = timeStr.slice(11, 13);
+                    if (Number(utcTimeHour)>12){
+                        var hour = Number(utcTimeHour)-17;
+                        $scope.ampm = "PM"
+                    }else{
+                        $scope.ampm = "AM"
+                    }
                     utcTimeMin = timeStr.slice(14, 16);
-                    // PM and AM
-                    if(Number(utcTimeHour)>12){
-                        utcTimeHour = Number(utcTimeHour)-12;
-                        $scope.ampm = "PM";
-                    };
-                    data[i].time = utcTimeHour +":"+ utcTimeMin;
+                    data[i].time = hour +":"+ utcTimeMin;
 
                 };
         })

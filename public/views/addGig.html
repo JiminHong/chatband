@@ -43,7 +43,7 @@
             <form method="get">
                 <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required />
                 <input class="form wide" placeholder="Date" type="text" ng-model="newGig.date" onfocus="this.type='date'; this.setAttribute('onfocus','');this.blur();this.focus();">
-                <input class="form wide" type="text" ng-model="newGig.time" placeholder="time" required />
+                <input class="form wide" placeholder="Time" type="text" ng-model="newGig.date" onfocus="this.type='time'; this.setAttribute('onfocus','');this.blur();this.focus();">
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createDatetime()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.scheduleName}]}</p></button>
             </form>
         </div>
