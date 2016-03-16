@@ -524,6 +524,25 @@ input[type=text], textarea {
     };
 }
 
+input[type=date], textarea {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px $text-green;
+    transition: border 0.3s;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 10px;
+    &:focus{
+        box-shadow: none;
+        outline: none;
+        outline: 0;
+        border: none;
+        border-bottom: 2px solid $white-orange;
+    };
+}
+
+
 .placeholder-icon{
     position: relative;
     top: 36px;

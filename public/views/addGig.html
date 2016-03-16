@@ -8,10 +8,10 @@
         </div>
         <div class="panel-body" ng-show="songPanelBody">
             <form method="get">
-                <input class="form" type="text" ng-model="newGig.artist" placeholder="Artist name" required /><br />
-                <input class="form" type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required /><br />
-                <input class="form" type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/><br />
-                <input class="form"type="text" ng-model="newGig.bpm" placeholder="BPM"/><br />
+                <input class="form" type="text" ng-model="newGig.artist" placeholder="Artist name" required />
+                <input class="form" type="text" ng-model="newGig.title" ng-model-options="{ updateOn: 'blur' }" placeholder="Title of song" required />
+                <input class="form" type="text" ng-model="newGig.songDuration" placeholder="Song duration (e.g., 3:50)"/>
+                <input class="form"type="text" ng-model="newGig.bpm" placeholder="BPM"/>
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createSong()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.title}]}</p></button>
             </form>
         </div>
@@ -24,10 +24,10 @@
         </div>
         <div class="panel-body" ng-show="lineupPanelBody">
             <form method="get">
-                <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation (e.g., Drum)" required /><br />
-                <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="First name" required/><br />
-                <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Last name"/><br />
-                <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
+                <input class="form wide" type="text" ng-model="newGig.instrumentation" ng-model-options="{ updateOn: 'blur' }" placeholder="Instrumentation (e.g., Drum)" required />
+                <input class="form wide"type="text" ng-model="newGig.firstName" placeholder="First name" required/>
+                <input class="form wide"type="text" ng-model="newGig.lastName" placeholder="Last name"/>
+                <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/>
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createLineup()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.instrumentation}]}</p></button>
             </form>
         </div>
@@ -41,19 +41,9 @@
         </div>
         <div class="panel-body" ng-show="datetimePanelBody">
             <form method="get">
-                <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required /><br />
-                <!-- <input class="form wide" type="text" ng-model="newGig.date" placeholder="date"/><br /> -->
-                <datepicker date-format="yyyy-MM-dd" selector="form-control">
-                    <div class="input-group">
-                        <input class="form-control" placeholder="Choose a date"/>
-                        <span class="input-group-addon" style="cursor: pointer">
-                        <i class="fa fa-lg fa-calendar"></i>
-                        </span>
-                    </div>
-                </datepicker>
-
-
-                <input class="form wide" type="text" ng-model="newGig.time" placeholder="time" required /><br />
+                <input class="form wide" type="text" ng-model="newGig.scheduleName" ng-model-options="{ updateOn: 'blur' }" placeholder="Schedule Name (e.g., Rehearsal)" required />
+                <input class="form wide" placeholder="Date" type="text" ng-model="newGig.date" onfocus="this.type='date'; this.setAttribute('onfocus','');this.blur();this.focus();">
+                <input class="form wide" type="text" ng-model="newGig.time" placeholder="time" required />
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createDatetime()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.scheduleName}]}</p></button>
             </form>
         </div>
@@ -81,8 +71,8 @@
         </div>
         <div class="panel-body" ng-show="wardrobePanelBody">
             <form method="get">
-                <input class="form wide" type="text" ng-model="newGig.wardrobeConcept" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe concept (e.g., suit)"/><br />
-                <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/><br />
+                <input class="form wide" type="text" ng-model="newGig.wardrobeConcept" ng-model-options="{ updateOn: 'blur' }" placeholder="Wardrobe concept (e.g., suit)"/>
+                <input class="form wide"type="text" ng-model="newGig.comment" placeholder="Comment"/>
                 <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createWardrobe()"><p class="light-brown lowercase">{[{add}]} {[{doneIndicator}]} {[{newGig.wardrobeConcept}]}</p></button>
             </form>
         </div>
