@@ -7,8 +7,8 @@ myapp.factory("chatMessages", ["$firebaseArray",
 ]);
 
 
-myapp.controller('ChatCtrl', ["$scope", "Upload", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
-function ($scope, Upload, chatMessages, $firebaseArray, $location, $http, $routeParams) {
+myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
+function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
 
         var profileImages = [
             "/img/profile_pics/pug.jpg", 
@@ -53,21 +53,6 @@ function ($scope, Upload, chatMessages, $firebaseArray, $location, $http, $route
             });
           }
         });
-
-        $scope.upload = function (file) {
-            console.log("upload!!!");
-            Upload.upload({
-                url: 'upload/url',
-                data: {file: file, 'username': $scope.username}
-            }).then(function (resp) {
-                console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-            }, function (resp) {
-                console.log('Error status: ' + resp.status);
-            }, function (evt) {
-                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-            });
-        };
 
         // It goes to list of chats
         $scope.goChats = function(){
