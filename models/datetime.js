@@ -4,19 +4,28 @@ var mongoose 	= require('mongoose');
 var db 			= require('../config/db');
 var Schema 		= mongoose.Schema;
 
-var datetimeSchedule = new Schema({
-  	scheduleName		: String,
-  	date		: Date,
-  	time		: String
+var datetimeSchema = new Schema({
+  	time:{
+		type: String,
+		default: 'Unknown time'
+	},
+	date:{
+		type: String,
+		default: 'Unknown date'
+	},
+	scheduleName : {
+		type: String,
+		default: '00:00'
+	}
 });
 
-var _model = mongoose.model('datetime', datetimeSchedule);
+var _model = mongoose.model('datetime', datetimeSchema);
 
 	_save = function(req, success, fail) {
 		var newGig = new _model({
-			scheduleName     : req.scheduleName,
-	        date     : req.date,
-	        time     : req.time
+			time     		: req.time,
+	        date     		: req.date,
+	        scheduleName    : req.scheduleName
 		});
 
 		newGig.save(function(err, doc) {
@@ -33,15 +42,14 @@ var _model = mongoose.model('datetime', datetimeSchedule);
 			if(err){
 				fail(err);
 			}else{
-				console.log(doc);
 				success(doc);
 			}
 		})
 	};
 
 	_findOne = function(id ,success, fail){
-		objectID = 'ObjectId("'+id+'")';
-		_model.findOne({'_id': objectID}, function(err, doc){
+		objectId = id._id;
+		_model.findOne({'_id': objectId}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{
@@ -50,8 +58,35 @@ var _model = mongoose.model('datetime', datetimeSchedule);
 		})
 	};
 
+
+	_update = function(req, success, fail){
+		
+		console.log('REQ', req);
+		var id = req._id;
+		var datetimetime = req.time;
+		var datetimedate = req.date;
+		var datetimescheduleName = req.scheduleName;
+
+
+        _model.update({_id: id}, 
+        			  {$set:{
+        			  		time:datetimetime,
+        			  		date:datetimedate, 
+        			  		scheduleName: datetimescheduleName
+        			  }}, function(err,doc){
+			            if (err) {
+			                fail(err);
+			                
+			            }else{
+			                success(doc);
+			                
+			            }
+        				});
+    }
+
+
 	_remove = function(id, success, fail){
-		console.log(id);
+		console.log("id in model",id);
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
 				fail(err);
@@ -63,8 +98,10 @@ var _model = mongoose.model('datetime', datetimeSchedule);
 
 
 return{
-	schema  : datetimeSchedule,
+	schema  : datetimeSchema,
 	add 	: _save,
+	remove  : _remove, 
+	update  : _update,
     findAll : _findAll,
     findOne : _findOne,
     delete  : _remove

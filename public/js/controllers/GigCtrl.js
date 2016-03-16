@@ -36,15 +36,11 @@ function ($scope, $http, $route, $location, $NgMap) {
         .success(function(data) {
             $scope.datetimes = data;
                 for(i=0; i<data.length; i++){
-                    // Code for getitng month
-                    monthNum = data[i].date.charAt(5)+data[i].date.charAt(6);
-                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    monthNumIndex   = Number(monthNum)-1;
-                    data[i].month = monthNames[monthNumIndex];
-                    // Code for getting dates
-                    dateNum = data[i].date.charAt(8)+data[i].date.charAt(9);
-                    data[i].date = dateNum;
-                    // Code for getting time
+                    // Getitng Date
+                    monthStr = data[i].date;
+                    data[i].date = monthStr.slice(0, -24);
+
+                    // Getitng Time
                     timeStr = data[i].time;
                     utcTimeHour = timeStr.slice(11, 13);
                     if (Number(utcTimeHour)>12){
@@ -54,7 +50,7 @@ function ($scope, $http, $route, $location, $NgMap) {
                         $scope.ampm = "AM"
                     }
                     utcTimeMin = timeStr.slice(14, 16);
-                    data[i].time = hour +":"+ utcTimeMin;
+                    data[i].time = hour +":"+ utcTimeMin + " ";
 
                 };
         })
@@ -175,6 +171,44 @@ function ($scope, $http, $route, $location, $NgMap) {
         $http.delete('/api/lineups/'+ id)
              .success(function(data){
                 $scope.lineup = data;
+                console.log("deleted!!");
+             })
+             .finally(function(){
+                $route.reload();
+                console.log("id : ", id)
+             })
+    } 
+
+    // ===================================================================
+    // ============================ Lineup ===============================
+    // ===================================================================
+
+    $scope.editDatetime = function(id){
+        $http.get('/api/datetimes/' + id)
+             .success(function(data){
+              $scope.datetime = data;
+              $scope.commentId = id;
+                console.log("id is ", id);
+                console.log("commend Id is ", $scope.commentId);
+        })
+    } 
+
+    $scope.updateDatetime = function(id){
+        $http.post('/api/datetimes/'+ id, $scope.datetime)
+             .success(function(data){
+                $scope.datetime = data;
+                console.log($scope);
+             })
+             .finally(function(){
+                $route.reload();
+                console.log("id : ", id)
+             })
+    }
+
+    $scope.deleteDatetime = function(id){
+        $http.delete('/api/datetimes/'+ id)
+             .success(function(data){
+                $scope.datetime = data;
                 console.log("deleted!!");
              })
              .finally(function(){

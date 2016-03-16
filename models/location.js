@@ -29,7 +29,6 @@ var _model = mongoose.model('location', locationSchema);
 			if(err){
 				fail(err);
 			}else{
-				console.log(doc);
 				success(doc);
 			}
 		})
@@ -47,7 +46,6 @@ var _model = mongoose.model('location', locationSchema);
 	};
 
 	_remove = function(id, success, fail){
-		console.log(id);
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
 				fail(err);
