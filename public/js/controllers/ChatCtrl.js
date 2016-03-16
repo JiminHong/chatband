@@ -54,6 +54,8 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
           }
         });
 
+        
+
         // It goes to list of chats
         $scope.goChats = function(){
             $location.path('/');
