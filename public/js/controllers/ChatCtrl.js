@@ -1,9 +1,6 @@
 myapp.factory("chatMessages", ["$firebaseArray",
-  function($firebaseArray) {
-    // create a reference to the database location where we will store our data
-    var randomRoomId = Math.round(Math.random() * 100000000);
-    var ref = new Firebase("https://vivid-fire-4911.firebaseio.com/" + randomRoomId);
-
+  function($firebaseArray) {    
+    var ref = new Firebase("https://vivid-fire-4911.firebaseio.com/");
     // this uses AngularFire to create the synchronized array
     return $firebaseArray(ref);
   }
@@ -12,7 +9,21 @@ myapp.factory("chatMessages", ["$firebaseArray",
 myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
 function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
 
-        $scope.user = "Guest " + Math.round(Math.random() * 100);
+        var profileImages = [
+            "/img/profile_pics/pug.jpg", 
+            "/img/profile_pics/matt.jpg", 
+            "/img/profile_pics/lorde.jpg"
+        ]
+
+        var usernames = [
+            "John", "Matt", "Lorde"
+        ];
+    
+        var randomNum = Math.round(Math.random() * 2);
+        
+        $scope.profilePic = profileImages[randomNum];
+        
+        $scope.user = usernames[randomNum];
 
         // we add chatMessages array to the scope to be used in our ng-repeat
         $scope.messages = chatMessages;
@@ -23,7 +34,8 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
           // except that it saves the changes to our database!
           $scope.messages.$add({
             senderUsername: $scope.user,
-            message: $scope.message
+            message: $scope.message, 
+            senderProfilePic: $scope.profilePic
           });
 
           // reset the message input
@@ -34,8 +46,9 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
         $scope.messages.$loaded(function() {
           if ($scope.messages.length === 0) {
             $scope.messages.$add({
-              senderUsername: "Firebase Docs",
-              message: "Hello world!"
+              senderUsername: "John",
+              message: "Hello guys!",
+              senderProfilePic: "/img/profile_pics/pug.jpg"
             });
           }
         });
