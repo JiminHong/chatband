@@ -2,11 +2,8 @@
 // process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 // // modules =================================================
 var express        = require('express');
-
 var app            = express();
 var http           = require('http').createServer(app);
-
-var io             = require('socket.io')(http);
 var router         = express.Router();
 var mongoose       = require('mongoose');
 var morgan         = require('morgan');  
@@ -58,24 +55,6 @@ router.get('/', function(req, res) {
 
 app.get('/', function(req, res){
   res.sendfile('./public/index.html');
-});
-
-// //Integrating Socket IO
-io.sockets.on('connection', function(socket){
-  console.log('a user connected');
-  //Listens for a new chat message
-  socket.on('new message', function(data) {
-    //Create message
-    var newMsg = new Chat({
-      message: data.message,
-      time: new Date()
-    });
-    //Save it to database
-    newMsg.save(function(err, msg){
-      //Send message to those connected in the room
-      io.in(msg.room).emit('message created', msg);
-    });
-  });
 });
 
 // // Require all APIs

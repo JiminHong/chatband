@@ -1,62 +1,63 @@
 <div class="white-wrapper">
-<h2 class="gig-name-h2">-{[{gigName}]}-</h2>
-<div class="content-width-8">
-    <svg id="location" width="15" class="float-left green-fill" viewBox="0 0 20.95 36.76"><path class="location" d="M9.91,0C2.71,0.41-.14,7.13,0,13.53,0.19,21.89,5.62,29,9.63,35.94a1.59,1.59,0,0,0,2.24.59,1.38,1.38,0,0,0,1.65-.83c3.31-7.07,7.24-14.88,7.42-22.85C21.09,6.36,17.09-.38,9.91,0Zm7.18,16.49a71.52,71.52,0,0,1-5.68,15.69L7.92,26.13C6.42,23.52,4.78,20.94,4,18,2.65,12.86,2.93,4.1,9.82,3.43,17,2.74,18.15,11.28,17.09,16.51Z M12.64,8.26a1.44,1.44,0,0,0-1.09,0c-5.62-.81-7.92,10.05-1.6,10.4C15.17,18.92,17.72,10.26,12.64,8.26ZM12,13a2.64,2.64,0,0,1-1.38,2.14c-2.09.68-.78-3.87,0.4-3.6a1.74,1.74,0,0,0,.78,0A2,2,0,0,1,12,13Z"/></svg>
+    <div class="tab-page-wrapper">
+        <h2 class="gig-name-h2">-{[{gigName}]}-</h2>
+        <div class="content-width-8">
+            <svg id="location" width="15" class="float-left green-fill" viewBox="0 0 20.95 36.76"><path class="location" d="M9.91,0C2.71,0.41-.14,7.13,0,13.53,0.19,21.89,5.62,29,9.63,35.94a1.59,1.59,0,0,0,2.24.59,1.38,1.38,0,0,0,1.65-.83c3.31-7.07,7.24-14.88,7.42-22.85C21.09,6.36,17.09-.38,9.91,0Zm7.18,16.49a71.52,71.52,0,0,1-5.68,15.69L7.92,26.13C6.42,23.52,4.78,20.94,4,18,2.65,12.86,2.93,4.1,9.82,3.43,17,2.74,18.15,11.28,17.09,16.51Z M12.64,8.26a1.44,1.44,0,0,0-1.09,0c-5.62-.81-7.92,10.05-1.6,10.4C15.17,18.92,17.72,10.26,12.64,8.26ZM12,13a2.64,2.64,0,0,1-1.38,2.14c-2.09.68-.78-3.87,0.4-3.6a1.74,1.74,0,0,0,.78,0A2,2,0,0,1,12,13Z"/></svg>
 
 
-    <h2 class="chap-h2 uplowcase margin-left margin-left">Location</h2>
+            <h2 class="chap-h2 uplowcase margin-left margin-left">Location</h2>
 
-    <div ng-repeat="location in locations" class="song-list-wrapper">
+            <div ng-repeat="location in locations" class="song-list-wrapper">
+                <div class="section group">
+                        <p class="gig-data-p margin-zero">
+                            {[{location.gigAddress}]}
+                        <p>
+                        <ng-map center="1010 N Orange Ave, Winter Park, FL 32789, USA" scrollwheel="false">
+                            <marker position="san francisco"></div>
+                        </ng-map>   
+                </div>
+                <button class="button btn-xl dark-green-yellow-bg light-brown">
+
+                <svg id="location" class="float-left" height="20" viewBox="0 0 20.95 36.76"><path class="ligth-brown-fill" d="M9.91,0C2.71,0.41-.14,7.13,0,13.53,0.19,21.89,5.62,29,9.63,35.94a1.59,1.59,0,0,0,2.24.59,1.38,1.38,0,0,0,1.65-.83c3.31-7.07,7.24-14.88,7.42-22.85C21.09,6.36,17.09-.38,9.91,0Zm7.18,16.49a71.52,71.52,0,0,1-5.68,15.69L7.92,26.13C6.42,23.52,4.78,20.94,4,18,2.65,12.86,2.93,4.1,9.82,3.43,17,2.74,18.15,11.28,17.09,16.51Z M12.64,8.26a1.44,1.44,0,0,0-1.09,0c-5.62-.81-7.92,10.05-1.6,10.4C15.17,18.92,17.72,10.26,12.64,8.26ZM12,13a2.64,2.64,0,0,1-1.38,2.14c-2.09.68-.78-3.87,0.4-3.6a1.74,1.74,0,0,0,.78,0A2,2,0,0,1,12,13Z"/></svg>
+                <p class="light-brown">get directions</p>
+                </button>
+            </div>
+            
+        </div>
+
         <div class="section group">
-                <p class="gig-data-p margin-zero">
-                    {[{location.gigAddress}]}
-                <p>
-                <ng-map center="1010 N Orange Ave, Winter Park, FL 32789, USA" scrollwheel="false">
-                    <marker position="san francisco"></div>
-                </ng-map>   
-        </div>
-        <button class="button btn-xl dark-green-yellow-bg light-brown">
-
-        <svg id="location" class="float-left" height="20" viewBox="0 0 20.95 36.76"><path class="ligth-brown-fill" d="M9.91,0C2.71,0.41-.14,7.13,0,13.53,0.19,21.89,5.62,29,9.63,35.94a1.59,1.59,0,0,0,2.24.59,1.38,1.38,0,0,0,1.65-.83c3.31-7.07,7.24-14.88,7.42-22.85C21.09,6.36,17.09-.38,9.91,0Zm7.18,16.49a71.52,71.52,0,0,1-5.68,15.69L7.92,26.13C6.42,23.52,4.78,20.94,4,18,2.65,12.86,2.93,4.1,9.82,3.43,17,2.74,18.15,11.28,17.09,16.51Z M12.64,8.26a1.44,1.44,0,0,0-1.09,0c-5.62-.81-7.92,10.05-1.6,10.4C15.17,18.92,17.72,10.26,12.64,8.26ZM12,13a2.64,2.64,0,0,1-1.38,2.14c-2.09.68-.78-3.87,0.4-3.6a1.74,1.74,0,0,0,.78,0A2,2,0,0,1,12,13Z"/></svg>
-        <p class="light-brown">get directions</p>
-        </button>
-    </div>
-    
-</div>
-
-<div class="section group">
-    <div class="tabs">
-        <div class="col span_1_of_5">
-        <a href="/#/songs" ng-class="{ active: isSet(1) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="songs" p="songs"></svg-icon>
-            <p class="tabText">Songs</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/#/lineup" ng-class="{ active: isSet(2) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="lineup" p="lineup"></svg-icon>
-            <p class="tabText">Lineup</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/#/datetime"ng-class="{ active: isSet(3) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="datetime" p="datetime"></svg-icon>
-            <p class="tabText">Datetime</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/#/location" ng-class="{ active: isSet(4) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="location" p="location"></svg-icon>
-            <p class="tabText">Location</p>
-        </a>
-        </div>
-        <div class="col span_1_of_5">
-        <a href="/#/wardrobe" ng-class="{ active: isSet(5) }">
-            <svg-icon class="tabimg svg-tabs svg-center" id="wardrobe" p="wardrobe"></svg-icon>
-            <p class="tabText">Wardrobe</p>
-        </a>
+            <div class="tabs">
+                <div class="col span_1_of_5">
+                <a href="/#/songs" ng-class="{ active: isSet(1) }">
+                    <svg-icon class="tabimg svg-tabs svg-center" id="songs" p="songs"></svg-icon>
+                    <p class="tabText">Songs</p>
+                </a>
+                </div>
+                <div class="col span_1_of_5">
+                <a href="/#/lineup" ng-class="{ active: isSet(2) }">
+                    <svg-icon class="tabimg svg-tabs svg-center" id="lineup" p="lineup"></svg-icon>
+                    <p class="tabText">Lineup</p>
+                </a>
+                </div>
+                <div class="col span_1_of_5">
+                <a href="/#/datetime"ng-class="{ active: isSet(3) }">
+                    <svg-icon class="tabimg svg-tabs svg-center" id="datetime" p="datetime"></svg-icon>
+                    <p class="tabText">Datetime</p>
+                </a>
+                </div>
+                <div class="col span_1_of_5">
+                <a href="/#/location" ng-class="{ active: isSet(4) }">
+                    <svg-icon class="tabimg svg-tabs svg-center" id="location" p="location"></svg-icon>
+                    <p class="tabText">Location</p>
+                </a>
+                </div>
+                <div class="col span_1_of_5">
+                <a href="/#/wardrobe" ng-class="{ active: isSet(5) }">
+                    <svg-icon class="tabimg svg-tabs svg-center" id="wardrobe" p="wardrobe"></svg-icon>
+                    <p class="tabText">Wardrobe</p>
+                </a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
 </div> <!-- End of white wrapper -->

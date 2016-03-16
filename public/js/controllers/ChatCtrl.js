@@ -1,7 +1,45 @@
-myapp.controller('ChatCtrl', ["$scope", "$location", "$http", "$routeParams", 
-function ($scope, $location, $http, $routeParams) {
-        //Use it when you want to console.log a current path
-        $scope.currentPath = $location.path();
+myapp.factory("chatMessages", ["$firebaseArray",
+  function($firebaseArray) {
+    // create a reference to the database location where we will store our data
+    var randomRoomId = Math.round(Math.random() * 100000000);
+    var ref = new Firebase("https://vivid-fire-4911.firebaseio.com/" + randomRoomId);
+
+    // this uses AngularFire to create the synchronized array
+    return $firebaseArray(ref);
+  }
+]);
+
+myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
+function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
+
+        $scope.user = "Guest " + Math.round(Math.random() * 100);
+
+        // we add chatMessages array to the scope to be used in our ng-repeat
+        $scope.messages = chatMessages;
+
+        // a method to create new messages; called by ng-submit
+        $scope.addMessage = function() {
+          // calling $add on a synchronized array is like Array.push(),
+          // except that it saves the changes to our database!
+          $scope.messages.$add({
+            senderUsername: $scope.user,
+            message: $scope.message
+          });
+
+          // reset the message input
+          $scope.message = "";
+        };
+
+        // if the messages are empty, add something for fun!
+        $scope.messages.$loaded(function() {
+          if ($scope.messages.length === 0) {
+            $scope.messages.$add({
+              senderUsername: "Firebase Docs",
+              message: "Hello world!"
+            });
+          }
+        });
+  
 
         // It goes to list of chats
         $scope.goChats = function(){
@@ -22,24 +60,6 @@ function ($scope, $location, $http, $routeParams) {
         $scope.goSongs = function(){
             $location.path('/songs');
         }
-
-        $scope.newMessage = function(){
-            $http.post('/api/chats', $scope.newChat)
-            .success(function(data) {
-                    $scope.chats = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });;
-        }
-
-        $http.get('/api/chats')
-            .success(function(data) {
-                $scope.chats = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-        });
 
         $scope.group = "Awesome Group";
 
