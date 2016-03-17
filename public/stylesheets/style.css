@@ -1417,7 +1417,7 @@ select {
 /* line 306, ../sass/style.scss */
 .center-content {
   margin: 0 auto;
-  display: table-cell;
+  display: block;
   box-sizing: border-box;
 }
 
