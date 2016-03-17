@@ -1,8 +1,8 @@
 myapp.controller('ListFilesCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
-    console.log('ListFilesCtrl fired');
-
+    $scope.fileviewoptions = [{name:"View by File Type"}, {name:"View by Gigs"}];
+    $scope.firstOption = $scope.fileviewoptions[0];
     //Directs to the chat page
     $scope.goChat = function(){
         $location.path('/chat');
