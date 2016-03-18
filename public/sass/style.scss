@@ -255,13 +255,19 @@ li{
 
 
 
-
+.header-wrapper{
+    left: 35px;
+}
 
 
 
 /*============================================= */
 /*================== Search =================== */
 /*============================================= */
+
+.search-box-wrapper{
+    transition: 0.5s linear all;
+}
 
 .search-container{
   overflow: hidden;
@@ -457,10 +463,17 @@ select{
     top:-200px;
 }
 
-
 /*============================================= */
 /*================= Contents ================== */
 /*============================================= */
+/*.nav-3-wrapper{
+    background-color: red;
+    position: fixed;
+    height: 200px;
+}*/
+.position-fix{
+    position: fixed;
+}
 
 .display-table{
     display: table;
@@ -820,6 +833,9 @@ input{
     color: #A28B7A;
 }
 
+.dark-brown{
+    color: #3E2E16;
+}
 .gig-content-wrapper{
     width: 100%;
     height: 100%;
