@@ -831,6 +831,7 @@ input{
 }
 
 .reg-grey-fill {
+    color: $reg-grey;
     fill: $reg-grey;
     @include transition(fill .15s .15s);
     &:hover{

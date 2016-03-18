@@ -30,15 +30,6 @@
 		</div>
 	</div>
 
-	<!-- List of files -->
-	<div class="group section" ng-repeat="fileData in file">
-		<div class="content-width-8">
-			{[{fileData.fileName}]}
-			{[{fileData.date}]}{[{file.time}]}
-			{[{fileData.username}]}
-		</div>
-	</div>
-
 	<div ng-show="filter"> <!-- Filter by file type -->
 		<div class="file-gig-panel">
 			<div class="group section">
@@ -82,4 +73,13 @@
 			
 		</div>
 	</div>
+	<!-- List of files -->
+	<div class="group section" ng-repeat="fileData in file">
+		<div class="content-width-8">
+			<p><b>{[{fileData.fileName}]}</b></p>
+			<p>{[{fileData.date}]} <span class="reg-grey-fill">at</span> {[{fileData.time}]} <span class="reg-grey-fill">by</span> <span class="brown-color"><b>{[{fileData.username}]}</b></span></p>
+		</div>
+	</div>
+
+	
 </div><!-- End of view -->
