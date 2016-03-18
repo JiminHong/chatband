@@ -402,33 +402,18 @@ select{
     }
 }
 
-
-/*.listGigs-panel{
-    &:hover{
-        .giglist-panel-header{
-            background-color: $white-cool-grey;
-            .chap-h2{
-                color: $dark-navy;
-                .time-giglist{
-                    color: $dark-cool-grey;
-                }
-            }
-        }
-        .listGigs-panel-content{
-            background-color: $dark-cool-grey;
-            h2, p{
-                color: $white;
-            }
-            svg#arrow{
-                display: inline-block;
-                path.arrow{
-                    fill: $white;
-                }
-            }
-        }
+.file-gig-panel{
+    .header{
+        display: inline-block;
+        width: 100%;
+        line-height: 2.5em;
+        box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255,255,255,0.8);
     }
-}*/
+    .body{
 
+    }  
+}
 
 .inline-block{
     display: inline-block;
