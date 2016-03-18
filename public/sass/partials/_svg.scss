@@ -1,6 +1,9 @@
 /*============================================= */
 /*==================== SVGs =================== */
 /*============================================= */
+.svg-width{
+    width: 50px;
+}
 
 svg-icon#location.tabimg svg{
     display: block;
@@ -38,6 +41,10 @@ svg#arrow{
         fill: $desat-burnt-sienna;
         @include transition(all .15s .15s);
     };
+}
+
+svg#image{
+    margin: 22px 10px 10px 5px;
 }
 
 svg#logo{

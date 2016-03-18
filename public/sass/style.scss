@@ -320,7 +320,8 @@ select{
 .panel-body{
     @include transition(all .15s .15s);
     position: relative;
-    top: 0;  
+    top: 0; 
+
 }
 
 .ng-hide {
@@ -333,6 +334,10 @@ select{
 /*============================================= */
 /*================= Contents ================== */
 /*============================================= */
+
+.display-table{
+    display: table;
+}
 .empty{
     height: 40px;
 }
@@ -357,6 +362,7 @@ select{
 .content-width-8{
     width: 80%;
     margin: 0 auto;
+    display: table;
 }
 .content-width-7{
     width: 70%;
@@ -370,7 +376,12 @@ select{
     /*margin-top: 40px;*/
 }
 
+.listGigs-panel-body{
+    background-color: rgba(255,255,255,.5);
+}
+
 .listGigs-panel-content{
+    padding-bottom: 10px;
     cursor: pointer;
         @include transition(background-color .15s .15s);
     p{
@@ -409,10 +420,23 @@ select{
         line-height: 2.5em;
         box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
         background-color: rgba(255,255,255,0.8);
+        height: 60px;
+        margin-bottom: 3px;
+        cursor: pointer;
     }
-    .body{
-
-    }  
+    h2{
+        color: $reg-grey;
+        position: absolute;
+        left: 75px;
+        line-height: 4em;
+    }
+    svg{
+        margin-top: 10px;
+    }
+    svg.small-arrow{
+        float: right;
+        margin-top: 22px;
+    }
 }
 
 .inline-block{

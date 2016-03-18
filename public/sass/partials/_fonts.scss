@@ -41,6 +41,7 @@ h2{
     font-size: 1.4em;
     margin: 0 0 5%;
     @include transition(color .15s .15s);
+    text-transform: none;
 }
 
 h2.mont-h2{
