@@ -174,10 +174,6 @@ li{
     width: 43px;
 }
 
-.send-btn-div{
-    width: 50px;
-}
-
 .div-30{
     width: 30px;
     margin-right: 15px;
@@ -187,25 +183,156 @@ li{
     width: 40px;
 }
 
-.send-btn{
-    font-size: .8em;
-    text-align: center;
-    display: inline-block;
-    color: $reg-grey;
-    cursor: pointer;
-    position: fixed;
-    right: 5px;
-    @include transition(color .15s .15s);
-    margin: 0.5%;
-    line-height: 3.5em;
-    &:hover{
-        color: $reg-green;
-    };
-    p {
-        font-size: .8em;
-        text-align: center;
-    }
+.sendmsg-container{
+  overflow: hidden;
+  vertical-align: middle;
+  white-space: nowrap;
 }
+
+.sendmsg-container input#sendmsg{
+  box-shadow: none;
+  height: 50px;
+  background: white;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: $reg-grey;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.sendmsg-container input#sendmsg::-webkit-input-placeholder {
+   color: $reg-grey;
+}
+ 
+.sendmsg-container input#sendmsg:-moz-placeholder { /* Firefox 18- */
+   color: $reg-grey;  
+}
+ 
+.sendmsg-container input#sendmsg::-moz-placeholder {  /* Firefox 19+ */
+   color: $reg-grey;  
+}
+ 
+.sendmsg-container input#sendmsg:-ms-input-placeholder {  
+   color: $reg-grey;  
+}
+
+
+.sendmsg-container button.icon{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+  border: none;
+  background: white;
+  height: 50px;
+  width: 50px;
+  color: $reg-grey;
+  opacity: 0;
+  font-size: 10pt;
+ 
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.sendmsg-container:hover button.icon, .sendmsg-container:active button.icon, .sendmsg-container:focus button.icon{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+ 
+  .sendmsg-container:hover button.icon:hover{
+    background: white;
+  }
+
+
+
+
+
+
+
+/*============================================= */
+/*================== Search =================== */
+/*============================================= */
+
+.search-container{
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.search-container input#search{
+  width: 300px;
+  height: 50px;
+  background: white;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: $reg-grey;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.search-container input#search::-webkit-input-placeholder {
+   color: $reg-grey;
+}
+ 
+.search-container input#search:-moz-placeholder { /* Firefox 18- */
+   color: $reg-grey;  
+}
+ 
+.search-container input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: $reg-grey;  
+}
+ 
+.search-container input#search:-ms-input-placeholder {  
+   color: $reg-grey;  
+}
+
+
+.search-container button.icon{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+  border: none;
+  background: #72552F;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+ 
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.search-container:hover button.icon, .search-container:active button.icon, .search-container:focus button.icon{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+ 
+  .search-container:hover button.icon:hover{
+    background: white;
+  }
 
 /*============================================= */
 /*================== Buttons ================== */
