@@ -1,6 +1,5 @@
 myapp.controller('ChatsCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
-    console.log('ChatsCtrl fired');
 
         //Directs to the chat page
         $scope.goChat = function(){
