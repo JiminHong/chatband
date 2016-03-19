@@ -67,6 +67,10 @@ svg#files, svg#calendar, svg#addUser{
     };
 };
 
+svg#files{
+    margin-top:3px;
+}
+
 svg#option-plus{
     fill: $reg-green-hover;
     margin-bottom: -12px;

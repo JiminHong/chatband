@@ -11,7 +11,6 @@ function ($scope, $http, $location, $routeParams) {
     $http.get('/api/files')
         .success(function(data) {
             $scope.file = data;
-            console.log(data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
