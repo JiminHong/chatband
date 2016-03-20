@@ -759,16 +759,22 @@ h4.subheading {
 }
 
 /* line 104, ../sass/partials/_fonts.scss */
+.small-font {
+  font-size: .7em;
+  margin-top: 15px;
+}
+
+/* line 109, ../sass/partials/_fonts.scss */
 a {
   text-decoration: none;
 }
 
-/* line 108, ../sass/partials/_fonts.scss */
+/* line 113, ../sass/partials/_fonts.scss */
 .time-span {
   font-size: .5em;
 }
 
-/* line 112, ../sass/partials/_fonts.scss */
+/* line 117, ../sass/partials/_fonts.scss */
 .time-giglist {
   margin-left: 5px;
   color: #ADADAD;
@@ -783,29 +789,29 @@ a {
   transition: color 0.15s 0.15s;
 }
 
-/* line 122, ../sass/partials/_fonts.scss */
+/* line 127, ../sass/partials/_fonts.scss */
 .small-text {
   font-size: .75em;
 }
 
-/* line 126, ../sass/partials/_fonts.scss */
+/* line 131, ../sass/partials/_fonts.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 130, ../sass/partials/_fonts.scss */
+/* line 135, ../sass/partials/_fonts.scss */
 .uplowcase {
   text-transform: unset;
 }
 
-/* line 134, ../sass/partials/_fonts.scss */
+/* line 139, ../sass/partials/_fonts.scss */
 .comment {
   color: #FFA780;
   font-family: "chaparral-pro";
   font-style: italic;
 }
 
-/* line 140, ../sass/partials/_fonts.scss */
+/* line 145, ../sass/partials/_fonts.scss */
 label {
   margin-top: 20px;
   margin-bottom: 5px;
@@ -816,12 +822,12 @@ label {
   display: block;
 }
 
-/* line 150, ../sass/partials/_fonts.scss */
+/* line 155, ../sass/partials/_fonts.scss */
 .label-margin-bottom {
   margin-bottom: -20px;
 }
 
-/* line 154, ../sass/partials/_fonts.scss */
+/* line 159, ../sass/partials/_fonts.scss */
 .display-box {
   display: -webkit-box;
 }

@@ -18,9 +18,9 @@
 			    <div class="content-width-8">
 					<div class="group section">
 					  <div class="search-container">
-					    <input type="search" id="search" ng-model="fileSearch" placeholder="Search files here..." />
+					    <input type="text" id="search" ng-model="fileSearch" placeholder="Search files here..." />
 					    <button class="icon" ng-click="search=!search; refresh();">
-					    	Cancel
+					    	<p>Cancel</p>
 					    </button>
 					  </div>
 					</div>
@@ -42,7 +42,7 @@
 				</div>
 				<div class="col span_7_of_9">
 					
-					<h4 class="dark-brown">{[{fileData.date}]} <span class="reg-grey-fill">at</span> {[{fileData.time}]} <span class="reg-grey-fill">by</span> <span class="chocolate"><b>{[{fileData.username}]}</b></span></h4>
+					<p class="dark-brown small-font">{[{fileData.date}]} <span class="reg-grey-fill">at</span> {[{fileData.time}]} <span class="reg-grey-fill">uploaded by</span> <span class="chocolate">{[{fileData.username}]}</span></p>
 					<p>{[{fileData.fileName}]}</p>
 				</div>
 			</div>

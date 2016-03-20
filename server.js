@@ -1,6 +1,5 @@
-// // server.js
-// process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-// // modules =================================================
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+// modules =================================================
 var express        = require('express');
 var app            = express();
 var http           = require('http').createServer(app);
@@ -12,19 +11,17 @@ var methodOverride = require('method-override');
 var fs             = require('fs');
 
 
-// //load all files in models dir
+// load all files in models dir
 fs.readdirSync(__dirname + '/models').forEach(function(filename) {
   if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename)
 });
 
-// // configuration ===========================================
-    
-// // config files
+// configuration ===========================================
 var db = require('./config/db');
-
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
   
+// Mongoose connection
 mongoose.connect(db.url, options);
 var conn = mongoose.connection;             
  
@@ -35,7 +32,7 @@ conn.once('open', function() {
 });
 
 
-// // set our port
+// set our port
 var port = process.env.PORT || 3000; 
 app.use(bodyParser.json()); 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
