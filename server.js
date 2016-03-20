@@ -1,4 +1,4 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'db';
+process.env.NODE_ENV = process.env.NODE_ENV || 3000;
 // modules =================================================
 var express        = require('express');
 var app            = express();
