@@ -1,7 +1,7 @@
 module.exports = function(){
 
 var mongoose 	= require('mongoose');
-var db 			= require('../config/db');
+var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
 var gigSchema = new Schema({
