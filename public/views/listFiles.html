@@ -38,8 +38,7 @@
 		<div class="group section" ng-repeat="fileData in file | filter:fileSearch | orderBy:'date'" >
 			<div class="content-width-8">
 				<div class="col span_2_of_9">
-				<!-- <svg id="Layer_1" class="float-left" width="50" viewBox="{[{fileData.svgViewbox}]}"><path class="light-grey-fill" d="{[{fileData.svgPath}]}"/></svg> -->
-				<file-icon class="tabimg svg-tabs svg-center" id="allfiles" p="{[{fileData.svgPath}]}"></file-icon>
+					<file-icon p="{[{fileData.svgPath}]}"></file-icon>
 				</div>
 				<div class="col span_7_of_9">
 					

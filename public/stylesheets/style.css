@@ -1061,6 +1061,17 @@ svg#trash {
   bottom: 10px;
 }
 
+/* line 186, ../sass/partials/_svg.scss */
+.file-icon {
+  height: 45px;
+  margin-top: 17px;
+}
+
+/* line 191, ../sass/partials/_svg.scss */
+svg#image {
+  margin-top: 10px;
+}
+
 /*============================================= */
 /*============== Navigation bar =============== */
 /*============================================= */
