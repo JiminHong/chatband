@@ -1,4 +1,4 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+process.env.NODE_ENV = process.env.NODE_ENV || 'db';
 // modules =================================================
 var express        = require('express');
 var app            = express();
@@ -18,7 +18,7 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename) {
 
 // configuration ===========================================
 
-var db = require('./config/env/production.js');
+var db = require('./config/env/db.js');
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
   

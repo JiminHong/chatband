@@ -1,7 +1,7 @@
 module.exports = function(){
 
 var mongoose 	= require('mongoose');
-var db 			= require('../config/env/production');
+var db 			= require('../config/db');
 var Schema 		= mongoose.Schema;
 
 var songSchema = new Schema({
