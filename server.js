@@ -24,15 +24,15 @@ var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000
   
 
 
-if(!process.env.ENV) process.env.ENV = 'development';
+// if(!process.env.ENV) process.env.ENV = 'development';
 
-console.log('=========', process.env.ENV);
+// console.log('=========', process.env.ENV);
 
-// local
+// local db
 if(process.env.ENV === 'development'){
 	var db = require('./config/env/development.js');
 } 
-// remote
+// remote db
 else if(process.env.ENV === 'production'){
 	var db = require('./config/env/production.js');
 }
