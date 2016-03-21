@@ -4,6 +4,7 @@ var mongoose 	= require('mongoose');
 var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
+// Schema for chat page
 var chatSchema = new Schema({
   	senderProfilePic:{
 		type: String,
@@ -25,6 +26,7 @@ var chatSchema = new Schema({
 
 var _model = mongoose.model('chat', chatSchema);
 
+	// Add a new message
 	_save = function(req, success, fail) {
 		var newChat = new _model({
 			senderProfilePic  : req.senderProfilePic,
@@ -42,6 +44,7 @@ var _model = mongoose.model('chat', chatSchema);
 		})
 	};
 
+	// Getting all messages
 	_findAll = function(success, fail ){
 		_model.find({}, function(err, doc){
 			if(err){
@@ -51,7 +54,7 @@ var _model = mongoose.model('chat', chatSchema);
 			}
 		})
 	};
-
+// returning all functions above here.
 return{
 	schema  : chatSchema,
 	add 	: _save,

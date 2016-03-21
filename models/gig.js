@@ -4,6 +4,10 @@ var mongoose 	= require('mongoose');
 var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
+// Schema for gig database
+// when we grab a address they give us an object but we want a string. 
+// Thats' why we have gigLocationBedfore which is an object.
+// gigLocation is a string from gigLocationBedfore.
 var gigSchema = new Schema({
   	gigName		: String,
   	gigDate		: String,
@@ -12,8 +16,10 @@ var gigSchema = new Schema({
   	gigLocationBefore : String
 });
 
+
 var _model = mongoose.model('gig', gigSchema);
 
+	// Saving new gig database
 	_save = function(req, success, fail) {
 		var newGig = new _model({
 			gigName     : req.gigName,
@@ -32,6 +38,7 @@ var _model = mongoose.model('gig', gigSchema);
 		})
 	};
 
+	// Getting all database from gig db
 	_findAll = function(success, fail ){
 		_model.find({}, function(err, doc){
 			if(err){
@@ -42,6 +49,7 @@ var _model = mongoose.model('gig', gigSchema);
 		})
 	};
 
+	// Grab one gig database
 	_findOne = function(id ,success, fail){
 		objectID = 'ObjectId("'+id+'")';
 		_model.findOne({'_id': objectID}, function(err, doc){
@@ -53,7 +61,7 @@ var _model = mongoose.model('gig', gigSchema);
 		})
 	};
 
-
+	// Grab an id and remove databse
 	_remove = function(id, success, fail){
 		console.log("id in model",id);
 		_model.remove({_id: id}, function(err, doc){
@@ -66,7 +74,7 @@ var _model = mongoose.model('gig', gigSchema);
 	};
 
 
-
+// returning all functions above here.
 return{
 	schema  : gigSchema,
 	add 	: _save,

@@ -42,7 +42,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =============================== Songs =============================
     // ===================================================================
-
+    // Creating a song
     $scope.createSong = function() {
         $http.post('/api/songs', $scope.newGig)
         .success(function(data) {
@@ -66,7 +66,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // ============================ Lineups ==============================
     // ===================================================================
-
+    // Creating a lineup
     $scope.createLineup = function() {
         $http.post('/api/lineups', $scope.newGig)
             .success(function(data) {
@@ -88,7 +88,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =========================== Datetimes =============================
     // ===================================================================
-
+    // Creating a date and time for schedule
     $scope.createDatetime = function() {
         $http.post('/api/datetimes', $scope.newGig)
             .success(function(data) {
@@ -111,7 +111,8 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =========================== Location ==============================
     // ===================================================================
-
+    // Creating a location
+    // $scope.newGig.gigAddress is an object not a string
     $scope.createLocation = function() {
     $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
         $http.post('/api/locations', $scope.newGig)
@@ -137,7 +138,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // =========================== Wardrobes =============================
     // ===================================================================
-
+    // Creating a new wardrobe
     $scope.createWardrobe = function() {
         $http.post('/api/wardrobes', $scope.newGig)
             .success(function(data) {

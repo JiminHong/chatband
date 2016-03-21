@@ -1,9 +1,12 @@
 module.exports = function(){
 
+// Require mongoose
 var mongoose 	= require('mongoose');
+// Datbase connection
 var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
+// Schema for wardrobe
 var wardrobeSchema = new Schema({
   	wardrobeConcept:{
 		type: String
@@ -19,6 +22,7 @@ var wardrobeSchema = new Schema({
 
 var _model = mongoose.model('wardrobe', wardrobeSchema);
 
+	// Save a new wardrobe
 	_save = function(req, success, fail) {
 		var newGig = new _model({
 			wardrobeConcept : req.wardrobeConcept,
@@ -35,6 +39,7 @@ var _model = mongoose.model('wardrobe', wardrobeSchema);
 		})
 	};
 
+	// Getting all warbrobe database
 	_findAll = function(success, fail ){
 		_model.find({}, function(err, doc){
 			if(err){
@@ -45,6 +50,7 @@ var _model = mongoose.model('wardrobe', wardrobeSchema);
 		})
 	};
 
+	// Find one wardrobe database
 	_findOne = function(id ,success, fail){
 		objectId = id._id;
 		_model.findOne({'_id': objectId}, function(err, doc){
@@ -56,17 +62,16 @@ var _model = mongoose.model('wardrobe', wardrobeSchema);
 		})
 	};
 
-
+	// Grab an object id and update db
 	_update = function(req, success, fail){
 		
-		console.log('REQ', req);
 		var id = req._id;
 		var newWardrobeConcept = req.wardrobeConcept;
 		var newComment = req.comment;
 		var newWardrobeImg = req.wardrobeImg;
 		var newWardrobeImg = req.WardrobeImg;
 
-
+		// Updating function here
         _model.update({_id: id}, 
         			  {$set:{
         			  		wardrobeConcept:newWardrobeConcept,
@@ -83,7 +88,7 @@ var _model = mongoose.model('wardrobe', wardrobeSchema);
         				});
     }
 
-
+    // grab id and remove
 	_remove = function(id, success, fail){
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
@@ -94,7 +99,7 @@ var _model = mongoose.model('wardrobe', wardrobeSchema);
 		})
 	};
 
-
+	// returning all functions above here.
 return{
 	schema  : wardrobeSchema,
 	add 	: _save,

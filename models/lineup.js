@@ -1,9 +1,12 @@
 module.exports = function(){
 
+// Require mongoose
 var mongoose 	= require('mongoose');
+// db connection
 var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
+// Schema for lineup
 var lineupSchema = new Schema({
   	instrumentation: String,
 	firstName: String,
@@ -13,6 +16,7 @@ var lineupSchema = new Schema({
 
 var _model = mongoose.model('lineup', lineupSchema);
 
+	// Saving all lineups
 	_save = function(req, success, fail) {
 		var newGig = new _model({
 			instrumentation     : req.instrumentation,
@@ -30,6 +34,7 @@ var _model = mongoose.model('lineup', lineupSchema);
 		})
 	};
 
+	// Getting all lineups
 	_findAll = function(success, fail ){
 		_model.find({}, function(err, doc){
 			if(err){
@@ -40,6 +45,7 @@ var _model = mongoose.model('lineup', lineupSchema);
 		})
 	};
 
+	// Find one lineup
 	_findOne = function(id ,success, fail){
 		objectId = id._id;
 		_model.findOne({'_id': objectId}, function(err, doc){
@@ -51,17 +57,16 @@ var _model = mongoose.model('lineup', lineupSchema);
 		})
 	};
 
-
+	// Update lineup by grabbing a object id and update.
 	_update = function(req, success, fail){
 		
-		console.log('REQ', req);
 		var id = req._id;
 		var lineupInstrumentation = req.instrumentation;
 		var lineupFirstName = req.firstName;
 		var lineupLastName = req.lastName;
 		var lineupComment = req.comment;
 
-
+		// Updating function here.
         _model.update({_id: id}, 
         			  {$set:{
         			  		instrumentation:lineupInstrumentation,
@@ -79,7 +84,7 @@ var _model = mongoose.model('lineup', lineupSchema);
         				});
     }
 
-
+    // Grab an id and remove db
 	_remove = function(id, success, fail){
 		console.log("id in model",id);
 		_model.remove({_id: id}, function(err, doc){
@@ -91,7 +96,7 @@ var _model = mongoose.model('lineup', lineupSchema);
 		})
 	};
 
-
+// returning all functions above here.
 return{
 	schema  : lineupSchema,
 	add 	: _save,

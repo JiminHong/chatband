@@ -43,13 +43,12 @@
 
 <div class="view height100">
 	<div class="files-wrapper">
-		<div class="group section" ng-repeat="fileData in file | filter:fileSearch | orderBy:'date'" >
+		<div class="group section" ng-repeat="fileData in file | filter:fileSearch | orderBy:'date'" ng-click="goFileDetail(fileData)">
 			<div class="content-width-8">
 				<div class="col span_2_of_9">
 					<file-icon p="{[{fileData.svgPath}]}"></file-icon>
 				</div>
 				<div class="col span_7_of_9">
-					
 					<p class="dark-brown small-font">{[{fileData.date}]} <span class="reg-grey-fill">at</span> {[{fileData.time}]} <span class="reg-grey-fill">uploaded by</span> <span class="chocolate">{[{fileData.username}]}</span></p>
 					<p>{[{fileData.fileName}]}</p>
 				</div>

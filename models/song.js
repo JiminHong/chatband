@@ -1,9 +1,12 @@
 module.exports = function(){
 
+// Requrie mongoose
 var mongoose 	= require('mongoose');
+// Database connection
 var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
+// Schema for song db
 var songSchema = new Schema({
   	artist:{
 		type: String,
@@ -23,8 +26,10 @@ var songSchema = new Schema({
 	}
 });
 
+
 var _model = mongoose.model('song', songSchema);
 
+	// Saving new song database
 	_save = function(req, success, fail) {
 		var newGig = new _model({
 			artist     		: req.artist,
@@ -42,6 +47,7 @@ var _model = mongoose.model('song', songSchema);
 		})
 	};
 
+	// Getting all song db
 	_findAll = function(success, fail ){
 		_model.find({}, function(err, doc){
 			if(err){
@@ -52,6 +58,7 @@ var _model = mongoose.model('song', songSchema);
 		})
 	};
 
+	// Find one song db
 	_findOne = function(id ,success, fail){
 		objectId = id._id;
 		_model.findOne({'_id': objectId}, function(err, doc){
@@ -63,7 +70,7 @@ var _model = mongoose.model('song', songSchema);
 		})
 	};
 
-
+	// Grab object id and update new song database
 	_update = function(req, success, fail){
 		
 		console.log('REQ', req);
@@ -91,7 +98,7 @@ var _model = mongoose.model('song', songSchema);
         				});
     }
 
-
+    // Grab an object id and remove song database
 	_remove = function(id, success, fail){
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
@@ -102,7 +109,7 @@ var _model = mongoose.model('song', songSchema);
 		})
 	};
 
-
+// returning all functions above here.
 return{
 	schema  : songSchema,
 	add 	: _save,

@@ -20,7 +20,7 @@ function ($scope, $http, $location, $routeParams) {
 
     // Create a new gig
     $scope.createGig = function(){
-        // If you add just a gigLocation it will add a object now a string. 
+        // If you add just a gigLocation it will add a object not a string. 
         $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
         $http.post('/api/gig', $scope.newGig)
         .success(function(data) {
@@ -68,11 +68,9 @@ function ($scope, $http, $location, $routeParams) {
         $http.delete('/api/gig/'+ id)
              .success(function(data){
                 $scope.gig = data;
-                console.log("deleted!!");
              })
              .finally(function(){
                 $route.reload();
-                console.log("id : ", id)
              })
     }
 

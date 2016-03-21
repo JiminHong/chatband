@@ -5,9 +5,9 @@ function ($scope, $http, $route, $location, $NgMap) {
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
     $NgMap.getMap().then(function(map) {
-        // console.log(map.getCenter());
-        // console.log('markers', map.markers);
-        // console.log('shapes', map.shapes);
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
       });
 
     // Gig name. Using scope db for now.
@@ -145,7 +145,6 @@ function ($scope, $http, $route, $location, $NgMap) {
         $http.delete('/api/songs/'+ id)
              .success(function(data){
                 $scope.song = data;
-                console.log("deleted!!");
              })
              .finally(function(){
                 $route.reload();
@@ -156,6 +155,7 @@ function ($scope, $http, $route, $location, $NgMap) {
     // ============================ Lineup ===============================
     // ===================================================================
 
+    // Grabs the id of db
     $scope.editLineup = function(id){
         $http.get('/api/lineups/' + id)
              .success(function(data){
@@ -164,22 +164,22 @@ function ($scope, $http, $route, $location, $NgMap) {
         })
     } 
 
+    // Update db here
     $scope.updateLineup = function(id){
         $http.post('/api/lineups/'+ id, $scope.lineup)
              .success(function(data){
                 $scope.lineup = data;
-                console.log($scope);
              })
              .finally(function(){
                 $route.reload();
              })
     }
 
+    // Delete db
     $scope.deleteLineup = function(id){
         $http.delete('/api/lineups/'+ id)
              .success(function(data){
                 $scope.lineup = data;
-                console.log("deleted!!");
              })
              .finally(function(){
                 $route.reload();
@@ -190,6 +190,7 @@ function ($scope, $http, $route, $location, $NgMap) {
     // ============================ Lineup ===============================
     // ===================================================================
 
+    // Grabs the id of db
     $scope.editDatetime = function(id){
         $http.get('/api/datetimes/' + id)
              .success(function(data){
@@ -198,22 +199,22 @@ function ($scope, $http, $route, $location, $NgMap) {
         })
     } 
 
+    // Update db here
     $scope.updateDatetime = function(id){
         $http.post('/api/datetimes/'+ id, $scope.datetime)
              .success(function(data){
                 $scope.datetime = data;
-                console.log($scope);
              })
              .finally(function(){
                 $route.reload();
              })
     }
 
+    // Delete db
     $scope.deleteDatetime = function(id){
         $http.delete('/api/datetimes/'+ id)
              .success(function(data){
                 $scope.datetime = data;
-                console.log("deleted!!");
              })
              .finally(function(){
                 $route.reload();
@@ -277,6 +278,7 @@ myapp.directive('svgIcon', function(){
     }
 })
 
+// svg paths 
 var icons = {   
     songs : "M14.5,6.49H1.5a1.5,1.5,0,1,0,0,3h13C15.5,9.49,15.5,6.49,14.5,6.49Z M14.5,13.49H1.5a1.5,1.5,0,0,0,0,3h13C15.5,16.49,15.5,13.49,14.5,13.49Z M14.5,19.49H1.5a1.5,1.5,0,0,0,0,3h13C15.5,22.49,15.5,19.49,14.5,19.49Z M20.51,0.36a1.66,1.66,0,0,0-2.66,1.07L17.56,19.2c0,2.32.21,4.91,0,7.28-3.11-.77-6.79-0.75-8.09,2.74C8,33,11.74,35.62,15.15,34.33A7.51,7.51,0,0,0,19.94,30a1.76,1.76,0,0,0,.56-2.17,38.07,38.07,0,0,0,.28-5L21.06,5.65c2.76,3.21,4.75,7.11,2.29,11.24-1.09,1.83,2,3.12,3,1.32C30.39,11.47,25.3,4.9,20.51.36Z",
     lineup: "M33.35,1.05A3.11,3.11,0,0,0,31,0c-1.12.16-2.23,1.14-3.16,1.73S25.35,3,24.61,3.88s-0.28,2,.11,2.95A72.43,72.43,0,0,0,19,11.38a4.49,4.49,0,0,0-2-2.32c-1.16-.48-2.6.26-3.65,0.73a4.31,4.31,0,0,0-2.52,2,12.49,12.49,0,0,0-.56,3.52l-4.62.72a14.2,14.2,0,0,0-3.95.74C0,17.7,0,20,0,21.74A15.3,15.3,0,0,0,6.86,34.16c3.16,2.1,8.74,3.91,10.82-.49a13.76,13.76,0,0,0,1-3.74c0.11-.73,0-3.11.34-3.59,0.55-.7,3.25-1.27,4.12-1.58l5-1.83a1.35,1.35,0,0,0,.79-2,3.76,3.76,0,0,0-1.88-1.87c-0.79-.38-2.53-0.36-3.48-0.81,1.46-2.5,4-4.86,5.75-7,1-.05,1.87.13,2.69-0.68s1.47-2.73,2.06-3.91c0.47-.94,1.42-2.16,1.38-3.24S34.12,1.65,33.35,1.05ZM31.09,6.74a6.18,6.18,0,0,1-.84,1.68c-0.35.31-.46,0.15-1.13,0.21a1.37,1.37,0,0,0-.64.22,1.07,1.07,0,0,0-1,.45l-4.09,5.06c-0.84,1-2.57,2.44-2.8,3.87-0.39,2.44,2.41,2.45,4.36,3l-4,1.44c-1.23.45-3.11,0.73-4.06,1.76s-0.64,2.62-.76,3.78c-0.29,2.83-.76,6.14-4.47,5.28a12.38,12.38,0,0,1-8.65-8.81,13.43,13.43,0,0,1-.42-3c-0.05-1.91,0-2.31,1.74-2.8a61.69,61.69,0,0,1,7-1.09A1.17,1.17,0,0,0,12,17.58a1.39,1.39,0,0,0,.85-1.13l0.3-2.35c0.13-1,0-1.25,1-1.72,0.36-.18,1.61-0.93,2-0.77a5,5,0,0,1,1,1.8h0a1.36,1.36,0,0,0,2.23,1.32,66.94,66.94,0,0,1,7.32-6A1.38,1.38,0,0,0,27,8.23a1.12,1.12,0,0,0,.5-1.41c-0.15-.42-0.41-1-0.56-1.49,1-.75,2.21-1.33,3.21-2l0.8-.5q0.29-.36.48,0.06a3.23,3.23,0,0,1,1.15.83C32.22,4.78,31.55,5.81,31.09,6.74Z M12.37,25.76c-1,0-1,2.66,0,2.66C15.37,28.42,15.37,25.76,12.37,25.76Z M11.37,28.82a2.13,2.13,0,1,0,0,4.25C13.37,33.07,13.37,28.82,11.37,28.82Z M7.37,28.55c-1,0-1,2.13,0,2.13C9.37,30.68,9.37,28.55,7.37,28.55Z",

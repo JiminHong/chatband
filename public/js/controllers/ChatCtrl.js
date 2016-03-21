@@ -10,6 +10,8 @@ myapp.factory("chatMessages", ["$firebaseArray",
 myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
 function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
 
+    // For now,
+    // I have user database here
         var profileImages = [
             "/img/profile_pics/pug.jpg", 
             "/img/profile_pics/matt.jpg", 
@@ -19,7 +21,7 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
         var usernames = [
             "John", "Matt", "Lorde"
         ];
-    
+    // It randomly picks user when user sends a message
         var randomNum = Math.round(Math.random() * 2);
 
         $scope.profilePic = profileImages[randomNum];
@@ -43,7 +45,7 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
           $scope.message = "";
         };
 
-        // if the messages are empty, add something for fun!
+        // if the messages are empty
         $scope.messages.$loaded(function() {
           if ($scope.messages.length === 0) {
             $scope.messages.$add({
@@ -78,6 +80,7 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
 
         $scope.group = "Awesome Group";
 
+        // It gets all gig database
         $http.get('/api/gig')
         .success(function(data) {
             $scope.gigs = data;

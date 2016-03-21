@@ -1,4 +1,4 @@
-var myapp = angular.module('myapp', ['firebase', 'ngFileUpload', 'ngMap', 'ngRoute', 'ngAnimate', 'ngTouch', 'snap', 'google.places', '720kb.datepicker'])
+var myapp = angular.module('myapp', ['firebase', 'ngMap', 'ngRoute', 'ngAnimate', 'ngTouch', 'snap', 'google.places'])
 
 myapp.config(['$interpolateProvider', function($interpolateProvider){
   // $interpolateProvider used to differentiate uses for angular from express
@@ -40,6 +40,10 @@ myapp.config(function ($routeProvider){
 
 		}
 	})
+
+	
+
+
 
 	// ======================================================== Gig info
 
