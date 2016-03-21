@@ -18,10 +18,25 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename) {
 
 // configuration ===========================================
 
-var db = require('./config/env/production.js');
+
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
   
+
+
+if(!process.env.ENV) process.env.ENV = 'development';
+
+console.log('=========', process.env.ENV);
+
+// local
+if(process.env.ENV === 'development'){
+	var db = require('./config/env/development.js');
+} 
+// remote
+else if(process.env.ENV === 'production'){
+	var db = require('./config/env/production.js');
+}
+
 // Mongoose connection
 mongoose.connect(db.url, options);
 var conn = mongoose.connection;             
