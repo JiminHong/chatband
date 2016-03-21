@@ -82,7 +82,6 @@ $ compass watch
 ```
 
 ## Database
-Local Database url : mongodb://localhost:27017/chatband
 Heroku Database uri : mongodb://jhong:jhong@ds055545.mongolab.com:55545/heroku_sf66wt12
 
 ## Do you see any typekit error?
