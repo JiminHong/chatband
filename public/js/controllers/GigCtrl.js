@@ -69,6 +69,16 @@ function ($scope, $http, $route, $location, $NgMap) {
             console.log('Error: ' + data);
     }); 
 
+    // getting all wardrobes
+    $http.get('/api/wardrobes')
+        .success(function(data) {
+            $scope.wardrobes = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
+
     // using this scope for now.
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
@@ -203,6 +213,40 @@ function ($scope, $http, $route, $location, $NgMap) {
         $http.delete('/api/datetimes/'+ id)
              .success(function(data){
                 $scope.datetime = data;
+                console.log("deleted!!");
+             })
+             .finally(function(){
+                $route.reload();
+             })
+    } 
+
+    // ===================================================================
+    // ========================== Wardrobe ===============================
+    // ===================================================================
+
+    $scope.editWardrobe = function(id){
+        $http.get('/api/wardrobes/' + id)
+             .success(function(data){
+              $scope.wardrobe = data;
+              $scope.commentId = id;
+        })
+    } 
+
+    $scope.updateWardrobe = function(id){
+        $http.post('/api/wardrobes/'+ id, $scope.wardrobe)
+             .success(function(data){
+                $scope.wardrobe = data;
+                console.log($scope);
+             })
+             .finally(function(){
+                $route.reload();
+             })
+    }
+
+    $scope.deleteWardrobe = function(id){
+        $http.delete('/api/wardrobes/'+ id)
+             .success(function(data){
+                $scope.wardrobe = data;
                 console.log("deleted!!");
              })
              .finally(function(){

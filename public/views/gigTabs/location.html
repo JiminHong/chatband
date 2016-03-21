@@ -9,11 +9,11 @@
 
             <div ng-repeat="location in locations" class="song-list-wrapper">
                 <div class="section group">
-                        <p class="gig-data-p margin-zero">
-                            {[{location.gigAddress}]}
                         <p>
+                            {[{location.gigAddress}]}
+                        </p>
                         <ng-map center="san francisco, ca" scrollwheel="false">
-                            <marker position="san francisco"></div>
+                            <marker position="san francisco">
                         </ng-map>   
                 </div>
                 <button class="button btn-xl dark-green-yellow-bg light-brown">

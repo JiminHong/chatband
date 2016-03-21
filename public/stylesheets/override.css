@@ -95,11 +95,12 @@ snap-drawers, .snap-drawers {
   font-size: 0.7em;
 }
 
-/* line 85, ../sass/override.scss */
+/* line 83, ../sass/override.scss */
 *:focus {
   outline: none;
 }
 
-/*snap-content, .snap-content{
-	position: relative;
-}*/
+/* line 87, ../sass/override.scss */
+ng-map {
+  margin-top: 10px;
+}

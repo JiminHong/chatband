@@ -8,10 +8,9 @@
 
     <div ng-repeat="wardrobe in wardrobes" class="song-list-wrapper">
         <div class="section group">
-                <p class="gig-data-p">
-                    {[{wardrobe.wardrobe}]} {[{wardrobe.comment}]}
-            <p>
-                <img class="img" src="{[{wardrobe.wardrobeImg}]}">
+                <p class="gig-data-p">{[{wardrobe.wardrobeConcept}]}</p> 
+                <p class="comment">{[{wardrobe.comment}]}</p>
+                <img class="img" ng-src="{[{wardrobe.wardrobeImg}]}">
         </div>
 
     </div>

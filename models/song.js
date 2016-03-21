@@ -93,7 +93,6 @@ var _model = mongoose.model('song', songSchema);
 
 
 	_remove = function(id, success, fail){
-		console.log("id in model",id);
 		_model.remove({_id: id}, function(err, doc){
 			if(err){
 				fail(err);
