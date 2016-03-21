@@ -117,7 +117,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $http.post('/api/locations', $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; 
-                $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
+                $scope.newGig.gigAddress = data.gigAddress.formatted_address;
                 $scope.location = data;
                 $scope.doneIndicator = "Added!";
                 $scope.add = "";

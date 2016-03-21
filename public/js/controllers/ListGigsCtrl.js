@@ -39,13 +39,12 @@ function ($scope, $http, $location, $routeParams) {
             $scope.gigs = data;
             gigMonthObject = {};
                 for(i=0; i<data.length; i++){
-                    //Month
-                    monthNum = Number(data[i].gigDate.charAt(0)) + Number(data[i].gigDate.charAt(1));
+                    // Month
+                    monthNum = Number(data[i].gigDate.charAt(5))+Number(data[i].gigDate.charAt(6));
                     monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                     data[i].gigMonth = monthNames[Number(monthNum)-1];
-
-                    //Date
-                    data[i].gigDate = data[i].gigDate.charAt(3)+data[i].gigDate.charAt(4);
+                    // Date
+                    data[i].gigDate = data[i].gigDate.charAt(8)+data[i].gigDate.charAt(9);
 
                     //Time
                     timeStr = data[i].gigTime;

@@ -5,9 +5,9 @@ function ($scope, $http, $route, $location, $NgMap) {
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
 
     $NgMap.getMap().then(function(map) {
-        console.log(map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
+        // console.log(map.getCenter());
+        // console.log('markers', map.markers);
+        // console.log('shapes', map.shapes);
       });
 
     // Gig name. Using scope db for now.
@@ -36,22 +36,24 @@ function ($scope, $http, $route, $location, $NgMap) {
         .success(function(data) {
             $scope.datetimes = data;
                 for(i=0; i<data.length; i++){
-                    // Getitng Date
-                    monthStr = data[i].date;
-                    data[i].date = monthStr.slice(0, -24);
+                    // Month
+                    monthNum = Number(data[i].date.charAt(5))+Number(data[i].date.charAt(6));
+                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    data[i].month = monthNames[Number(monthNum)-1];
+                    // Date
+                    data[i].date = data[i].date.charAt(8)+data[i].date.charAt(9);
 
-                    // Getitng Time
+                    //Time
                     timeStr = data[i].time;
-                    utcTimeHour = timeStr.slice(11, 13);
-                    if (Number(utcTimeHour)>12){
-                        var hour = Number(utcTimeHour)-17;
-                        $scope.ampm = "PM"
+                    utcTimeHour = timeStr.slice(0, 2);
+                    utcTimeMin = timeStr.slice(3, 5);
+                    if(Number(utcTimeHour)>12){
+                        utcTimeHour = Number(utcTimeHour)-12;
+                        $scope.ampm = "PM";
                     }else{
-                        $scope.ampm = "AM"
-                    }
-                    utcTimeMin = timeStr.slice(14, 16);
-                    data[i].time = hour +":"+ utcTimeMin + " ";
-
+                        $scope.ampm = "AM";
+                    };
+                    data[i].time = utcTimeHour +":"+ utcTimeMin;
                 };
         })
         .error(function(data) {
@@ -137,7 +139,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              })
              .finally(function(){
                 $route.reload();
-                console.log("id : ", id)
              })
     }
 
@@ -150,8 +151,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              .success(function(data){
               $scope.lineup = data;
               $scope.commentId = id;
-                console.log("id is ", id);
-                console.log("commend Id is ", $scope.commentId);
         })
     } 
 
@@ -163,7 +162,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              })
              .finally(function(){
                 $route.reload();
-                console.log("id : ", id)
              })
     }
 
@@ -175,7 +173,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              })
              .finally(function(){
                 $route.reload();
-                console.log("id : ", id)
              })
     } 
 
@@ -188,8 +185,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              .success(function(data){
               $scope.datetime = data;
               $scope.commentId = id;
-                console.log("id is ", id);
-                console.log("commend Id is ", $scope.commentId);
         })
     } 
 
@@ -201,7 +196,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              })
              .finally(function(){
                 $route.reload();
-                console.log("id : ", id)
              })
     }
 
@@ -213,7 +207,6 @@ function ($scope, $http, $route, $location, $NgMap) {
              })
              .finally(function(){
                 $route.reload();
-                console.log("id : ", id)
              })
     } 
     
