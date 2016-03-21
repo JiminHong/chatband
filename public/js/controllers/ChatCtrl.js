@@ -24,9 +24,11 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
     // It randomly picks user when user sends a message
         var randomNum = Math.round(Math.random() * 2);
 
-        $scope.profilePic = profileImages[randomNum];
+        // if you need random : profileImages[randomNum]
+        $scope.profilePic = "/img/profile_pics/user.jpg";
         
-        $scope.user = usernames[randomNum];
+        // random user would be : usernames[randomNum]
+        $scope.user = "me";
 
         // we add chatMessages array to the scope to be used in our ng-repeat
         $scope.messages = chatMessages;
