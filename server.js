@@ -27,7 +27,7 @@ mongoose.connect(db.url, options);
 var conn = mongoose.connection;             
  
 conn.on('error', console.error.bind(console, 'connection error:'));  
- 
+// When they have db connection correctly 
 conn.once('open', function() {
   console.log("Data connected!");                         
 });
