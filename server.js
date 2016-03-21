@@ -33,7 +33,7 @@ if(process.env.ENV === 'development'){
 	var db = require('./config/env/development.js');
 } 
 // remote db
-else if(process.env.ENV === 'production'){
+else{
 	var db = require('./config/env/production.js');
 }
 
