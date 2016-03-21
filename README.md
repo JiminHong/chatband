@@ -35,17 +35,45 @@ It is currently using a MEAN Stack (MongoDB, ExpressJS, AngularJS, and NodeJS) a
 
 ## Installation
 
-1. Install NPMs
+Make a directory to store this file.
+```
+$ mkdir YOUR_FOLDER_NAME
+```
+
+Go into the directory you made.
+```
+$ CD /YOUR_FOLDER_NAME
+```
+
+Create an empty Git repository or reinitialize an existing one.
+```
+$ git init
+```
+
+Create/Add a remote.
+```
+$ git remote add YOUR_REMOTE_NAME https://github.com/JiminHong/chatband.git
+```
+
+Pull down the code from master branch
+```
+$ git pull github master
+```
+
+Install NPMs
+
 ```
 $ npm install
 ```
 
-2. Run the server
+Run the server
+
 ```
 $ node server
 ```
 
-3. Watch
+Open another tab (command + t) and Compass Watch
+
 ```
 $ cd public
 ```
