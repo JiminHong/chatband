@@ -1,6 +1,8 @@
 # ChatBand
 
 ## What is ChatBand?
+![alt text](https://github.com/JiminHong/chatband/blob/master/public/img/chatband_logo.png "Logo Title Text 1")
+
 
 For musicians who love to manage gigs & communicate with band members Chatband is a group-friendly message and menager app.
 
