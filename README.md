@@ -71,7 +71,7 @@ $ npm install
 Run the server
 
 ```
-$ node server
+$ ENV=development node server
 ```
 
 Open another tab (command + t) and Compass Watch

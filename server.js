@@ -21,12 +21,6 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename) {
 
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       
-  
-
-// Set it to the local db.
-// if(!process.env.ENV) process.env.ENV = 'development';
-
-console.log('=========', process.env.ENV);
 
 // local db
 if(process.env.ENV === 'development'){
