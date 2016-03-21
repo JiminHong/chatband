@@ -190,23 +190,24 @@ li{
 }
 
 .sendmsg-container{
-  overflow: hidden;
-  vertical-align: middle;
-  white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
 .sendmsg-container input#sendmsg{
-  box-shadow: none;
-  height: 50px;
-  background: white;
-  border: none;
-  font-size: 10pt;
-  float: left;
-  color: $reg-grey;
-  padding-left: 15px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+    box-shadow: none;
+    height: 50px;
+    background: white;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: $reg-grey;
+    padding-left: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-right: 55px;
 }
 
 .sendmsg-container input#sendmsg::-webkit-input-placeholder {
@@ -929,6 +930,10 @@ input{
     margin: 0;
 }
 
+.margin-both{
+    margin: 0 10px;
+}
+
 .margin-top-sm{
     margin-top: 7px;
 }
@@ -975,7 +980,6 @@ hr{
     border-radius: 5px;
     border: 1px solid silver;
 }
-
 
 .anchor{
     cursor: pointer;
