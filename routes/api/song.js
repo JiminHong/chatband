@@ -15,8 +15,11 @@ app.get('/api/songs/:gigId', function(req, res) {
 });
 
 // Create
-app.post('/api/songs', function(req, res) {
-    song.add(req.body, function(doc){
+app.post('/api/songs/:gigId', function(req, res) {
+    gig_id = req.params.gigId;
+
+    song.add(gig_id, req.body, function(doc){
+        console.log("gig_id in api", gig_id);
         res.send(doc);
     });
 });

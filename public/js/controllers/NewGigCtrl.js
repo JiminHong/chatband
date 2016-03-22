@@ -44,9 +44,10 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // Creating a song
     $scope.createSong = function() {
-        $http.post('/api/songs', $scope.newGig)
+        $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)
         .success(function(data) {
             $scope.newGig = {}; 
+            $scope.newGig.gig_id = $routeParams.gigId; 
             $scope.song = data;
             $scope.doneIndicator = "Added!";
             $scope.add = "";
@@ -67,6 +68,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ============================ Lineups ==============================
     // ===================================================================
     // Creating a lineup
+
     $scope.createLineup = function() {
         $http.post('/api/lineups', $scope.newGig)
             .success(function(data) {

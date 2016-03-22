@@ -23,6 +23,9 @@ var songSchema = new Schema({
 	bpm: {
 		type: Number,
 		default: 0
+	},
+	gig_id: {
+		type: String
 	}
 });
 
@@ -30,12 +33,13 @@ var songSchema = new Schema({
 var _model = mongoose.model('song', songSchema);
 
 	// Saving new song database
-	_save = function(req, success, fail) {
+	_save = function(gig_id, req, success, fail) {
 		var newGig = new _model({
 			artist     		: req.artist,
 	        title     		: req.title,
 	        songDuration    : req.songDuration,
 	        bpm 			: req.bpm,
+	        gig_id			: gig_id
 		});
 
 		newGig.save(function(err, doc) {

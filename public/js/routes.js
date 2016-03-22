@@ -41,12 +41,10 @@ myapp.config(function ($routeProvider){
 		}
 	})
 
-	
-
-
-
 	// ======================================================== Gig info
 
+	// After select a gig
+	// Send the gig Id
 	.when('/songs/:gigId', {
 		templateUrl : 'views/gigTabs/songs.html',
 		controller 	: 'GigCtrl', function($scope, $http){
