@@ -13,8 +13,7 @@ app.get('/api/groups', function(req, res) {
     });
 });
 
-
- // Read One
+// Read One
 app.get('/api/groups/:id', function(req, res) {
     objectId = req.params.id;
     group.findOne({_id:objectId},function(doc) {

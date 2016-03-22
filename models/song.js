@@ -47,9 +47,9 @@ var _model = mongoose.model('song', songSchema);
 		})
 	};
 
-	// Getting all song db
-	_findAll = function(success, fail ){
-		_model.find({}, function(err, doc){
+	// Getting all song db with the gig id
+	_findAll = function(gigId, success, fail){
+		_model.find({'gig_id':gigId.gig_id}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{
@@ -72,8 +72,6 @@ var _model = mongoose.model('song', songSchema);
 
 	// Grab object id and update new song database
 	_update = function(req, success, fail){
-		
-		console.log('REQ', req);
 		var id = req._id;
 		var songArtist = req.artist;
 		var songTitle = req.title;

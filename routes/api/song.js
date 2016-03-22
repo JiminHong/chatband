@@ -6,9 +6,10 @@ module.exports = function(app){
 // =============================== Gigs ==============================
 // ===================================================================
 
-// Read All
-app.get('/api/songs', function(req, res) {
-    song.findAll(function(data) {
+// Read All with gig_id
+app.get('/api/songs/:gigId', function(req, res) {
+    gig_id = req.params.gigId;
+    song.findAll({'gig_id':gig_id},function(data) {
       res.status(200).json(data);
     });
 });

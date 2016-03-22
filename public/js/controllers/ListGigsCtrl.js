@@ -14,8 +14,8 @@ function ($scope, $http, $location, $routeParams) {
     }
 
     // Goes to the detail page
-    $scope.goSongs = function(){
-        $location.path('/songs');
+    $scope.goSongs = function(gigId){
+        $location.path('/songs/gigId');
     }
 
     // Create a new gig
