@@ -12,15 +12,6 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
 
     // For now,
     // I have user database here
-        var profileImages = [
-            "/img/profile_pics/pug.jpg", 
-            "/img/profile_pics/matt.jpg", 
-            "/img/profile_pics/lorde.jpg"
-        ]
-
-        var usernames = [
-            "John", "Matt", "Lorde"
-        ];
     // It randomly picks user when user sends a message
         var randomNum = Math.round(Math.random() * 2);
 

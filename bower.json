@@ -21,14 +21,10 @@
     "angular": "~1.4.7",
     "angular-route": "~1.4.7",
     "angular-resource": "~1.2",
-    "ui-bootstrap": "^1.1.2",
-    "angular-bootstrap": "^1.1.2",
     "ngmap": "^1.16.7",
     "angular-touch": "^1.5.0",
     "angular-snap": "^1.8.5",
     "angularjs-google-maps": "^0.4.0",
-    "angular-google-places-autocomplete": "^0.2.7",
-    "angularjs-datepicker": "^0.2.16",
     "angular-google-places-autocomplete": "^0.2.7"
   }
 }
