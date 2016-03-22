@@ -13,8 +13,10 @@ function ($scope, $http, $route, $location, $NgMap) {
     // Gig name. Using scope db for now.
     $scope.gigName = "moonstone music festival 2016";
 
+
     // getting all songs
-    $http.get('/api/songs')
+    gigId = "56f086d79239298c0c90dbb2";
+    $http.get('/api/songs/'+ gigId)
         .success(function(data) {
             $scope.songs = data;
         })

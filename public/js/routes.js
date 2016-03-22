@@ -47,7 +47,7 @@ myapp.config(function ($routeProvider){
 
 	// ======================================================== Gig info
 
-	.when('/songs', {
+	.when('/songs/:gigId', {
 		templateUrl : 'views/gigTabs/songs.html',
 		controller 	: 'GigCtrl', function($scope, $http){
 
