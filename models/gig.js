@@ -41,8 +41,8 @@ var _model = mongoose.model('gig', gigSchema);
 	};
 
 	// Getting all database from gig db
-	_findAll = function(success, fail ){
-		_model.find({}, function(err, doc){
+	_findAll = function(groupId, success, fail ){
+		_model.find({'group_id':groupId.group_id}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{

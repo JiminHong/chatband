@@ -2,12 +2,14 @@ module.exports = function(app){
     var express = require('express');
     var router = express.Router();
     var song = require('../../models/song.js');
+    var gig = require('../../models/gig.js');
 // ===================================================================
 // =============================== Gigs ==============================
 // ===================================================================
 
 // Read All with gig_id
-app.get('/api/songs/:gigId', function(req, res) {
+app.get('/api/songs/:groupId/:gigId', function(req, res) {
+    group_id = req.params.groupId;
     gig_id = req.params.gigId;
     song.findAll({'gig_id':gig_id},function(data) {
       res.status(200).json(data);

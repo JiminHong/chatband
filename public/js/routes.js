@@ -45,7 +45,7 @@ myapp.config(function ($routeProvider){
 
 	// After select a gig
 	// Send the gig Id
-	.when('/songs/:gigId', {
+	.when('/songs/:groupId/:gigId', {
 		templateUrl : 'views/gigTabs/songs.html',
 		controller 	: 'GigCtrl', function($scope, $http){
 
@@ -84,12 +84,6 @@ myapp.config(function ($routeProvider){
 		}
 	})
 	.when('/goAddGig/:gigId', {
-		templateUrl : 'views/addGig.html',
-		controller 	: 'NewGigCtrl', function($scope, $http){
-
-		}
-	})
-	.when('/goAddGig', {
 		templateUrl : 'views/addGig.html',
 		controller 	: 'NewGigCtrl', function($scope, $http){
 

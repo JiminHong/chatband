@@ -13,15 +13,19 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     // Gig name. Using scope db for now.
     $scope.gigName = "moonstone music festival 2016";
 
-
     // getting all songs
-    $http.get('/api/songs/'+ $routeParams.gigId)
+    $http.get('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId)
         .success(function(data) {
             $scope.songs = data;
+            // this is song id
+            // console.log(data[0].gig_id);
         })
         .error(function(data) {
             console.log('Error: ' + data);
     });
+
+    // Get a gig that has gig_id as _id
+
 
     // getting all lineups
     $http.get('/api/lineups')
@@ -105,6 +109,11 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     $scope.isSet = function(tabNum){
         return $scope.tab === tabNum;
     }
+
+
+    // $scope.goListGigs = function(){
+    //     $location.path('/listGigs/:groupId');
+    // }
 
     // It goes to detail page
     $scope.goGig = function(){

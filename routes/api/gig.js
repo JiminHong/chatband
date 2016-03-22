@@ -6,11 +6,13 @@ module.exports = function(app){
 // =============================== Gigs ==============================
 // ===================================================================
 // Read All
-app.get('/api/gig', function(req, res) {
-    gig.findAll(function(data) {
+app.get('/api/gig/:groupId', function(req, res) {
+    group_id = req.params.groupId;
+    gig.findAll({'group_id':group_id},function(data) {
       res.status(200).json(data);
     });
 });
+
 
 // Create
 app.post('/api/gig/:groupId', function(req, res) {

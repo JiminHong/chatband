@@ -1,8 +1,6 @@
 myapp.controller('ListGigsCtrl', ["$scope", "$http", "$location", "$routeParams", 
 function ($scope, $http, $location, $routeParams) {
 
-    console.log('ListGigsCtrl fired');
-
     //Directs to the chat page
     $scope.goChat = function(){
         $location.path('/chat/'+$routeParams.groupId);
@@ -15,7 +13,7 @@ function ($scope, $http, $location, $routeParams) {
 
     // Goes to the detail page
     $scope.goSongs = function(gigId){
-        $location.path('/songs/'+gigId);
+        $location.path('/songs/'+$routeParams.groupId+"/"+gigId);
     }
 
     // Create a new gig
@@ -34,7 +32,7 @@ function ($scope, $http, $location, $routeParams) {
     }
 
     // Getting all gigs
-    $http.get('/api/gig')
+    $http.get('/api/gig/'+ $routeParams.groupId)
         .success(function(data) {
             $scope.gigs = data;
             gigMonthObject = {};
