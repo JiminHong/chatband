@@ -15,7 +15,7 @@ myapp.config(function ($routeProvider){
 
 		}
 	})
-	.when('/chat', {
+	.when('/chat/:groupId', {
 		templateUrl : 'views/chat.html',
 		controller 	: 'ChatCtrl', function($scope, $http){
 
@@ -27,13 +27,13 @@ myapp.config(function ($routeProvider){
 
 		}
 	})
-	.when('/listGigs', {
+	.when('/listGigs/:groupId', {
 		templateUrl : 'views/listGigs.html',
 		controller 	: 'ListGigsCtrl', function($scope, $http){
 
 		}
 	})
-
+	
 	.when('/listFiles', {
 		templateUrl : 'views/listFiles.html',
 		controller 	: 'ListFilesCtrl', function($scope, $http){
@@ -77,7 +77,7 @@ myapp.config(function ($routeProvider){
 	})
 
 	// ======================================================== Adding a new gig
-	.when('/goAddGigId', {
+	.when('/goAddGigId/:groupId', {
 		templateUrl : 'views/addGigId.html',
 		controller 	: 'NewGigCtrl', function($scope, $http){
 

@@ -49,8 +49,6 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
           }
         });
 
-        
-
         // It goes to list of chats
         $scope.goChats = function(){
             $location.path('/');
@@ -58,17 +56,12 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
 
         // It goes to list of gig
         $scope.goGigs = function(){
-            $location.path('/listGigs');
+            $location.path('/listGigs/'+$routeParams.groupId);
         }
 
         // It goes to list of gig
         $scope.goFiles = function(){
             $location.path('/listFiles');
-        }
-
-        // It gets you to the detail page
-        $scope.goSongs = function(){
-            $location.path('/songs');
         }
 
         $scope.group = "Awesome Group";

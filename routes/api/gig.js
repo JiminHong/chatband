@@ -13,8 +13,9 @@ app.get('/api/gig', function(req, res) {
 });
 
 // Create
-app.post('/api/gig', function(req, res) {
-    gig.add(req.body, function(doc){
+app.post('/api/gig/:groupId', function(req, res) {
+    group_id = req.params.groupId;
+    gig.add(group_id, req.body, function(doc){
         res.send(doc);
     });
 });

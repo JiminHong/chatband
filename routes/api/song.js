@@ -19,7 +19,6 @@ app.post('/api/songs/:gigId', function(req, res) {
     gig_id = req.params.gigId;
 
     song.add(gig_id, req.body, function(doc){
-        console.log("gig_id in api", gig_id);
         res.send(doc);
     });
 });

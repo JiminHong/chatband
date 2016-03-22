@@ -2041,43 +2041,48 @@ input {
   border-width: 0;
 }
 
+/* line 800, ../sass/style.scss */
+.cursor-none {
+  cursor: default;
+}
+
 /*============================================= */
 /*=================== Colors ================== */
 /*============================================= */
-/* line 806, ../sass/style.scss */
+/* line 808, ../sass/style.scss */
 .redorange {
   fill: #FC6232;
 }
 
-/* line 810, ../sass/style.scss */
+/* line 812, ../sass/style.scss */
 .desat {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
-/* line 815, ../sass/style.scss */
+/* line 817, ../sass/style.scss */
 .dark-green-bg {
   background-color: #515d3c;
 }
 
-/* line 819, ../sass/style.scss */
+/* line 821, ../sass/style.scss */
 .reg-green-bg {
   background-color: #98B964;
 }
 
-/* line 823, ../sass/style.scss */
+/* line 825, ../sass/style.scss */
 .brown-color {
   color: #7D6542;
   fill: #7D6542;
 }
 
-/* line 828, ../sass/style.scss */
+/* line 830, ../sass/style.scss */
 .nav-icons {
   display: block;
   margin: 0 auto;
 }
 
-/* line 833, ../sass/style.scss */
+/* line 835, ../sass/style.scss */
 .dark-green-yellow-bg {
   background-color: #424242;
   -moz-transition: background-color 0.15s 0.15s;
@@ -2086,68 +2091,68 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: background-color 0.15s 0.15s;
 }
-/* line 836, ../sass/style.scss */
+/* line 838, ../sass/style.scss */
 .dark-green-yellow-bg:hover {
   background-color: #333333;
 }
 
-/* line 841, ../sass/style.scss */
+/* line 843, ../sass/style.scss */
 .dark-green-yellow-fill {
   fill: #424242;
 }
 
-/* line 845, ../sass/style.scss */
+/* line 847, ../sass/style.scss */
 .light-brown {
   color: #e2d6c5;
 }
 
-/* line 849, ../sass/style.scss */
+/* line 851, ../sass/style.scss */
 .ligth-brown-fill {
   fill: #e2d6c5;
 }
 
-/* line 853, ../sass/style.scss */
+/* line 855, ../sass/style.scss */
 .burnt-sienna-fill {
   fill: #C39263;
   color: #8E7053;
 }
 
-/* line 858, ../sass/style.scss */
+/* line 860, ../sass/style.scss */
 .goldenrod {
   fill: goldenrod;
   color: goldenrod;
 }
 
-/* line 863, ../sass/style.scss */
+/* line 865, ../sass/style.scss */
 .edit-color {
   fill: #858470;
   color: #7D8371;
 }
 
-/* line 868, ../sass/style.scss */
+/* line 870, ../sass/style.scss */
 .chocolate {
   fill: #D87039;
   color: #A28B7A;
 }
 
-/* line 873, ../sass/style.scss */
+/* line 875, ../sass/style.scss */
 .dark-brown {
   color: #3E2E16;
 }
 
-/* line 876, ../sass/style.scss */
+/* line 878, ../sass/style.scss */
 .gig-content-wrapper {
   width: 100%;
   height: 100%;
   background-color: red;
 }
 
-/* line 882, ../sass/style.scss */
+/* line 884, ../sass/style.scss */
 .green-fill {
   fill: #8DAF41;
 }
 
-/* line 886, ../sass/style.scss */
+/* line 888, ../sass/style.scss */
 .reg-grey-fill {
   color: #636969;
   fill: #636969;
@@ -2157,12 +2162,12 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 890, ../sass/style.scss */
+/* line 892, ../sass/style.scss */
 .reg-grey-fill:hover {
   fill: #333333;
 }
 
-/* line 895, ../sass/style.scss */
+/* line 897, ../sass/style.scss */
 .light-grey-fill {
   fill: #B1B1B1;
   -moz-transition: fill 0.15s 0.15s;
@@ -2171,12 +2176,12 @@ input {
   -webkit-transition-delay: 0.15s;
   transition: fill 0.15s 0.15s;
 }
-/* line 898, ../sass/style.scss */
+/* line 900, ../sass/style.scss */
 .light-grey-fill:hover {
   fill: #333333;
 }
 
-/* line 903, ../sass/style.scss */
+/* line 905, ../sass/style.scss */
 .light-grey {
   color: #7C8181;
   fill: #939089;
@@ -2185,74 +2190,74 @@ input {
 /*============================================= */
 /*=================== Float =================== */
 /*============================================= */
-/* line 912, ../sass/style.scss */
+/* line 914, ../sass/style.scss */
 .center-div {
   margin: 0 auto;
   display: table;
 }
 
-/* line 917, ../sass/style.scss */
+/* line 919, ../sass/style.scss */
 .float-left {
   float: left;
 }
 
-/* line 921, ../sass/style.scss */
+/* line 923, ../sass/style.scss */
 .float-right {
   float: right;
 }
 
-/* line 925, ../sass/style.scss */
+/* line 927, ../sass/style.scss */
 .float-clear {
   clear: both;
 }
 
-/* line 929, ../sass/style.scss */
+/* line 931, ../sass/style.scss */
 .lowercase {
   text-transform: lowercase;
 }
 
-/* line 933, ../sass/style.scss */
+/* line 935, ../sass/style.scss */
 .margin-zero {
   margin: 0;
 }
 
-/* line 937, ../sass/style.scss */
+/* line 939, ../sass/style.scss */
 .margin-both {
   margin: 0 10px;
 }
 
-/* line 941, ../sass/style.scss */
+/* line 943, ../sass/style.scss */
 .margin-top-sm {
   margin-top: 7px;
 }
 
-/* line 945, ../sass/style.scss */
+/* line 947, ../sass/style.scss */
 .margin-left-sm {
   margin-left: 15px;
 }
 
-/* line 949, ../sass/style.scss */
+/* line 951, ../sass/style.scss */
 .margin-more {
   margin-top: 62px;
   margin-bottom: 19px;
 }
 
-/* line 954, ../sass/style.scss */
+/* line 956, ../sass/style.scss */
 .margin-bottom {
   margin-bottom: 20px;
 }
 
-/* line 958, ../sass/style.scss */
+/* line 960, ../sass/style.scss */
 .padding-zero {
   padding: 0;
 }
 
-/* line 962, ../sass/style.scss */
+/* line 964, ../sass/style.scss */
 .padding-bottom {
   padding-bottom: 15px;
 }
 
-/* line 966, ../sass/style.scss */
+/* line 968, ../sass/style.scss */
 hr {
   border-top: 2px solid rgba(150, 150, 150, 0.1);
   border-left: white;
@@ -2260,17 +2265,17 @@ hr {
   margin-bottom: 0;
 }
 
-/* line 973, ../sass/style.scss */
+/* line 975, ../sass/style.scss */
 .img {
   width: 100%;
 }
 
-/* line 977, ../sass/style.scss */
+/* line 979, ../sass/style.scss */
 .profile-img {
   max-width: 130px;
 }
 
-/* line 981, ../sass/style.scss */
+/* line 983, ../sass/style.scss */
 #map {
   height: 400px;
   margin: 20px 0;
@@ -2278,13 +2283,13 @@ hr {
   border: 1px solid silver;
 }
 
-/* line 988, ../sass/style.scss */
+/* line 990, ../sass/style.scss */
 .anchor {
   cursor: pointer;
 }
 
 @media only screen and (max-width: 320px) {
-  /* line 994, ../sass/style.scss */
+  /* line 996, ../sass/style.scss */
   .chat-msg-input {
     width: 77%;
   }

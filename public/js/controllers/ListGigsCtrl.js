@@ -5,12 +5,12 @@ function ($scope, $http, $location, $routeParams) {
 
     //Directs to the chat page
     $scope.goChat = function(){
-        $location.path('/chat');
+        $location.path('/chat/'+$routeParams.groupId);
     } 
 
     // Directs to th page to add a new gig 
     $scope.goAddGigId = function(){
-    	$location.path('/goAddGigId');
+    	$location.path('/goAddGigId/'+$routeParams.groupId);
     }
 
     // Goes to the detail page

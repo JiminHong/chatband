@@ -2,8 +2,8 @@ myapp.controller('ChatsCtrl', ["$scope", "$http", "$location", "$routeParams",
 function ($scope, $http, $location, $routeParams) {
 
         //Directs to the chat page
-        $scope.goChat = function(){
-            $location.path('/chat');
+        $scope.goChat = function(groupId){
+            $location.path('/chat/'+groupId);
         } 
 
         $scope.goAddChat = function(){

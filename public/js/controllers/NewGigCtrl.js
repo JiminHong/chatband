@@ -28,10 +28,13 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // Creating a gig
     $scope.createGig = function(){
         $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-        $http.post('/api/gig', $scope.newGig)
+        $http.post('/api/gig/'+$routeParams.groupId, $scope.newGig)
         .success(function(data) {
                 $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
+                console.log($routeParams.groupId);
+                $scope.newGig.group_id = $routeParams.groupId; 
                 $scope.gigs = data;
+                // data._id is gig Id
                 $location.path('/goAddGig/'+ data._id);
         })
         .error(function(data) {

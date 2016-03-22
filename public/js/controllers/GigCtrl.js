@@ -1,5 +1,5 @@
-myapp.controller('GigCtrl', ["$scope", "$http", "$route", "$location", "NgMap",
-function ($scope, $http, $route, $location, $NgMap) {
+myapp.controller('GigCtrl', ["$scope", "$http", "$route", "$location", "NgMap", "$routeParams", 
+function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     //google map
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
@@ -15,8 +15,7 @@ function ($scope, $http, $route, $location, $NgMap) {
 
 
     // getting all songs
-    gigId = "56f086d79239298c0c90dbb2";
-    $http.get('/api/songs/'+ gigId)
+    $http.get('/api/songs/'+ $routeParams.gigId)
         .success(function(data) {
             $scope.songs = data;
         })
@@ -114,7 +113,7 @@ function ($scope, $http, $route, $location, $NgMap) {
 
     // it goes to chat page
     $scope.goChat = function(){
-        $location.path('/chat');
+        $location.path('/chat/'+$routeParams.gigId);
     }
 
     // ===================================================================

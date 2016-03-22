@@ -3,7 +3,7 @@ function ($scope, $location, $routeParams) {
 
         $scope.currentPath = $location.path();
 
-        // Go to the chat
+        //Go to the chat
         $scope.goChat = function(){
             $location.path('/chat');
         }

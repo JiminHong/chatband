@@ -13,20 +13,22 @@ var gigSchema = new Schema({
   	gigDate		: String,
   	gigTime		: String,
   	gigLocation	: String,
-  	gigLocationBefore : String
+  	gigLocationBefore : String,
+  	group_id : String
 });
 
 
 var _model = mongoose.model('gig', gigSchema);
 
 	// Saving new gig database
-	_save = function(req, success, fail) {
+	_save = function(groupId, req, success, fail) {
 		var newGig = new _model({
 			gigName     : req.gigName,
 	        gigDate     : req.gigDate,
 	        gigTime     : req.gigTime,
 	        gigLocationBefore : req.gigLocationBefore,
-	        gigLocation : req.gigLocation
+	        gigLocation : req.gigLocation,
+	        group_id	: groupId
 		});
 
 		newGig.save(function(err, doc) {
