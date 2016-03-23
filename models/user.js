@@ -7,41 +7,36 @@ var db 			= require('../config/env/production.js');
 var Schema 		= mongoose.Schema;
 
 // Schema for groups(in chats.html)
-var groupSchema = new Schema({
-	groupName:{
+var userSchema = new Schema({
+	firstName:{
 		type: String,
-		default: 'group name'
+		default: 'firstName'
 	},
-	lastMessage:{
+	lastName:{
 		type: String,
-		default: 'Last Message'
+		default: 'Last Name'
 	},
-	lastMessageTime:{
+	profilePic:{
 		type: String,
-		default: '00:00'
+		default: '/img/profile_pics/user.jpg'
 	},
-	groupPic:{
+	group_id:{
 		type: String,
-		default: '/img/bands/band1.jpg'
-	},
-	groupPic:{
-		type: String,
-		default: '#5E5D34'
+		default: 'group_id'
 	}
 });
 
-var _model = mongoose.model('group', groupSchema);
+var _model = mongoose.model('user', userSchema);
 
 	_save = function(gig_id, req, success, fail) {
-		var newGroup = new _model({
-			groupName 			: req.groupName,
-			lastMessage 		: req.lastMessage,
-		  	lastMessageTime 	: req.lastMessageTime, 
-		  	groupPic 			: req.groupPic,
-		  	headerColor 		: req.headerColor
+		var newUser = new _model({
+			firstName 			: req.firstName,
+			lastName 		: req.lastName,
+		  	profilePic 	: req.profilePic, 
+		  	group_id 			: req.group_id
 		});
 
-		newGroup.save(function(err, doc) {
+		newUser.save(function(err, doc) {
 			if(err){
 				console.log(err);
 			}else{
@@ -61,18 +56,6 @@ var _model = mongoose.model('group', groupSchema);
 		})
 	};
 
-	// Find one group db
-	// _findOne = function(id ,success, fail){
-	// 	objectId = id._id;
-	// 	_model.findOne({'_id': objectId}, function(err, doc){
-	// 		if(err){
-	// 			fail(err);
-	// 		}else{
-	// 			success(doc);
-	// 		}
-	// 	})
-	// };
-
 	// Grab an id and remove group db
 	_remove = function(id, success, fail){
 		console.log("id in model",id);
@@ -87,12 +70,10 @@ var _model = mongoose.model('group', groupSchema);
 
 // returning all functions above here.
 return{
-	schema  : groupSchema,
+	schema  : userSchema,
 	add 	: _save,
 	remove  : _remove, 
-    findAll : _findAll,
-    findOne : _findOne
-    
+    findAll : _findAll    
 }
 
 }();

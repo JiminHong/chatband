@@ -20,7 +20,17 @@
 
 
         </span>
-        <input class="form text-indent" type="text" name="gigName" ng-model="newGroup.groupName" placeholder="Name of members" required/>
+        <input class="form text-indent" type="text" name="gigName" ng-model="searchMembers" placeholder="Name of members" required/>
+
+        <div ng-repeat="user in users | filter:searchMembers">
+
+          <img ng-src="{[{user.profilePic}]}"  
+                     class="message-profile-pic" alt="profile pic"/>
+          <p>{[{user.firstName}]}</p>
+        <hr>
+        </div>
+
+
       </div>
       <button type="submit" class="button btn-xl margin-zero dark-green-yellow-bg" ng-click="createGig()"><p class="light-brown lowercase">Click here to add {[{newGig.title}]}</p></button>
     </form>
