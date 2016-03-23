@@ -54,7 +54,7 @@ var _model = mongoose.model('gig', gigSchema);
 	// Grab one gig database
 	_findOne = function(id ,success, fail){
 		objectID = 'ObjectId("'+id+'")';
-		_model.findOne({'_id': objectID}, function(err, doc){
+		_model.findOne({'group_id': objectID}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{

@@ -25,7 +25,7 @@ app.post('/api/gig/:groupId', function(req, res) {
  // Read One
 app.get('/api/gig/:id', function(req, res) {
     objectId = req.params.id;
-    gig.findOne({_id:objectId},function(doc) {
+    gig.findOne({group_id:objectId},function(doc) {
             res.status(200).json(doc);
     });
 });

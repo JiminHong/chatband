@@ -16,6 +16,16 @@ function ($scope, $http, $location, $routeParams) {
         $location.path('/songs/'+$routeParams.groupId+"/"+gigId);
     }
 
+    // getting a group that has $routeParams.groupId as _id
+    $http.get('/api/groups/'+$routeParams.groupId)
+        .success(function(data) {
+            $scope.songs = data;
+            $scope.groupName = data.groupName;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+        
     // Create a new gig
     $scope.createGig = function(){
         // If you add just a gigLocation it will add a object not a string. 

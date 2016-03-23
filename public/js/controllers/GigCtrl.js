@@ -17,15 +17,20 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     $http.get('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId)
         .success(function(data) {
             $scope.songs = data;
-            // this is song id
-            // console.log(data[0].gig_id);
         })
         .error(function(data) {
             console.log('Error: ' + data);
     });
 
-    // Get a gig that has gig_id as _id
-
+    // getting a group that has $routeParams.groupId as _id
+    $http.get('/api/groups/'+$routeParams.groupId)
+        .success(function(data) {
+            $scope.songs = data;
+            $scope.groupName = data.groupName;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     // getting all lineups
     $http.get('/api/lineups')
@@ -110,10 +115,10 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
         return $scope.tab === tabNum;
     }
 
-
-    // $scope.goListGigs = function(){
-    //     $location.path('/listGigs/:groupId');
-    // }
+    console.log($routeParams.groupId)
+    $scope.goListGigs = function(){
+        $location.path('/listGigs/'+$routeParams.groupId);
+    }
 
     // It goes to detail page
     $scope.goGig = function(){

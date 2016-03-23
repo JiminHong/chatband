@@ -6,13 +6,38 @@ myapp.factory("chatMessages", ["$firebaseArray",
   }
 ]);
 
-
 myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
 function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
+        // It goes to list of chats
+        $scope.goChats = function(){
+            $location.path('/');
+        }
 
-    // For now,
-    // I have user database here
-    // It randomly picks user when user sends a message
+        // It goes to list of gig
+        $scope.goGigs = function(){
+            $location.path('/listGigs/'+$routeParams.groupId);
+        }
+
+        // It goes to list of gig
+        $scope.goFiles = function(){
+            $location.path('/listFiles');
+        }
+
+        // getting a group that has $routeParams.groupId as _id
+        $http.get('/api/groups/'+$routeParams.groupId)
+            .success(function(data) {
+                $scope.songs = data;
+                $scope.groupName = data.groupName;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+        });
+
+
+
+        // For now,
+        // I have user database here
+        // It randomly picks user when user sends a message
         var randomNum = Math.round(Math.random() * 2);
 
         // if you need random : profileImages[randomNum]
@@ -49,22 +74,6 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
           }
         });
 
-        // It goes to list of chats
-        $scope.goChats = function(){
-            $location.path('/');
-        }
-
-        // It goes to list of gig
-        $scope.goGigs = function(){
-            $location.path('/listGigs/'+$routeParams.groupId);
-        }
-
-        // It goes to list of gig
-        $scope.goFiles = function(){
-            $location.path('/listFiles');
-        }
-
-        $scope.group = "Awesome Group";
 
         // It gets all gig database
         $http.get('/api/gig')
@@ -97,3 +106,4 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
             console.log('Error: ' + data);
         });
 }]);
+
