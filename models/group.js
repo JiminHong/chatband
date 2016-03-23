@@ -24,7 +24,7 @@ var groupSchema = new Schema({
 		type: String,
 		default: '/img/bands/band1.jpg'
 	},
-	groupPic:{
+	headerColor:{
 		type: String,
 		default: '#5E5D34'
 	}
@@ -32,7 +32,7 @@ var groupSchema = new Schema({
 
 var _model = mongoose.model('group', groupSchema);
 
-	_save = function(gig_id, req, success, fail) {
+	_save = function(req, success, fail) {
 		var newGroup = new _model({
 			groupName 			: req.groupName,
 			lastMessage 		: req.lastMessage,
@@ -62,16 +62,16 @@ var _model = mongoose.model('group', groupSchema);
 	};
 
 	// Find one group db
-	// _findOne = function(id ,success, fail){
-	// 	objectId = id._id;
-	// 	_model.findOne({'_id': objectId}, function(err, doc){
-	// 		if(err){
-	// 			fail(err);
-	// 		}else{
-	// 			success(doc);
-	// 		}
-	// 	})
-	// };
+	_findOne = function(id ,success, fail){
+		objectId = id._id;
+		_model.findOne({'_id': objectId}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
 
 	// Grab an id and remove group db
 	_remove = function(id, success, fail){

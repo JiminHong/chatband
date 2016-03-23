@@ -36,6 +36,15 @@ app.delete('/api/users/:id', function(req, res) {
     });
 });
 
+app.post('/api/users/:id', function(req, res) {
+    objectId = req.params.id;
+    
+    group.update(req.body,function(doc){
+      res.status(200).json(doc);
+    });
+});
+
+
 
 return app;
 };

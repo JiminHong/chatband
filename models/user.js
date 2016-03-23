@@ -68,12 +68,36 @@ var _model = mongoose.model('user', userSchema);
 		})
 	};
 
+	// Update lineup by grabbing a object id and update.
+	_update = function(req, success, fail){
+		
+		var id = req._id;
+		var userGroupId = req.group_id;
+
+		// Updating function here.
+        _model.update({_id: id}, 
+        			  {$set:{
+        			  		group_id:userGroupId
+        			  }}, function(err,doc){
+			            if (err) {
+			                fail(err);
+			                
+			            }else{
+			                success(doc);
+			                
+			            }
+        				});
+    }
+
+
+
 // returning all functions above here.
 return{
 	schema  : userSchema,
 	add 	: _save,
 	remove  : _remove, 
-    findAll : _findAll    
+    findAll : _findAll,
+    update 	: _update    
 }
 
 }();
