@@ -1,6 +1,55 @@
-myapp.controller('ChatCtrl', ["$scope", "$firebaseArray", "$location", "$http", "$routeParams", 
-function ($scope, $firebaseArray, $location, $http, $routeParams) {
-        // It goes to list of chats
+myapp.factory("chatMessages", ["$firebaseArray", "$routeParams",
+  function($firebaseArray, $routeParams) {
+    // go to the group chat
+    var ref = new Firebase("https://vivid-fire-4911.firebaseio.com/" + $routeParams.groupId);
+
+    // this uses AngularFire to create the synchronized array
+    return $firebaseArray(ref);
+  }
+]);
+
+myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
+function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
+    // ===================================================================
+    // ============================ Chats ===============================
+    // ===================================================================  
+        // var profileImages = [
+        //     "/img/profile_pics/pug.jpg", 
+        //     "/img/profile_pics/matt.jpg", 
+        //     "/img/profile_pics/lorde.jpg"
+        // ]
+
+        // var usernames = [
+        //     "John", "Matt", "Lorde"
+        // ];
+    
+        // var randomNum = Math.round(Math.random() * 2);
+        
+        $scope.profilePic = "/img/profile_pics/pug.jpg";
+        
+        $scope.user = "me";
+
+        // we add chatMessages array to the scope to be used in our ng-repeat
+        $scope.messages = chatMessages;
+
+        // a method to create new messages; called by ng-submit
+        $scope.addMessage = function() {
+          // calling $add on a synchronized array is like Array.push(),
+          // except that it saves the changes to our database!
+          $scope.messages.$add({
+            senderUsername: $scope.user,
+            message: $scope.message, 
+            senderProfilePic: $scope.profilePic
+          });
+
+          // reset the message input
+          $scope.message = "";
+        };
+
+    // ===================================================================
+    // ============================ Routes ===============================
+    // ===================================================================        
+    // It goes to list of chats
         $scope.goChats = function(){
             $location.path('/');
         }
@@ -14,7 +63,9 @@ function ($scope, $firebaseArray, $location, $http, $routeParams) {
         $scope.goFiles = function(){
             $location.path('/listFiles');
         }
-
+    // ===================================================================
+    // ============================ Data =================================
+    // =================================================================== 
         // getting a group that has $routeParams.groupId as _id
         $http.get('/api/groups/'+$routeParams.groupId)
             .success(function(data) {
@@ -25,35 +76,68 @@ function ($scope, $firebaseArray, $location, $http, $routeParams) {
                 console.log('Error: ' + data);
         });
 
-        // It gets all gig database
-        $http.get('/api/gig')
-        .success(function(data) {
-            $scope.gigs = data;
-            gigMonthObject = {};
-                for(i=0; i<data.length; i++){
-                    //Month
-                    monthNum = Number(data[i].gigDate.charAt(0)) + Number(data[i].gigDate.charAt(1));
-                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    data[i].gigMonth = monthNames[Number(monthNum)-1];
+        // Getting all gigs
+        $http.get('/api/gig/'+ $routeParams.groupId)
+            .success(function(data) {
+                $scope.gigs = data;
+                gigMonthObject = {};
+                    for(i=0; i<data.length; i++){
+                        // Month
+                        monthNum = Number(data[i].gigDate.charAt(5))+Number(data[i].gigDate.charAt(6));
+                        monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        data[i].gigMonth = monthNames[Number(monthNum)-1];
+                        // Date
+                        data[i].gigDate = data[i].gigDate.charAt(8)+data[i].gigDate.charAt(9);
 
-                    //Date
-                    data[i].gigDate = data[i].gigDate.charAt(3)+data[i].gigDate.charAt(4);
-
-                    //Time
-                    timeStr = data[i].gigTime;
-                    utcTimeHour = timeStr.slice(0, 2);
-                    utcTimeMin = timeStr.slice(3, 5);
-                    if(Number(utcTimeHour)>12){
-                        utcTimeHour = Number(utcTimeHour)-12;
-                        $scope.ampm = "PM";
-                    }else{
-                        $scope.ampm = "AM";
+                        //Time
+                        timeStr = data[i].gigTime;
+                        utcTimeHour = timeStr.slice(0, 2);
+                        utcTimeMin = timeStr.slice(3, 5);
+                        if(Number(utcTimeHour)>12){
+                            utcTimeHour = Number(utcTimeHour)-12;
+                            $scope.ampm = "PM";
+                        }else{
+                            $scope.ampm = "AM";
+                        };
+                        data[i].gigTime = utcTimeHour +":"+ utcTimeMin;
                     };
-                    data[i].gigTime = utcTimeHour +":"+ utcTimeMin;
-                };
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+
+
+
 }]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
