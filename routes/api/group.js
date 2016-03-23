@@ -21,6 +21,13 @@ app.get('/api/groups/:id', function(req, res) {
     });
 });
 
+// Create
+app.post('/api/groups', function(req, res) {
+    group.add(req.body, function(doc){
+        res.send(doc);
+    });
+});
+
 // Delete One
 app.delete('/api/groups/:id', function(req, res) {
     objectId = req.params.id;

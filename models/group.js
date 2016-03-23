@@ -8,14 +8,49 @@ var Schema 		= mongoose.Schema;
 
 // Schema for groups(in chats.html)
 var groupSchema = new Schema({
-  	groupName: String,
-  	lastMessage: String,
-  	lastMessageTime: String, 
-  	groupPic: String,
-  	headerColor: String
+
+
+	groupName:{
+		type: String,
+		default: 'group name'
+	},
+	lastMessage:{
+		type: String,
+		default: 'Last Message'
+	},
+	lastMessageTime:{
+		type: String,
+		default: '00:00'
+	},
+	groupPic:{
+		type: String,
+		default: '/img/bands/band1.jpg'
+	},
+	groupPic:{
+		type: String,
+		default: '#5E5D34'
+	}
 });
 
 var _model = mongoose.model('group', groupSchema);
+
+	_save = function(gig_id, req, success, fail) {
+		var newGroup = new _model({
+			groupName 			: req.groupName,
+			lastMessage 		: req.lastMessage,
+		  	lastMessageTime 	: req.lastMessageTime, 
+		  	groupPic 			: req.groupPic,
+		  	headerColor 		: req.headerColor
+		});
+
+		newGroup.save(function(err, doc) {
+			if(err){
+				console.log(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
 
 	// Getting all groups db
 	_findAll = function(success, fail){
@@ -29,16 +64,16 @@ var _model = mongoose.model('group', groupSchema);
 	};
 
 	// Find one group db
-	_findOne = function(id ,success, fail){
-		objectId = id._id;
-		_model.findOne({'_id': objectId}, function(err, doc){
-			if(err){
-				fail(err);
-			}else{
-				success(doc);
-			}
-		})
-	};
+	// _findOne = function(id ,success, fail){
+	// 	objectId = id._id;
+	// 	_model.findOne({'_id': objectId}, function(err, doc){
+	// 		if(err){
+	// 			fail(err);
+	// 		}else{
+	// 			success(doc);
+	// 		}
+	// 	})
+	// };
 
 	// Grab an id and remove group db
 	_remove = function(id, success, fail){
@@ -55,9 +90,11 @@ var _model = mongoose.model('group', groupSchema);
 // returning all functions above here.
 return{
 	schema  : groupSchema,
+	add 	: _save,
 	remove  : _remove, 
     findAll : _findAll,
     findOne : _findOne
+    
 }
 
 }();

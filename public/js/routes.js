@@ -15,6 +15,12 @@ myapp.config(function ($routeProvider){
 
 		}
 	})
+	.when('/goAddGroup', {
+		templateUrl : 'views/addGroup.html',
+		controller 	: 'ChatCtrl', function($scope, $http){
+
+		}
+	})
 	.when('/chat/:groupId', {
 		templateUrl : 'views/chat.html',
 		controller 	: 'ChatCtrl', function($scope, $http){

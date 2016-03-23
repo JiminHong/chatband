@@ -5,9 +5,17 @@ function ($scope, $http, $location, $routeParams) {
         $scope.goChat = function(groupId){
             $location.path('/chat/'+groupId);
         } 
-
-        $scope.goAddChat = function(){
-            $location.path('/addChat');
+        // Directs to the page for creating a new group.
+        $scope.goAddGroup = function(){
+            $location.path('/goAddGroup');
+            //http.add
+            // $http.post('/api/groups', $scope.newGroup)
+            // .success(function(data) {
+            //     $scope.groups = data;
+            // })
+            // .error(function(data) {
+            //     console.log('Error: ' + data);
+            // });
         }
 
         // getting all groups
