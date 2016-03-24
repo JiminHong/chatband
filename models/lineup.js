@@ -17,12 +17,13 @@ var lineupSchema = new Schema({
 var _model = mongoose.model('lineup', lineupSchema);
 
 	// Saving all lineups
-	_save = function(req, success, fail) {
+	_save = function(gig_id, req, success, fail) {
 		var newGig = new _model({
 			instrumentation     : req.instrumentation,
 	        firstName     		: req.firstName,
 	        lastName    		: req.lastName,
 	        comment 			: req.comment,
+	        gig_id				: gig_id
 		});
 
 		newGig.save(function(err, doc) {
@@ -35,8 +36,8 @@ var _model = mongoose.model('lineup', lineupSchema);
 	};
 
 	// Getting all lineups
-	_findAll = function(success, fail ){
-		_model.find({}, function(err, doc){
+	_findAll = function(gigId, success, fail ){
+		_model.find({'gig_id':gigId.gig_id}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{

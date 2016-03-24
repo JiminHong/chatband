@@ -21,8 +21,8 @@ function ($scope, chatMessages, $firebaseObject, $firebaseArray, $location, $htt
         // the $firebaseArray service properly handles database queries as well
         $scope.lastMessage = $firebaseArray(query);
 
-        $scope.profilePic = "/img/profile_pics/pug.jpg";
-        $scope.user = "me";
+        $scope.profilePic = "/img/profile_pics/matt.jpg";
+        $scope.user = "matt";
 
         // we add chatMessages array to the scope to be used in our ng-repeat
         $scope.messages = chatMessages;
@@ -70,6 +70,8 @@ function ($scope, chatMessages, $firebaseObject, $firebaseArray, $location, $htt
         $http.get('/api/groups/'+$routeParams.groupId)
             .success(function(data) {
                 $scope.groups = data;
+                $scope.groupName = data.groupName;
+                console.log($scope.groupName);
             })
             .error(function(data) {
                 console.log('Error: ' + data);

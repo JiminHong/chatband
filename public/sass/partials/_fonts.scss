@@ -82,6 +82,15 @@ p{
     font-family: $open-sans;
 }
 
+.nav-text{
+    font-family: $mont;
+    text-transform: uppercase;
+    color: $white-text;
+    font-size: .8em;
+    font-weight: 400;
+    @include transition(color .15s .15s);
+}
+
 .text-under-svg{
     font-size: 12px;
     text-align: center;

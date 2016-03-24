@@ -7,17 +7,23 @@ module.exports = function(app){
 // ===================================================================
 
 // Read All
-app.get('/api/groups/:groupId', function(req, res) {
-    group_id = req.params.groupId;
-    group.findAll({'_id':group_id},function(data) {
+app.get('/api/groups', function(req, res) {
+    group.findAll(function(data) {
       res.status(200).json(data);
     });
 });
-
 // Create
 app.post('/api/groups', function(req, res) {
     group.add(req.body, function(doc){
         res.send(doc);
+    });
+});
+
+ // Read One
+app.get('/api/groups/:groupId', function(req, res) {
+    group_id = req.params.groupId;
+    group.findOne({group_id:group_id},function(doc) {
+            res.status(200).json(doc);
     });
 });
 

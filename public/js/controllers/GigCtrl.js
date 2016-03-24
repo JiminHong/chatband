@@ -25,7 +25,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     // getting a group that has $routeParams.groupId as _id
     $http.get('/api/groups/'+$routeParams.groupId)
         .success(function(data) {
-            $scope.songs = data;
+            $scope.groups = data;
             $scope.groupName = data.groupName;
         })
         .error(function(data) {

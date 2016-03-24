@@ -12,6 +12,16 @@ myapp.factory("chatGroupMessage", ["$firebaseArray", "$routeParams",
 myapp.controller('ChatsCtrl', ["$scope", "chatGroupMessage", "$firebaseArray", "$location", "$http", "$routeParams", 
 function ($scope, chatGroupMessage, $firebaseArray, $location, $http, $routeParams) {
 
+        // getting a group that has $routeParams.groupId as _id
+        $http.get('/api/groups')
+            .success(function(data) {
+                $scope.groups = data;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+        });
+
+
         //Directs to the chat page
         $scope.goChat = function(groupId){
             $location.path('/chat/'+groupId);
@@ -20,27 +30,6 @@ function ($scope, chatGroupMessage, $firebaseArray, $location, $http, $routePara
         $scope.goAddGroup = function(){
             $location.path('/goAddGroup');
         }
-
-        // getting all groups
-        $http.get('/api/groups')
-            .success(function(data) {
-                $scope.groups = data;
-                $scope.lastMessage = [];
-                for(i=0; i<data.length; i++){
-                    groupId = data[i]._id;
-                    var messagesRef = new Firebase("https://vivid-fire-4911.firebaseio.com/" + groupId);
-                    //create a query for the most recent 25 messages on the server
-                    var query = messagesRef.orderByChild("message").limitToLast(1);
-                    // the $firebaseArray service properly handles database queries as well
-                    $scope.lastMessage.push (
-                        $firebaseArray(query)
-                    )  
-                    $scope.filteredData = $scope.lastMessage;
-                }
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-        });        
 
         //Delete a group chat
         $scope.deleteGroup = function(id) {
@@ -58,5 +47,4 @@ function ($scope, chatGroupMessage, $firebaseArray, $location, $http, $routePara
         };
         
 }]);
-
 

@@ -6,7 +6,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     }
     // go to the list of gigs
     $scope.goGigList = function(){
-        $location.path('/listGigs');
+        $location.path('/listGigs/'+$routeParams.groupId);
     }
 
     // This is for toggle. 
@@ -20,6 +20,17 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     $scope.add = "Add";
     // Before done adding
     $scope.doneIndicator = "";
+
+    // getting a group that has $routeParams.groupId as _id
+    $http.get('/api/groups/'+$routeParams.groupId)
+        .success(function(data) {
+            $scope.groups = data;
+            $scope.groupName = data.groupName;
+            console.log($scope.groupName);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     // ===================================================================
     // =============================== GIG ===============================

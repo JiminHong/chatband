@@ -9,6 +9,10 @@ function ($scope, $firebaseArray, $location, $http, $routeParams) {
             console.log('Error: ' + data);
     });
 
+    $scope.goChats = function(){
+        $location.path('/');
+    }
+
     // Add a new group.
     // In here, add only a group name.
     $scope.addGroup = function(){
