@@ -2,49 +2,48 @@ myapp.factory("chatMessages", ["$firebaseArray", "$routeParams",
   function($firebaseArray, $routeParams) {
     // go to the group chat
     var ref = new Firebase("https://vivid-fire-4911.firebaseio.com/" + $routeParams.groupId);
-
+    
     // this uses AngularFire to create the synchronized array
     return $firebaseArray(ref);
+
   }
 ]);
 
-myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseArray", "$location", "$http", "$routeParams", 
-function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) {
+myapp.controller('ChatCtrl', ["$scope", "chatMessages", "$firebaseObject", "$firebaseArray", "$location", "$http", "$routeParams", 
+function ($scope, chatMessages, $firebaseObject, $firebaseArray, $location, $http, $routeParams) {
     // ===================================================================
     // ============================ Chats ===============================
-    // ===================================================================  
-        // var profileImages = [
-        //     "/img/profile_pics/pug.jpg", 
-        //     "/img/profile_pics/matt.jpg", 
-        //     "/img/profile_pics/lorde.jpg"
-        // ]
+    // =================================================================== 
+        
+        var messagesRef = new Firebase("https://vivid-fire-4911.firebaseio.com/" + $routeParams.groupId);
+        //create a query for the most recent 25 messages on the server
+        var query = messagesRef.orderByChild("message").limitToLast(1);
+        // the $firebaseArray service properly handles database queries as well
+        $scope.lastMessage = $firebaseArray(query);
 
-        // var usernames = [
-        //     "John", "Matt", "Lorde"
-        // ];
-    
-        // var randomNum = Math.round(Math.random() * 2);
-        
         $scope.profilePic = "/img/profile_pics/pug.jpg";
-        
         $scope.user = "me";
 
         // we add chatMessages array to the scope to be used in our ng-repeat
         $scope.messages = chatMessages;
-
+        
         // a method to create new messages; called by ng-submit
         $scope.addMessage = function() {
-          // calling $add on a synchronized array is like Array.push(),
-          // except that it saves the changes to our database!
-          $scope.messages.$add({
-            senderUsername: $scope.user,
-            message: $scope.message, 
-            senderProfilePic: $scope.profilePic
-          });
-
+            // calling $add on a synchronized array is like Array.push(),
+            // except that it saves the changes to our database!
+            $scope.messages.$add({
+                senderUsername: $scope.user,
+                message: $scope.message, 
+                senderProfilePic: $scope.profilePic,
+                group_id : $routeParams.groupId
+            });
+            
           // reset the message input
           $scope.message = "";
         };
+
+
+
 
     // ===================================================================
     // ============================ Routes ===============================
@@ -66,15 +65,17 @@ function ($scope, chatMessages, $firebaseArray, $location, $http, $routeParams) 
     // ===================================================================
     // ============================ Data =================================
     // =================================================================== 
+
         // getting a group that has $routeParams.groupId as _id
         $http.get('/api/groups/'+$routeParams.groupId)
             .success(function(data) {
-                $scope.songs = data;
-                $scope.groupName = data.groupName;
+                $scope.groups = data;
             })
             .error(function(data) {
                 console.log('Error: ' + data);
         });
+
+
 
         // Getting all gigs
         $http.get('/api/gig/'+ $routeParams.groupId)

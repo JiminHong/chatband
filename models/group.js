@@ -50,9 +50,9 @@ var _model = mongoose.model('group', groupSchema);
 		})
 	};
 
-	// Getting all groups db
-	_findAll = function(success, fail){
-		_model.find({}, function(err, doc){
+	// Getting all database from gig db
+	_findAll = function(groupId, success, fail ){
+		_model.find({'_id':groupId}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{
@@ -62,16 +62,16 @@ var _model = mongoose.model('group', groupSchema);
 	};
 
 	// Find one group db
-	_findOne = function(id ,success, fail){
-		objectId = id._id;
-		_model.findOne({'_id': objectId}, function(err, doc){
-			if(err){
-				fail(err);
-			}else{
-				success(doc);
-			}
-		})
-	};
+	// _findOne = function(id ,success, fail){
+	// 	objectId = id._id;
+	// 	_model.findOne({'_id': objectId}, function(err, doc){
+	// 		if(err){
+	// 			fail(err);
+	// 		}else{
+	// 			success(doc);
+	// 		}
+	// 	})
+	// };
 
 	// Grab an id and remove group db
 	_remove = function(id, success, fail){
@@ -90,9 +90,7 @@ return{
 	schema  : groupSchema,
 	add 	: _save,
 	remove  : _remove, 
-    findAll : _findAll,
-    findOne : _findOne
-    
+    findAll : _findAll    
 }
 
 }();

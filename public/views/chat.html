@@ -8,7 +8,7 @@
                 <p ng-click="goChats()" class="nav-text">Chats</p>
             </div>
         </div>
-        <div class="col span_1_of_3" ><h1>{[{groupName}]}</h1></div>
+        <div class="col span_1_of_3" ><h1>{[{groups[0].groupName}]}</h1></div>
         <div class="col nav-right"></div>
     </div>
     <div class="lv2-nav section group">
@@ -70,6 +70,9 @@
             </div>
         </div>
         </div>
+        <ul>Last message : 
+            <li ng-repeat="message in lastMessage">{[{ message.senderUsername }]}: {[{ message.message }]}</li>
+        </ul>
     </div>
 </div>
 
