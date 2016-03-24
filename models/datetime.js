@@ -19,6 +19,9 @@ var datetimeSchema = new Schema({
 	scheduleName : {
 		type: String,
 		default: '00:00'
+	},
+	gig_id: {
+		type: String
 	}
 });
 
@@ -26,11 +29,12 @@ var datetimeSchema = new Schema({
 var _model = mongoose.model('datetime', datetimeSchema);
 
 	// Saving date and time 
-	_save = function(req, success, fail) {
+	_save = function(gig_id, req, success, fail) {
 		var newGig = new _model({
 			time     		: req.time,
 	        date     		: req.date,
-	        scheduleName    : req.scheduleName
+	        scheduleName    : req.scheduleName,
+	        gig_id			: gig_id
 		});
 
 		newGig.save(function(err, doc) {
@@ -43,8 +47,8 @@ var _model = mongoose.model('datetime', datetimeSchema);
 	};
 
 	// Getting all date and time
-	_findAll = function(success, fail ){
-		_model.find({}, function(err, doc){
+	_findAll = function(gigId,success, fail ){
+		_model.find({'gig_id':gigId.gig_id}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{

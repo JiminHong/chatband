@@ -11,7 +11,9 @@ var lineupSchema = new Schema({
   	instrumentation: String,
 	firstName: String,
 	lastName: String,
-	comment: String
+	comment: String,
+	gig_id:String
+	
 });
 
 var _model = mongoose.model('lineup', lineupSchema);

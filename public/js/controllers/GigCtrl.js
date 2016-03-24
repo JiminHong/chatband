@@ -1,26 +1,8 @@
 myapp.controller('GigCtrl', ["$scope", "$http", "$route", "$location", "NgMap", "$routeParams", 
 function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
-    //google map
-    $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
-
-    $NgMap.getMap().then(function(map) {
-        console.log(map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
-      });
-
     // Gig name. Using scope db for now.
     $scope.gigName = "moonstone music festival 2016";
-
-    // getting all songs
-    $http.get('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId)
-        .success(function(data) {
-            $scope.songs = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
 
     // getting a group that has $routeParams.groupId as _id
     $http.get('/api/groups/'+$routeParams.groupId)
@@ -32,97 +14,30 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
             console.log('Error: ' + data);
     });
 
-    // getting all lineups
-    $http.get('/api/lineups')
-        .success(function(data) {
-            $scope.lineups = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
-
-    // getting all data and times
-    $http.get('/api/datetimes')
-        .success(function(data) {
-            $scope.datetimes = data;
-                for(i=0; i<data.length; i++){
-                    // Month
-                    monthNum = Number(data[i].date.charAt(5))+Number(data[i].date.charAt(6));
-                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    data[i].month = monthNames[Number(monthNum)-1];
-                    // Date
-                    data[i].date = data[i].date.charAt(8)+data[i].date.charAt(9);
-
-                    //Time
-                    timeStr = data[i].time;
-                    utcTimeHour = timeStr.slice(0, 2);
-                    utcTimeMin = timeStr.slice(3, 5);
-                    if(Number(utcTimeHour)>12){
-                        utcTimeHour = Number(utcTimeHour)-12;
-                        $scope.ampm = "PM";
-                    }else{
-                        $scope.ampm = "AM";
-                    };
-                    data[i].time = utcTimeHour +":"+ utcTimeMin;
-                };
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
-
-    // Getting a location
-    $http.get('/api/locations')
-        .success(function(data) {
-            $scope.locations = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    }); 
-
-    // getting all wardrobes
-    $http.get('/api/wardrobes')
-        .success(function(data) {
-            $scope.wardrobes = data;
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-    });
-
-
-    // using this scope for now.
-    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-
-    
-    // Tabs hover and active.
-    if($location.path() === "/songs"){
-        $scope.tab = 1;
-
-    }else if($location.path() === "/lineup"){
-        $scope.tab = 2;
-
-    }else if($location.path() === "/datetime"){
-        $scope.tab = 3;
-
-    }else if($location.path() === "/location"){
-        $scope.tab = 4;
-
-    }else if($location.path() === "/wardrobe"){
-        $scope.tab = 5;
-
-    }
-
-    $scope.isSet = function(tabNum){
-        return $scope.tab === tabNum;
-    }
-
-    console.log($routeParams.groupId)
     $scope.goListGigs = function(){
         $location.path('/listGigs/'+$routeParams.groupId);
     }
 
     // It goes to detail page
     $scope.goGig = function(){
-        $location.path('/songs');
+        $location.path('/songs/'+$routeParams.groupId+'/'+$routeParams.gigId);
+    }
+
+     // It goes to detail page
+    $scope.goLineup = function(){
+        $location.path('/lineups/'+$routeParams.groupId+'/'+$routeParams.gigId);
+    }
+
+    $scope.goDatetime = function(){
+        $location.path('/datetimes/'+$routeParams.groupId+'/'+$routeParams.gigId);
+    }
+
+    $scope.goWardrobe = function(){
+        $location.path('/wardrobes/'+$routeParams.groupId+'/'+$routeParams.gigId);
+    }
+
+    $scope.goLocation = function(){
+        $location.path('/locations/'+$routeParams.groupId+'/'+$routeParams.gigId);
     }
 
     // it goes to chat page
@@ -133,6 +48,15 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     // ===================================================================
     // ============================== Song ===============================
     // ===================================================================
+
+    // getting all songs
+    $http.get('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId)
+        .success(function(data) {
+            $scope.songs = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     // Editing song 
     $scope.editSong = function(id){
@@ -170,6 +94,15 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     // ============================ Lineup ===============================
     // ===================================================================
 
+    // getting all lineups
+    $http.get('/api/lineups/'+ $routeParams.groupId + "/" +$routeParams.gigId)
+        .success(function(data) {
+            $scope.lineups = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
     // Grabs the id of db
     $scope.editLineup = function(id){
         $http.get('/api/lineups/' + id)
@@ -202,8 +135,37 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     } 
 
     // ===================================================================
-    // ============================ Lineup ===============================
+    // ========================== Datetime ===============================
     // ===================================================================
+
+    // getting all data and times
+    $http.get('/api/datetimes/'+ $routeParams.groupId + "/" +$routeParams.gigId)
+        .success(function(data) {
+            $scope.datetimes = data;
+                for(i=0; i<data.length; i++){
+                    // Month
+                    monthNum = Number(data[i].date.charAt(5))+Number(data[i].date.charAt(6));
+                    monthNames      = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    data[i].month = monthNames[Number(monthNum)-1];
+                    // Date
+                    data[i].date = data[i].date.charAt(8)+data[i].date.charAt(9);
+
+                    //Time
+                    timeStr = data[i].time;
+                    utcTimeHour = timeStr.slice(0, 2);
+                    utcTimeMin = timeStr.slice(3, 5);
+                    if(Number(utcTimeHour)>12){
+                        utcTimeHour = Number(utcTimeHour)-12;
+                        $scope.ampm = "PM";
+                    }else{
+                        $scope.ampm = "AM";
+                    };
+                    data[i].time = utcTimeHour +":"+ utcTimeMin;
+                };
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     // Grabs the id of db
     $scope.editDatetime = function(id){
@@ -237,8 +199,42 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     } 
 
     // ===================================================================
+    // ========================== Location ===============================
+    // ===================================================================
+
+    //google map
+    $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWpBZWjt_nC0iK6n4S3BOUENHZBUjFro";
+
+    $NgMap.getMap().then(function(map) {
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
+    });
+
+    // Getting a location
+    $http.get('/api/locations/'+ $routeParams.groupId + "/" +$routeParams.gigId)
+        .success(function(data) {
+            $scope.locations = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    }); 
+
+    // using this scope for now.
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+
+    // ===================================================================
     // ========================== Wardrobe ===============================
     // ===================================================================
+
+    // getting all wardrobes
+    $http.get('/api/wardrobes/'+ $routeParams.groupId + "/" +$routeParams.gigId)
+        .success(function(data) {
+            $scope.wardrobes = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
 
     $scope.editWardrobe = function(id){
         $http.get('/api/wardrobes/' + id)
@@ -268,7 +264,30 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
              .finally(function(){
                 $route.reload();
              })
-    } 
+    }
+
+    // Tabs hover and active.
+    if($location.path() === "/songs"){
+        $scope.tab = 1;
+
+    }else if($location.path() === "/lineup"){
+        $scope.tab = 2;
+
+    }else if($location.path() === "/datetime"){
+        $scope.tab = 3;
+
+    }else if($location.path() === "/location"){
+        $scope.tab = 4;
+
+    }else if($location.path() === "/wardrobe"){
+        $scope.tab = 5;
+
+    }
+
+    $scope.isSet = function(tabNum){
+        return $scope.tab === tabNum;
+    }
+ 
     
 }]);
 

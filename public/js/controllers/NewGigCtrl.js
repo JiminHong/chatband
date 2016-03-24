@@ -5,8 +5,9 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $location.path('/chat');
     }
     // go to the list of gigs
+    // gigId?
     $scope.goGigList = function(){
-        $location.path('/listGigs/'+$routeParams.groupId);
+        $location.path('/listGigs/'+$routeParams.gigId);
     }
 
     // This is for toggle. 
@@ -26,7 +27,6 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         .success(function(data) {
             $scope.groups = data;
             $scope.groupName = data.groupName;
-            console.log($scope.groupName);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -42,9 +42,9 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $http.post('/api/gig/'+$routeParams.groupId, $scope.newGig)
         .success(function(data) {
                 $scope.newGig.gigLocation = $scope.newGig.gigLocation.formatted_address;
-                console.log($routeParams.groupId);
                 $scope.newGig.group_id = $routeParams.groupId; 
                 $scope.gigs = data;
+                console.log(data._id);
                 // data._id is gig Id
                 $location.path('/goAddGig/'+ data._id);
         })
@@ -61,7 +61,8 @@ function ($scope, $timeout, $http, $location, $routeParams) {
         $http.post('/api/songs/'+$routeParams.gigId, $scope.newGig)
         .success(function(data) {
             $scope.newGig = {}; 
-            $scope.newGig.gig_id = $routeParams.gigId; 
+            $scope.newGig.gig_id = $routeParams.gigId;
+            console.log("gig id when create new song", $scope.newGig.gig_id);
             $scope.song = data;
             $scope.doneIndicator = "Added!";
             $scope.add = "";
@@ -84,9 +85,10 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // Creating a lineup
 
     $scope.createLineup = function() {
-        $http.post('/api/lineups', $scope.newGig)
+        $http.post('/api/lineups/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
-                $scope.newGig = {}; 
+                $scope.newGig = {};
+                $scope.newGig.gig_id = $routeParams.gigId; 
                 $scope.lineup = data;
                 $scope.doneIndicator = "Added!";
                 $scope.add = "";

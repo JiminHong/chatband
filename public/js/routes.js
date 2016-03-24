@@ -57,25 +57,25 @@ myapp.config(function ($routeProvider){
 
 		}
 	})
-	.when('/lineup', {
+	.when('/lineups/:groupId/:gigId', {
 		templateUrl : 'views/gigTabs/lineup.html',
 		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
-	.when('/datetime', {
+	.when('/datetimes/:groupId/:gigId', {
 		templateUrl : 'views/gigTabs/datetime.html',
 		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
-	.when('/location', {
+	.when('/locations/:groupId/:gigId', {
 		templateUrl : 'views/gigTabs/location.html',
 		controller 	: 'GigCtrl', function($scope, $http){
 
 		}
 	})
-	.when('/wardrobe', {
+	.when('/wardrobes/:groupId/:gigId', {
 		templateUrl : 'views/gigTabs/wardrobe.html',
 		controller 	: 'GigCtrl', function($scope, $http){
 

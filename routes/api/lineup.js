@@ -6,16 +6,19 @@ module.exports = function(app){
 // =============================== Gigs ==============================
 // ===================================================================
 
-// Read All
-app.get('/api/lineups', function(req, res) {
-    lineup.findAll(function(data) {
+// Read All with gig_id
+app.get('/api/lineups/:groupId/:gigId', function(req, res) {
+    group_id = req.params.groupId;
+    gig_id = req.params.gigId;
+    lineup.findAll({'gig_id':gig_id}, function(data) {
       res.status(200).json(data);
     });
 });
 
 // Create
-app.post('/api/lineups', function(req, res) {
-    lineup.add(req.body, function(doc){
+app.post('/api/lineups/:gigId', function(req, res) {
+    gig_id = req.params.gigId;
+    lineup.add(gig_id, req.body, function(doc){
         res.send(doc);
     });
 });

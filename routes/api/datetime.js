@@ -7,21 +7,24 @@ module.exports = function(app){
 // ===================================================================
 
 // Read All
-app.get('/api/datetimes', function(req, res) {
-    datetime.findAll(function(data) {
+app.get('/api/datetimes/:groupId/:gigId', function(req, res) {
+    group_id = req.params.groupId;
+    gig_id = req.params.gigId;
+    datetime.findAll({'gig_id':gig_id}, function(data) {
       res.status(200).json(data);
     });
 });
 
 // Create
-app.post('/api/datetimes', function(req, res) {
-    datetime.add(req.body, function(doc){
+app.post('/api/datetimes/:gigId', function(req, res) {
+    gig_id = req.params.gigId;
+    datetime.add(gig_id, req.body, function(doc){
         res.send(doc);
     });
 });
 
  // Read One
-app.get('/api/datetimes/:id', function(req, res) {
+app.get('/api/datetimes/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
     datetime.findOne({_id:objectId},function(doc) {
             res.status(200).json(doc);

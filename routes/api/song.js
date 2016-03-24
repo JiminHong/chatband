@@ -19,19 +19,25 @@ app.get('/api/songs/:groupId/:gigId', function(req, res) {
 // Create
 app.post('/api/songs/:gigId', function(req, res) {
     gig_id = req.params.gigId;
-
     song.add(gig_id, req.body, function(doc){
         res.send(doc);
     });
 });
 
  // Read One
-app.get('/api/songs/:id', function(req, res) {
+ app.get('/api/songs/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
     song.findOne({_id:objectId},function(doc) {
             res.status(200).json(doc);
     });
 });
+ 
+// app.get('/api/songs/:id', function(req, res) {
+//     objectId = req.params.id;
+//     song.findOne({_id:objectId},function(doc) {
+//             res.status(200).json(doc);
+//     });
+// });
 
 // Update
 app.post('/api/songs/:id', function(req, res) {
