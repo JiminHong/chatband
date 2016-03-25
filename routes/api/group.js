@@ -22,7 +22,7 @@ app.post('/api/groups', function(req, res) {
  // Read One
 app.get('/api/groups/:groupId', function(req, res) {
     group_id = req.params.groupId;
-    group.findOne({group_id:group_id},function(doc) {
+    group.findOne({_id:group_id},function(doc) {
             res.status(200).json(doc);
     });
 });

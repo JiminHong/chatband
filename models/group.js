@@ -64,9 +64,9 @@ var _model = mongoose.model('group', groupSchema);
 	// Find one wardrobe database
 	_findOne = function(groupId ,success, fail){
 		group_id = groupId._id;
-		_model.findOne({'group_id': group_id}, function(err, doc){
+		_model.findOne({'_id': group_id}, function(err, doc){
 			if(err){
-				console.log(err);
+				fail(err);
 			}else{
 				success(doc);
 			}
