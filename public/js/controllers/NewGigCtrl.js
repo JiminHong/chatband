@@ -7,7 +7,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // go to the list of gigs
     // gigId?
     $scope.goGigList = function(){
-        $location.path('/listGigs/'+$routeParams.gigId);
+        $location.path('/listGigs/'+$routeParams.groupId);
     }
 
     // This is for toggle. 
@@ -108,7 +108,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // Creating a date and time for schedule
     $scope.createDatetime = function() {
-        $http.post('/api/datetimes', $scope.newGig)
+        $http.post('/api/datetimes/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.datetimes = data;
@@ -133,7 +133,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // $scope.newGig.gigAddress is an object not a string
     $scope.createLocation = function() {
     $scope.newGig.gigAddress = $scope.newGig.gigAddress.formatted_address;
-        $http.post('/api/locations', $scope.newGig)
+        $http.post('/api/locations/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; 
                 $scope.newGig.gigAddress = data.gigAddress.formatted_address;
@@ -158,7 +158,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
     // ===================================================================
     // Creating a new wardrobe
     $scope.createWardrobe = function() {
-        $http.post('/api/wardrobes', $scope.newGig)
+        $http.post('/api/wardrobes/'+$routeParams.gigId, $scope.newGig)
             .success(function(data) {
                 $scope.newGig = {}; // clear the form so our user is ready to enter another
                 $scope.wardrobes = data;
