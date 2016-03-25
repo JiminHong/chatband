@@ -89,7 +89,7 @@ myapp.config(function ($routeProvider){
 
 		}
 	})
-	.when('/goAddGig/:gigId', {
+	.when('/goAddGig/:groupId/:gigId', {
 		templateUrl : 'views/addGig.html',
 		controller 	: 'NewGigCtrl', function($scope, $http){
 

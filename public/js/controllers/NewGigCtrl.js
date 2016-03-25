@@ -46,7 +46,7 @@ function ($scope, $timeout, $http, $location, $routeParams) {
                 $scope.gigs = data;
                 console.log(data._id);
                 // data._id is gig Id
-                $location.path('/goAddGig/'+ data._id);
+                $location.path('/goAddGig/'+ $routeParams.groupId +"/"+ data._id);
         })
         .error(function(data) {
             console.log('Error: ' + data);
