@@ -40,6 +40,29 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
         $location.path('/locations/'+$routeParams.groupId+'/'+$routeParams.gigId);
     }
 
+    // Tabs hover and active.
+    if($location.path() === '/songs/'+$routeParams.groupId+'/'+$routeParams.gigId){
+        $scope.tab = 1;
+
+    }else if($location.path() === '/lineups/'+$routeParams.groupId+'/'+$routeParams.gigId){
+        $scope.tab = 2;
+
+    }else if($location.path() === '/datetimes/'+$routeParams.groupId+'/'+$routeParams.gigId){
+        $scope.tab = 3;
+
+    }else if($location.path() === '/locations/'+$routeParams.groupId+'/'+$routeParams.gigId){
+        $scope.tab = 4;
+
+    }else if($location.path() === '/wardrobes/'+$routeParams.groupId+'/'+$routeParams.gigId){
+        $scope.tab = 5;
+
+    }
+
+    $scope.isSet = function(tabNum){
+        return $scope.tab === tabNum;
+    }
+    
+
     // it goes to chat page
     $scope.goChat = function(){
         $location.path('/chat/'+$routeParams.gigId);
@@ -266,27 +289,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
              })
     }
 
-    // Tabs hover and active.
-    if($location.path() === "/songs"){
-        $scope.tab = 1;
-
-    }else if($location.path() === "/lineup"){
-        $scope.tab = 2;
-
-    }else if($location.path() === "/datetime"){
-        $scope.tab = 3;
-
-    }else if($location.path() === "/location"){
-        $scope.tab = 4;
-
-    }else if($location.path() === "/wardrobe"){
-        $scope.tab = 5;
-
-    }
-
-    $scope.isSet = function(tabNum){
-        return $scope.tab === tabNum;
-    }
+    
  
     
 }]);
