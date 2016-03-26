@@ -108,9 +108,6 @@ function ($scope, chatMessages, $firebaseObject, $firebaseArray, $location, $htt
             .error(function(data) {
                 console.log('Error: ' + data);
             });
-
-
-
 }]);
 
 

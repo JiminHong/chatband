@@ -24,7 +24,7 @@ app.post('/api/lineups/:gigId', function(req, res) {
 });
 
  // Read One
-app.get('/api/lineups/:id', function(req, res) {
+app.get('/api/lineups/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
     lineup.findOne({_id:objectId},function(doc) {
             res.status(200).json(doc);
@@ -32,7 +32,7 @@ app.get('/api/lineups/:id', function(req, res) {
 });
 
 // Update
-app.post('/api/lineups/:id', function(req, res) {
+app.post('/api/lineups/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
     lineup.update(req.body,function(doc){
       res.status(200).json(doc);
@@ -41,7 +41,7 @@ app.post('/api/lineups/:id', function(req, res) {
 
 
 // Delete One
-app.delete('/api/lineups/:id', function(req, res) {
+app.delete('/api/lineups/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
     lineup.remove({_id:objectId},function(doc){
         res.status(200).json("doc in api",doc);

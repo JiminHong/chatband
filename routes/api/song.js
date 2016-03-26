@@ -35,7 +35,6 @@ app.post('/api/songs/:gigId', function(req, res) {
 // Update
 app.post('/api/songs/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
-    console.log(objectId);
     song.update(req.body,function(doc){
       res.status(200).json(doc);
     });

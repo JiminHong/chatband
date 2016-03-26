@@ -13,8 +13,6 @@ app.get('/api/gig/:groupId', function(req, res) {
     });
 });
 
-
-
 // Create
 app.post('/api/gig/:groupId', function(req, res) {
     group_id = req.params.groupId;
@@ -24,9 +22,9 @@ app.post('/api/gig/:groupId', function(req, res) {
 });
 
  // Read One
-app.get('/api/gig/:id', function(req, res) {
-    objectId = req.params.id;
-    gig.findOne({group_id:objectId},function(doc) {
+app.get('/api/gig/:groupId/:gigId', function(req, res) {
+    gig_id = req.params.gigId;
+    gig.findOne({_id:gig_id},function(doc) {
             res.status(200).json(doc);
     });
 });

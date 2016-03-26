@@ -1,9 +1,6 @@
 myapp.controller('GigCtrl', ["$scope", "$http", "$route", "$location", "NgMap", "$routeParams", 
 function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
-    // Gig name. Using scope db for now.
-    $scope.gigName = "moonstone music festival 2016";
-
     // getting a group that has $routeParams.groupId as _id
     $http.get('/api/groups/'+$routeParams.groupId)
         .success(function(data) {
@@ -13,6 +10,16 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
         .error(function(data) {
             console.log('Error: ' + data);
     });
+
+    // getting a group that has $routeParams.groupId as _id
+    $http.get('/api/gig/'+$routeParams.groupId+"/"+$routeParams.gigId)
+        .success(function(data) {
+            $scope.gigs = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+    });
+
 
     $scope.goListGigs = function(){
         $location.path('/listGigs/'+$routeParams.groupId);
@@ -62,7 +69,6 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
         return $scope.tab === tabNum;
     }
     
-
     // it goes to chat page
     $scope.goChat = function(){
         $location.path('/chat/'+$routeParams.gigId);
@@ -128,7 +134,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Grabs the id of db
     $scope.editLineup = function(id){
-        $http.get('/api/lineups/' + id)
+        $http.get('/api/lineups/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
               $scope.lineup = data;
               $scope.commentId = id;
@@ -137,7 +143,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Update db here
     $scope.updateLineup = function(id){
-        $http.post('/api/lineups/'+ id, $scope.lineup)
+        $http.post('/api/lineups/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id, $scope.lineup)
              .success(function(data){
                 $scope.lineup = data;
              })
@@ -148,7 +154,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Delete db
     $scope.deleteLineup = function(id){
-        $http.delete('/api/lineups/'+ id)
+        $http.delete('/api/lineups/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
                 $scope.lineup = data;
              })
@@ -192,7 +198,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Grabs the id of db
     $scope.editDatetime = function(id){
-        $http.get('/api/datetimes/' + id)
+        $http.get('/api/datetimes/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
               $scope.datetime = data;
               $scope.commentId = id;
@@ -201,7 +207,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Update db here
     $scope.updateDatetime = function(id){
-        $http.post('/api/datetimes/'+ id, $scope.datetime)
+        $http.post('/api/datetimes/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id, $scope.datetime)
              .success(function(data){
                 $scope.datetime = data;
              })
@@ -212,7 +218,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Delete db
     $scope.deleteDatetime = function(id){
-        $http.delete('/api/datetimes/'+ id)
+        $http.delete('/api/datetimes/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
                 $scope.datetime = data;
              })
@@ -260,7 +266,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     });
 
     $scope.editWardrobe = function(id){
-        $http.get('/api/wardrobes/' + id)
+        $http.get('/api/wardrobes/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
               $scope.wardrobe = data;
               $scope.commentId = id;
@@ -268,7 +274,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     } 
 
     $scope.updateWardrobe = function(id){
-        $http.post('/api/wardrobes/'+ id, $scope.wardrobe)
+        $http.post('/api/wardrobes/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id, $scope.wardrobe)
              .success(function(data){
                 $scope.wardrobe = data;
                 console.log($scope);
@@ -279,7 +285,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     }
 
     $scope.deleteWardrobe = function(id){
-        $http.delete('/api/wardrobes/'+ id)
+        $http.delete('/api/wardrobes/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
                 $scope.wardrobe = data;
                 console.log("deleted!!");
