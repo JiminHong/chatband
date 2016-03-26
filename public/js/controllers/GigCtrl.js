@@ -84,7 +84,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
     // Editing song 
     $scope.editSong = function(id){
         //get song by id
-        $http.get('/api/songs/' + id)
+        $http.get('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
               $scope.song = data;
               $scope.songId = id;
@@ -93,7 +93,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // After getting an id of the certain song and upload it.
     $scope.updateSong = function(id){
-        $http.post('/api/songs/'+ id, $scope.song)
+        $http.post('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id, $scope.song)
              .success(function(data){
                 $scope.song = data;
              })
@@ -104,7 +104,7 @@ function ($scope, $http, $route, $location, $NgMap, $routeParams) {
 
     // Delete a song using id
     $scope.deleteSong = function(id){
-        $http.delete('/api/songs/'+ id)
+        $http.delete('/api/songs/'+ $routeParams.groupId + "/" +$routeParams.gigId+"/"+id)
              .success(function(data){
                 $scope.song = data;
              })

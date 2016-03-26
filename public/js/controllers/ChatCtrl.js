@@ -68,12 +68,10 @@ function ($scope, chatMessages, $firebaseObject, $firebaseArray, $location, $htt
     // =================================================================== 
 
         // getting a group that has $routeParams.groupId as _id
-        console.log($routeParams.groupId);
         $http.get('/api/groups/'+$routeParams.groupId)
             .success(function(data) {
                 $scope.groups = data;
                 $scope.groupName = data.groupName;
-                console.log($scope.groups);
             })
             .error(function(data) {
                 console.log('Error: ' + data);

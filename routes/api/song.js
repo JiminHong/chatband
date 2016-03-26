@@ -32,16 +32,10 @@ app.post('/api/songs/:gigId', function(req, res) {
     });
 });
  
-// app.get('/api/songs/:id', function(req, res) {
-//     objectId = req.params.id;
-//     song.findOne({_id:objectId},function(doc) {
-//             res.status(200).json(doc);
-//     });
-// });
-
 // Update
-app.post('/api/songs/:id', function(req, res) {
+app.post('/api/songs/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
+    console.log(objectId);
     song.update(req.body,function(doc){
       res.status(200).json(doc);
     });
@@ -49,7 +43,7 @@ app.post('/api/songs/:id', function(req, res) {
 
 
 // Delete One
-app.delete('/api/songs/:id', function(req, res) {
+app.delete('/api/songs/:groupId/:gigId/:id', function(req, res) {
     objectId = req.params.id;
     song.remove({_id:objectId},function(doc){
         res.status(200).json("doc in api",doc);
