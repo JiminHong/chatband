@@ -20,8 +20,7 @@ function ($scope, chatGroupMessage, $firebaseArray, $location, $http, $routePara
             .error(function(data) {
                 console.log('Error: ' + data);
         });
-
-
+            
         //Directs to the chat page
         $scope.goChat = function(groupId){
             $location.path('/chat/'+groupId);

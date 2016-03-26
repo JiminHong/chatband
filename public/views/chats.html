@@ -13,7 +13,7 @@
         </li>
         <li class="col nav-right">
             <div class="inline">
-                <p  class="nav-text" ng-click="goAddGroup()">Add group</p>
+                <p class="nav-text" ng-click="goAddGroup()">Add group</p>
             </div>
         </li>
     </ul>
@@ -51,7 +51,12 @@
             </div>
           </div>
         </snap-content>
-        
+      </div>
+    </div>
+
+    <div ng-repeat="data in lastMessage">
+      <div ng-repeat="inData in data">
+        {[{inData.message}]}
       </div>
     </div>
 </div><!--End of view-->

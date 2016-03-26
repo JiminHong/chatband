@@ -1126,7 +1126,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* line 41, ../sass/style.scss */

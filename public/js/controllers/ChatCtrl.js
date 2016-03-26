@@ -15,8 +15,9 @@ function ($scope, chatMessages, $firebaseObject, $firebaseArray, $location, $htt
     // ============================ Chats ===============================
     // =================================================================== 
         
+        // This group chat
         var messagesRef = new Firebase("https://vivid-fire-4911.firebaseio.com/" + $routeParams.groupId);
-        //create a query for the most recent 25 messages on the server
+        //create a query for the most recent 1 messages on the server
         var query = messagesRef.orderByChild("message").limitToLast(1);
         // the $firebaseArray service properly handles database queries as well
         $scope.lastMessage = $firebaseArray(query);
